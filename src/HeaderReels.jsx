@@ -4,23 +4,21 @@ import { bestSellerProducts } from './scrapshalaBestSellers';
 
 const REEL_URLS = SCRAPSHALA_SHOP_VIDEOS;
 
-const BRAND_NAME = 'Ajnaa Jewels';
-const SHOP_CTA_URL = 'https://ajnaajewels.com';
+const BRAND_NAME = 'Carriall';
+const SHOP_CTA_URL = 'https://carriall.com';
 
-/** Instagram-style story ring (gradient border) */
 const IG_STORY_RING =
   'rounded-full bg-[linear-gradient(135deg,#feda75_0%,#fa7e1e_35%,#d62976_68%,#962fbf_100%)] p-[2.5px] sm:p-[3px]';
 
-/** One line per reel — jewelry / brand tone */
 const REEL_CAPTIONS = [
-  'Thoughtfully crafted designs that define every look.',
-  `${BRAND_NAME} · timeless pieces for every occasion.`,
-  'Handpicked jewelry — made to shine.',
-  'Celebrate tradition with a modern touch.',
-  'Your story, set in gold.',
-  'Every piece tells a moment.',
+  'Bags built for life on the move.',
+  `${BRAND_NAME} · carry more, worry less.`,
+  'Structured style for every occasion.',
+  'From commute to weekend — Carriall goes everywhere.',
+  'Your journey, carried beautifully.',
+  'Every bag tells a story.',
   'Crafted with care — made for you.',
-  'Elevate your everyday.',
+  'Elevate your everyday carry.',
 ];
 
 function IconClose() {

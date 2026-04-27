@@ -12,6 +12,7 @@ import PdpHeroReviewRotator from './PdpHeroReviewRotator';
 // ============================================
 
 import productHeader from './assets/product_header.png';
+import brandLogo from './assets/brand.png';
 import { SCRAPSHALA_SHOP_VIDEOS, PDP_DRAGGABLE_VIDEO } from './scrapshalaShopVideos';
 import {
   bestSellerProducts,
@@ -43,36 +44,35 @@ function formatSoldLabel(n) {
 }
 
 
-// Brand Name (footer / assets)
-const BRAND_NAME = "Ajnaa Jewels";
-const AJNAA_INSTAGRAM_URL = 'https://www.instagram.com/ajnaajewels/';
-/** Display label for Instagram follower count (reviews sidebar + links) */
-const AJNAA_INSTAGRAM_FOLLOWERS_LABEL = '78.6K';
+// Brand Name
+const BRAND_NAME = "Carriall";
+const AJNAA_INSTAGRAM_URL = 'https://www.instagram.com/carriall/';
+const AJNAA_INSTAGRAM_FOLLOWERS_LABEL = '18K';
 
-/** Reviews UI — brand burgundy accent */
-const REVIEW_ACCENT = '#651F39';
-const REVIEW_RING_TRACK = '#ede4e8';
-const REVIEW_SOFT = 'rgba(101, 31, 57, 0.09)';
-const REVIEW_ACCENT_BORDER = 'rgba(101, 31, 57, 0.25)';
+/** Reviews UI — Carriall teal accent */
+const REVIEW_ACCENT = '#3a8c7e';
+const REVIEW_RING_TRACK = '#d1ece9';
+const REVIEW_SOFT = 'rgba(58, 140, 126, 0.09)';
+const REVIEW_ACCENT_BORDER = 'rgba(58, 140, 126, 0.25)';
 
-// Product Video — draggable floating card (rana_kavita25 reel clip)
+// Product Video — draggable floating card
 const PRODUCT_VIDEO = PDP_DRAGGABLE_VIDEO;
 
 // Product Details
-const PRODUCT_NAME = "Ghats of Varanasi Wall Decor | Rectangular | Backside Hanging Hook | Handpainted | Made in India | Ajnaa Jewels";
-const PRODUCT_PRICE = 1945;
-const PRODUCT_ORIGINAL_PRICE = 2145;
-const PRODUCT_DISCOUNT = 9;
-const PRODUCT_SKU = "SS-LB-NP-TT-001";
-const PRODUCT_DESCRIPTION = "Hand-finished kundan and pearl work by Indian artisans — this piece is designed for weddings, festivals, and occasions where you want jewellery that photographs beautifully and feels comfortable to wear for hours. The setting is checked for smooth edges, secure clasps, and even stone alignment. Pair it with silk, organza, or minimal fusion fits. Each order supports small workshops and careful quality control before dispatch.";
-const PRODUCT_BRAND = "Ajnaa Jewels";
+const PRODUCT_NAME = "Ireen";
+const PRODUCT_PRICE = 5499;
+const PRODUCT_ORIGINAL_PRICE = 9199;
+const PRODUCT_DISCOUNT = 40;
+const PRODUCT_SKU = "CA-IREEN-BEI-001";
+const PRODUCT_DESCRIPTION = "Introducing Ireen – where vintage elegance meets modern purpose. Designed with a clean, structured silhouette and a soft textured finish, Ireen carries a quiet sophistication that never tries too hard but always stands out. Her main zippered compartment opens to a well-organised interior featuring one slip pocket and one zip pocket, offering space for everything you need to keep close seamlessly arranged. Ireen offers two stylish carrying modes with both structured top handles and a detachable shoulder strap, allowing you to switch effortlessly between a classic handheld look and hands-free ease. From weekday commutes to bookstore strolls and Sunday brunches, Ireen goes everywhere and elevates everything. Always grounded. Always graceful. Always a little iconic.";
+const PRODUCT_BRAND = "Carriall";
 const PRODUCT_COLORS = [];
 const PRODUCT_SIZES = [];
 /** Social proof — shown next to rating & reviews on the buy box */
-const PRODUCT_REVIEW_COUNT = 320;
-const PRODUCT_SOLD_COUNT = 480;
+const PRODUCT_REVIEW_COUNT = 86;
+const PRODUCT_SOLD_COUNT = 340;
 
-// You May Also Like — aligned with best sellers (reserved for future alternate carousels)
+// You May Also Like — aligned with best sellers
 const RELATED_PRODUCTS = bestSellerProducts.slice(0, 4).map((p) => ({
   id: p.id,
   name: p.title,
@@ -85,40 +85,34 @@ const RELATED_PRODUCTS = bestSellerProducts.slice(0, 4).map((p) => ({
 
 // Short captions under PDP reel pills
 const PDP_REEL_LABELS = [
-  'Kundan & pearls',
-  'Wedding edits',
-  'Hand-set stones',
+  'Style on the go',
+  'Travel essentials',
+  'Structured handbags',
   'Customer favourites',
-  'Lightweight wear',
+  'Lightweight carry',
   'Real customer stories',
-  'Festive & bridal',
-  'Nickel-conscious picks',
-  'Gift-ready boxes',
-  'Shop Ajnaa Jewels',
-  'Handmade in India',
+  'Work & weekend',
+  'Premium quality',
+  'Gift-ready bags',
+  'Shop Carriall',
+  'Made for India',
 ];
 
 /** Short keyword chips under rating / reviews on the buy box */
-const PDP_KEYWORD_TAGS = ['Perfect gifting', 'Timeless design', 'Trusted quality', 'Festive ready'];
+const PDP_KEYWORD_TAGS = ['Perfect gifting', 'Structured silhouette', 'Trusted quality', 'Everyday carry'];
 
-const PDP_BREADCRUMB_MID = 'Deal of the Week';
-const PDP_GIFT_PROMO =
-  'Complimentary Festive Gift worth ₹599/- with every order';
-const PDP_COUPON_CODE = 'DEAL10';
-const PDP_COUPON_COPY =
-  'Get an extra 10% off on top picks — use code DEAL10';
+const PDP_BREADCRUMB_MID = 'Handbags';
+const PDP_GIFT_PROMO = 'Free dust bag & gift wrapping with every order';
+const PDP_COUPON_CODE = 'CARRY10';
+const PDP_COUPON_COPY = 'Get an extra 10% off on all bags — use code CARRY10';
 
-/** Trust row below CTAs (icons + labels) */
+/** Trust row below CTAs */
 const PDP_TRUST_FEATURES = [
   {
-    label: 'Easy 3 Days Return',
+    label: 'Easy 7 Days Return',
     icon: (
       <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-        />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
       </svg>
     ),
   },
@@ -131,7 +125,7 @@ const PDP_TRUST_FEATURES = [
     ),
   },
   {
-    label: '6 Month Maintenance Warranty',
+    label: '1 Year Warranty',
     icon: (
       <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -139,11 +133,10 @@ const PDP_TRUST_FEATURES = [
     ),
   },
   {
-    label: 'Anti-Tarnish',
+    label: 'Premium Material',
     icon: (
       <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c2.5 3 4 5.5 4 8a4 4 0 11-8 0c0-2.5 1.5-5 4-8z" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 11v2M10 13h4" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M5 3l14 9-14 9V3z" />
       </svg>
     ),
   },
@@ -153,18 +146,18 @@ const PDP_TRUST_FEATURES = [
 // END OF EDITABLE SECTION
 // ============================================
 
-// Fallback blurbs for image modals — short, casual (matches review.json tone)
+// Fallback blurbs for image modals
 const dummyReviews = [
-  { name: 'Priya Sharma', rating: 5, title: 'Wedding ready', text: 'Choker sat perfectly with my lehenga. Didn’t feel heavy by midnight — cousins asked where I got it.', date: '1/20/2025', type: 'product' },
-  { name: 'Anjali Mehta', rating: 5, title: 'Secure clasp', text: 'Back of the necklace doesn’t poke. Clasp clicks in properly; I’m not worried about it opening on the dance floor.', date: '1/18/2025', type: 'product' },
-  { name: 'Riya Patel', rating: 4, title: 'Gift for sister', text: 'Earrings for roka — she said hooks don’t hurt. 4 stars only because delivery took 4 days.', date: '1/15/2025', type: 'product' },
-  { name: 'Kavya Reddy', rating: 5, title: 'Looks like the reel', text: 'Saw styling on IG — stones match what arrived. Pearls are evenly sized, not lumpy.', date: '1/12/2025', type: 'product' },
-  { name: 'Meera Singh', rating: 5, title: 'Office day subtle', text: 'Small studs for everyday — not loud under office lights. Comfortable full day.', date: '1/10/2025', type: 'product' },
-  { name: 'Sneha Verma', rating: 5, title: 'Quick delivery', text: 'Came in a proper box with cloth pouches. No rattling in transit.', date: '1/08/2025', type: 'product' },
-  { name: 'Divya Nair', rating: 4, title: 'Nice finish', text: 'Gold tone even across the set. One tiny thread on the pouch — jewellery itself fine.', date: '1/05/2025', type: 'product' },
-  { name: 'Pooja Mehta', rating: 5, title: 'Mother’s gift', text: 'Bought bangles for mum — she has thin wrists; fit was ok with the extra links.', date: '1/03/2025', type: 'product' },
-  { name: 'Neha Kapoor', rating: 5, title: 'Second buy', text: 'First was jhumkas. This time a long necklace — same quality of setting.', date: '12/30/2024', type: 'product' },
-  { name: 'Aarti Desai', rating: 5, title: 'Photos well', text: 'Wore for a shoot — didn’t reflect weird under camera flash. Makeup artist kept the set.', date: '12/28/2024', type: 'product' },
+  { name: 'Priya Sharma', rating: 5, title: 'Perfect everyday bag', text: 'Ireen holds its shape all day. Interior pockets are well-placed. Strap is comfortable for long carries.', date: '1/20/2025', type: 'product' },
+  { name: 'Anjali Mehta', rating: 5, title: 'Quality is real', text: 'Stitching is clean, zipper smooth, fabric spotless after weeks of use. Looks far more expensive than it is.', date: '1/18/2025', type: 'product' },
+  { name: 'Riya Patel', rating: 4, title: 'Gift for sister', text: 'Bought the Ireen as a birthday gift — she was genuinely impressed. 4 stars only because delivery took an extra day.', date: '1/15/2025', type: 'product' },
+  { name: 'Kavya Reddy', rating: 5, title: 'Exactly like the photos', text: 'Beige colour is identical to the website. No surprises at all. Carriall delivers what they show.', date: '1/12/2025', type: 'product' },
+  { name: 'Meera Singh', rating: 5, title: 'Office to evening', text: 'Carries my laptop, charger, and essentials without looking overstuffed. Gets compliments every week.', date: '1/10/2025', type: 'product' },
+  { name: 'Sneha Verma', rating: 5, title: 'Great packaging', text: 'Came with a dust bag and proper wrapping. No dents or marks on the bag. Thoughtful unboxing experience.', date: '1/08/2025', type: 'product' },
+  { name: 'Divya Nair', rating: 4, title: 'Very clean finish', text: 'Hardware is solid and not flimsy. Handles feel premium. One tiny loose thread but the bag itself is excellent.', date: '1/05/2025', type: 'product' },
+  { name: 'Pooja Mehta', rating: 5, title: 'Mum approved', text: 'Bought the Wander Tote for mum — she uses it daily. Says straps are comfortable and the bag is light.', date: '1/03/2025', type: 'product' },
+  { name: 'Neha Kapoor', rating: 5, title: 'Second Carriall', text: 'First was the City Crossbody. This time the Ireen — same great quality and consistent finish.', date: '12/30/2024', type: 'product' },
+  { name: 'Aarti Desai', rating: 5, title: 'Photographs beautifully', text: 'Used Ireen for a shoot — structured shape shows up great on camera. Team asked about the brand.', date: '12/28/2024', type: 'product' },
 ];
 
 function AccordionRow({ label, content }) {
@@ -615,7 +608,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
         </div>
       )}
       
-      <main className="flex-1 bg-white py-6 md:py-10">
+      <main className="flex-1 py-6 md:py-10" style={{ backgroundColor: '#f0ede8' }}>
         <div className="mx-auto w-full max-w-6xl px-4 md:px-8">
 
           {/* Breadcrumb — reference-style trail */}
@@ -656,7 +649,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                   </div>
 
                   {/* Main image + arrows */}
-                  <div className="relative flex-1 rounded-none overflow-hidden bg-gray-50">
+                  <div className="relative flex-1 rounded-none overflow-hidden" style={{ backgroundColor: '#f0ede8' }}>
                     <img
                       src={imgs[selectedImage] || imgs[0]}
                       alt={productName}
@@ -706,234 +699,179 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
               );
             })()}
 
-            {/* RIGHT — buy box (reference-style layout; rating + keyword block preserved) */}
-            <div className="flex flex-col gap-4 lg:max-w-xl lg:justify-self-end">
-              {/* Title + wishlist */}
-              <div className="flex items-start justify-between gap-3">
-                <h1 className="text-xl font-semibold leading-snug text-gray-900 md:text-2xl">{productName}</h1>
-                <button
-                  type="button"
-                  onClick={() => setWishlisted((w) => !w)}
-                  className="mt-0.5 shrink-0 rounded-none p-1.5 text-gray-400 transition-colors hover:bg-stone-100 hover:text-[#651F39]"
-                  aria-label={wishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
-                >
-                  <svg
-                    className="h-7 w-7"
-                    viewBox="0 0 24 24"
-                    fill={wishlisted ? '#651F39' : 'none'}
-                    stroke={wishlisted ? '#651F39' : 'currentColor'}
-                    strokeWidth="1.8"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                    />
-                  </svg>
-                </button>
+            {/* RIGHT — clean minimal buy box */}
+            <div className="flex flex-col gap-0">
+
+              {/* Product name */}
+              <h1
+                className="mb-5 text-3xl font-light leading-tight text-gray-900 md:text-4xl"
+                style={{ letterSpacing: '0.12em', fontFamily: 'Georgia, serif', textTransform: 'uppercase' }}
+              >
+                {productName}
+              </h1>
+
+              {/* MRP label */}
+              <p className="mb-1 text-xs text-gray-500 tracking-wide">MRP (Maximum Retail Price)</p>
+
+              {/* Price row */}
+              <div className="mb-1 flex flex-wrap items-baseline gap-3">
+                <span className="text-2xl font-semibold tracking-widest" style={{ color: '#c0392b' }}>
+                  RS.&nbsp;{productPrice.toLocaleString('en-IN')}.00
+                </span>
+                {productOriginal ? (
+                  <span className="text-base text-gray-400 line-through tracking-wide">
+                    RS.&nbsp;{productOriginal.toLocaleString('en-IN')}.00
+                  </span>
+                ) : null}
               </div>
 
-              {/* Rating, stars, reviews & sold + keyword checkmarks — unchanged content */}
-              <div className="flex flex-col gap-2">
-                <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm">
-                  <span className="font-semibold tabular-nums text-gray-900" aria-hidden>
-                    {productRating.toFixed(1)}
-                  </span>
-                  <span className="flex items-center gap-0.5" aria-label={`${productRating.toFixed(1)} out of 5 stars`}>
+              {/* Tax note */}
+              <p className="mb-6 text-xs text-gray-500">(Price Inclusive of all Taxes)</p>
+
+              <div className="border-t border-gray-300 mb-6" />
+
+              {/* Rating | Reviews */}
+              <div className="mb-2 flex items-start gap-8">
+                <div className="flex flex-col gap-2">
+                  <span className="text-sm text-gray-600 tracking-wide">Rating ({productRating.toFixed(1)})</span>
+                  <span className="flex gap-1" aria-label={`${productRating.toFixed(1)} out of 5 stars`}>
                     {[1, 2, 3, 4, 5].map((i) => (
-                      <svg key={i} width="15" height="15" viewBox="0 0 24 24" aria-hidden>
+                      <svg key={i} width="18" height="18" viewBox="0 0 24 24" aria-hidden>
                         <path
                           d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                          fill={i <= Math.round(productRating) ? '#f97316' : '#e5e7eb'}
+                          fill={i <= Math.round(productRating) ? '#3a8c7e' : '#d1d5db'}
                         />
                       </svg>
                     ))}
                   </span>
-                  <span className="hidden sm:inline text-gray-600" aria-hidden>
-                    ·
-                  </span>
-                  <span className="text-gray-500">
-                    {productReviews > 0
-                      ? `${Number(productReviews).toLocaleString('en-IN')} reviews`
-                      : 'No reviews'}
-                  </span>
-                  {Number(productSoldCount) > 0 && (
-                    <>
-                      <span className="hidden sm:inline text-gray-600" aria-hidden>
-                        ·
-                      </span>
-                      <span className="text-gray-500">{formatSoldLabel(productSoldCount)}</span>
-                    </>
-                  )}
                 </div>
-                <ul
-                  className="m-0 flex list-none flex-wrap items-center gap-y-1.5 p-0"
-                  aria-label="Product highlights"
-                >
-                  {PDP_KEYWORD_TAGS.map((kw, i) => (
-                    <li key={kw} className="flex items-center text-[13px] text-stone-700 sm:text-sm">
-                      {i > 0 && (
-                        <span
-                          className="mx-2.5 h-3.5 w-px shrink-0 bg-stone-300 sm:mx-3"
-                          aria-hidden
+                <div className="w-px self-stretch bg-gray-300" />
+                <div className="flex flex-col gap-1">
+                  <span className="text-sm text-gray-600 tracking-wide">Reviews</span>
+                  <span className="text-4xl font-bold text-gray-900 leading-none">{productReviews}</span>
+                </div>
+              </div>
+
+              <div className="border-t border-gray-300 mb-6 mt-6" />
+
+              {/* Description */}
+              <p className="mb-6 text-sm leading-relaxed text-gray-700" style={{ lineHeight: '1.85' }}>
+                {passedProduct?.feature
+                  ? `${passedProduct.feature}. ${PRODUCT_DESCRIPTION}`
+                  : PRODUCT_DESCRIPTION}
+              </p>
+
+              <div className="border-t border-gray-300 mb-6" />
+
+              {/* Color selector */}
+              {(() => {
+                const colors = PRODUCT_COLORS.length
+                  ? PRODUCT_COLORS
+                  : [
+                      { label: 'Beige', hex: '#e8dcc8' },
+                      { label: 'Brown', hex: '#6b4226' },
+                      { label: 'Teal', hex: '#2e7d70' },
+                    ];
+                const [selectedColor, setSelectedColor] = React.useState(colors[0].label);
+                return (
+                  <div className="mb-6">
+                    <p className="mb-3 text-sm text-gray-700 tracking-wide">
+                      Color: <span className="font-medium">{selectedColor}</span>
+                    </p>
+                    <div className="flex gap-3">
+                      {colors.map((c) => (
+                        <button
+                          key={c.label}
+                          type="button"
+                          aria-label={c.label}
+                          onClick={() => setSelectedColor(c.label)}
+                          className="h-9 w-9 rounded-full border-2 transition-all"
+                          style={{
+                            backgroundColor: c.hex,
+                            borderColor: selectedColor === c.label ? '#1a1a1a' : 'transparent',
+                            boxShadow: selectedColor === c.label ? '0 0 0 1px #1a1a1a' : '0 0 0 1px #ccc',
+                          }}
                         />
-                      )}
-                      <span>{kw}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Social share */}
-              <div className="flex items-center gap-2">
-                <a
-                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-9 w-9 items-center justify-center rounded-none text-white transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: '#1877f2' }}
-                  aria-label="Share on Facebook"
-                >
-                  <span className="text-[11px] font-bold">f</span>
-                </a>
-                <a
-                  href={`https://wa.me/?text=${encodeURIComponent(`${productName} ${typeof window !== 'undefined' ? window.location.href : ''}`)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-9 w-9 items-center justify-center rounded-none text-white transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: '#25d366' }}
-                  aria-label="Share on WhatsApp"
-                >
-                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                  </svg>
-                </a>
-                <a
-                  href={`https://pinterest.com/pin/create/button/?url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}&description=${encodeURIComponent(productName)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-9 w-9 items-center justify-center rounded-none text-white transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: '#e60023' }}
-                  aria-label="Share on Pinterest"
-                >
-                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                    <path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.132 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.397 2.967 7.397 6.931 0 4.136-2.607 7.466-6.233 7.466-1.214 0-2.357-.629-2.746-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z" />
-                  </svg>
-                </a>
-              </div>
-
-              {/* Price */}
-              <div>
-                <div className="flex flex-wrap items-baseline gap-2 gap-y-1">
-                  <span className="text-2xl font-bold text-gray-900">
-                    ₹{productPrice.toLocaleString('en-IN')}
-                  </span>
-                  {productOriginal ? (
-                    <span className="text-base text-gray-400 line-through">
-                      ₹{productOriginal.toLocaleString('en-IN')}
-                    </span>
-                  ) : null}
-                  {productDiscount > 0 ? (
-                    <span className="text-sm font-semibold text-orange-500">{productDiscount}% off</span>
-                  ) : null}
-                </div>
-                <p className="mt-1 text-xs text-gray-500">(Inclusive of all taxes)</p>
-              </div>
-
-              <p className="text-sm font-medium text-orange-500">{PDP_GIFT_PROMO}</p>
-
-              {/* Coupon */}
-              <div className="rounded-none border border-dashed border-gray-300 bg-gray-50/80 px-3 py-3">
-                <div className="flex items-start gap-3">
-                  <div
-                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-none text-sm font-bold text-white"
-                    style={{ backgroundColor: '#f97316' }}
-                  >
-                    %
+                      ))}
+                    </div>
                   </div>
-                  <div className="min-w-0">
-                    <p className="text-base font-bold text-gray-900">{PDP_COUPON_CODE}</p>
-                    <p className="mt-0.5 text-[13px] leading-snug text-gray-600">{PDP_COUPON_COPY}</p>
-                  </div>
-                </div>
-              </div>
+                );
+              })()}
 
-              <div className="border-t border-gray-100" />
+              <div className="border-t border-gray-300 mb-6" />
 
               {/* Quantity */}
-              <div>
-                <p className="mb-2 text-sm font-medium text-gray-700">Quantity</p>
-                <div className="flex w-fit items-center rounded-none border border-gray-300">
+              <div className="mb-6">
+                <div className="flex w-fit items-center border border-gray-400 bg-white">
                   <button
                     type="button"
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="flex h-10 w-10 items-center justify-center text-lg text-gray-600 transition-colors hover:bg-gray-50"
+                    className="flex h-11 w-11 items-center justify-center text-xl text-gray-600 transition-colors hover:bg-gray-100"
                   >
                     −
                   </button>
-                  <span className="w-10 text-center text-sm font-semibold text-gray-900">{quantity}</span>
+                  <span className="w-12 text-center text-sm font-semibold text-gray-900 border-l border-r border-gray-400">
+                    {quantity}
+                  </span>
                   <button
                     type="button"
                     onClick={() => setQuantity(quantity + 1)}
-                    className="flex h-10 w-10 items-center justify-center text-lg text-gray-600 transition-colors hover:bg-gray-50"
+                    className="flex h-11 w-11 items-center justify-center text-xl text-gray-600 transition-colors hover:bg-gray-100"
                   >
                     +
                   </button>
                 </div>
               </div>
 
-              {/* Add to Cart + Buy Now — full-width stacked */}
-              <div className="flex flex-col gap-2.5">
+              {/* CTA buttons */}
+              <div className="flex flex-col gap-3 mb-6">
                 <button
                   type="button"
-                  className="flex h-12 w-full items-center justify-center gap-2 rounded-none text-sm font-semibold text-white transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: '#f97316' }}
+                  className="flex h-12 w-full items-center justify-center text-sm font-semibold tracking-widest text-white transition-opacity hover:opacity-90"
+                  style={{ backgroundColor: '#1a1a1a', letterSpacing: '0.12em' }}
                 >
-                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                  </svg>
-                  Add To Cart
+                  ADD TO CART
                 </button>
                 <button
                   type="button"
-                  className="flex h-12 w-full items-center justify-center gap-2 rounded-none text-sm font-semibold text-white transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: '#111111' }}
+                  className="flex h-12 w-full items-center justify-center text-sm font-semibold tracking-widest text-white transition-opacity hover:opacity-90"
+                  style={{ backgroundColor: '#3a8c7e', letterSpacing: '0.12em' }}
                 >
-                  <span className="flex items-center gap-0.5 opacity-90" aria-hidden>
-                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
-                    </svg>
-                  </span>
                   BUY NOW
                 </button>
               </div>
 
               {/* Trust icons row */}
-              <div className="grid grid-cols-2 gap-4 border-t border-gray-100 pt-4 sm:grid-cols-4 sm:gap-3">
+              <div className="grid grid-cols-2 gap-4 border-t border-gray-300 pt-5 sm:grid-cols-4 sm:gap-3 mb-6">
                 {PDP_TRUST_FEATURES.map(({ label, icon }) => (
                   <div key={label} className="flex flex-col items-center gap-2 text-center">
-                    <div className="text-gray-600">{icon}</div>
-                    <p className="text-[11px] font-medium leading-snug text-gray-700 sm:text-xs">{label}</p>
+                    <div className="text-gray-500">{icon}</div>
+                    <p className="text-[11px] font-medium leading-snug text-gray-600 sm:text-xs">{label}</p>
                   </div>
                 ))}
               </div>
 
+              {/* Brand logo */}
+              <div className="mb-5">
+                <img src={brandLogo} alt="Carriall" className="h-10 object-contain" />
+              </div>
+
               {/* Pincode */}
-              <div className="border-t border-gray-100 pt-4">
-                <p className="mb-2 text-xs font-semibold text-gray-900">Check Pincode For COD</p>
+              <div className="border-t border-gray-300 pt-5 mb-6">
+                <p className="mb-2 text-xs font-semibold tracking-widest text-gray-700 uppercase">Check Pincode For COD</p>
                 <div className="flex gap-2">
                   <input
                     type="text"
                     inputMode="numeric"
                     maxLength={6}
-                    placeholder="ENTER YOUR PINCODE"
+                    placeholder="Enter your pincode"
                     value={pincodeInput}
                     onChange={(e) => setPincodeInput(e.target.value.replace(/\D/g, '').slice(0, 6))}
-                    className="min-w-0 flex-1 rounded-none border border-gray-300 bg-white px-3 py-2.5 text-xs font-medium uppercase tracking-wide text-gray-800 placeholder:text-gray-400 placeholder:normal-case"
+                    className="min-w-0 flex-1 border border-gray-400 bg-white px-3 py-2.5 text-xs text-gray-800 placeholder:text-gray-400"
                   />
                   <button
                     type="button"
-                    className="shrink-0 rounded-none border border-gray-300 bg-white px-4 py-2.5 text-xs font-semibold text-gray-800 transition-colors hover:bg-gray-50"
+                    className="shrink-0 border border-gray-400 bg-white px-4 py-2.5 text-xs font-semibold text-gray-800 transition-colors hover:bg-gray-50 tracking-wide"
                   >
                     Check
                   </button>
@@ -943,17 +881,11 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
               {/* Accordions */}
               {[
                 {
-                  label: 'DESCRIPTION',
-                  content: passedProduct?.feature
-                    ? `${passedProduct.feature}. ${PRODUCT_DESCRIPTION}`
-                    : PRODUCT_DESCRIPTION,
-                },
-                {
                   label: 'PREPARATION DAYS',
                   content: 'This product is handcrafted and requires 3–5 working days of preparation before dispatch.',
                 },
                 {
-                  label: 'RETURN/EXCHANGE POLICY',
+                  label: 'RETURN / EXCHANGE POLICY',
                   content: 'We accept returns and exchanges within 7 days of delivery. The product must be unused and in its original packaging.',
                 },
                 {
@@ -991,14 +923,14 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                 <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
                   <div>
                     <h2 className="text-base sm:text-lg font-semibold text-gray-900 tracking-tight">
-                      See Ajnaa Jewels in action
+                      See Carriall in action
                     </h2>
                   </div>
                   <a
-                    href="https://www.instagram.com/ajnaajewels/"
+                    href="https://www.instagram.com/carriall/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-none shrink-0 bg-white text-gray-800 border border-gray-200 shadow-sm hover:bg-white hover:border-[#651F39]/40 transition-colors"
+                    className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-none shrink-0 bg-white text-gray-800 border border-gray-200 shadow-sm hover:bg-white hover:border-[#003764]/40 transition-colors"
                     style={{ textDecoration: 'none' }}
                   >
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -1006,7 +938,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       <circle cx="12" cy="12" r="4.5" stroke="currentColor" strokeWidth="1.8"/>
                       <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
                     </svg>
-                    @ajnaajewels
+                    @carriall
                   </a>
                 </div>
                 <div className="overflow-x-auto pb-2 scrollbar-hide" style={{ scrollbarWidth: 'none' }}>
@@ -1015,7 +947,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       <button
                         key={idx}
                         type="button"
-                        className="focus:outline-none focus-visible:ring-2 focus-visible:ring-[#651F39] focus-visible:ring-offset-2 rounded-none flex flex-col items-center"
+                        className="focus:outline-none focus-visible:ring-2 focus-visible:ring-[#003764] focus-visible:ring-offset-2 rounded-none flex flex-col items-center"
                         onClick={() => {
                           setPdpWildMuted(false);
                           setWildVideoIdx(idx);
@@ -1070,7 +1002,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                   onClick={(e) => e.stopPropagation()}
                   role="dialog"
                   aria-modal="true"
-                  aria-label="Ajnaa Jewels reels"
+                  aria-label="Carriall reels"
                 >
                   {/* Desktop: previous preview */}
                   <div className="hidden w-[148px] shrink-0 flex-col md:flex">
@@ -1144,7 +1076,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                           <img src={thumbImg} alt="" className="w-full h-full object-cover" />
                         </div>
                         <div className="min-w-0">
-                          <p className="text-white text-sm font-semibold leading-none truncate">Ajnaa Jewels</p>
+                          <p className="text-white text-sm font-semibold leading-none truncate">Carriall</p>
                           <p className="text-white/75 text-xs mt-0.5 truncate">
                             Reel {idx + 1} of {n}
                           </p>
@@ -1216,7 +1148,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                         type="button"
                         onClick={() =>
                           navigator.share
-                            ? navigator.share({ title: 'Ajnaa Jewels', text: reelLabel, url: window.location.href })
+                            ? navigator.share({ title: 'Carriall', text: reelLabel, url: window.location.href })
                             : navigator.clipboard?.writeText(window.location.href)
                         }
                         className="flex flex-col items-center gap-1"
@@ -1238,13 +1170,13 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                     >
                       <p className="text-white text-sm font-medium mb-2 line-clamp-2">{reelLabel}</p>
                       <a
-                        href="https://www.instagram.com/ajnaajewels/"
+                        href="https://www.instagram.com/carriall/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex w-full items-center justify-center py-3 rounded-none text-sm font-bold text-white bg-[#651F39] hover:opacity-95 transition-opacity"
+                        className="inline-flex w-full items-center justify-center py-3 rounded-none text-sm font-bold text-white bg-[#003764] hover:opacity-95 transition-opacity"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        Follow @ajnaajewels
+                        Follow @carriall
                       </a>
                     </div>
                   </div>
@@ -1284,7 +1216,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
       <section className="w-full py-12 md:py-16 bg-white border-t border-gray-100">
         <div className="mx-auto w-full max-w-7xl px-4">
           <div className="text-center mb-8 md:mb-10">
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-normal text-[#651F39] tracking-wide">
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-normal text-[#003764] tracking-wide">
               SHOP OUR BEST SELLERS
             </h2>
           </div>
@@ -1440,8 +1372,8 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       href={AJNAA_INSTAGRAM_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label="Open @ajnaajewels on Instagram"
-                      className="flex items-center gap-3.5 rounded-none border border-stone-200/70 bg-white px-3.5 py-3 transition-colors hover:bg-stone-50/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#651F39]/35 focus-visible:ring-offset-2"
+                      aria-label="Open @carriall on Instagram"
+                      className="flex items-center gap-3.5 rounded-none border border-stone-200/70 bg-white px-3.5 py-3 transition-colors hover:bg-stone-50/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#003764]/35 focus-visible:ring-offset-2"
                       style={{ textDecoration: 'none' }}
                     >
                       <span className="flex h-9 w-9 shrink-0 items-center justify-center" aria-hidden>
@@ -1469,7 +1401,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       </span>
                       <div className="min-w-0 flex-1 text-left">
                         <div className="flex flex-col gap-1.5">
-                          <p className="text-[13px] font-semibold leading-snug text-stone-900">@ajnaajewels</p>
+                          <p className="text-[13px] font-semibold leading-snug text-stone-900">@carriall</p>
                           <p className="text-[11px] leading-snug text-stone-600">
                             <span className="font-semibold tabular-nums text-stone-800">{AJNAA_INSTAGRAM_FOLLOWERS_LABEL}</span>
                             {' '}
@@ -1498,12 +1430,12 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
 
                 <div className="px-6 pb-2 pt-5">
                   <h4 className="mb-3 font-serif text-xl font-normal tracking-tight text-stone-900 md:text-[1.35rem]">
-                    What jewellery lovers are saying
+                    What bag lovers are saying
                   </h4>
                   <p className="text-[15px] leading-[1.65] text-stone-600">
                     {isAISummaryExpanded ? (
                       <>
-                        Shoppers praise Ajnaa Jewels for fine jewellery that feels comfortable to wear for hours — secure clasps, smooth settings, and stones that match what they saw online. Reviews often mention kundan and pearl work, lightweight necklaces and earrings for weddings and festivals, and pieces that photograph well for reels and family events. Many buy again for matching sets or gifts, and note premium boxes and pouches that feel occasion-ready.{' '}
+                        Shoppers praise Carriall for bags that hold their structure all day, with clean stitching, smooth zippers, and interiors that actually stay organised. Reviews often mention the Ireen handbag, Meta Luggage, and Meal Bag — noting premium materials, thoughtful compartments, and packaging that feels gift-ready. Many come back for a second bag or buy for friends and family.{' '}
                         <button
                           type="button"
                           onClick={() => setIsAISummaryExpanded(false)}
@@ -1514,7 +1446,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       </>
                     ) : (
                       <>
-                        Buyers love our handcrafted jewellery for weddings, festive wear, and gifting — with attention to finish, stone sparkle, and pieces that work from silk to everyday fusion looks.{' '}
+                        Buyers love Carriall bags for their structured quality, clean hardware, and carry comfort — whether for daily commutes, travel, or gifting.{' '}
                         <button
                           type="button"
                           onClick={() => setIsAISummaryExpanded(true)}
@@ -1529,13 +1461,13 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
 
                 <div className="px-6 pb-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-[12px] leading-relaxed text-stone-500">
                   {[
-                    'Kundan & pearls',
-                    'Bridal & festive',
-                    'Handcrafted',
-                    'Lightweight wear',
+                    'Structured handbags',
+                    'Travel luggage',
+                    'Premium quality',
+                    'Lightweight carry',
                     'Gift-ready',
-                    'Made in India',
-                    'Everyday & occasion',
+                    'Made for India',
+                    'Work & weekend',
                   ].map((kw, i) => (
                     <span key={kw} className="inline-flex items-center gap-2">
                       {i > 0 && (
@@ -1703,7 +1635,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                                 })}
                               </div>
                               <span className="truncate text-xs font-semibold text-stone-900">{review.name}</span>
-                              <svg className="h-3 w-3 shrink-0 text-[#651F39]" fill="currentColor" viewBox="0 0 20 20">
+                              <svg className="h-3 w-3 shrink-0 text-[#003764]" fill="currentColor" viewBox="0 0 20 20">
                                 <path
                                   fillRule="evenodd"
                                   d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -1960,7 +1892,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
       <section className="w-full py-12 md:py-16 bg-white">
         <div className="mx-auto w-full max-w-7xl px-4">
           <div className="text-center mb-8 md:mb-12">
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-normal text-[#651F39] mb-3 tracking-wide">
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-normal text-[#003764] mb-3 tracking-wide">
               Best Sellers
             </h2>
           </div>
@@ -1980,7 +1912,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
       </section>
 
       {/* Photo Gallery */}
-      <PhotoGallery title="More from Ajnaa Jewels" subtitle="Handcrafted with love — jewelry for every moment" />
+      <PhotoGallery title="More from Carriall" subtitle="Bags crafted for life on the move" />
 
       <ShopifyFooter brandName={BRAND_NAME} />
       
@@ -2124,7 +2056,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-2">
                       <span className="font-semibold text-gray-900 text-lg md:text-xl">{selectedReview.name}</span>
-                      <svg className="w-5 h-5 text-[#651F39] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-5 h-5 text-[#003764] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
         </div>
@@ -2139,7 +2071,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       <svg
                         key={i}
                         className="w-5 h-5"
-                        style={{ fill: i < selectedReview.rating ? '#651F39' : '#d1d5db' }}
+                        style={{ fill: i < selectedReview.rating ? '#003764' : '#d1d5db' }}
                         viewBox="0 0 20 20"
                       >
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -2157,7 +2089,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                   
                   {/* Review Type Badge */}
                   <div className="mt-4">
-                    <span className="inline-block px-3 py-1.5 text-xs font-medium rounded-none" style={{ backgroundColor: 'rgba(101, 31, 57, 0.1)', color: '#651F39' }}>
+                    <span className="inline-block px-3 py-1.5 text-xs font-medium rounded-none" style={{ backgroundColor: 'rgba(0, 55, 100, 0.1)', color: '#003764' }}>
                       {selectedReview.type === 'product' ? 'Product Review' : 'Brand Review'}
                     </span>
                   </div>
@@ -2201,7 +2133,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex items-center gap-2">
                     <span className="font-semibold text-gray-900 text-base">{selectedReview.name}</span>
-                    <svg className="w-4 h-4 text-[#651F39]" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-4 h-4 text-[#003764]" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                   </div>
@@ -2213,7 +2145,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                   <svg width="0" height="0" style={{ position: 'absolute' }}>
                     <defs>
                       <linearGradient id="mobileModalStarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#651F39" />
+                        <stop offset="0%" stopColor="#003764" />
                         <stop offset="50%" stopColor="#E85C54" />
                         <stop offset="100%" stopColor="#F28B86" />
                       </linearGradient>
@@ -2237,7 +2169,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                   <h3 className="font-medium text-gray-900 mb-2 text-base">{selectedReview.title}</h3>
                 )}
                 <p className="text-gray-700 text-sm leading-relaxed mb-2">{selectedReview.text}</p>
-                <span className="inline-block px-3 py-1 text-xs font-medium rounded-none" style={{ backgroundColor: 'rgba(101, 31, 57, 0.1)', color: '#651F39' }}>
+                <span className="inline-block px-3 py-1 text-xs font-medium rounded-none" style={{ backgroundColor: 'rgba(0, 55, 100, 0.1)', color: '#003764' }}>
                   {selectedReview.type === 'product' ? 'Product Review' : 'Brand Review'}
                 </span>
               </div>

@@ -9,13 +9,13 @@ import brandInstagramProfile from './assets/logo.png';
 import { SCRAPSHALA_SHOP_VIDEOS } from './scrapshalaShopVideos';
 import { bestSellerProducts } from './scrapshalaBestSellers';
 import InstagramTrustCarousel from './InstagramTrustCarousel';
-import PhotoGallery, { GALLERY_IMAGES } from './PhotoGallery';
+import { GALLERY_IMAGES } from './PhotoGallery';
 import { INSTAGRAM_POST_URLS } from './instagramPosts';
 import BrandTestimonialsPdp from './BrandTestimonialsPdp';
 import reviewData from '../review.json';
 import './HomePage.css';
 
-const BRAND_TESTIMONIAL_ACCENT = '#651F39';
+const BRAND_TESTIMONIAL_ACCENT = '#003764';
 
 /** Brand love — only strong positive ratings (4.5+) for marketing; each paired with a gallery photo */
 const brandTestimonialItems = reviewData
@@ -32,10 +32,10 @@ const brandTestimonialItems = reviewData
     rating: typeof r.rating === 'number' ? r.rating : 5,
   }));
 
-const AJNAA_INSTAGRAM_URL = 'https://www.instagram.com/ajnaajewels/';
-const AJNAA_LINKTR_URL = 'https://linktr.ee/ajnaajewels';
+const AJNAA_INSTAGRAM_URL = 'https://www.instagram.com/carriall/';
+const AJNAA_LINKTR_URL = 'https://carriall.com';
 const AJNAA_HASHTAG_URL =
-  'https://www.instagram.com/explore/tags/ajnaajewels/';
+  'https://www.instagram.com/explore/tags/carriall/';
 
 const SHOPIFY_VIDEO_URLS = SCRAPSHALA_SHOP_VIDEOS;
 
@@ -70,8 +70,32 @@ const TRUST_SLIDES = [
   {
     content: (
       <span className="flex items-center gap-1.5">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" width="13" height="13" alt="" style={{flexShrink:0}} />
-        <span className="text-xs font-bold text-gray-900">Instagram • 78.6K followers • @ajnaajewels</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" height="14" alt="Amazon" style={{flexShrink:0, width:'auto', height:'14px'}} />
+        <span className="text-xs font-bold text-gray-900">10K+ Ratings &amp; Reviews on Amazon</span>
+      </span>
+    ),
+  },
+  {
+    content: (
+      <span className="flex items-center gap-1.5">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" width="14" height="14" alt="Instagram" style={{flexShrink:0}} />
+        <span className="text-xs font-bold text-gray-900">18K Followers on Instagram</span>
+      </span>
+    ),
+  },
+  {
+    content: (
+      <span className="flex items-center gap-1.5">
+        <img src="https://yt3.googleusercontent.com/Z-HrCiL2QCqy2HAsjbQWIaNVZ0k_OdA6I8IsXtyKUtvaN7ENFORmLnBkSO_A5umNjLmjgecm7w=s900-c-k-c0x00ffffff-no-rj" width="20" height="20" alt="" style={{flexShrink:0, borderRadius:'50%'}} />
+        <span className="text-xs font-bold text-gray-900">Watch Us on YouTube</span>
+      </span>
+    ),
+  },
+  {
+    content: (
+      <span className="flex items-center gap-1.5">
+        <img src="https://play-lh.googleusercontent.com/0-sXSA0gnPDKi6EeQQCYPsrDx6DqnHELJJ7wFP8bWCpziL4k5kJf8RnOoupdnOFuDm_n=s256-rw" width="20" height="20" alt="" style={{flexShrink:0, borderRadius:'4px'}} />
+        <span className="text-xs font-bold text-gray-900">Available on App • 4.8★ Rated</span>
       </span>
     ),
   },
@@ -79,39 +103,7 @@ const TRUST_SLIDES = [
     content: (
       <span className="flex items-center gap-1.5">
         <span style={{color:'#f97316',fontSize:'12px',letterSpacing:'1px'}}>★★★★★</span>
-        <span className="text-xs font-bold text-gray-900">1 Lakh+ Happy Customers</span>
-      </span>
-    ),
-  },
-  {
-    content: (
-      <span className="flex items-center gap-1.5">
-        <span style={{color:'#651F39',fontSize:'13px',fontWeight:700}}>✦</span>
-        <span className="text-xs font-bold text-gray-900">Kundan & pearls • Handcrafted</span>
-      </span>
-    ),
-  },
-  {
-    content: (
-      <span className="flex items-center gap-1.5">
-        <span style={{color:'#651F39',fontSize:'13px',fontWeight:700}}>✦</span>
-        <span className="text-xs font-bold text-gray-900">Loved for weddings & festivals</span>
-      </span>
-    ),
-  },
-  {
-    content: (
-      <span className="flex items-center gap-1.5">
-        <span style={{color:'#f97316',fontSize:'12px',letterSpacing:'1px'}}>★★★★★</span>
-        <span className="text-xs font-bold text-gray-900">4.6 Rated • 1,00,000+ Orders</span>
-      </span>
-    ),
-  },
-  {
-    content: (
-      <span className="flex items-center gap-1.5">
-        <span style={{color:'#651F39',fontSize:'13px',fontWeight:700}}>✦</span>
-        <span className="text-xs font-bold text-gray-900">Gift-ready boxes • Pan-India</span>
+        <span className="text-xs font-bold text-gray-900">10K+ Happy Customers</span>
       </span>
     ),
   },
@@ -457,7 +449,7 @@ const HomePage = ({ onProductClick }) => {
 
       {/* Instagram trust / mentions strip — off for now; set to true to restore */}
       {false && (
-        <InstagramTrustCarousel instagramUrl={AJNAA_INSTAGRAM_URL} followersLabel="78.6K" />
+        <InstagramTrustCarousel instagramUrl={AJNAA_INSTAGRAM_URL} followersLabel="18K" />
       )}
 
       {/* Big Deals Section */}
@@ -687,7 +679,7 @@ const HomePage = ({ onProductClick }) => {
                           e.stopPropagation();
                           console.log('Add to cart:', product);
                         }}
-                        className="w-full text-white py-2.5 px-4 rounded-lg font-semibold text-xs uppercase tracking-wide transition-all duration-300 hover:shadow-md mt-3" style={{ backgroundColor: '#651F39', marginTop: '12px' }}
+                        className="w-full text-white py-2.5 px-4 rounded-lg font-semibold text-xs uppercase tracking-wide transition-all duration-300 hover:shadow-md mt-3" style={{ backgroundColor: '#003764', marginTop: '12px' }}
                       >
                         ADD TO CART
                       </button>
@@ -707,8 +699,8 @@ const HomePage = ({ onProductClick }) => {
             <div>
               <p className="text-xs font-semibold tracking-widest text-gray-400 uppercase mb-1">Latest drops</p>
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-                Jewels in motion
-                <span className="ml-2 text-[#651F39]" aria-hidden>✦</span>
+                Bags in motion
+                <span className="ml-2 text-[#003764]" aria-hidden>✦</span>
               </h2>
             </div>
             <button className="text-sm font-bold text-gray-900 hover:opacity-70 transition-opacity">View All</button>
@@ -779,7 +771,7 @@ const HomePage = ({ onProductClick }) => {
                       </div>
                       <button
                         onClick={(e) => e.stopPropagation()}
-                        className="w-full text-white py-2.5 px-4 rounded-none font-semibold text-xs uppercase tracking-wide transition-all duration-300 hover:shadow-md mt-3" style={{ backgroundColor: '#651F39' }}
+                        className="w-full text-white py-2.5 px-4 rounded-none font-semibold text-xs uppercase tracking-wide transition-all duration-300 hover:shadow-md mt-3" style={{ backgroundColor: '#003764' }}
                       >
                         ADD TO CART
                       </button>
@@ -810,7 +802,7 @@ const HomePage = ({ onProductClick }) => {
                 <div className="w-32 h-32 rounded-full overflow-hidden">
                   <img
                     src={brandInstagramProfile}
-                    alt="Ajnaa Jewels on Instagram"
+                    alt="Carriall on Instagram"
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
@@ -826,7 +818,7 @@ const HomePage = ({ onProductClick }) => {
                   rel="noopener noreferrer"
                   className="text-gray-900 font-semibold text-xl hover:opacity-70 transition-opacity"
                 >
-                  ajnaajewels
+                  carriall
                 </a>
                 <span className="text-gray-400 text-base tracking-widest">···</span>
               </div>
@@ -836,7 +828,7 @@ const HomePage = ({ onProductClick }) => {
                   <p className="text-gray-400 text-sm">posts</p>
                 </div>
                 <div className="text-center">
-                  <p className="font-bold text-gray-900 text-base">78.6K</p>
+                  <p className="font-bold text-gray-900 text-base">18K</p>
                   <p className="text-gray-400 text-sm">followers</p>
                 </div>
                 <div className="text-center">
@@ -877,8 +869,8 @@ const HomePage = ({ onProductClick }) => {
             </div>
 
             <div className="space-y-1">
-              <p className="text-gray-900 text-sm font-semibold">Ajnaa Jewels</p>
-              <p className="text-gray-400 text-sm">Fine jewelry &amp; everyday classics</p>
+              <p className="text-gray-900 text-sm font-semibold">Carriall</p>
+              <p className="text-gray-400 text-sm">Premium bags for every journey</p>
               <p className="text-gray-800 text-sm">Thoughtfully crafted designs for every look.</p>
               <p className="text-gray-800 text-sm">Handmade in India · Trusted quality</p>
               <p className="text-gray-800 text-sm">Celebrate tradition with a modern touch</p>
@@ -890,7 +882,7 @@ const HomePage = ({ onProductClick }) => {
                   className="font-medium"
                   style={{ color: '#DB2A20' }}
                 >
-                  #AjnaaJewels
+                  #Carriall
                 </a>
               </p>
               <a
@@ -900,7 +892,7 @@ const HomePage = ({ onProductClick }) => {
                 className="text-sm font-medium"
                 style={{ color: '#DB2A20' }}
               >
-                linktr.ee/ajnaajewels
+                carriall.com
               </a>
             </div>
           </div>
@@ -916,7 +908,7 @@ const HomePage = ({ onProductClick }) => {
                   <div className="w-20 h-20 rounded-full overflow-hidden">
                     <img
                       src={brandInstagramProfile}
-                      alt="Ajnaa Jewels on Instagram"
+                      alt="Carriall on Instagram"
                       className="w-full h-full object-cover"
                       loading="lazy"
                     />
@@ -929,7 +921,7 @@ const HomePage = ({ onProductClick }) => {
                   <p className="text-gray-400 text-xs">posts</p>
                 </div>
                 <div className="text-center">
-                  <p className="font-semibold text-gray-900 text-base">78.6K</p>
+                  <p className="font-semibold text-gray-900 text-base">18K</p>
                   <p className="text-gray-400 text-xs">followers</p>
                 </div>
                 <div className="text-center">
@@ -940,8 +932,8 @@ const HomePage = ({ onProductClick }) => {
             </div>
 
             <div className="space-y-0.5">
-              <p className="text-gray-900 text-sm font-semibold">Ajnaa Jewels</p>
-              <p className="text-gray-400 text-xs">Fine jewelry &amp; everyday classics</p>
+              <p className="text-gray-900 text-sm font-semibold">Carriall</p>
+              <p className="text-gray-400 text-xs">Premium bags for every journey</p>
               <p className="text-gray-800 text-sm">Thoughtfully crafted designs for every look.</p>
               <p className="text-gray-800 text-sm">Handmade in India · Trusted quality</p>
               <p className="text-gray-800 text-sm">Celebrate tradition with a modern touch</p>
@@ -953,7 +945,7 @@ const HomePage = ({ onProductClick }) => {
                   className="font-medium"
                   style={{ color: '#DB2A20' }}
                 >
-                  #AjnaaJewels
+                  #Carriall
                 </a>
               </p>
               <a
@@ -963,7 +955,7 @@ const HomePage = ({ onProductClick }) => {
                 className="text-sm font-medium"
                 style={{ color: '#DB2A20' }}
               >
-                linktr.ee/ajnaajewels
+                carriall.com
               </a>
             </div>
 
@@ -1001,12 +993,6 @@ const HomePage = ({ onProductClick }) => {
         </div>
       </section>
       )}
-
-      {/* Photo Gallery */}
-      <PhotoGallery
-        title="Our Gallery"
-        subtitle="Handcrafted fine jewellery for weddings, festivals, and the moments you remember."
-      />
 
       {/* Instagram Reels Carousel Section */}
       <section className="w-full py-8 md:py-12 bg-white overflow-hidden">
@@ -1124,7 +1110,7 @@ const HomePage = ({ onProductClick }) => {
                       <div className="flex-1 min-w-0">
                         <p className="text-white text-xs font-medium line-clamp-1">{p.title}</p>
                         <p className="text-yellow-300 text-sm font-bold">₹{p.currentPrice?.toLocaleString('en-IN')}</p>
-                        <button className="mt-1 px-3 py-0.5 rounded text-xs font-bold text-white bg-[#651F39]">
+                        <button className="mt-1 px-3 py-0.5 rounded text-xs font-bold text-white bg-[#003764]">
                           Add
                         </button>
                       </div>
@@ -1155,7 +1141,7 @@ const HomePage = ({ onProductClick }) => {
                       <p className="text-white text-sm font-bold">₹{p.currentPrice?.toLocaleString('en-IN')}</p>
                       <button
                         onClick={(e) => { e.stopPropagation(); }}
-                        className="mt-1.5 px-3 py-1 rounded text-xs font-bold text-white bg-[#651F39] hover:opacity-90 transition-opacity"
+                        className="mt-1.5 px-3 py-1 rounded text-xs font-bold text-white bg-[#003764] hover:opacity-90 transition-opacity"
                       >
                         Add to Cart
                       </button>
@@ -1287,7 +1273,7 @@ const HomePage = ({ onProductClick }) => {
                   <img src={selectedLookVideo.image} alt="" className="w-full h-full object-cover" />
                 </div>
                 <div>
-                  <p className="text-white text-sm font-semibold leading-none">Ajnaa Jewels</p>
+                  <p className="text-white text-sm font-semibold leading-none">Carriall</p>
                   <p className="text-white/70 text-xs mt-0.5">{selectedLookVideo.views} views</p>
                 </div>
               </div>
@@ -1346,7 +1332,7 @@ const HomePage = ({ onProductClick }) => {
 
               {/* Share */}
               <button
-                onClick={() => navigator.share ? navigator.share({ title: selectedLookVideo.title, text: `Check out ${selectedLookVideo.title} from Ajnaa Jewels`, url: window.location.href }) : navigator.clipboard?.writeText(window.location.href)}
+                onClick={() => navigator.share ? navigator.share({ title: selectedLookVideo.title, text: `Check out ${selectedLookVideo.title} from Carriall`, url: window.location.href }) : navigator.clipboard?.writeText(window.location.href)}
                 className="flex flex-col items-center gap-1"
               >
                 <div className="w-11 h-11 rounded-full bg-black/40 flex items-center justify-center">
@@ -1380,7 +1366,7 @@ const HomePage = ({ onProductClick }) => {
                 <button
                   onClick={(e) => e.stopPropagation()}
                   className="flex-1 py-3 rounded-none text-sm font-bold text-white"
-                  style={{ background: '#651F39' }}
+                  style={{ background: '#003764' }}
                 >
                   Add to Cart
                 </button>

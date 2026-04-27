@@ -18,7 +18,7 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #651F39;
+  color: #003764;
   margin: 0 0 10px;
 }
 
@@ -112,7 +112,7 @@
 }
 
 .pg-add-cart {
-  background: #651F39;
+  background: #003764;
   color: #fff;
   font-size: 10px;
   font-weight: 700;
@@ -325,7 +325,7 @@
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #651f39;
+  color: #003764;
   margin: 0;
 }
 
@@ -394,7 +394,7 @@
   padding: 14px 20px;
   border: none;
   border-radius: 10px;
-  background: #651f39;
+  background: #003764;
   color: #fff;
   font-size: 13px;
   font-weight: 700;
@@ -405,7 +405,7 @@
 }
 
 .pg-lb-cta:hover {
-  background: #4a1428;
+  background: #002a4f;
   transform: translateY(-1px);
 }
 

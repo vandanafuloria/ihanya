@@ -21,7 +21,7 @@ function PremiumAIIcon({ gradientId, className, style, size = 40 }) {
       <defs>
         <linearGradient id={gradientId} x1="12" y1="12" x2="36" y2="36" gradientUnits="userSpaceOnUse">
           <stop stopColor="#c9a227" />
-          <stop offset="0.45" stopColor="#651f39" />
+          <stop offset="0.45" stopColor="#003764" />
           <stop offset="1" stopColor="#b76e79" />
         </linearGradient>
       </defs>
@@ -291,12 +291,12 @@ function AIBrandEngine({ showExtras = true }) {
     fit: {
       label: 'Bridal comfort (wear)',
       data: [85, 88, 86, 90, 87, 91, 92],
-      color: '#651f39',
+      color: '#003764',
     },
     positive: {
       label: 'Love for craft & look',
       data: [78, 82, 84, 87, 85, 88, 90],
-      color: '#8b4a62',
+      color: '#1a5a9e',
     },
     repeat: {
       label: 'Repeat buys & gifts',
@@ -311,7 +311,7 @@ function AIBrandEngine({ showExtras = true }) {
     rating: {
       label: 'Avg. rating (illustrative)',
       data: [4.2, 4.3, 4.4, 4.5, 4.5, 4.6, 4.7],
-      color: '#4a1942',
+      color: '#002a4f',
     },
     issue: {
       label: 'Care & resolution (proxy)',
