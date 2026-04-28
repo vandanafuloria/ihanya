@@ -47,7 +47,7 @@ function formatSoldLabel(n) {
 
 // Brand Name
 const BRAND_NAME = "Carriall";
-const AJNAA_INSTAGRAM_URL = 'https://www.instagram.com/carriall/';
+const AJNAA_INSTAGRAM_URL = 'https://www.instagram.com/thecarriallco/?hl=en';
 const AJNAA_INSTAGRAM_FOLLOWERS_LABEL = '18K';
 
 /** Reviews UI — Carriall teal accent */
@@ -996,7 +996,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                     </h2>
                   </div>
                   <a
-                    href="https://www.instagram.com/carriall/"
+                    href="https://www.instagram.com/thecarriallco/?hl=en"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-none shrink-0 bg-white text-gray-800 border border-gray-200 shadow-sm hover:bg-white hover:border-[#003764]/40 transition-colors"
@@ -1239,7 +1239,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                     >
                       <p className="text-white text-sm font-medium mb-2 line-clamp-2">{reelLabel}</p>
                       <a
-                        href="https://www.instagram.com/carriall/"
+                        href="https://www.instagram.com/thecarriallco/?hl=en"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex w-full items-center justify-center py-3 rounded-none text-sm font-bold text-white bg-[#003764] hover:opacity-95 transition-opacity"
