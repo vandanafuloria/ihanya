@@ -46,13 +46,26 @@ function StarRow({ rating, accent, idPrefix = 'star' }) {
 }
 
 /**
- * Brand testimonials — compact cards: image, quote, name & location.
- * Used on the home page (gallery images + mid-tier review copy).
+ * Mosaic pattern per item index (repeats every 7):
+ * 0 → featured (2-col, 2-row)
+ * 1,2 → normal (1-col, 1-row)
+ * 3 → tall (1-col, 2-row)
+ * 4 → normal (1-col, 1-row)
+ * 5 → wide (2-col, 1-row)
+ * 6 → normal (1-col, 1-row)
  */
+function getMosaicSpan(i) {
+  const pos = i % 7;
+  if (pos === 0) return { col: 'lg:col-span-2', row: 'lg:row-span-2', aspect: 'aspect-square' };
+  if (pos === 3) return { col: 'lg:col-span-1', row: 'lg:row-span-2', aspect: 'aspect-[3/4]' };
+  if (pos === 5) return { col: 'lg:col-span-2', row: 'lg:row-span-1', aspect: 'aspect-[16/7]' };
+  return       { col: 'lg:col-span-1', row: 'lg:row-span-1', aspect: 'aspect-[4/3]' };
+}
+
 export default function BrandTestimonialsPdp({
   items = [],
   title = 'Brand love',
-  subtitle = 'Real photos, real words — from Ajnaa Jewels customers across India',
+  subtitle = 'Real photos, real words — from Carriall customers across India',
   accent = '#003764',
 }) {
   const [visibleCount, setVisibleCount] = useState(() => Math.min(INITIAL_COUNT, items.length));
@@ -90,31 +103,29 @@ export default function BrandTestimonialsPdp({
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-x-4 gap-y-3 sm:gap-x-5 sm:gap-y-3.5 md:gap-x-6 md:gap-y-4 lg:grid-cols-4 lg:gap-x-6 lg:gap-y-4">
+        {/* Masonry via CSS columns — cards sit at natural height */}
+        <div className="columns-2 gap-3 sm:gap-4 lg:columns-4 lg:gap-4">
           {visibleItems.map((item, i) => (
             <article
-              key={`${item.name}-grid-${i}`}
-              className="group flex flex-col overflow-hidden rounded-lg border border-stone-200/90 bg-white shadow-sm transition-shadow hover:shadow-md"
+              key={`${item.name}-mosaic-${i}`}
+              className="group mb-3 overflow-hidden rounded-xl border border-stone-200/80 bg-white shadow-sm transition-shadow hover:shadow-md break-inside-avoid sm:mb-4"
             >
-              <div className="aspect-[3/2] overflow-hidden bg-stone-100">
+              {/* Cropped image — fixed height so mosaic columns vary by text length */}
+              <div className="overflow-hidden h-40 sm:h-48">
                 <img
                   src={item.image}
                   alt=""
-                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                   loading="lazy"
                 />
               </div>
-              <div className="flex flex-1 flex-col p-2.5 md:p-3">
-                <StarRow rating={item.rating} accent={accent} idPrefix={`bt-${i}`} />
-                <p className="flex-1 text-[11px] leading-snug text-stone-600 md:text-xs md:leading-snug">
+              {/* Text below image */}
+              <div className="p-3 md:p-3.5">
+                <StarRow rating={item.rating} accent="#f97316" idPrefix={`bt-${i}`} />
+                <p className="mt-1 line-clamp-2 text-[10px] leading-snug text-stone-500">
                   {item.quote}
                 </p>
-                <div className="mt-2 border-t border-stone-100 pt-2">
-                  <p className="text-xs font-semibold text-stone-900">{item.name}</p>
-                  {item.location && (
-                    <p className="mt-0.5 text-[10px] text-stone-500">{item.location}</p>
-                  )}
-                </div>
+                <p className="mt-1.5 text-[10px] font-semibold text-stone-700">{item.name}</p>
               </div>
             </article>
           ))}
@@ -124,10 +135,8 @@ export default function BrandTestimonialsPdp({
           <div className="mt-6 flex justify-center md:mt-7">
             <button
               type="button"
-              onClick={() =>
-                setVisibleCount((c) => Math.min(c + LOAD_STEP, items.length))
-              }
-              className="rounded-full border border-stone-200 bg-white px-5 py-2 text-xs font-semibold text-stone-800 shadow-sm transition-colors hover:border-stone-300 hover:bg-stone-50 md:text-sm md:px-6 md:py-2.5"
+              onClick={() => setVisibleCount((c) => Math.min(c + LOAD_STEP, items.length))}
+              className="rounded-full border bg-white px-5 py-2 text-xs font-semibold text-stone-800 shadow-sm transition-colors hover:bg-stone-50 md:px-6 md:py-2.5 md:text-sm"
               style={{ borderColor: `${accent}40` }}
             >
               Load more

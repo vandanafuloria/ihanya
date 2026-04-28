@@ -25,7 +25,7 @@ const brandTestimonialItems = reviewData
       (typeof r.rating === 'number' ? r.rating : 5) >= 4.5
   )
   .map((r, i) => ({
-    image: GALLERY_IMAGES[(i * 5 + 3) % GALLERY_IMAGES.length],
+    image: GALLERY_IMAGES[i % GALLERY_IMAGES.length],
     quote: r.review,
     name: r.name,
     location: r.location,
@@ -71,7 +71,23 @@ const TRUST_SLIDES = [
     content: (
       <span className="flex items-center gap-1.5">
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" height="14" alt="Amazon" style={{flexShrink:0, width:'auto', height:'14px'}} />
-        <span className="text-xs font-bold text-gray-900">10K+ Ratings &amp; Reviews on Amazon</span>
+        <span className="text-xs font-bold text-gray-900">4.5/5 · 10K+ Ratings on Amazon</span>
+      </span>
+    ),
+  },
+  {
+    content: (
+      <span className="flex items-center gap-1.5">
+        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/flipkart-icon.png" height="16" alt="Flipkart" style={{flexShrink:0, width:'auto', height:'16px'}} />
+        <span className="text-xs font-bold text-gray-900">4.1/5 · 4.3K+ Reviews on Flipkart</span>
+      </span>
+    ),
+  },
+  {
+    content: (
+      <span className="flex items-center gap-1.5">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDQWzflRbFZJBAjCD9s3tRiveZPd5k4N4BiA&s" height="16" alt="Myntra" style={{flexShrink:0, width:'auto', height:'16px'}} />
+        <span className="text-xs font-bold text-gray-900">4.3/5 · 2.1K+ Reviews on Myntra</span>
       </span>
     ),
   },
@@ -80,22 +96,6 @@ const TRUST_SLIDES = [
       <span className="flex items-center gap-1.5">
         <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" width="14" height="14" alt="Instagram" style={{flexShrink:0}} />
         <span className="text-xs font-bold text-gray-900">18K Followers on Instagram</span>
-      </span>
-    ),
-  },
-  {
-    content: (
-      <span className="flex items-center gap-1.5">
-        <img src="https://yt3.googleusercontent.com/Z-HrCiL2QCqy2HAsjbQWIaNVZ0k_OdA6I8IsXtyKUtvaN7ENFORmLnBkSO_A5umNjLmjgecm7w=s900-c-k-c0x00ffffff-no-rj" width="20" height="20" alt="" style={{flexShrink:0, borderRadius:'50%'}} />
-        <span className="text-xs font-bold text-gray-900">Watch Us on YouTube</span>
-      </span>
-    ),
-  },
-  {
-    content: (
-      <span className="flex items-center gap-1.5">
-        <img src="https://play-lh.googleusercontent.com/0-sXSA0gnPDKi6EeQQCYPsrDx6DqnHELJJ7wFP8bWCpziL4k5kJf8RnOoupdnOFuDm_n=s256-rw" width="20" height="20" alt="" style={{flexShrink:0, borderRadius:'4px'}} />
-        <span className="text-xs font-bold text-gray-900">Available on App • 4.8★ Rated</span>
       </span>
     ),
   },
@@ -326,55 +326,6 @@ const HomePage = ({ onProductClick }) => {
     };
   }, [showInstagramModal]);
 
-  // Auto-scroll Instagram carousel
-  useEffect(() => {
-    const carousel = instagramCarouselRef.current;
-    if (!carousel) return;
-
-    let scrollAmount = 0;
-    const scrollSpeed = 1; // pixels per frame
-    const scrollInterval = 16; // ~60fps
-    let intervalId = null;
-    let isPaused = false;
-
-    const scroll = () => {
-      if (isPaused) return;
-      scrollAmount += scrollSpeed;
-      carousel.scrollLeft = scrollAmount;
-
-      // Reset scroll position when reaching the end (seamless loop)
-      if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
-        scrollAmount = 0;
-      }
-    };
-
-    const startScrolling = () => {
-      if (!intervalId) {
-        intervalId = setInterval(scroll, scrollInterval);
-      }
-      isPaused = false;
-    };
-
-    const stopScrolling = () => {
-      if (intervalId) {
-        clearInterval(intervalId);
-        intervalId = null;
-      }
-      isPaused = true;
-    };
-
-    startScrolling();
-
-    // Pause on hover
-    carousel.addEventListener('mouseenter', stopScrolling);
-    carousel.addEventListener('mouseleave', startScrolling);
-
-    return () => {
-      stopScrolling();
-      carousel.removeEventListener('mouseenter', stopScrolling);
-      carousel.removeEventListener('mouseleave', startScrolling);
-    };
-  }, [instagramPosts.length]);
 
   // Scroll detection for live counter
   useEffect(() => {
@@ -460,7 +411,7 @@ const HomePage = ({ onProductClick }) => {
             <button className="text-base md:text-lg font-bold text-gray-900 hover:opacity-70 transition-opacity">View All</button>
           </div>
           <div className="overflow-x-auto -mx-4 px-4 scrollbar-hide">
-            <div className="flex gap-4 md:gap-5 min-w-max pb-2">
+            <div className="flex gap-6 md:gap-8 min-w-max pb-2">
               {bestSellerProducts.map((product) => (
                 <div
                   key={product.id}
@@ -706,7 +657,7 @@ const HomePage = ({ onProductClick }) => {
             <button className="text-sm font-bold text-gray-900 hover:opacity-70 transition-opacity">View All</button>
           </div>
           <div className="overflow-x-auto scrollbar-hide -mx-4 px-4">
-            <div className="flex gap-4 md:gap-6 min-w-max pb-2">
+            <div className="flex gap-6 md:gap-8 min-w-max pb-2">
               {videoProducts.map((product) => (
                 <div
                   key={product.id}
@@ -1493,7 +1444,7 @@ const HomePage = ({ onProductClick }) => {
       )}
 
       <ShopifyFooter brandName={BRAND_NAME} />
-      <AIBrandEngine />
+      <AIBrandEngine compact />
       <ActivityBanner />
     </div>
   );

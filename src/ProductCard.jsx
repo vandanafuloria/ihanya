@@ -1,25 +1,37 @@
-import  React, { useState } from 'react';
+import React, { useId } from 'react';
 import './ProductCard.css';
 
+const STAR_PATH = "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z";
+
 function StarRow({ rating = 0 }) {
+  const uid = useId().replace(/:/g, '');
   return (
     <span className="pc-stars" aria-label={`${rating} out of 5 stars`}>
-      {[1, 2, 3, 4, 5].map((i) => (
-        <svg
-          key={i}
-          className={`pc-star${i <= Math.round(rating) ? ' pc-star--on' : ''}`}
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-        </svg>
-      ))}
+      {[1, 2, 3, 4, 5].map((i) => {
+        const full = i <= Math.floor(rating);
+        const half = !full && i === Math.ceil(rating) && (rating % 1) >= 0.25;
+        const clipId = `${uid}-h${i}`;
+        return (
+          <svg key={i} className="pc-star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            {half && (
+              <defs>
+                <clipPath id={clipId}>
+                  <rect x="0" y="0" width="12" height="24" />
+                </clipPath>
+              </defs>
+            )}
+            <path d={STAR_PATH} fill="#d1d5db" />
+            {(full || half) && (
+              <path d={STAR_PATH} fill="#f97316" clipPath={half ? `url(#${clipId})` : undefined} />
+            )}
+          </svg>
+        );
+      })}
     </span>
   );
 }
 
 const ProductCard = ({ product, onClick }) => {
-  const [hovered, setHovered] = useState(false);
 
   if (!product) return null;
 
@@ -56,10 +68,6 @@ const ProductCard = ({ product, onClick }) => {
     }
   };
 
-  const reviewLabel =
-    reviewCount > 0
-      ? `${Number(reviewCount).toLocaleString('en-IN')} review${reviewCount === 1 ? '' : 's'}`
-      : 'No reviews';
 
   const priceFormatted = currentPrice
     ? `₹ ${Number(currentPrice).toLocaleString('en-IN')}`
@@ -71,8 +79,6 @@ const ProductCard = ({ product, onClick }) => {
   return (
     <div
       className="pc-card"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
     >
       {/* Image area — wishlist + CTAs are outside the image link (valid HTML) */}
       <div className="pc-img-wrap">
@@ -101,22 +107,6 @@ const ProductCard = ({ product, onClick }) => {
             className="pc-img"
           />
         </a>
-        <div className={`pc-cta-row${hovered ? ' pc-cta-row--visible' : ''}`}>
-          <button
-            type="button"
-            className="pc-btn pc-btn--cart"
-            onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}
-          >
-            ADD TO CART
-          </button>
-          <button
-            type="button"
-            className="pc-btn pc-btn--quick"
-            onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}
-          >
-            QUICK VIEW
-          </button>
-        </div>
       </div>
 
       {/* Info area */}
@@ -130,16 +120,13 @@ const ProductCard = ({ product, onClick }) => {
             <span className="pc-rating-num">{rating.toFixed(1)}</span>
           )}
           <StarRow rating={rating} />
-          <span className="pc-review-label">{reviewLabel}</span>
+          <span className="pc-review-label">({reviewCount > 0 ? Number(reviewCount).toLocaleString('en-IN') : 0})</span>
         </div>
 
         <div className="pc-price-row">
           <span className="pc-price-current">{priceFormatted}</span>
           {discountPercent > 0 && origFormatted ? (
-            <>
-              <s className="pc-price-orig">{origFormatted}</s>
-              <span className="pc-price-discount">{discountPercent}% off</span>
-            </>
+            <s className="pc-price-orig">{origFormatted}</s>
           ) : null}
         </div>
       </div>

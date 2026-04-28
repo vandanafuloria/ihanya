@@ -23,11 +23,6 @@ const ShopifyHeader = ({ onProductClick }) => {
         playsInline
       />
       <img
-        src={headerPhone}
-        alt="Header"
-        className="block md:hidden w-full h-auto"
-      />
-      <img
         src={headerPhone1}
         alt="Header"
         className="block md:hidden w-full h-auto"

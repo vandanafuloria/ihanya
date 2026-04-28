@@ -1,10 +1,10 @@
 import React, { useId, useState } from 'react';
 import './AIBrandEngine.css';
 
-const SHOP_URL = 'https://ajnaajewels.com/';
-const INSTAGRAM_URL = 'https://www.instagram.com/ajnaajewels/';
+const SHOP_URL = 'https://carriall.com/';
+const INSTAGRAM_URL = 'https://www.instagram.com/carriall/';
 
-/** Sparkle mark — Ajnaa burgundy / rose / gold (AI accent, not third-party logo) */
+/** Sparkle mark — Carriall navy accent */
 function PremiumAIIcon({ gradientId, className, style, size = 40 }) {
   return (
     <svg
@@ -20,9 +20,9 @@ function PremiumAIIcon({ gradientId, className, style, size = 40 }) {
     >
       <defs>
         <linearGradient id={gradientId} x1="12" y1="12" x2="36" y2="36" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#c9a227" />
+          <stop stopColor="#1a5a9e" />
           <stop offset="0.45" stopColor="#003764" />
-          <stop offset="1" stopColor="#b76e79" />
+          <stop offset="1" stopColor="#002a4f" />
         </linearGradient>
       </defs>
       <path
@@ -38,7 +38,7 @@ function PremiumAIIcon({ gradientId, className, style, size = 40 }) {
   );
 }
 
-function AIBrandEngine({ showExtras = true }) {
+function AIBrandEngine({ showExtras = true, compact = false }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [activeTab, setActiveTab] = useState('metrics');
   const [activeMetric, setActiveMetric] = useState('fit');
@@ -130,203 +130,203 @@ function AIBrandEngine({ showExtras = true }) {
 
   const brandInfo = {
     craft: {
-      title: 'Fine jewellery craft',
+      title: 'Bag craftsmanship',
       iconType: 'craft',
       content: [
         {
-          label: 'Heritage techniques',
-          value: 'Kundan · pearls',
-          description: 'Hand-set work and gold-tone finishes suited to bridal necklaces, chokers, and statement earrings.',
+          label: 'Structured silhouette',
+          value: 'Holds its shape',
+          description: 'Reinforced base and side panels keep the bag upright all day — from office desks to airport carousels.',
         },
         {
-          label: 'Made for milestones',
-          value: 'Wedding-ready',
-          description: 'Pieces chosen for mandap light, sangeet sparkle, and reception photos — secure clasps for long wear.',
+          label: 'Hardware & zippers',
+          value: 'Smooth & sturdy',
+          description: 'Matte-tone metal hardware, smooth-glide zippers, and magnetic closures that click with satisfying precision.',
         },
         {
-          label: 'Finish',
+          label: 'Fabric & finish',
           value: 'Hand-checked',
-          description: 'Smooth edges and even stones so jewellery sits comfortably through rituals and family photos.',
+          description: 'Clean stitching, no loose threads, and fabrics chosen to resist everyday scuffs, spills, and dirt.',
         },
       ],
       highlights: [
-        'Lightweight options for mehendi and haldi without weighing you down.',
-        'Sets that pair with lehenga, saree, or sharara lines.',
-        'Packaging that feels worthy of trousseau and milestone gifts.',
+        'Interior pockets designed around what you actually carry — phone, cards, lip balm, keys.',
+        'Detachable straps let you switch between handheld and crossbody in seconds.',
+        'Every bag passes a finish check before it leaves the warehouse.',
       ],
     },
     occasions: {
-      title: 'Wedding & marriage moments',
+      title: 'Bags for every occasion',
       iconType: 'occasions',
       content: [
         {
-          label: 'Bridal journey',
-          value: 'Roka → reception',
-          description: 'Engagement, roka, sangeet, wedding day, and reception — coordinated sets and matching pieces for each function.',
+          label: 'Work & commute',
+          value: 'Office-ready',
+          description: 'Structured bags that fit a 13-inch laptop, daily essentials, and still look polished in a client meeting.',
         },
         {
-          label: 'Family rituals',
-          value: 'Karva · festivals',
-          description: 'Karva Chauth, Teej, Diwali pooja, and anniversary dinners — pieces that feel traditional yet wearable.',
+          label: 'Travel',
+          value: 'Flight to train',
+          description: 'Hard-shell luggage with TSA locks, spinner wheels, and expandable compartments built for Indian routes.',
         },
         {
-          label: 'On camera',
-          value: 'Photo-friendly',
-          description: 'Stones and polish chosen to read clearly in daylight, flash, and reel lighting.',
+          label: 'Weekends & gifting',
+          value: 'Casual to formal',
+          description: 'Totes and crossbodys that move from a Sunday market to a birthday dinner without missing a beat.',
         },
       ],
       highlights: [
-        'Necklaces and earrings that frame the face for bridal portraits.',
-        'Matching sets for the bride and coordinated tones for sisters / mothers.',
-        'Comfort for long ceremonies — so you enjoy the day, not just the photos.',
+        'Meal bags that keep lunch warm for 3-4 hours — perfect for 9-to-6 schedules.',
+        'Luggage tested across domestic and international routes with zero wheel failures.',
+        'Compact crossbodys that hold phone, wallet, keys, and a small bottle — nothing more, nothing less.',
       ],
     },
     gifting: {
-      title: 'Gifting that feels personal',
+      title: 'Gifting made thoughtful',
       iconType: 'gift',
       content: [
         {
-          label: "Who it's for",
+          label: 'Who it is for',
           value: 'Her · them',
-          description: 'Mother of the bride, sister of the groom, wife, daughter-in-law, or friend — jewellery as a keepsake, not a generic box.',
+          description: 'Sister, friend, mum, colleague — a Carriall bag is a gift that gets used every single day.',
         },
         {
           label: 'Occasions',
-          value: 'Festive · life',
-          description: 'Housewarming, baby shower, promotion, anniversary, Diwali, Eid, Rakhi, birthdays, and “just because” surprises.',
+          value: 'Every milestone',
+          description: 'Birthdays, promotions, anniversaries, Diwali, housewarming, and "just because" surprises.',
         },
         {
           label: 'Presentation',
           value: 'Gift-ready',
-          description: 'Premium boxes and pouches so gifts feel occasion-appropriate without extra wrapping stress.',
+          description: 'Premium packaging with dust bag and gift wrapping included — no extra effort needed.',
         },
       ],
       highlights: [
-        'Thoughtful sets for first Diwali after marriage or first Karva Chauth.',
-        'Elevated gifting for colleagues and clients when you want more than sweets.',
-        'Easy to pair with sarees, suits, and fusion fits the recipient already owns.',
+        'Recipients consistently say the bag looks far more expensive than it is.',
+        'Dust bag and wrapping included so it arrives feeling like a considered gift.',
+        'Available in colours — Beige, Brown, Teal — easy to match personal style.',
       ],
     },
     care: {
-      title: 'Care for heirloom-worthy pieces',
+      title: 'Care for your Carriall',
       iconType: 'care',
       content: [
         {
-          label: 'After the wedding',
-          value: 'Store right',
-          description: 'Keep sets in soft pouches, separate heavy necklaces so chains and stones don’t rub.',
+          label: 'Fabric bags',
+          value: 'Wipe clean',
+          description: 'Damp cloth for surface marks — most fabrics repel light stains. Avoid submerging or machine washing.',
         },
         {
-          label: 'Daily wear',
-          value: 'Last on',
-          description: 'Perfume, hair spray, and haldi stains stay off the metal — put jewellery on after dressing.',
+          label: 'Luggage shell',
+          value: 'Easy wipe-down',
+          description: 'Hard-shell scratches are normal in transit. Wipe with a soft damp cloth; avoid abrasive cleaners.',
         },
         {
-          label: 'Cleaning',
-          value: 'Soft cloth',
-          description: 'Gentle wipe-down; follow product-specific care for kundan, pearls, and plated pieces.',
+          label: 'Storage',
+          value: 'Stuff & store',
+          description: 'Keep structured bags stuffed with tissue paper so they hold shape between uses.',
         },
       ],
       highlights: [
-        'Rotate heavy bridal pieces with lighter everyday jewels to preserve finish.',
-        'Avoid sleeping in delicate ear hooks and maang tikka chains.',
-        'Re-wear wedding jewellery for anniversaries — store it so it stays photo-ready.',
+        'Store bags upright and away from direct sunlight to preserve colour.',
+        'For meal bags, wipe the interior after every use to keep it odour-free.',
+        'Hardware stays polished longer when you avoid perfume contact.',
       ],
     },
     shipping: {
-      title: 'Delivery to your door',
+      title: 'Delivery & returns',
       iconType: 'shipping',
       content: [
         {
-          label: 'Pan-India',
+          label: 'Pan-India delivery',
           value: 'Trackable',
-          description: 'Wedding timelines and festival gifting — check estimated delivery at checkout for your PIN.',
+          description: 'Every order ships with real-time tracking — check estimated delivery at checkout for your PIN.',
         },
         {
-          label: 'Orders & help',
-          value: 'Support',
-          description: 'Questions on sizing, sets, or dispatch — use site contact with your order ID.',
+          label: 'COD available',
+          value: 'Pay on delivery',
+          description: 'Cash on delivery available at checkout. No advance payment required for eligible pincodes.',
         },
         {
-          label: 'Returns',
-          value: 'As per policy',
-          description: 'Eligibility and windows are on each product and policy page — keep pieces unused where required.',
+          label: '7-day returns',
+          value: 'Easy returns',
+          description: 'Not what you expected? Raise a return within 7 days. Check policy page for full eligibility details.',
         },
       ],
       highlights: [
-        'Secure outer packaging for high-value jewellery in transit.',
-        'Plan ahead for wedding dates — order with buffer for alterations or exchanges if needed.',
-        'Free or promotional shipping when shown in cart — see current offers on ajnaajewels.com.',
+        'Bags are packed with internal padding — no dents or deformation on arrival.',
+        'Luggage wheels and handles are tested before dispatch.',
+        'Free or promotional shipping often available — check cart for current offers.',
       ],
     },
     brand: {
-      title: 'Ajnaa Jewels',
+      title: 'Carriall',
       iconType: 'brand',
       content: [
         {
-          label: 'Promise',
-          value: 'Fine · Indian',
-          description: 'Jewellery imagined for real weddings, festivals, and gifts — not shelf decoration.',
+          label: 'Brand promise',
+          value: 'Carry more, worry less',
+          description: 'Bags designed for how Indian women actually live — commutes, travel, family functions, and everything between.',
         },
         {
           label: 'Shop',
-          value: 'Online',
-          description: 'Browse bridal edits, festive drops, and gifting-friendly sets on the store.',
+          value: 'carriall.com',
+          description: 'Handbags, luggage, meal bags, totes, and crossbodys — built for real life, priced for India.',
         },
         {
-          label: 'Inspiration',
-          value: '@ajnaajewels',
-          description: 'Reels and styling for marriage seasons, festivals, and everyday shine.',
+          label: 'Community',
+          value: '@carriall · 18K',
+          description: 'Styling reels, real customer stories, and new drops on Instagram.',
         },
       ],
       highlights: [
-        'Built around how Indian women actually wear jewellery — from engagement to anniversary.',
-        'Community love for kundan, pearls, and lightweight glam.',
-        'When in doubt, match the moment: wedding, festival, or a gift they’ll remember.',
+        'Trusted by 10K+ buyers on Amazon with consistently high ratings.',
+        'Products designed around what Indian travellers and professionals actually need.',
+        'When in doubt — structured handbag for daily carry, Trail Smart for travel.',
       ],
     },
   };
 
   const graphData = {
     fit: {
-      label: 'Bridal comfort (wear)',
-      data: [85, 88, 86, 90, 87, 91, 92],
+      label: 'Daily carry comfort',
+      data: [85, 88, 86, 90, 87, 91, 93],
       color: '#003764',
     },
     positive: {
-      label: 'Love for craft & look',
-      data: [78, 82, 84, 87, 85, 88, 90],
+      label: 'Quality satisfaction',
+      data: [78, 82, 84, 87, 85, 88, 91],
       color: '#1a5a9e',
     },
     repeat: {
-      label: 'Repeat buys & gifts',
-      data: [62, 65, 68, 70, 72, 75, 78],
-      color: '#c9a227',
+      label: 'Repeat purchases',
+      data: [62, 65, 68, 70, 72, 75, 79],
+      color: '#3a8c7e',
     },
     delivery: {
-      label: 'Delivery (wedding timelines)',
-      data: [86, 88, 89, 91, 90, 92, 93],
-      color: '#b76e79',
-    },
-    rating: {
-      label: 'Avg. rating (illustrative)',
-      data: [4.2, 4.3, 4.4, 4.5, 4.5, 4.6, 4.7],
+      label: 'Delivery experience',
+      data: [86, 88, 89, 91, 90, 92, 94],
       color: '#002a4f',
     },
+    rating: {
+      label: 'Avg. rating',
+      data: [4.3, 4.4, 4.5, 4.6, 4.6, 4.7, 4.8],
+      color: '#1a5a9e',
+    },
     issue: {
-      label: 'Care & resolution (proxy)',
-      data: [80, 82, 85, 87, 88, 90, 91],
-      color: '#7c2d42',
+      label: 'Post-purchase support',
+      data: [80, 82, 85, 87, 88, 90, 92],
+      color: '#003764',
     },
   };
 
   const metrics = [
-    { id: 'positive', label: 'Love' },
-    { id: 'repeat', label: 'Gifts' },
-    { id: 'fit', label: 'Bridal' },
+    { id: 'positive', label: 'Quality' },
+    { id: 'repeat', label: 'Repeat' },
+    { id: 'fit', label: 'Carry' },
     { id: 'delivery', label: 'Ship' },
     { id: 'rating', label: 'Stars' },
-    { id: 'issue', label: 'Care' },
+    { id: 'issue', label: 'Support' },
   ];
 
   const currentMetric = graphData[activeMetric];
@@ -362,7 +362,7 @@ function AIBrandEngine({ showExtras = true }) {
     return (
       <div className="chart-container">
         <div className="chart-header">
-          <h5 className="chart-title">Jewellery trust snapshot</h5>
+          <h5 className="chart-title">Carriall trust snapshot</h5>
           <div className="chart-value">{displayValue}</div>
         </div>
         <svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} className="chart-svg" preserveAspectRatio="xMidYMid meet">
@@ -426,7 +426,7 @@ function AIBrandEngine({ showExtras = true }) {
           ))}
         </div>
         <p className="chart-footnote">
-          Illustrative trend only — not live data. Themes: bridal wear, gifting, and festival shopping satisfaction.
+          Illustrative trend only — not live data. Themes: daily carry, travel, and gifting satisfaction.
         </p>
       </div>
     );
@@ -435,7 +435,7 @@ function AIBrandEngine({ showExtras = true }) {
   const tabs = [
     { id: 'metrics', label: 'Signals', iconType: 'metrics' },
     { id: 'craft', label: 'Craft', iconType: 'craft' },
-    { id: 'occasions', label: 'Wedding', iconType: 'occasions' },
+    { id: 'occasions', label: 'Use', iconType: 'occasions' },
     { id: 'gifting', label: 'Gifts', iconType: 'gift' },
     { id: 'care', label: 'Care', iconType: 'care' },
     { id: 'shipping', label: 'Ship', iconType: 'shipping' },
@@ -452,28 +452,32 @@ function AIBrandEngine({ showExtras = true }) {
         <div className="ai-brand-engine-trigger-wrap">
           <button
             type="button"
-            className="ai-brand-engine-trigger"
+            className={`ai-brand-engine-trigger${compact ? ' abe-compact' : ''}`}
             onClick={() => setIsExpanded(true)}
-            aria-label="Open jewellery and gifting insights for Ajnaa Jewels"
+            aria-label="Open bag and travel insights for Carriall"
           >
             <div className="trigger-icon">
               <span className="ai-gemini-rotator" aria-hidden="true">
                 <PremiumAIIcon gradientId={sparkleGrad} className="ai-gemini-icon" size={36} />
               </span>
             </div>
-            <div className="trigger-text">
-              <span className="trigger-label">Bridal & gifts</span>
-              <span className="trigger-sublabel">Ajnaa Jewels</span>
-            </div>
+            {!compact && (
+              <div className="trigger-text">
+                <span className="trigger-label">Bags & travel</span>
+                <span className="trigger-sublabel">Carriall</span>
+              </div>
+            )}
             <span className="trigger-badge">AI</span>
           </button>
-          <div className="ai-brand-engine-tooltip" role="note">
-            Weddings, gifting & fine jewellery — tap to explore
-            <span className="ai-brand-engine-tooltip__arrow" aria-hidden />
-          </div>
+          {!compact && (
+            <div className="ai-brand-engine-tooltip" role="note">
+              Bags, luggage & gifting — tap to explore
+              <span className="ai-brand-engine-tooltip__arrow" aria-hidden />
+            </div>
+          )}
         </div>
       ) : (
-        <div className="ai-brand-engine-panel" role="dialog" aria-label="Ajnaa Jewels jewellery and gifting insights">
+        <div className="ai-brand-engine-panel" role="dialog" aria-label="Carriall bag and travel insights">
           <div className="panel-header">
             <div className="header-left">
               <div className="header-icon">
@@ -481,7 +485,7 @@ function AIBrandEngine({ showExtras = true }) {
               </div>
               <div>
                 <h3 className="panel-title">AI Brand Engine</h3>
-                <p className="panel-subtitle">Fine jewellery · weddings · gifting</p>
+                <p className="panel-subtitle">Bags · luggage · everyday carry</p>
               </div>
             </div>
             <button type="button" className="panel-close-btn" onClick={() => setIsExpanded(false)} aria-label="Close">
@@ -540,7 +544,7 @@ function AIBrandEngine({ showExtras = true }) {
                 </div>
                 <div className="panel-content-cta">
                   <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className="abe-cta abe-cta--primary">
-                    Shop bridal & gifts
+                    Shop Carriall
                   </a>
                   <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="abe-cta abe-cta--ghost">
                     Instagram
@@ -555,10 +559,10 @@ function AIBrandEngine({ showExtras = true }) {
               <span className="footer-badge-icon" aria-hidden>
                 <PremiumAIIcon gradientId={`${baseId}-foot`} size={18} />
               </span>
-              <span>Curated for bridal & gifting moments</span>
+              <span>Curated for bags, travel & gifting</span>
             </div>
             <p className="footer-note">
-              For weddings, festivals, and gifts — summaries are for inspiration only. Check product pages and policies on ajnaajewels.com before you buy.
+              For daily carry, travel, and gifts — summaries are for inspiration only. Check product pages and policies on carriall.com before you buy.
             </p>
           </div>
         </div>

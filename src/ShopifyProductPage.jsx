@@ -12,6 +12,7 @@ import PdpHeroReviewRotator from './PdpHeroReviewRotator';
 // ============================================
 
 import productHeader from './assets/product_header.png';
+import productHeaderPhone from './assets/product_header_phone.png';
 import brandLogo from './assets/brand.png';
 import { SCRAPSHALA_SHOP_VIDEOS, PDP_DRAGGABLE_VIDEO } from './scrapshalaShopVideos';
 import {
@@ -159,6 +160,136 @@ const dummyReviews = [
   { name: 'Neha Kapoor', rating: 5, title: 'Second Carriall', text: 'First was the City Crossbody. This time the Ireen — same great quality and consistent finish.', date: '12/30/2024', type: 'product' },
   { name: 'Aarti Desai', rating: 5, title: 'Photographs beautifully', text: 'Used Ireen for a shoot — structured shape shows up great on camera. Team asked about the brand.', date: '12/28/2024', type: 'product' },
 ];
+
+const MARKETPLACE_BADGES = [
+  {
+    label: 'Amazon',
+    rating: '4.5/5',
+    count: '10K+',
+    logo: (
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" style={{ height: 14, width: 'auto', flexShrink: 0 }} />
+    ),
+  },
+  {
+    label: 'Flipkart',
+    rating: '4.1/5',
+    count: '4.3K',
+    logo: (
+      <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/flipkart-icon.png" alt="Flipkart" style={{ height: 16, width: 'auto', flexShrink: 0 }} />
+    ),
+  },
+  {
+    label: 'Myntra',
+    rating: '4.3/5',
+    count: '2.1K',
+    logo: (
+      <img src="https://static.vecteezy.com/system/resources/previews/067/941/729/non_2x/myntra-logo-myntra-icon-transparent-background-free-png.png" alt="Myntra" style={{ height: 22, width: 'auto', flexShrink: 0 }} />
+    ),
+  },
+];
+
+function MarketplaceBadgeRotator() {
+  const [idx, setIdx] = React.useState(0);
+  const [phase, setPhase] = React.useState('idle'); // 'idle' | 'exit' | 'enter'
+
+  React.useEffect(() => {
+    const id = setInterval(() => {
+      setPhase('exit');
+      setTimeout(() => {
+        setIdx(i => (i + 1) % MARKETPLACE_BADGES.length);
+        setPhase('enter');
+        setTimeout(() => setPhase('idle'), 280);
+      }, 280);
+    }, 2800);
+    return () => clearInterval(id);
+  }, []);
+
+  const badge = MARKETPLACE_BADGES[idx];
+  const slideStyle = {
+    transition: 'transform 280ms cubic-bezier(0.4,0,0.2,1), opacity 280ms ease',
+    transform:
+      phase === 'exit'  ? 'translateX(-110%)' :
+      phase === 'enter' ? 'translateX(110%)'  :
+      'translateX(0)',
+    opacity: phase === 'idle' ? 1 : 0,
+  };
+
+  return (
+    <span
+      className="flex items-center overflow-hidden px-1 py-0.5"
+      style={{ minWidth: 120 }}
+      aria-live="polite"
+      aria-label={`${badge.label} rating`}
+    >
+      <span className="flex items-center gap-1.5" style={slideStyle}>
+        {badge.logo}
+        <span className="text-xs font-semibold text-gray-800">{badge.rating}</span>
+        <span className="text-xs text-gray-700">({badge.count})</span>
+      </span>
+    </span>
+  );
+}
+
+const SOCIAL_PROOF_MESSAGES = [
+  {
+    icon: (
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+      </svg>
+    ),
+    text: (n) => `${n} people viewing this right now`,
+  },
+  {
+    icon: (
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+    ),
+    text: (n) => `${n} people added this to cart today`,
+  },
+  {
+    icon: (
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+      </svg>
+    ),
+    text: (n) => `${n} orders placed in the last hour`,
+  },
+];
+
+function SocialProofTicker() {
+  const [idx, setIdx] = React.useState(0);
+  const [visible, setVisible] = React.useState(true);
+  const nums = [23, 41, 18];
+
+  React.useEffect(() => {
+    const id = setInterval(() => {
+      setVisible(false);
+      setTimeout(() => {
+        setIdx(i => (i + 1) % SOCIAL_PROOF_MESSAGES.length);
+        setVisible(true);
+      }, 350);
+    }, 3500);
+    return () => clearInterval(id);
+  }, []);
+
+  const { icon, text } = SOCIAL_PROOF_MESSAGES[idx];
+  return (
+    <div className="mb-3 flex items-center gap-2 w-fit">
+      <span
+        className="flex items-center gap-1.5 text-xs font-medium tracking-wide"
+        style={{
+          transition: 'opacity 350ms ease',
+          opacity: visible ? 1 : 0,
+          color: '#003764',
+        }}
+      >
+        <span style={{ color: '#003764' }}>{icon}</span>
+        {text(nums[idx])}
+      </span>
+    </div>
+  );
+}
 
 function AccordionRow({ label, content }) {
   const [open, setOpen] = React.useState(false);
@@ -537,7 +668,8 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
 
       {/* Product Page Header Banner — full width (no max-width) */}
       <div className="w-full bg-white">
-        <img src={productHeader} alt="Product Header" className="w-full object-cover" />
+        <img src={productHeader} alt="Product Header" className="hidden md:block w-full object-cover" />
+        <img src={productHeaderPhone} alt="Product Header" className="block md:hidden w-full object-cover" />
       </div>
 
       {/* Product Video - Draggable floating card */}
@@ -608,7 +740,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
         </div>
       )}
       
-      <main className="flex-1 py-6 md:py-10" style={{ backgroundColor: '#f0ede8' }}>
+      <main className="flex-1 py-6 md:py-10" style={{ backgroundColor: '#EFEFEF' }}>
         <div className="mx-auto w-full max-w-6xl px-4 md:px-8">
 
           {/* Breadcrumb — reference-style trail */}
@@ -628,40 +760,25 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
 
           <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-12">
 
-            {/* LEFT — thumbnail strip + main image + arrows */}
+            {/* LEFT — large main image + horizontal thumbnail strip below */}
             {(() => {
               const imgs = productImages.length ? productImages : [productHeader];
               return (
-                <div className="flex gap-3">
-                  {/* Thumbnail strip */}
-                  <div className="hidden md:flex flex-col gap-2 w-[72px] shrink-0">
-                    {imgs.map((img, i) => (
-                      <button
-                        key={i}
-                        type="button"
-                        onClick={() => setSelectedImage(i)}
-                        className="w-full aspect-square overflow-hidden rounded-none border-2 transition-all"
-                        style={{ borderColor: selectedImage === i ? '#1a1a1a' : '#e5e7eb' }}
-                      >
-                        <img src={img} alt="" className="w-full h-full object-cover" />
-                      </button>
-                    ))}
-                  </div>
-
-                  {/* Main image + arrows */}
-                  <div className="relative flex-1 rounded-none overflow-hidden" style={{ backgroundColor: '#f0ede8' }}>
+                <div className="flex flex-col gap-3">
+                  {/* Main image */}
+                  <div className="relative overflow-hidden rounded-none" style={{ backgroundColor: '#EFEFEF' }}>
                     <img
                       src={imgs[selectedImage] || imgs[0]}
                       alt={productName}
-                      className="w-full h-auto object-contain"
-                      style={{ aspectRatio: '1/1' }}
+                      className="w-full object-contain"
+                      style={{ aspectRatio: '3/4', maxHeight: '75vh' }}
                     />
                     {/* Prev arrow */}
                     {imgs.length > 1 && (
                       <button
                         type="button"
                         onClick={() => setSelectedImage(i => (i - 1 + imgs.length) % imgs.length)}
-                        className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-none bg-white shadow flex items-center justify-center hover:bg-gray-100 transition-colors"
+                        className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/80 backdrop-blur-sm shadow flex items-center justify-center hover:bg-white transition-colors"
                       >
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                           <path d="M15 18l-6-6 6-6"/>
@@ -673,28 +790,31 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       <button
                         type="button"
                         onClick={() => setSelectedImage(i => (i + 1) % imgs.length)}
-                        className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-none bg-white shadow flex items-center justify-center hover:bg-gray-100 transition-colors"
+                        className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/80 backdrop-blur-sm shadow flex items-center justify-center hover:bg-white transition-colors"
                       >
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                           <path d="M9 18l6-6-6-6"/>
                         </svg>
                       </button>
                     )}
-                    {/* Mobile thumb strip below */}
-                    <div className="md:hidden flex gap-2 overflow-x-auto mt-3 pb-1 scrollbar-hide">
+                  </div>
+
+                  {/* Horizontal thumbnail strip */}
+                  {imgs.length > 1 && (
+                    <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
                       {imgs.map((img, i) => (
                         <button
                           key={i}
                           type="button"
                           onClick={() => setSelectedImage(i)}
-                          className="w-16 h-16 shrink-0 rounded-none border-2 overflow-hidden transition-all"
+                          className="w-16 h-16 shrink-0 overflow-hidden border-2 transition-all"
                           style={{ borderColor: selectedImage === i ? '#1a1a1a' : '#e5e7eb' }}
                         >
                           <img src={img} alt="" className="w-full h-full object-cover" />
                         </button>
                       ))}
                     </div>
-                  </div>
+                  )}
                 </div>
               );
             })()}
@@ -710,11 +830,9 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                 {productName}
               </h1>
 
-              {/* MRP label */}
-              <p className="mb-1 text-xs text-gray-500 tracking-wide">MRP (Maximum Retail Price)</p>
 
               {/* Price row */}
-              <div className="mb-1 flex flex-wrap items-baseline gap-3">
+              <div className="mb-4 flex flex-wrap items-baseline gap-3">
                 <span className="text-2xl font-semibold tracking-widest" style={{ color: '#c0392b' }}>
                   RS.&nbsp;{productPrice.toLocaleString('en-IN')}.00
                 </span>
@@ -725,34 +843,57 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                 ) : null}
               </div>
 
-              {/* Tax note */}
-              <p className="mb-6 text-xs text-gray-500">(Price Inclusive of all Taxes)</p>
+              
 
-              <div className="border-t border-gray-300 mb-6" />
+              <SocialProofTicker />
 
-              {/* Rating | Reviews */}
-              <div className="mb-2 flex items-start gap-8">
-                <div className="flex flex-col gap-2">
-                  <span className="text-sm text-gray-600 tracking-wide">Rating ({productRating.toFixed(1)})</span>
-                  <span className="flex gap-1" aria-label={`${productRating.toFixed(1)} out of 5 stars`}>
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <svg key={i} width="18" height="18" viewBox="0 0 24 24" aria-hidden>
-                        <path
-                          d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                          fill={i <= Math.round(productRating) ? '#3a8c7e' : '#d1d5db'}
-                        />
-                      </svg>
-                    ))}
+              {/* Rating row — stars · count · Amazon badge */}
+              <div className="mb-3">
+                <div className="flex flex-nowrap items-center gap-x-2 overflow-hidden">
+                  {/* Stars */}
+                  <span className="flex gap-0.5" aria-label={`${productRating.toFixed(1)} out of 5 stars`}>
+                    {[1, 2, 3, 4, 5].map((i) => {
+                      const full = i <= Math.floor(productRating);
+                      const half = !full && i === Math.ceil(productRating) && (productRating % 1) >= 0.25;
+                      const clipId = `pdp-star-${i}`;
+                      return (
+                        <svg key={i} width="20" height="20" viewBox="0 0 24 24" aria-hidden>
+                          {half && (
+                            <defs>
+                              <clipPath id={clipId}><rect x="0" y="0" width="12" height="24" /></clipPath>
+                            </defs>
+                          )}
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#d1d5db" />
+                          {(full || half) && (
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#e05c00" clipPath={half ? `url(#${clipId})` : undefined} />
+                          )}
+                        </svg>
+                      );
+                    })}
                   </span>
+                  {/* Rating number + count */}
+                  <span className="text-sm font-bold text-gray-900">{productRating.toFixed(1)}</span>
+                  <span className="text-sm text-gray-500">({productReviews} reviews)</span>
+                  {/* Divider */}
+                  <span className="text-gray-300 text-sm select-none">|</span>
+                  {/* Rotating marketplace badge */}
+                  <MarketplaceBadgeRotator />
                 </div>
-                <div className="w-px self-stretch bg-gray-300" />
-                <div className="flex flex-col gap-1">
-                  <span className="text-sm text-gray-600 tracking-wide">Reviews</span>
-                  <span className="text-4xl font-bold text-gray-900 leading-none">{productReviews}</span>
+
+                {/* Keyword chips */}
+                <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1">
+                  {PDP_KEYWORD_TAGS.map((tag) => (
+                    <span key={tag} className="flex items-center gap-1 text-xs text-gray-600">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#003764" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                        <path d="M20 6L9 17L4 12" />
+                      </svg>
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
 
-              <div className="border-t border-gray-300 mb-6 mt-6" />
+              <div className="border-t border-gray-300 mb-6" />
 
               {/* Description */}
               <p className="mb-6 text-sm leading-relaxed text-gray-700" style={{ lineHeight: '1.85' }}>
@@ -763,45 +904,8 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
 
               <div className="border-t border-gray-300 mb-6" />
 
-              {/* Color selector */}
-              {(() => {
-                const colors = PRODUCT_COLORS.length
-                  ? PRODUCT_COLORS
-                  : [
-                      { label: 'Beige', hex: '#e8dcc8' },
-                      { label: 'Brown', hex: '#6b4226' },
-                      { label: 'Teal', hex: '#2e7d70' },
-                    ];
-                const [selectedColor, setSelectedColor] = React.useState(colors[0].label);
-                return (
-                  <div className="mb-6">
-                    <p className="mb-3 text-sm text-gray-700 tracking-wide">
-                      Color: <span className="font-medium">{selectedColor}</span>
-                    </p>
-                    <div className="flex gap-3">
-                      {colors.map((c) => (
-                        <button
-                          key={c.label}
-                          type="button"
-                          aria-label={c.label}
-                          onClick={() => setSelectedColor(c.label)}
-                          className="h-9 w-9 rounded-full border-2 transition-all"
-                          style={{
-                            backgroundColor: c.hex,
-                            borderColor: selectedColor === c.label ? '#1a1a1a' : 'transparent',
-                            boxShadow: selectedColor === c.label ? '0 0 0 1px #1a1a1a' : '0 0 0 1px #ccc',
-                          }}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                );
-              })()}
-
-              <div className="border-t border-gray-300 mb-6" />
-
-              {/* Quantity */}
-              <div className="mb-6">
+              {/* Quantity + Brand logo */}
+              <div className="mb-6 flex items-center">
                 <div className="flex w-fit items-center border border-gray-400 bg-white">
                   <button
                     type="button"
@@ -821,6 +925,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                     +
                   </button>
                 </div>
+                <img src={brandLogo} alt="Carriall" className="h-12 mx-4 w-auto md:w-[53%]" />
               </div>
 
               {/* CTA buttons */}
@@ -841,42 +946,6 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                 </button>
               </div>
 
-              {/* Trust icons row */}
-              <div className="grid grid-cols-2 gap-4 border-t border-gray-300 pt-5 sm:grid-cols-4 sm:gap-3 mb-6">
-                {PDP_TRUST_FEATURES.map(({ label, icon }) => (
-                  <div key={label} className="flex flex-col items-center gap-2 text-center">
-                    <div className="text-gray-500">{icon}</div>
-                    <p className="text-[11px] font-medium leading-snug text-gray-600 sm:text-xs">{label}</p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Brand logo */}
-              <div className="mb-5">
-                <img src={brandLogo} alt="Carriall" className="h-10 object-contain" />
-              </div>
-
-              {/* Pincode */}
-              <div className="border-t border-gray-300 pt-5 mb-6">
-                <p className="mb-2 text-xs font-semibold tracking-widest text-gray-700 uppercase">Check Pincode For COD</p>
-                <div className="flex gap-2">
-                  <input
-                    type="text"
-                    inputMode="numeric"
-                    maxLength={6}
-                    placeholder="Enter your pincode"
-                    value={pincodeInput}
-                    onChange={(e) => setPincodeInput(e.target.value.replace(/\D/g, '').slice(0, 6))}
-                    className="min-w-0 flex-1 border border-gray-400 bg-white px-3 py-2.5 text-xs text-gray-800 placeholder:text-gray-400"
-                  />
-                  <button
-                    type="button"
-                    className="shrink-0 border border-gray-400 bg-white px-4 py-2.5 text-xs font-semibold text-gray-800 transition-colors hover:bg-gray-50 tracking-wide"
-                  >
-                    Check
-                  </button>
-                </div>
-              </div>
 
               {/* Accordions */}
               {[
@@ -1325,7 +1394,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                     ))}
                   </div>
 
-                  <div className="divide-y divide-stone-200/80 border-t border-stone-200/80">
+                  <div className="border-t border-stone-200/80">
                     {[
                       {
                         icon: (
@@ -1333,7 +1402,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
                         ),
-                        label: 'Weddings & festive',
+                        label: 'Gift-ready packaging',
                         value: '96%',
                       },
                       {
@@ -1342,7 +1411,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                           </svg>
                         ),
-                        label: 'Kundan sparkle',
+                        label: 'Build quality',
                         value: '9/10',
                       },
                       {
@@ -1351,7 +1420,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                           </svg>
                         ),
-                        label: 'Comfortable wear',
+                        label: 'Everyday carry',
                         value: '98%',
                       },
                     ].map((stat, idx) => (
@@ -1462,12 +1531,8 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                 <div className="px-6 pb-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-[12px] leading-relaxed text-stone-500">
                   {[
                     'Structured handbags',
-                    'Travel luggage',
                     'Premium quality',
-                    'Lightweight carry',
                     'Gift-ready',
-                    'Made for India',
-                    'Work & weekend',
                   ].map((kw, i) => (
                     <span key={kw} className="inline-flex items-center gap-2">
                       {i > 0 && (
@@ -1599,12 +1664,12 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                     </div>
                   </div>
 
-                  <div className="space-y-3 md:space-y-4">
+                  <div className="divide-y divide-stone-200/70 md:space-y-4 md:divide-y-0">
                     {reviews.slice(0, reviewsToShow).map((review) => {
                       return (
                         <div
                           key={review.id}
-                          className="rounded-none border border-stone-200/70 bg-white p-4 shadow-[0_1px_2px_rgba(0,0,0,0.04)] md:p-5"
+                          className="py-4 md:rounded-none md:border md:border-stone-200/70 md:bg-white md:p-5 md:shadow-[0_1px_2px_rgba(0,0,0,0.04)]"
                         >
                           <div className="mb-2 flex items-center justify-between gap-2">
                             <div className="flex min-w-0 flex-wrap items-center gap-1.5">
@@ -1897,7 +1962,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
             </h2>
           </div>
           <div className="overflow-x-auto -mx-4 px-4 scrollbar-hide">
-            <div className="flex gap-4 md:gap-6 min-w-max">
+            <div className="flex gap-6 md:gap-8 min-w-max">
               {bestSellerProducts.map((product) => (
                 <div
                   key={product.id}
@@ -2177,7 +2242,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
           </div>
         </div>
       )}
-      <AIBrandEngine />
+      <AIBrandEngine compact />
     </div>
   );
 };

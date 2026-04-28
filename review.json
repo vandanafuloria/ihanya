@@ -3,234 +3,120 @@
     "name": "Ayesha Khan",
     "location": "Mumbai",
     "rating": 5,
-    "title": "Ireen is absolutely gorgeous",
-    "review": "Ordered the Ireen handbag for daily office use — the structured silhouette holds its shape all day. The beige colour looks even richer in person. Detachable shoulder strap is a great touch, makes switching between handheld and crossbody effortless. Quality of the fabric is soft yet durable. Packed safely, no dents on delivery.",
+    "title": "Smooth Travel",
+    "review": "Glides easily with sturdy wheels.",
     "type": "large"
   },
   {
     "name": "Priya Sharma",
     "location": "Delhi",
-    "rating": 5,
-    "title": "Meta Luggage — worth every rupee",
-    "review": "Travelled Bangalore–Delhi–Mumbai in one week with the Meta Luggage. Wheels roll smoothly even on rough airport floors. The hard shell took a few bumps from baggage handlers and came out scratch-free. Loved that the interior has proper compartments — my clothes arrived wrinkle-free. Zipper feels very sturdy.",
+    "rating": 4.5,
+    "title": "Good for Trips",
+    "review": "Spacious and easy to carry.",
     "type": "large"
   },
   {
     "name": "Neha Verma",
     "location": "Bangalore",
-    "rating": 4.5,
-    "title": "Meal Bag is smarter than I expected",
-    "review": "Bought the Meal Bag for office lunch runs. Keeps my food warm for about 3–4 hours, which is all I need. The interior wipes clean easily — I spilled a bit of curry and it came right off. Outer quality is excellent, no fraying on the handles after a month of daily use. Only minor note: wish it had a side pocket for a water bottle.",
+    "rating": 5,
+    "title": "Stylish Build",
+    "review": "Looks premium, feels durable.",
     "type": "large"
   },
   {
     "name": "Riya Patel",
     "location": "Ahmedabad",
-    "rating": 5,
-    "title": "Trail Smart Luggage — the real deal",
-    "review": "Bought the Trail Smart for my solo trip to Europe. Went through 4 flights and 6 train rides — not a single scratch, no stuck wheels. The expandable section saved me from excess baggage fees. TSA lock is easy to operate. The interior lining is a nice detail. Carriall has clearly thought about the actual traveller's needs.",
+    "rating": 4,
+    "title": "Worth Buying",
+    "review": "Decent quality for the price.",
     "type": "large"
   },
   {
     "name": "Kavita Reddy",
     "location": "Hyderabad",
-    "rating": 4,
-    "title": "Ireen — elegant everyday bag",
-    "review": "The Ireen structured bag is everything I wanted for casual and slightly formal occasions. Fits my laptop (13 inch), wallet, and cosmetics without looking overstuffed. The interior zip pocket is well-placed. Only reason for 4 stars is that I wish it came in more colour options. Build quality is genuinely premium for the price.",
+    "rating": 5,
+    "title": "Lightweight",
+    "review": "Easy to handle anywhere.",
     "type": "large"
   },
   {
     "name": "Simran Kaur",
     "location": "Chandigarh",
-    "rating": 5,
-    "title": "Gifted the Wander Tote — she loved it",
-    "review": "Gifted the Wander Tote to my sister for her birthday. It came in beautiful packaging — she thought I had bought something from abroad. The tote is roomy but doesn't flop. Handles feel soft and strong. She's been using it daily for 3 weeks and says it still looks brand new.",
-    "type": "large"
+    "rating": 4.5,
+    "title": "Strong Body",
+    "review": "Handles rough use well.",
+    "type": "mid"
   },
   {
     "name": "Meera Joshi",
     "location": "Pune",
     "rating": 5,
-    "title": "Second Carriall order, not the last",
-    "review": "First order was the City Crossbody — loved it so much I came back for the Ireen. Both have the same careful stitching and clean hardware. The brand's attention to detail shows. Magnetic closures are strong and satisfying. Would confidently recommend to anyone looking for a quality bag under 10k.",
-    "type": "large"
+    "title": "Nice Design",
+    "review": "Modern and clean look.",
+    "type": "mid"
   },
   {
     "name": "Ananya Desai",
     "location": "Surat",
     "rating": 5,
-    "title": "Looks far more expensive than it is",
-    "review": "Compared to bags I've seen in malls — Ireen looks genuinely premium. Stitching is clean, no loose threads. The beige fabric hasn't picked up any dirt even after regular use. I've been getting compliments every week.",
+    "title": "Travel Friendly",
+    "review": "Perfect for short trips.",
     "type": "mid"
   },
   {
     "name": "Shruti Iyer",
     "location": "Kolkata",
-    "rating": 4.5,
-    "title": "Meta Luggage — smooth airport experience",
-    "review": "Used for a 10-day trip. Four-wheel spinner glides in every direction. The telescopic handle locks at multiple heights, which I really appreciate. Interior is well-divided with mesh pockets. Delivery was fast and the bag was wrapped properly.",
+    "rating": 4,
+    "title": "Good Storage",
+    "review": "Enough space for essentials.",
     "type": "mid"
   },
   {
     "name": "Pooja Hegde",
     "location": "Chennai",
     "rating": 5,
-    "title": "Meal Bag — better than I imagined",
-    "review": "Works perfectly for my 9-to-6 office schedule. Keeps food at the right temperature, handles don't dig into the palm. Washes easily. Bought the black and now eyeing the beige.",
+    "title": "Easy Rolling",
+    "review": "Wheels work smoothly.",
     "type": "mid"
   },
   {
     "name": "Tanya Bhatia",
     "location": "Gurgaon",
-    "rating": 4.8,
-    "title": "Ireen — both my sister and I use it now",
-    "review": "Ordered one, my sister liked it so much she ordered the teal. Both bags arrived perfect. The structured top handles are comfortable even for longer carries. Hardware hasn't tarnished at all.",
-    "type": "mid"
+    "rating": 4.5,
+    "title": "Value Pick",
+    "review": "Good features in budget.",
+    "type": "small"
   },
   {
     "name": "Sakshi Nair",
     "location": "Kochi",
     "rating": 5,
-    "title": "Trail Smart — no-drama travel",
-    "review": "Flew 3 domestic routes in a month with this luggage. Packing cubes fit perfectly. The combination lock is easy to set. Hard shell shows zero dents. Will definitely upgrade my second bag to Carriall too.",
-    "type": "mid"
+    "title": "Compact Size",
+    "review": "Fits cabin requirements.",
+    "type": "small"
   },
   {
     "name": "Divya Agarwal",
     "location": "Lucknow",
     "rating": 4,
-    "title": "City Crossbody — great for weekends",
-    "review": "Compact but holds more than you'd think. Fits phone, wallet, keys, a small water bottle, and snacks. Adjustable strap is a big plus. Leather-effect trim looks really polished.",
-    "type": "mid"
+    "title": "Reliable Choice",
+    "review": "Works well for travel needs.",
+    "type": "small"
   },
   {
     "name": "Aditi Rao",
     "location": "Indore",
     "rating": 5,
-    "title": "Exactly what I saw on the website",
-    "review": "The colour of the Ireen in beige is identical to the product photos — no surprises. Fabric texture is soft and structured. I've carried it to three client meetings and always get a compliment.",
-    "type": "mid"
+    "title": "Simple & Useful",
+    "review": "Basic but gets the job done.",
+    "type": "very_small"
   },
   {
     "name": "Geeta Singh",
     "location": "Bhopal",
     "rating": 5,
-    "title": "Saw on Instagram, ordered same day",
-    "review": "The Ireen styling reel convinced me instantly. Bag has a nice weight — feels substantial, not flimsy. Shoulder strap length is just right for my height.",
-    "type": "mid"
-  },
-  {
-    "name": "Roshni M.",
-    "rating": 5,
-    "review": "Ireen — sits perfectly with both formal and casual outfits.",
-    "type": "small"
-  },
-  {
-    "name": "Smriti K.",
-    "rating": 5,
-    "review": "Meta Luggage wheels are whisper-quiet. Love it.",
-    "type": "small"
-  },
-  {
-    "name": "Jhanvi T.",
-    "rating": 4,
-    "review": "Great bag. Wish they made a mini version of Ireen.",
-    "type": "small"
-  },
-  {
-    "name": "Alia S.",
-    "rating": 5,
-    "review": "Packed safe, reached on time. No damage at all.",
+    "title": "Smart Travel",
+    "review": "Easy packing and movement.",
     "type": "very_small"
-  },
-  {
-    "name": "Deepa R.",
-    "rating": 5,
-    "review": "Meal Bag still odour-free after 4 weeks of daily use.",
-    "type": "small"
-  },
-  {
-    "name": "Nikita P.",
-    "rating": 4.5,
-    "review": "Zipper on Trail Smart is very smooth and sturdy.",
-    "type": "very_small"
-  },
-  {
-    "name": "Vandana F.",
-    "rating": 5,
-    "review": "Happy with Ireen. Will order the teal next.",
-    "type": "small"
-  },
-  {
-    "name": "Sanjana W.",
-    "rating": 5,
-    "review": "City Crossbody fits everything I need for a day out.",
-    "type": "very_small"
-  },
-  {
-    "name": "Ishita B.",
-    "rating": 5,
-    "review": "My friend ordered Ireen after seeing mine.",
-    "type": "small"
-  },
-  {
-    "name": "Mansi C.",
-    "rating": 4,
-    "review": "Handles strong. Interior lining looks premium.",
-    "type": "very_small"
-  },
-  {
-    "name": "Pallavi G.",
-    "rating": 5,
-    "review": "Gifted Wander Tote — recipient was genuinely impressed.",
-    "type": "small"
-  },
-  {
-    "name": "Kirti D.",
-    "rating": 5,
-    "review": "Exactly as shown. Clean stitching, no loose threads.",
-    "type": "very_small"
-  },
-  {
-    "name": "Richa V.",
-    "rating": 4.5,
-    "review": "Meal Bag insulation is better than my old branded one.",
-    "type": "small"
-  },
-  {
-    "name": "Farah A.",
-    "rating": 5,
-    "review": "Would love a bigger version of the City Crossbody.",
-    "type": "very_small"
-  },
-  {
-    "name": "Natasha K.",
-    "rating": 5,
-    "review": "Tracking worked perfectly. Bag arrived in mint condition.",
-    "type": "small"
-  },
-  {
-    "name": "Ritu S.",
-    "rating": 5,
-    "review": "Trail Smart didn't budge on overhead cabin — perfect fit.",
-    "type": "small"
-  },
-  {
-    "name": "Preeti L.",
-    "rating": 4.5,
-    "review": "Shoulder strap comfortable — wore 6 hours, no pain.",
-    "type": "small"
-  },
-  {
-    "name": "Nisha O.",
-    "rating": 5,
-    "review": "Ireen in teal matches my whole wardrobe — obsessed.",
-    "type": "very_small"
-  },
-  {
-    "name": "Tarun H.",
-    "rating": 5,
-    "review": "Bought Meta Luggage for wife — she uses it every trip now.",
-    "type": "small"
   }
 ]
