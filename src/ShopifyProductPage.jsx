@@ -1542,18 +1542,21 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                   </p>
                 </div>
 
-                <div className="px-6 pb-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-[12px] leading-relaxed text-stone-500">
+                <div className="px-6 pb-5 flex flex-wrap items-center gap-2.5 text-[12px] leading-relaxed">
                   {[
                     'Crafted home decor',
                     'Premium quality',
                     'Gift-ready',
-                  ].map((kw, i) => (
-                    <span key={kw} className="inline-flex items-center gap-2">
-                      {i > 0 && (
-                        <span className="text-stone-300 select-none" aria-hidden>
-                          ·
-                        </span>
-                      )}
+                  ].map((kw) => (
+                    <span
+                      key={kw}
+                      className="inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium text-stone-700"
+                      style={{
+                        borderColor: 'rgba(185, 155, 123, 0.35)',
+                        background:
+                          'linear-gradient(135deg, rgba(185, 155, 123, 0.18), rgba(255, 255, 255, 0.9))',
+                      }}
+                    >
                       {kw}
                     </span>
                   ))}
