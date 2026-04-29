@@ -5,37 +5,21 @@ import ProductCard from './ProductCard';
 import AIBrandEngine from './AIBrandEngine';
 import LiveUserCounter from './LiveUserCounter';
 import ActivityBanner from './ActivityBanner';
+import PhotoGallerySection from './PhotoGallerySection';
 import brandInstagramProfile from './assets/logo.png';
 import { SCRAPSHALA_SHOP_VIDEOS } from './scrapshalaShopVideos';
 import { bestSellerProducts } from './scrapshalaBestSellers';
 import InstagramTrustCarousel from './InstagramTrustCarousel';
 import { GALLERY_IMAGES } from './PhotoGallery';
 import { INSTAGRAM_POST_URLS } from './instagramPosts';
-import BrandTestimonialsPdp from './BrandTestimonialsPdp';
 import reviewData from '../review.json';
 import './HomePage.css';
 
-const BRAND_TESTIMONIAL_ACCENT = '#003764';
 
-/** Brand love — only strong positive ratings (4.5+) for marketing; each paired with a gallery photo */
-const brandTestimonialItems = reviewData
-  .filter(
-    (r) =>
-      (r.type === 'mid' || r.type === 'small' || r.type === 'very_small') &&
-      (typeof r.rating === 'number' ? r.rating : 5) >= 4.5
-  )
-  .map((r, i) => ({
-    image: GALLERY_IMAGES[i % GALLERY_IMAGES.length],
-    quote: r.review,
-    name: r.name,
-    location: r.location,
-    rating: typeof r.rating === 'number' ? r.rating : 5,
-  }));
-
-const AJNAA_INSTAGRAM_URL = 'https://www.instagram.com/carriall/';
-const AJNAA_LINKTR_URL = 'https://carriall.com';
+const AJNAA_INSTAGRAM_URL = 'https://www.instagram.com/muunhomedecor/';
+const AJNAA_LINKTR_URL = 'https://www.instagram.com/muunhomedecor/';
 const AJNAA_HASHTAG_URL =
-  'https://www.instagram.com/explore/tags/carriall/';
+  'https://www.instagram.com/explore/tags/muunhomedecor/';
 
 const SHOPIFY_VIDEO_URLS = SCRAPSHALA_SHOP_VIDEOS;
 
@@ -44,7 +28,10 @@ const BRAND_NAME = "wordofmouth";
 const getRandomSoldThisWeek = (min = 180, max = 420) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
-const VIDEO_VIEWS = ['4.0K', '4.2K', '3.8K', '3.1K', '2.9K', '2.7K', '3.5K', '4.1K'];
+const VIDEO_VIEWS = [
+  '4.0K', '4.2K', '3.8K', '3.1K', '2.9K', '2.7K',
+  '3.5K', '4.1K', '3.3K', '3.6K', '2.8K', '3.9K',
+];
 
 // Video Products data — one row per reel clip; posters cycle best sellers
 const videoProducts = SHOPIFY_VIDEO_URLS.map((url, i) => {
@@ -71,7 +58,7 @@ const TRUST_SLIDES = [
     content: (
       <span className="flex items-center gap-1.5">
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" height="14" alt="Amazon" style={{flexShrink:0, width:'auto', height:'14px'}} />
-        <span className="text-xs font-bold text-gray-900">4.5/5 · 10K+ Ratings on Amazon</span>
+        <span className="text-xs font-bold text-gray-900">4.5/5 · 980+ Ratings on Amazon</span>
       </span>
     ),
   },
@@ -79,7 +66,7 @@ const TRUST_SLIDES = [
     content: (
       <span className="flex items-center gap-1.5">
         <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/flipkart-icon.png" height="16" alt="Flipkart" style={{flexShrink:0, width:'auto', height:'16px'}} />
-        <span className="text-xs font-bold text-gray-900">4.1/5 · 4.3K+ Reviews on Flipkart</span>
+        <span className="text-xs font-bold text-gray-900">4.1/5 · 860+ Reviews on Flipkart</span>
       </span>
     ),
   },
@@ -87,7 +74,7 @@ const TRUST_SLIDES = [
     content: (
       <span className="flex items-center gap-1.5">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDQWzflRbFZJBAjCD9s3tRiveZPd5k4N4BiA&s" height="16" alt="Myntra" style={{flexShrink:0, width:'auto', height:'16px'}} />
-        <span className="text-xs font-bold text-gray-900">4.3/5 · 2.1K+ Reviews on Myntra</span>
+        <span className="text-xs font-bold text-gray-900">4.3/5 · 740+ Reviews on Myntra</span>
       </span>
     ),
   },
@@ -95,7 +82,7 @@ const TRUST_SLIDES = [
     content: (
       <span className="flex items-center gap-1.5">
         <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" width="14" height="14" alt="Instagram" style={{flexShrink:0}} />
-        <span className="text-xs font-bold text-gray-900">18K Followers on Instagram</span>
+        <span className="text-xs font-bold text-gray-900">42K Followers on Instagram</span>
       </span>
     ),
   },
@@ -400,7 +387,7 @@ const HomePage = ({ onProductClick }) => {
 
       {/* Instagram trust / mentions strip — off for now; set to true to restore */}
       {false && (
-        <InstagramTrustCarousel instagramUrl={AJNAA_INSTAGRAM_URL} followersLabel="18K" />
+        <InstagramTrustCarousel instagramUrl={AJNAA_INSTAGRAM_URL} followersLabel="42K" />
       )}
 
       {/* Big Deals Section */}
@@ -630,7 +617,7 @@ const HomePage = ({ onProductClick }) => {
                           e.stopPropagation();
                           console.log('Add to cart:', product);
                         }}
-                        className="w-full text-white py-2.5 px-4 rounded-lg font-semibold text-xs uppercase tracking-wide transition-all duration-300 hover:shadow-md mt-3" style={{ backgroundColor: '#003764', marginTop: '12px' }}
+                        className="w-full text-white py-2.5 px-4 rounded-lg font-semibold text-xs uppercase tracking-wide transition-all duration-300 hover:shadow-md mt-3" style={{ backgroundColor: '#B99B7B', marginTop: '12px' }}
                       >
                         ADD TO CART
                       </button>
@@ -650,8 +637,8 @@ const HomePage = ({ onProductClick }) => {
             <div>
               <p className="text-xs font-semibold tracking-widest text-gray-400 uppercase mb-1">Latest drops</p>
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-                Bags in motion
-                <span className="ml-2 text-[#003764]" aria-hidden>✦</span>
+                Decor in motion
+                <span className="ml-2 text-[#B99B7B]" aria-hidden>✦</span>
               </h2>
             </div>
             <button className="text-sm font-bold text-gray-900 hover:opacity-70 transition-opacity">View All</button>
@@ -722,7 +709,7 @@ const HomePage = ({ onProductClick }) => {
                       </div>
                       <button
                         onClick={(e) => e.stopPropagation()}
-                        className="w-full text-white py-2.5 px-4 rounded-none font-semibold text-xs uppercase tracking-wide transition-all duration-300 hover:shadow-md mt-3" style={{ backgroundColor: '#003764' }}
+                        className="w-full text-white py-2.5 px-4 rounded-none font-semibold text-xs uppercase tracking-wide transition-all duration-300 hover:shadow-md mt-3" style={{ backgroundColor: '#B99B7B' }}
                       >
                         ADD TO CART
                       </button>
@@ -735,7 +722,8 @@ const HomePage = ({ onProductClick }) => {
         </div>
       </section>
 
-
+      {/* Photo Gallery Section */}
+      <PhotoGallerySection />
 
       {/* Instagram profile (followers, posts, bio) — off for now; set to true to restore */}
       {false && (
@@ -753,7 +741,7 @@ const HomePage = ({ onProductClick }) => {
                 <div className="w-32 h-32 rounded-full overflow-hidden">
                   <img
                     src={brandInstagramProfile}
-                    alt="Carriall on Instagram"
+                    alt="Muun Home Decor on Instagram"
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
@@ -769,7 +757,7 @@ const HomePage = ({ onProductClick }) => {
                   rel="noopener noreferrer"
                   className="text-gray-900 font-semibold text-xl hover:opacity-70 transition-opacity"
                 >
-                  carriall
+                  muunhomedecor
                 </a>
                 <span className="text-gray-400 text-base tracking-widest">···</span>
               </div>
@@ -779,7 +767,7 @@ const HomePage = ({ onProductClick }) => {
                   <p className="text-gray-400 text-sm">posts</p>
                 </div>
                 <div className="text-center">
-                  <p className="font-bold text-gray-900 text-base">18K</p>
+                  <p className="font-bold text-gray-900 text-base">42K</p>
                   <p className="text-gray-400 text-sm">followers</p>
                 </div>
                 <div className="text-center">
@@ -820,7 +808,7 @@ const HomePage = ({ onProductClick }) => {
             </div>
 
             <div className="space-y-1">
-              <p className="text-gray-900 text-sm font-semibold">Carriall</p>
+              <p className="text-gray-900 text-sm font-semibold">Muun Home Decor</p>
               <p className="text-gray-400 text-sm">Premium bags for every journey</p>
               <p className="text-gray-800 text-sm">Thoughtfully crafted designs for every look.</p>
               <p className="text-gray-800 text-sm">Handmade in India · Trusted quality</p>
@@ -833,7 +821,7 @@ const HomePage = ({ onProductClick }) => {
                   className="font-medium"
                   style={{ color: '#DB2A20' }}
                 >
-                  #Carriall
+                  #MuunHomeDecor
                 </a>
               </p>
               <a
@@ -843,7 +831,7 @@ const HomePage = ({ onProductClick }) => {
                 className="text-sm font-medium"
                 style={{ color: '#DB2A20' }}
               >
-                carriall.com
+                muunhomedecor
               </a>
             </div>
           </div>
@@ -859,7 +847,7 @@ const HomePage = ({ onProductClick }) => {
                   <div className="w-20 h-20 rounded-full overflow-hidden">
                     <img
                       src={brandInstagramProfile}
-                      alt="Carriall on Instagram"
+                      alt="Muun Home Decor on Instagram"
                       className="w-full h-full object-cover"
                       loading="lazy"
                     />
@@ -872,7 +860,7 @@ const HomePage = ({ onProductClick }) => {
                   <p className="text-gray-400 text-xs">posts</p>
                 </div>
                 <div className="text-center">
-                  <p className="font-semibold text-gray-900 text-base">18K</p>
+                  <p className="font-semibold text-gray-900 text-base">42K</p>
                   <p className="text-gray-400 text-xs">followers</p>
                 </div>
                 <div className="text-center">
@@ -883,7 +871,7 @@ const HomePage = ({ onProductClick }) => {
             </div>
 
             <div className="space-y-0.5">
-              <p className="text-gray-900 text-sm font-semibold">Carriall</p>
+              <p className="text-gray-900 text-sm font-semibold">Muun Home Decor</p>
               <p className="text-gray-400 text-xs">Premium bags for every journey</p>
               <p className="text-gray-800 text-sm">Thoughtfully crafted designs for every look.</p>
               <p className="text-gray-800 text-sm">Handmade in India · Trusted quality</p>
@@ -896,7 +884,7 @@ const HomePage = ({ onProductClick }) => {
                   className="font-medium"
                   style={{ color: '#DB2A20' }}
                 >
-                  #Carriall
+                  #MuunHomeDecor
                 </a>
               </p>
               <a
@@ -906,7 +894,7 @@ const HomePage = ({ onProductClick }) => {
                 className="text-sm font-medium"
                 style={{ color: '#DB2A20' }}
               >
-                carriall.com
+                muunhomedecor
               </a>
             </div>
 
@@ -982,8 +970,6 @@ const HomePage = ({ onProductClick }) => {
           </div>
         </div>
       </section>
-
-      <BrandTestimonialsPdp items={brandTestimonialItems} accent={BRAND_TESTIMONIAL_ACCENT} />
 
       {/* Video Modal */}
       {selectedVideo && (
@@ -1061,7 +1047,7 @@ const HomePage = ({ onProductClick }) => {
                       <div className="flex-1 min-w-0">
                         <p className="text-white text-xs font-medium line-clamp-1">{p.title}</p>
                         <p className="text-yellow-300 text-sm font-bold">₹{p.currentPrice?.toLocaleString('en-IN')}</p>
-                        <button className="mt-1 px-3 py-0.5 rounded text-xs font-bold text-white bg-[#003764]">
+                        <button className="mt-1 px-3 py-0.5 rounded text-xs font-bold text-white bg-[#B99B7B]">
                           Add
                         </button>
                       </div>
@@ -1092,7 +1078,7 @@ const HomePage = ({ onProductClick }) => {
                       <p className="text-white text-sm font-bold">₹{p.currentPrice?.toLocaleString('en-IN')}</p>
                       <button
                         onClick={(e) => { e.stopPropagation(); }}
-                        className="mt-1.5 px-3 py-1 rounded text-xs font-bold text-white bg-[#003764] hover:opacity-90 transition-opacity"
+                        className="mt-1.5 px-3 py-1 rounded text-xs font-bold text-white bg-[#B99B7B] hover:opacity-90 transition-opacity"
                       >
                         Add to Cart
                       </button>
@@ -1224,7 +1210,7 @@ const HomePage = ({ onProductClick }) => {
                   <img src={selectedLookVideo.image} alt="" className="w-full h-full object-cover" />
                 </div>
                 <div>
-                  <p className="text-white text-sm font-semibold leading-none">Carriall</p>
+                  <p className="text-white text-sm font-semibold leading-none">Muun Home Decor</p>
                   <p className="text-white/70 text-xs mt-0.5">{selectedLookVideo.views} views</p>
                 </div>
               </div>
@@ -1283,7 +1269,7 @@ const HomePage = ({ onProductClick }) => {
 
               {/* Share */}
               <button
-                onClick={() => navigator.share ? navigator.share({ title: selectedLookVideo.title, text: `Check out ${selectedLookVideo.title} from Carriall`, url: window.location.href }) : navigator.clipboard?.writeText(window.location.href)}
+                onClick={() => navigator.share ? navigator.share({ title: selectedLookVideo.title, text: `Check out ${selectedLookVideo.title} from Muun Home Decor`, url: window.location.href }) : navigator.clipboard?.writeText(window.location.href)}
                 className="flex flex-col items-center gap-1"
               >
                 <div className="w-11 h-11 rounded-full bg-black/40 flex items-center justify-center">
@@ -1317,7 +1303,7 @@ const HomePage = ({ onProductClick }) => {
                 <button
                   onClick={(e) => e.stopPropagation()}
                   className="flex-1 py-3 rounded-none text-sm font-bold text-white"
-                  style={{ background: '#003764' }}
+                  style={{ background: '#B99B7B' }}
                 >
                   Add to Cart
                 </button>

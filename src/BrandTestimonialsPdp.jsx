@@ -65,8 +65,8 @@ function getMosaicSpan(i) {
 export default function BrandTestimonialsPdp({
   items = [],
   title = 'Brand love',
-  subtitle = 'Real photos, real words — from Carriall customers across India',
-  accent = '#003764',
+  subtitle = 'Real photos, real words — from Muun Home Decor customers across India',
+  accent = '#B99B7B',
 }) {
   const [visibleCount, setVisibleCount] = useState(() => Math.min(INITIAL_COUNT, items.length));
 

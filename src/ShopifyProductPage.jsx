@@ -17,8 +17,8 @@ import brandLogo from './assets/brand.png';
 import { SCRAPSHALA_SHOP_VIDEOS, PDP_DRAGGABLE_VIDEO } from './scrapshalaShopVideos';
 import {
   bestSellerProducts,
-  AJNAA_PRODUCT_IMAGES,
-  LE108_PDP_GALLERY_IMAGES,
+  MUUN_HOME_PRODUCT_IMAGES,
+  MUUN_HOME_GALLERY_IMAGES,
 } from './scrapshalaBestSellers';
 
 import reviewData from '../review.json';
@@ -46,27 +46,27 @@ function formatSoldLabel(n) {
 
 
 // Brand Name
-const BRAND_NAME = "Carriall";
-const AJNAA_INSTAGRAM_URL = 'https://www.instagram.com/thecarriallco/?hl=en';
-const AJNAA_INSTAGRAM_FOLLOWERS_LABEL = '18K';
+const BRAND_NAME = "Muun Home Decor";
+const AJNAA_INSTAGRAM_URL = 'https://www.instagram.com/muunhomedecor/';
+const AJNAA_INSTAGRAM_FOLLOWERS_LABEL = '42K';
 
-/** Reviews UI — Carriall teal accent */
-const REVIEW_ACCENT = '#3a8c7e';
-const REVIEW_RING_TRACK = '#d1ece9';
-const REVIEW_SOFT = 'rgba(58, 140, 126, 0.09)';
-const REVIEW_ACCENT_BORDER = 'rgba(58, 140, 126, 0.25)';
+/** Reviews UI — warm neutrals from former section gradient (replacing teal bars) */
+const REVIEW_ACCENT = '#B89B7B';
+const REVIEW_RING_TRACK = '#e5ddd4';
+const REVIEW_SOFT = 'rgba(184, 155, 123, 0.14)';
+const REVIEW_ACCENT_BORDER = 'rgba(184, 155, 123, 0.35)';
 
 // Product Video — draggable floating card
 const PRODUCT_VIDEO = PDP_DRAGGABLE_VIDEO;
 
 // Product Details
-const PRODUCT_NAME = "Ireen";
+const PRODUCT_NAME = "Maya Tables - Vintage Glass";
 const PRODUCT_PRICE = 5499;
 const PRODUCT_ORIGINAL_PRICE = 9199;
 const PRODUCT_DISCOUNT = 40;
 const PRODUCT_SKU = "CA-IREEN-BEI-001";
-const PRODUCT_DESCRIPTION = "Introducing Ireen – where vintage elegance meets modern purpose. Designed with a clean, structured silhouette and a soft textured finish, Ireen carries a quiet sophistication that never tries too hard but always stands out. Her main zippered compartment opens to a well-organised interior featuring one slip pocket and one zip pocket, offering space for everything you need to keep close seamlessly arranged. Ireen offers two stylish carrying modes with both structured top handles and a detachable shoulder strap, allowing you to switch effortlessly between a classic handheld look and hands-free ease. From weekday commutes to bookstore strolls and Sunday brunches, Ireen goes everywhere and elevates everything. Always grounded. Always graceful. Always a little iconic.";
-const PRODUCT_BRAND = "Carriall";
+const PRODUCT_DESCRIPTION = "The Maya Tables are a study in organic tension and nostalgia. Designed as anchor pieces for a room, the sculptural wooden base pairs with a soft, fluid smoked-glass top that catches and reflects light beautifully. Their low, airy profile keeps the layout open while adding warmth, craft, and character to everyday spaces.";
+const PRODUCT_BRAND = "Muun Home Decor";
 const PRODUCT_COLORS = [];
 const PRODUCT_SIZES = [];
 /** Social proof — shown next to rating & reviews on the buy box */
@@ -88,24 +88,24 @@ const RELATED_PRODUCTS = bestSellerProducts.slice(0, 4).map((p) => ({
 const PDP_REEL_LABELS = [
   'Style on the go',
   'Travel essentials',
-  'Structured handbags',
+  'Styled interiors',
   'Customer favourites',
   'Lightweight carry',
   'Real customer stories',
   'Work & weekend',
   'Premium quality',
-  'Gift-ready bags',
-  'Shop Carriall',
+  'Gift-ready decor',
+  'Shop Muun Home Decor',
   'Made for India',
 ];
 
 /** Short keyword chips under rating / reviews on the buy box */
-const PDP_KEYWORD_TAGS = ['Perfect gifting', 'Structured silhouette', 'Trusted quality', 'Everyday carry'];
+const PDP_KEYWORD_TAGS = ['Organic tension', 'Sculptural base', 'Smoked glass top', 'Everyday living'];
 
-const PDP_BREADCRUMB_MID = 'Handbags';
+const PDP_BREADCRUMB_MID = 'Home Decor';
 const PDP_GIFT_PROMO = 'Free dust bag & gift wrapping with every order';
 const PDP_COUPON_CODE = 'CARRY10';
-const PDP_COUPON_COPY = 'Get an extra 10% off on all bags — use code CARRY10';
+const PDP_COUPON_COPY = 'Get an extra 10% off on decor picks — use code CARRY10';
 
 /** Trust row below CTAs */
 const PDP_TRUST_FEATURES = [
@@ -152,12 +152,12 @@ const dummyReviews = [
   { name: 'Priya Sharma', rating: 5, title: 'Perfect everyday bag', text: 'Ireen holds its shape all day. Interior pockets are well-placed. Strap is comfortable for long carries.', date: '1/20/2025', type: 'product' },
   { name: 'Anjali Mehta', rating: 5, title: 'Quality is real', text: 'Stitching is clean, zipper smooth, fabric spotless after weeks of use. Looks far more expensive than it is.', date: '1/18/2025', type: 'product' },
   { name: 'Riya Patel', rating: 4, title: 'Gift for sister', text: 'Bought the Ireen as a birthday gift — she was genuinely impressed. 4 stars only because delivery took an extra day.', date: '1/15/2025', type: 'product' },
-  { name: 'Kavya Reddy', rating: 5, title: 'Exactly like the photos', text: 'Beige colour is identical to the website. No surprises at all. Carriall delivers what they show.', date: '1/12/2025', type: 'product' },
+  { name: 'Kavya Reddy', rating: 5, title: 'Exactly like the photos', text: 'Beige colour is identical to the website. No surprises at all. Muun Home Decor delivers what they show.', date: '1/12/2025', type: 'product' },
   { name: 'Meera Singh', rating: 5, title: 'Office to evening', text: 'Carries my laptop, charger, and essentials without looking overstuffed. Gets compliments every week.', date: '1/10/2025', type: 'product' },
   { name: 'Sneha Verma', rating: 5, title: 'Great packaging', text: 'Came with a dust bag and proper wrapping. No dents or marks on the bag. Thoughtful unboxing experience.', date: '1/08/2025', type: 'product' },
   { name: 'Divya Nair', rating: 4, title: 'Very clean finish', text: 'Hardware is solid and not flimsy. Handles feel premium. One tiny loose thread but the bag itself is excellent.', date: '1/05/2025', type: 'product' },
   { name: 'Pooja Mehta', rating: 5, title: 'Mum approved', text: 'Bought the Wander Tote for mum — she uses it daily. Says straps are comfortable and the bag is light.', date: '1/03/2025', type: 'product' },
-  { name: 'Neha Kapoor', rating: 5, title: 'Second Carriall', text: 'First was the City Crossbody. This time the Ireen — same great quality and consistent finish.', date: '12/30/2024', type: 'product' },
+  { name: 'Neha Kapoor', rating: 5, title: 'Second purchase', text: 'First was the City Crossbody. This time the Ireen — same great quality and consistent finish.', date: '12/30/2024', type: 'product' },
   { name: 'Aarti Desai', rating: 5, title: 'Photographs beautifully', text: 'Used Ireen for a shoot — structured shape shows up great on camera. Team asked about the brand.', date: '12/28/2024', type: 'product' },
 ];
 
@@ -165,7 +165,7 @@ const MARKETPLACE_BADGES = [
   {
     label: 'Amazon',
     rating: '4.5/5',
-    count: '10K+',
+    count: '980+',
     logo: (
       <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" style={{ height: 14, width: 'auto', flexShrink: 0 }} />
     ),
@@ -173,7 +173,7 @@ const MARKETPLACE_BADGES = [
   {
     label: 'Flipkart',
     rating: '4.1/5',
-    count: '4.3K',
+    count: '860+',
     logo: (
       <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/flipkart-icon.png" alt="Flipkart" style={{ height: 16, width: 'auto', flexShrink: 0 }} />
     ),
@@ -181,7 +181,7 @@ const MARKETPLACE_BADGES = [
   {
     label: 'Myntra',
     rating: '4.3/5',
-    count: '2.1K',
+    count: '740+',
     logo: (
       <img src="https://static.vecteezy.com/system/resources/previews/067/941/729/non_2x/myntra-logo-myntra-icon-transparent-background-free-png.png" alt="Myntra" style={{ height: 22, width: 'auto', flexShrink: 0 }} />
     ),
@@ -281,10 +281,10 @@ function SocialProofTicker() {
         style={{
           transition: 'opacity 350ms ease',
           opacity: visible ? 1 : 0,
-          color: '#003764',
+          color: '#B99B7B',
         }}
       >
-        <span style={{ color: '#003764' }}>{icon}</span>
+        <span style={{ color: '#B99B7B' }}>{icon}</span>
         {text(nums[idx])}
       </span>
     </div>
@@ -327,8 +327,8 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
   const productImages = passedProduct?.galleryImages?.length
     ? passedProduct.galleryImages
     : passedProduct?.image
-      ? [passedProduct.image, ...AJNAA_PRODUCT_IMAGES.filter((u) => u !== passedProduct.image)]
-      : LE108_PDP_GALLERY_IMAGES;
+      ? [passedProduct.image, ...MUUN_HOME_PRODUCT_IMAGES.filter((u) => u !== passedProduct.image)]
+      : MUUN_HOME_GALLERY_IMAGES;
   const productRating  = passedProduct?.rating        ?? 4.8;
   const productReviews = passedProduct?.reviewCount   ?? PRODUCT_REVIEW_COUNT;
   const productSoldCount =
@@ -740,7 +740,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
         </div>
       )}
       
-      <main className="flex-1 py-6 md:py-10" style={{ backgroundColor: '#EFEFEF' }}>
+      <main className="flex-1 bg-white py-6 md:py-10">
         <div className="mx-auto w-full max-w-6xl px-4 md:px-8">
 
           {/* Breadcrumb — reference-style trail */}
@@ -881,10 +881,17 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                 </div>
 
                 {/* Keyword chips */}
-                <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1">
+                <div className="mt-4 flex flex-wrap items-center gap-x-2.5 gap-y-2">
                   {PDP_KEYWORD_TAGS.map((tag) => (
-                    <span key={tag} className="flex items-center gap-1 text-xs text-gray-600">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#003764" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                    <span
+                      key={tag}
+                      className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium text-stone-700"
+                      style={{
+                        borderColor: 'rgba(185, 155, 123, 0.35)',
+                        background: 'linear-gradient(135deg, rgba(185, 155, 123, 0.18), rgba(255, 255, 255, 0.9))',
+                      }}
+                    >
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#B99B7B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                         <path d="M20 6L9 17L4 12" />
                       </svg>
                       {tag}
@@ -896,11 +903,18 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
               <div className="border-t border-gray-300 mb-6" />
 
               {/* Description */}
-              <p className="mb-6 text-sm leading-relaxed text-gray-700" style={{ lineHeight: '1.85' }}>
-                {passedProduct?.feature
-                  ? `${passedProduct.feature}. ${PRODUCT_DESCRIPTION}`
-                  : PRODUCT_DESCRIPTION}
-              </p>
+              <div className="mb-6 text-sm leading-relaxed text-gray-700" style={{ lineHeight: '1.85' }}>
+                <p className="mb-3">
+                  {passedProduct?.feature
+                    ? `${passedProduct.feature}. ${PRODUCT_DESCRIPTION}`
+                    : PRODUCT_DESCRIPTION}
+                </p>
+                <ul className="list-disc space-y-1.5 pl-5 text-[13px] text-gray-700">
+                  <li><span className="font-semibold">Design Philosophy:</span> A blend of mid-century influences and modern softness.</li>
+                  <li><span className="font-semibold">Brown Tinted Glass:</span> A translucent finish that plays with light and shadow.</li>
+                  <li><span className="font-semibold">Solid Wood Base:</span> Sculptural legs crafted to feel grounded yet light.</li>
+                </ul>
+              </div>
 
               <div className="border-t border-gray-300 mb-6" />
 
@@ -925,7 +939,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                     +
                   </button>
                 </div>
-                <img src={brandLogo} alt="Carriall" className="h-12 mx-4 w-auto md:w-[53%]" />
+                <img src={brandLogo} alt="Muun Home Decor" className="h-12 mx-4 w-auto md:w-[53%]" />
               </div>
 
               {/* CTA buttons */}
@@ -940,7 +954,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                 <button
                   type="button"
                   className="flex h-12 w-full items-center justify-center text-sm font-semibold tracking-widest text-white transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: '#3a8c7e', letterSpacing: '0.12em' }}
+                  style={{ backgroundColor: '#B99B7B', letterSpacing: '0.12em' }}
                 >
                   BUY NOW
                 </button>
@@ -982,7 +996,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
         const idx = wildVideoIdx;
         const canWildPrev = idx != null && idx > 0;
         const canWildNext = idx != null && idx < n - 1;
-        const thumbImg = idx != null ? AJNAA_PRODUCT_IMAGES[idx % AJNAA_PRODUCT_IMAGES.length] : AJNAA_PRODUCT_IMAGES[0];
+        const thumbImg = idx != null ? MUUN_HOME_PRODUCT_IMAGES[idx % MUUN_HOME_PRODUCT_IMAGES.length] : MUUN_HOME_PRODUCT_IMAGES[0];
         const reelLabel = idx != null ? PDP_REEL_LABELS[idx % PDP_REEL_LABELS.length] : '';
 
         return (
@@ -992,14 +1006,14 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                 <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
                   <div>
                     <h2 className="text-base sm:text-lg font-semibold text-gray-900 tracking-tight">
-                      See Carriall in action
+                      See Muun Home Decor in action
                     </h2>
                   </div>
                   <a
-                    href="https://www.instagram.com/thecarriallco/?hl=en"
+                    href={AJNAA_INSTAGRAM_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-none shrink-0 bg-white text-gray-800 border border-gray-200 shadow-sm hover:bg-white hover:border-[#003764]/40 transition-colors"
+                    className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-none shrink-0 bg-white text-gray-800 border border-gray-200 shadow-sm hover:bg-white hover:border-[#B99B7B]/40 transition-colors"
                     style={{ textDecoration: 'none' }}
                   >
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -1007,7 +1021,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       <circle cx="12" cy="12" r="4.5" stroke="currentColor" strokeWidth="1.8"/>
                       <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
                     </svg>
-                    @carriall
+                    @muunhomedecor
                   </a>
                 </div>
                 <div className="overflow-x-auto pb-2 scrollbar-hide" style={{ scrollbarWidth: 'none' }}>
@@ -1016,7 +1030,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       <button
                         key={idx}
                         type="button"
-                        className="focus:outline-none focus-visible:ring-2 focus-visible:ring-[#003764] focus-visible:ring-offset-2 rounded-none flex flex-col items-center"
+                        className="focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B99B7B] focus-visible:ring-offset-2 rounded-none flex flex-col items-center"
                         onClick={() => {
                           setPdpWildMuted(false);
                           setWildVideoIdx(idx);
@@ -1071,7 +1085,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                   onClick={(e) => e.stopPropagation()}
                   role="dialog"
                   aria-modal="true"
-                  aria-label="Carriall reels"
+                  aria-label="Muun Home Decor reels"
                 >
                   {/* Desktop: previous preview */}
                   <div className="hidden w-[148px] shrink-0 flex-col md:flex">
@@ -1145,7 +1159,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                           <img src={thumbImg} alt="" className="w-full h-full object-cover" />
                         </div>
                         <div className="min-w-0">
-                          <p className="text-white text-sm font-semibold leading-none truncate">Carriall</p>
+                          <p className="text-white text-sm font-semibold leading-none truncate">Muun Home Decor</p>
                           <p className="text-white/75 text-xs mt-0.5 truncate">
                             Reel {idx + 1} of {n}
                           </p>
@@ -1217,7 +1231,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                         type="button"
                         onClick={() =>
                           navigator.share
-                            ? navigator.share({ title: 'Carriall', text: reelLabel, url: window.location.href })
+                            ? navigator.share({ title: 'Muun Home Decor', text: reelLabel, url: window.location.href })
                             : navigator.clipboard?.writeText(window.location.href)
                         }
                         className="flex flex-col items-center gap-1"
@@ -1239,13 +1253,13 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                     >
                       <p className="text-white text-sm font-medium mb-2 line-clamp-2">{reelLabel}</p>
                       <a
-                        href="https://www.instagram.com/thecarriallco/?hl=en"
+                        href={AJNAA_INSTAGRAM_URL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex w-full items-center justify-center py-3 rounded-none text-sm font-bold text-white bg-[#003764] hover:opacity-95 transition-opacity"
+                        className="inline-flex w-full items-center justify-center py-3 rounded-none text-sm font-bold text-white bg-[#B99B7B] hover:opacity-95 transition-opacity"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        Follow @carriall
+                        Follow @muunhomedecor
                       </a>
                     </div>
                   </div>
@@ -1285,7 +1299,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
       <section className="w-full py-12 md:py-16 bg-white border-t border-gray-100">
         <div className="mx-auto w-full max-w-7xl px-4">
           <div className="text-center mb-8 md:mb-10">
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-normal text-[#003764] tracking-wide">
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-normal text-[#B99B7B] tracking-wide">
               SHOP OUR BEST SELLERS
             </h2>
           </div>
@@ -1305,7 +1319,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
       </section>
 
       {/* Reviews Section - premium layout, full content */}
-      <div id="reviews-section" className="w-full border-t border-stone-200/70 bg-gradient-to-b from-stone-50/80 via-white to-white py-14 md:py-20">
+      <div id="reviews-section" className="w-full border-t border-stone-200/70 bg-white py-14 md:py-20">
         <div className="mx-auto w-full max-w-7xl px-4 md:px-6">
           <div className="mb-11 md:mb-14 text-center">
             <h2 className="font-serif text-3xl font-medium tracking-tight text-stone-900 md:text-4xl">Customer Reviews</h2>
@@ -1322,7 +1336,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       className="relative mx-auto mb-4 flex h-[7.25rem] w-[7.25rem] items-center justify-center rounded-full"
                       style={{
                         background: `conic-gradient(${REVIEW_ACCENT} 0% 96%, ${REVIEW_RING_TRACK} 96% 100%)`,
-                        boxShadow: '0 10px 28px rgba(219, 42, 32, 0.22)',
+                        boxShadow: '0 10px 28px rgba(125, 95, 70, 0.18)',
                       }}
                     >
                       <div className="absolute inset-1.5 flex items-center justify-center rounded-full bg-white">
@@ -1441,8 +1455,8 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       href={AJNAA_INSTAGRAM_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label="Open @carriall on Instagram"
-                      className="flex items-center gap-3.5 rounded-none border border-stone-200/70 bg-white px-3.5 py-3 transition-colors hover:bg-stone-50/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#003764]/35 focus-visible:ring-offset-2"
+                      aria-label="Open @muunhomedecor on Instagram"
+                      className="flex items-center gap-3.5 rounded-none border border-stone-200/70 bg-white px-3.5 py-3 transition-colors hover:bg-stone-50/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B99B7B]/35 focus-visible:ring-offset-2"
                       style={{ textDecoration: 'none' }}
                     >
                       <span className="flex h-9 w-9 shrink-0 items-center justify-center" aria-hidden>
@@ -1470,7 +1484,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       </span>
                       <div className="min-w-0 flex-1 text-left">
                         <div className="flex flex-col gap-1.5">
-                          <p className="text-[13px] font-semibold leading-snug text-stone-900">@carriall</p>
+                          <p className="text-[13px] font-semibold leading-snug text-stone-900">@muunhomedecor</p>
                           <p className="text-[11px] leading-snug text-stone-600">
                             <span className="font-semibold tabular-nums text-stone-800">{AJNAA_INSTAGRAM_FOLLOWERS_LABEL}</span>
                             {' '}
@@ -1499,12 +1513,12 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
 
                 <div className="px-6 pb-2 pt-5">
                   <h4 className="mb-3 font-serif text-xl font-normal tracking-tight text-stone-900 md:text-[1.35rem]">
-                    What bag lovers are saying
+                    What home decor lovers are saying
                   </h4>
                   <p className="text-[15px] leading-[1.65] text-stone-600">
                     {isAISummaryExpanded ? (
                       <>
-                        Shoppers praise Carriall for bags that hold their structure all day, with clean stitching, smooth zippers, and interiors that actually stay organised. Reviews often mention the Ireen handbag, Meta Luggage, and Meal Bag — noting premium materials, thoughtful compartments, and packaging that feels gift-ready. Many come back for a second bag or buy for friends and family.{' '}
+                        Shoppers praise Muun Home Decor for pieces that hold their shape beautifully, with clean finishes and details that feel thoughtfully made. Reviews often mention favorite textures and finishes — noting premium materials and styling details that look great every day. Many come back for a second piece or buy for friends and family.{' '}
                         <button
                           type="button"
                           onClick={() => setIsAISummaryExpanded(false)}
@@ -1515,7 +1529,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       </>
                     ) : (
                       <>
-                        Buyers love Carriall bags for their structured quality, clean hardware, and carry comfort — whether for daily commutes, travel, or gifting.{' '}
+                        Buyers love Muun Home Decor pieces for their crafted quality, refined finishes, and everyday charm — whether for daily living, hosting, or gifting.{' '}
                         <button
                           type="button"
                           onClick={() => setIsAISummaryExpanded(true)}
@@ -1530,7 +1544,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
 
                 <div className="px-6 pb-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-[12px] leading-relaxed text-stone-500">
                   {[
-                    'Structured handbags',
+                    'Crafted home decor',
                     'Premium quality',
                     'Gift-ready',
                   ].map((kw, i) => (
@@ -1545,24 +1559,31 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                   ))}
                 </div>
 
-                <div className="flex border-t border-stone-200/50">
-                  {[
-                    ['product', 'Product reviews'],
-                    ['brand', 'Brand reviews'],
-                  ].map(([id, label]) => (
-                    <button
-                      key={id}
-                      type="button"
-                      onClick={() => setActiveTab(id)}
-                      className={`flex-1 py-3.5 text-center text-[13px] font-medium transition-colors ${
-                        activeTab === id
-                          ? 'border-b-2 border-stone-900 text-stone-900'
-                          : 'border-b-2 border-transparent text-stone-500 hover:text-stone-700'
-                      }`}
-                    >
-                      {label}
-                    </button>
-                  ))}
+                <div className="border-t border-stone-200/50 px-4 pb-5 pt-4 sm:px-6">
+                  <div className="flex gap-3" role="tablist" aria-label="Review category">
+                    {[
+                      ['product', 'Product reviews'],
+                      ['brand', 'Brand reviews'],
+                    ].map(([id, label]) => {
+                      const selected = activeTab === id;
+                      return (
+                        <button
+                          key={id}
+                          type="button"
+                          role="tab"
+                          aria-selected={selected}
+                          onClick={() => setActiveTab(id)}
+                          className={`flex-1 rounded-xl border bg-white py-3.5 text-center text-[13px] font-semibold transition-all ${
+                            selected
+                              ? 'border-stone-900 text-stone-900 shadow-[0_1px_3px_rgba(0,0,0,0.08)]'
+                              : 'border-stone-200/90 text-stone-500 hover:border-stone-300 hover:text-stone-800'
+                          }`}
+                        >
+                          {label}
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
 
@@ -1700,7 +1721,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                                 })}
                               </div>
                               <span className="truncate text-xs font-semibold text-stone-900">{review.name}</span>
-                              <svg className="h-3 w-3 shrink-0 text-[#003764]" fill="currentColor" viewBox="0 0 20 20">
+                              <svg className="h-3 w-3 shrink-0 text-[#B99B7B]" fill="currentColor" viewBox="0 0 20 20">
                                 <path
                                   fillRule="evenodd"
                                   d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -1957,7 +1978,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
       <section className="w-full py-12 md:py-16 bg-white">
         <div className="mx-auto w-full max-w-7xl px-4">
           <div className="text-center mb-8 md:mb-12">
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-normal text-[#003764] mb-3 tracking-wide">
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-normal text-[#B99B7B] mb-3 tracking-wide">
               Best Sellers
             </h2>
           </div>
@@ -1977,7 +1998,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
       </section>
 
       {/* Photo Gallery */}
-      <PhotoGallery title="More from Carriall" subtitle="Bags crafted for life on the move" />
+      <PhotoGallery title="More from Muun Home Decor" subtitle="Curated pieces crafted for warm, modern spaces" />
 
       <ShopifyFooter brandName={BRAND_NAME} />
       
@@ -2056,7 +2077,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
         >
           {/* Modal Content Container - Myntra Style Side-by-Side for Desktop */}
           <div 
-            className="relative w-full max-w-6xl h-[90vh] bg-white rounded-none overflow-hidden flex flex-col md:flex-row shadow-2xl"
+          className="relative w-full max-w-5xl h-[75vh] bg-white rounded-none overflow-hidden flex flex-col md:flex-row shadow-2xl"
             onClick={(e) => e.stopPropagation()}
         >
           {/* Close Button */}
@@ -2070,8 +2091,8 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
             </svg>
           </button>
 
-            {/* Left Side - Image Section */}
-            <div className="relative w-full md:w-1/2 bg-gray-100 flex items-center justify-center p-4 md:p-8">
+            {/* Left Side - Image Section (reduced info: image-only modal) */}
+            <div className="relative w-full md:w-full bg-gray-100 flex items-center justify-center p-3 md:p-6">
               {/* Previous Button - Mobile only */}
           <button
             onClick={(e) => {
@@ -2113,132 +2134,9 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
             </div>
           </div>
             
-            {/* Right Side - Review Details Section (Desktop) */}
-            {selectedReview && (
-              <div className="hidden md:flex w-full md:w-1/2 bg-white overflow-y-auto flex-col">
-                <div className="p-6 md:p-8">
-                  {/* Header with Name and Date */}
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center gap-2">
-                      <span className="font-semibold text-gray-900 text-lg md:text-xl">{selectedReview.name}</span>
-                      <svg className="w-5 h-5 text-[#003764] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-        </div>
-                    <div className="text-right">
-                      <div className="text-sm text-gray-500">{getDaysAgo(selectedReview.date)}</div>
-                    </div>
-                  </div>
-                  
-                  {/* Star Rating */}
-                  <div className="flex items-center gap-1 mb-3">
-                    {[...Array(5)].map((_, i) => (
-                      <svg
-                        key={i}
-                        className="w-5 h-5"
-                        style={{ fill: i < selectedReview.rating ? '#003764' : '#d1d5db' }}
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
-                  </div>
-                  
-                  {/* Review Title */}
-                  {selectedReview.title && (
-                    <h3 className="font-semibold text-gray-900 mb-3 text-lg md:text-xl">{selectedReview.title}</h3>
-                  )}
-                  
-                  {/* Review Text */}
-                  <p className="text-gray-700 text-sm md:text-base leading-relaxed mb-4">{selectedReview.text}</p>
-                  
-                  {/* Review Type Badge */}
-                  <div className="mt-4">
-                    <span className="inline-block px-3 py-1.5 text-xs font-medium rounded-none" style={{ backgroundColor: 'rgba(0, 55, 100, 0.1)', color: '#003764' }}>
-                      {selectedReview.type === 'product' ? 'Product Review' : 'Brand Review'}
-                    </span>
-                  </div>
+            {/* Right side removed (less info request) */}
 
-                  {/* Navigation Buttons for Desktop - Bottom */}
-                  <div className="mt-6 flex items-center justify-between pt-4 border-t border-gray-200">
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handlePrevious();
-                      }}
-                      className="flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors px-4 py-2 rounded-none hover:bg-gray-50"
-                      aria-label="Previous image"
-                    >
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                      </svg>
-                      <span className="text-sm font-medium">Previous</span>
-                    </button>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleNext();
-                      }}
-                      className="flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors px-4 py-2 rounded-none hover:bg-gray-50"
-                      aria-label="Next image"
-                    >
-                      <span className="text-sm font-medium">Next</span>
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* Mobile: Review Details Below Image */}
-            {selectedReview && (
-              <div className="md:hidden w-full bg-white p-4 border-t border-gray-200 overflow-y-auto max-h-[40vh]">
-                <div className="flex items-start justify-between mb-3">
-                  <div className="flex items-center gap-2">
-                    <span className="font-semibold text-gray-900 text-base">{selectedReview.name}</span>
-                    <svg className="w-4 h-4 text-[#003764]" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-xs text-gray-500">{getDaysAgo(selectedReview.date)}</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-1 mb-2">
-                  <svg width="0" height="0" style={{ position: 'absolute' }}>
-                    <defs>
-                      <linearGradient id="mobileModalStarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#003764" />
-                        <stop offset="50%" stopColor="#E85C54" />
-                        <stop offset="100%" stopColor="#F28B86" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                  {[...Array(5)].map((_, i) => (
-                    <svg 
-                      key={i}
-                      className="w-4 h-4"
-                      style={i < selectedReview.rating ? { 
-                        fill: 'url(#mobileModalStarGradient)',
-                        filter: 'drop-shadow(0 1px 2px rgba(53, 31, 49, 0.3))'
-                      } : { fill: '#d1d5db' }}
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                {selectedReview.title && (
-                  <h3 className="font-medium text-gray-900 mb-2 text-base">{selectedReview.title}</h3>
-                )}
-                <p className="text-gray-700 text-sm leading-relaxed mb-2">{selectedReview.text}</p>
-                <span className="inline-block px-3 py-1 text-xs font-medium rounded-none" style={{ backgroundColor: 'rgba(0, 55, 100, 0.1)', color: '#003764' }}>
-                  {selectedReview.type === 'product' ? 'Product Review' : 'Brand Review'}
-                </span>
-              </div>
-            )}
+            {/* Mobile review details removed (less info request) */}
           </div>
         </div>
       )}

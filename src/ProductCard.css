@@ -1,174 +1,66 @@
-/* Ajnaa Jewels product card — portrait 300×458 imagery */
+/* Muun Home product card — clean minimalist styling */
 
 .pc-card {
   display: flex;
   flex-direction: column;
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  overflow: hidden;
+  background: #ffffff;
+  cursor: pointer;
   height: 100%;
+  transition: opacity 0.2s ease;
+}
+
+.pc-card:hover {
+  opacity: 0.8;
 }
 
 /* ── Image area ── */
 .pc-img-wrap {
   position: relative;
-  display: block;
-  background: #f7f7f7;
+  width: 100%;
+  aspect-ratio: 1;
+  background: #ffffff;
   overflow: hidden;
-}
-
-.pc-img-link {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  position: relative;
+  margin-bottom: 16px;
 }
 
 .pc-img {
   width: 100%;
-  aspect-ratio: 300 / 458;
+  height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center;
   display: block;
-  transition: transform 0.35s ease;
-}
-
-.pc-card:hover .pc-img {
-  transform: scale(1.03);
-}
-
-/* Wishlist — top-right on image */
-.pc-wishlist {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 5;
-  width: 34px;
-  height: 34px;
-  border-radius: 9999px;
-  border: none;
-  background: rgba(255, 255, 255, 0.95);
-  color: #1a1a1a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
-  transition: transform 0.15s ease, background 0.15s ease;
-}
-
-.pc-wishlist:hover {
-  transform: scale(1.06);
-  background: #fff;
-}
-
-/* Sale badge */
-.pc-badge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 3;
-  background: #db2a20;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  padding: 3px 9px;
-  border-radius: 2px;
-  pointer-events: none;
-  text-transform: capitalize;
-}
-
-/* CTA button row — sits at bottom of image */
-.pc-cta-row {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 4;
-  display: flex;
-  gap: 0;
-  /* Always visible on mobile */
-}
-
-/* On desktop, hide until hover */
-@media (min-width: 769px) {
-  .pc-cta-row {
-    opacity: 0;
-    transform: translateY(6px);
-    transition: opacity 0.22s ease, transform 0.22s ease;
-  }
-  .pc-cta-row--visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.pc-btn {
-  flex: 1;
-  padding: 11px 6px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  border: none;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: opacity 0.15s ease;
-}
-
-.pc-btn:hover {
-  opacity: 0.88;
-}
-
-.pc-btn--cart {
-  background: #003764;
-  color: #fff;
-}
-
-.pc-btn--quick {
-  background: #1a1a1a;
-  color: #fff;
+  border-radius: 12px;
 }
 
 /* ── Info area ── */
 .pc-info {
-  padding: 10px 12px 14px;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  flex: 1;
-}
-
-.pc-title-link {
-  text-decoration: none;
-  color: inherit;
+  gap: 8px;
+  text-align: left;
 }
 
 .pc-title {
-  font-size: 13px;
-  font-weight: 500;
-  color: #1a1a1a;
-  line-height: 1.4;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+  line-height: 1.3;
   margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-/* ── Stars ── */
-.pc-review-row {
+/* ── Rating and Reviews ── */
+.pc-rating-container {
   display: flex;
   align-items: center;
-  gap: 5px;
-}
-
-.pc-rating-num {
-  font-size: 12px;
-  font-weight: 700;
-  color: #1a1a1a;
+  gap: 6px;
+  margin: 2px 0;
 }
 
 .pc-stars {
@@ -178,50 +70,24 @@
 }
 
 .pc-star {
-  width: 17px;
-  height: 17px;
+  width: 16px;
+  height: 16px;
   fill: #d1d5db;
   stroke: none;
 }
 
-.pc-star--on {
-  fill: #f97316;
-}
-
-.pc-review-label {
+.pc-review-count {
   font-size: 12px;
-  color: #666;
-}
-
-/* ── Price ── */
-.pc-price-row {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.pc-price-current {
-  font-size: 14px;
-  font-weight: 700;
-  color: #1a1a1a;
-}
-
-.pc-price-sale {
-  font-size: 14px;
-  font-weight: 600;
-  color: #1a1a1a;
-}
-
-.pc-price-orig {
-  font-size: 13px;
-  color: #9ca3af;
+  color: #888888;
   font-weight: 400;
-  text-decoration: line-through;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.pc-price-discount {
-  font-size: 13px;
-  font-weight: 600;
-  color: #ea580c;
+.pc-price {
+  font-size: 14px;
+  font-weight: 400;
+  color: #666666;
+  line-height: 1.2;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }

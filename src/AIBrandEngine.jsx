@@ -1,10 +1,10 @@
 import React, { useId, useState } from 'react';
 import './AIBrandEngine.css';
 
-const SHOP_URL = 'https://carriall.com/';
-const INSTAGRAM_URL = 'https://www.instagram.com/carriall/';
+const SHOP_URL = 'https://www.instagram.com/muunhomedecor/';
+const INSTAGRAM_URL = 'https://www.instagram.com/muunhomedecor/';
 
-/** Sparkle mark — Carriall navy accent */
+/** Sparkle mark — Muun Home navy accent */
 function PremiumAIIcon({ gradientId, className, style, size = 40 }) {
   return (
     <svg
@@ -20,9 +20,9 @@ function PremiumAIIcon({ gradientId, className, style, size = 40 }) {
     >
       <defs>
         <linearGradient id={gradientId} x1="12" y1="12" x2="36" y2="36" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#1a5a9e" />
-          <stop offset="0.45" stopColor="#003764" />
-          <stop offset="1" stopColor="#002a4f" />
+          <stop stopColor="#c9aa8f" />
+          <stop offset="0.45" stopColor="#B99B7B" />
+          <stop offset="1" stopColor="#8a7260" />
         </linearGradient>
       </defs>
       <path
@@ -188,7 +188,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
         {
           label: 'Who it is for',
           value: 'Her · them',
-          description: 'Sister, friend, mum, colleague — a Carriall bag is a gift that gets used every single day.',
+          description: 'Sister, friend, mum, colleague — a Muun Home piece is a gift that gets used every single day.',
         },
         {
           label: 'Occasions',
@@ -208,7 +208,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
       ],
     },
     care: {
-      title: 'Care for your Carriall',
+      title: 'Care for your Muun Home bags',
       iconType: 'care',
       content: [
         {
@@ -260,7 +260,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
       ],
     },
     brand: {
-      title: 'Carriall',
+      title: 'Muun Home Decor',
       iconType: 'brand',
       content: [
         {
@@ -270,12 +270,12 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
         },
         {
           label: 'Shop',
-          value: 'carriall.com',
-          description: 'Handbags, luggage, meal bags, totes, and crossbodys — built for real life, priced for India.',
+          value: 'muunhomedecor',
+          description: 'Decor accents, statement pieces, and styling essentials — curated for warm, modern Indian homes.',
         },
         {
           label: 'Community',
-          value: '@carriall · 18K',
+          value: '@muunhomedecor · 42K',
           description: 'Styling reels, real customer stories, and new drops on Instagram.',
         },
       ],
@@ -291,32 +291,32 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
     fit: {
       label: 'Daily carry comfort',
       data: [85, 88, 86, 90, 87, 91, 93],
-      color: '#003764',
+      color: '#B99B7B',
     },
     positive: {
       label: 'Quality satisfaction',
       data: [78, 82, 84, 87, 85, 88, 91],
-      color: '#1a5a9e',
+      color: '#c9aa8f',
     },
     repeat: {
       label: 'Repeat purchases',
       data: [62, 65, 68, 70, 72, 75, 79],
-      color: '#3a8c7e',
+      color: '#a68b70',
     },
     delivery: {
       label: 'Delivery experience',
       data: [86, 88, 89, 91, 90, 92, 94],
-      color: '#002a4f',
+      color: '#8a7260',
     },
     rating: {
       label: 'Avg. rating',
       data: [4.3, 4.4, 4.5, 4.6, 4.6, 4.7, 4.8],
-      color: '#1a5a9e',
+      color: '#c9aa8f',
     },
     issue: {
       label: 'Post-purchase support',
       data: [80, 82, 85, 87, 88, 90, 92],
-      color: '#003764',
+      color: '#B99B7B',
     },
   };
 
@@ -362,7 +362,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
     return (
       <div className="chart-container">
         <div className="chart-header">
-          <h5 className="chart-title">Carriall trust snapshot</h5>
+          <h5 className="chart-title">Muun Home Decor trust snapshot</h5>
           <div className="chart-value">{displayValue}</div>
         </div>
         <svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} className="chart-svg" preserveAspectRatio="xMidYMid meet">
@@ -454,7 +454,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
             type="button"
             className={`ai-brand-engine-trigger${compact ? ' abe-compact' : ''}`}
             onClick={() => setIsExpanded(true)}
-            aria-label="Open bag and travel insights for Carriall"
+            aria-label="Open home decor insights for Muun Home Decor"
           >
             <div className="trigger-icon">
               <span className="ai-gemini-rotator" aria-hidden="true">
@@ -463,21 +463,21 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
             </div>
             {!compact && (
               <div className="trigger-text">
-                <span className="trigger-label">Bags & travel</span>
-                <span className="trigger-sublabel">Carriall</span>
+                <span className="trigger-label">Home decor insights</span>
+                <span className="trigger-sublabel">Muun Home Decor</span>
               </div>
             )}
             <span className="trigger-badge">AI</span>
           </button>
           {!compact && (
             <div className="ai-brand-engine-tooltip" role="note">
-              Bags, luggage & gifting — tap to explore
+              Decor trends, styling & gifting — tap to explore
               <span className="ai-brand-engine-tooltip__arrow" aria-hidden />
             </div>
           )}
         </div>
       ) : (
-        <div className="ai-brand-engine-panel" role="dialog" aria-label="Carriall bag and travel insights">
+        <div className="ai-brand-engine-panel" role="dialog" aria-label="Muun Home Decor home decor insights">
           <div className="panel-header">
             <div className="header-left">
               <div className="header-icon">
@@ -485,7 +485,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
               </div>
               <div>
                 <h3 className="panel-title">AI Brand Engine</h3>
-                <p className="panel-subtitle">Bags · luggage · everyday carry</p>
+                <p className="panel-subtitle">Home decor · styling · everyday spaces</p>
               </div>
             </div>
             <button type="button" className="panel-close-btn" onClick={() => setIsExpanded(false)} aria-label="Close">
@@ -544,7 +544,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
                 </div>
                 <div className="panel-content-cta">
                   <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className="abe-cta abe-cta--primary">
-                    Shop Carriall
+                    Shop Muun Home
                   </a>
                   <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="abe-cta abe-cta--ghost">
                     Instagram
@@ -559,10 +559,10 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
               <span className="footer-badge-icon" aria-hidden>
                 <PremiumAIIcon gradientId={`${baseId}-foot`} size={18} />
               </span>
-              <span>Curated for bags, travel & gifting</span>
+              <span>Curated for home decor, styling & gifting</span>
             </div>
             <p className="footer-note">
-              For daily carry, travel, and gifts — summaries are for inspiration only. Check product pages and policies on carriall.com before you buy.
+              For home styling and gifting — summaries are for inspiration only. Check product pages and policies on instagram.com/muunhomedecor before you buy.
             </p>
           </div>
         </div>

@@ -4,8 +4,8 @@ import { bestSellerProducts } from './scrapshalaBestSellers';
 
 const REEL_URLS = SCRAPSHALA_SHOP_VIDEOS;
 
-const BRAND_NAME = 'Carriall';
-const SHOP_CTA_URL = 'https://carriall.com';
+const BRAND_NAME = 'Muun Home Decor';
+const SHOP_CTA_URL = 'https://www.instagram.com/muunhomedecor/';
 
 const IG_STORY_RING =
   'rounded-full bg-[linear-gradient(135deg,#feda75_0%,#fa7e1e_35%,#d62976_68%,#962fbf_100%)] p-[2.5px] sm:p-[3px]';
@@ -14,7 +14,7 @@ const REEL_CAPTIONS = [
   'Bags built for life on the move.',
   `${BRAND_NAME} · carry more, worry less.`,
   'Structured style for every occasion.',
-  'From commute to weekend — Carriall goes everywhere.',
+  'From commute to weekend — Muun Home goes everywhere.',
   'Your journey, carried beautifully.',
   'Every bag tells a story.',
   'Crafted with care — made for you.',
@@ -225,17 +225,6 @@ export default function HeaderReels({ onViewProduct }) {
         aria-labelledby="header-reels-heading"
       >
         <div className="mx-auto w-full max-w-6xl px-3 pb-3 pt-4 sm:px-4 sm:pb-4 sm:pt-5">
-          <div className="mb-3 flex flex-col items-center gap-0.5 sm:mb-4">
-            <h2
-              id="header-reels-heading"
-              className="text-center text-base font-semibold tracking-tight text-stone-900 sm:text-lg"
-            >
-              {BRAND_NAME} reels
-            </h2>
-            <p className="text-center text-xs text-stone-500 sm:text-[13px]">
-              Tap a story to watch — swipe or use arrows to browse this section
-            </p>
-          </div>
           <div className="flex snap-x snap-mandatory justify-start gap-2.5 overflow-x-auto py-1 scrollbar-hide sm:justify-center sm:gap-3.5">
             {REEL_URLS.map((url, i) => (
               <div

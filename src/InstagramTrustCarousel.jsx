@@ -56,16 +56,16 @@ function RatingBadge({ value }) {
 export default function InstagramTrustCarousel({
   instagramUrl,
   followersLabel = '78.6K',
-  shopUrl = 'https://ajnaajewels.com',
-  amazonUrl = 'https://www.amazon.in/s?k=Ajnaa+Jewels',
-  flipkartUrl = 'https://www.flipkart.com/search?q=ajnaa+jewels',
+  shopUrl = 'https://www.instagram.com/muunhomedecor/',
+  amazonUrl = 'https://www.amazon.in/s?k=Muun+Home+Decor',
+  flipkartUrl = 'https://www.flipkart.com/search?q=muun+home+decor',
 }) {
   const trustSlides = useMemo(
     () => [
       {
         key: 'trusted',
         href: shopUrl,
-        ariaLabel: 'Trusted customers — visit Ajnaa Jewels',
+        ariaLabel: 'Trusted customers — visit Muun Home Decor',
         icon: <StarRow />,
         text: 'Trusted by 10,000+ Customers',
         badge: null,
@@ -73,35 +73,35 @@ export default function InstagramTrustCarousel({
       {
         key: 'instagram',
         href: instagramUrl,
-        ariaLabel: 'Ajnaa Jewels on Instagram',
+        ariaLabel: 'Muun Home Decor on Instagram',
         icon: <InstaRealIcon />,
-        text: `${followersLabel}+ followers · @ajnaajewels`,
+        text: `${followersLabel}+ followers · @muunhomedecor`,
         badge: null,
       },
       {
         key: 'amazon',
         href: amazonUrl,
-        ariaLabel: 'Ajnaa Jewels on Amazon India',
+        ariaLabel: 'Muun Home Decor on Amazon India',
         icon: (
           <img src={AMAZON_LOGO} alt="" className="h-4 w-auto object-contain" style={{ maxHeight: '16px' }} />
         ),
-        text: '2,000+ ratings · Amazon India',
+        text: '980+ ratings · Amazon India',
         badge: '4.5',
       },
       {
         key: 'flipkart',
         href: flipkartUrl,
-        ariaLabel: 'Ajnaa Jewels on Flipkart',
+        ariaLabel: 'Muun Home Decor on Flipkart',
         icon: (
           <img src={FLIPKART_LOGO} alt="" className="h-4 w-auto object-contain" style={{ maxHeight: '16px' }} />
         ),
-        text: '1,500+ reviews · Flipkart',
+        text: '860+ reviews · Flipkart',
         badge: '4.4',
       },
       {
         key: 'comfort',
         href: shopUrl,
-        ariaLabel: 'Fine jewelry — Ajnaa Jewels',
+        ariaLabel: 'Fine decor — Muun Home Decor',
         icon: <ComfortIcon />,
         text: 'Eco-conscious craft · Handmade in India',
         badge: null,

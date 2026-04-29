@@ -1,16 +1,17 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './PhotoGallery.css';
 
-import g01 from './assets/photo_gallary/gallery-01.png';
-import g02 from './assets/photo_gallary/gallery-02.png';
-import g03 from './assets/photo_gallary/gallery-03.png';
-import g04 from './assets/photo_gallary/gallery-04.png';
-import g05 from './assets/photo_gallary/gallery-05.png';
-import g06 from './assets/photo_gallary/gallery-06.png';
-import g07 from './assets/photo_gallary/gallery-07.png';
-import g08 from './assets/photo_gallary/gallery-08.png';
-import g09 from './assets/photo_gallary/gallery-09.png';
-import g10 from './assets/photo_gallary/gallery-10.png';
+// Import gallery images with clean filenames
+import g01 from './assets/photo_gallary/gallery_1.png';
+import g02 from './assets/photo_gallary/gallery_2.png';
+import g03 from './assets/photo_gallary/gallery_3.png';
+import g04 from './assets/photo_gallary/gallery_4.png';
+import g05 from './assets/photo_gallary/gallery_5.png';
+import g06 from './assets/photo_gallary/gallery_6.png';
+import g07 from './assets/photo_gallary/gallery_7.png';
+import g08 from './assets/photo_gallary/gallery_8.png';
+import g09 from './assets/photo_gallary/gallery_9.png';
+import g10 from './assets/photo_gallary/gallery_10.png';
 import { bestSellerProducts } from './scrapshalaBestSellers';
 
 export const GALLERY_IMAGES = [
@@ -79,7 +80,7 @@ export default function PhotoGallery({
     <section className="pg-section">
       {/* Header */}
       <div className="pg-header">
-        <p className="pg-eyebrow">✦ Ajnaa Jewels</p>
+   
         <h2 className="pg-title">{title}</h2>
         <p className="pg-subtitle">{subtitle}</p>
       </div>
@@ -148,7 +149,7 @@ export default function PhotoGallery({
               </div>
 
               <div className="pg-lb-details">
-                <p className="pg-lb-eyebrow">Ajnaa Jewels</p>
+                
                 <h3 id="pg-lb-title" className="pg-lb-product-title">{detail.title}</h3>
                 <p className="pg-lb-desc">
                   Hand-finished details inspired by this look. Dummy preview — pair with your occasion edit.

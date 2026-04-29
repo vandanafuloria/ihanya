@@ -3,15 +3,15 @@
 /* Override root gray-900 color variable if it's causing issues */
 :root {
   --color-gray-900-override: #111827;
-  /* Ajnaa Jewels — primary red + burgundy accent */
+  /* Muun Home Decor — primary red + burgundy accent */
   --brand-primary: #db2a20;
   --brand-primary-hover: #b8221a;
   --brand-soft: rgba(219, 42, 32, 0.1);
   --brand-soft-bg: rgba(219, 42, 32, 0.07);
   --brand-border: rgba(219, 42, 32, 0.25);
-  --brand-accent: #003764;
-  --brand-accent-soft: rgba(0, 55, 100, 0.1);
-  --brand-accent-muted: #ede4e8;
+  --brand-accent: #b99b7b;
+  --brand-accent-soft: rgba(185, 155, 123, 0.14);
+  --brand-accent-muted: #ebe4dc;
 }
 
 /* Vertical scrollbar: transparent track, minimal thumb (Chrome, Safari, Edge) */

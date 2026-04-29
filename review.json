@@ -3,120 +3,120 @@
     "name": "Ayesha Khan",
     "location": "Mumbai",
     "rating": 5,
-    "title": "Smooth Travel",
-    "review": "Glides easily with sturdy wheels.",
+    "title": "Beautiful Decor Piece",
+    "review": "Absolutely stunning diya set! Perfect for festival lighting.",
     "type": "large"
   },
   {
     "name": "Priya Sharma",
     "location": "Delhi",
     "rating": 4.5,
-    "title": "Good for Trips",
-    "review": "Spacious and easy to carry.",
+    "title": "Elegant Home Decor",
+    "review": "These decorative pieces transformed my living room beautifully.",
     "type": "large"
   },
   {
     "name": "Neha Verma",
     "location": "Bangalore",
     "rating": 5,
-    "title": "Stylish Build",
-    "review": "Looks premium, feels durable.",
+    "title": "Premium Quality",
+    "review": "Excellent craftsmanship and attention to detail in every piece.",
     "type": "large"
   },
   {
     "name": "Riya Patel",
     "location": "Ahmedabad",
     "rating": 4,
-    "title": "Worth Buying",
-    "review": "Decent quality for the price.",
+    "title": "Worth Every Rupee",
+    "review": "Great value for money. Perfect for Diwali decorations.",
     "type": "large"
   },
   {
     "name": "Kavita Reddy",
     "location": "Hyderabad",
     "rating": 5,
-    "title": "Lightweight",
-    "review": "Easy to handle anywhere.",
+    "title": "Festive Glow",
+    "review": "Creates the most beautiful ambiance during festivals.",
     "type": "large"
   },
   {
     "name": "Simran Kaur",
     "location": "Chandigarh",
     "rating": 4.5,
-    "title": "Strong Body",
-    "review": "Handles rough use well.",
+    "title": "Durable Design",
+    "review": "Well-crafted pieces that last for years.",
     "type": "mid"
   },
   {
     "name": "Meera Joshi",
     "location": "Pune",
     "rating": 5,
-    "title": "Nice Design",
-    "review": "Modern and clean look.",
+    "title": "Elegant Style",
+    "review": "Modern design with traditional touch.",
     "type": "mid"
   },
   {
     "name": "Ananya Desai",
     "location": "Surat",
     "rating": 5,
-    "title": "Travel Friendly",
-    "review": "Perfect for short trips.",
+    "title": "Perfect for Festivals",
+    "review": "Ideal for all Hindu festivals and celebrations.",
     "type": "mid"
   },
   {
     "name": "Shruti Iyer",
     "location": "Kolkata",
     "rating": 4,
-    "title": "Good Storage",
-    "review": "Enough space for essentials.",
+    "title": "Great Collection",
+    "review": "Wide variety of decorative items to choose from.",
     "type": "mid"
   },
   {
     "name": "Pooja Hegde",
     "location": "Chennai",
     "rating": 5,
-    "title": "Easy Rolling",
-    "review": "Wheels work smoothly.",
+    "title": "Beautiful Finish",
+    "review": "Smooth finish and intricate details.",
     "type": "mid"
   },
   {
     "name": "Tanya Bhatia",
     "location": "Gurgaon",
     "rating": 4.5,
-    "title": "Value Pick",
-    "review": "Good features in budget.",
+    "title": "Affordable Luxury",
+    "review": "Premium quality decor at reasonable prices.",
     "type": "small"
   },
   {
     "name": "Sakshi Nair",
     "location": "Kochi",
     "rating": 5,
-    "title": "Compact Size",
-    "review": "Fits cabin requirements.",
+    "title": "Perfect Size",
+    "review": "Ideal proportions for my dining table centerpiece.",
     "type": "small"
   },
   {
     "name": "Divya Agarwal",
     "location": "Lucknow",
     "rating": 4,
-    "title": "Reliable Choice",
-    "review": "Works well for travel needs.",
+    "title": "Trusted Brand",
+    "review": "Reliable quality for all home decoration needs.",
     "type": "small"
   },
   {
     "name": "Aditi Rao",
     "location": "Indore",
     "rating": 5,
-    "title": "Simple & Useful",
-    "review": "Basic but gets the job done.",
+    "title": "Minimalist Beauty",
+    "review": "Simple yet elegant designs that complement any decor.",
     "type": "very_small"
   },
   {
     "name": "Geeta Singh",
     "location": "Bhopal",
     "rating": 5,
-    "title": "Smart Travel",
-    "review": "Easy packing and movement.",
+    "title": "Traditional Charm",
+    "review": "Perfect blend of tradition and modern aesthetics.",
     "type": "very_small"
   }
 ]
