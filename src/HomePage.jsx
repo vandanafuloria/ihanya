@@ -65,16 +65,16 @@ const TRUST_SLIDES = [
   {
     content: (
       <span className="flex items-center gap-1.5">
-        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/flipkart-icon.png" height="16" alt="Flipkart" style={{flexShrink:0, width:'auto', height:'16px'}} />
-        <span className="text-xs font-bold text-gray-900">4.1/5 · 860+ Reviews on Flipkart</span>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMZ4VQq3AUwc6kAUXJM6eg2QCxmocOhXMvQQ&s" height="16" alt="Nykaa" style={{flexShrink:0, width:'auto', height:'16px'}} />
+        <span className="text-xs font-bold text-gray-900">4.6/5 · 900+ Reviews on Nykaa</span>
       </span>
     ),
   },
   {
     content: (
       <span className="flex items-center gap-1.5">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDQWzflRbFZJBAjCD9s3tRiveZPd5k4N4BiA&s" height="16" alt="Myntra" style={{flexShrink:0, width:'auto', height:'16px'}} />
-        <span className="text-xs font-bold text-gray-900">4.3/5 · 740+ Reviews on Myntra</span>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMZ4VQq3AUwc6kAUXJM6eg2QCxmocOhXMvQQ&s" height="16" alt="Nykaa" style={{flexShrink:0, width:'auto', height:'16px'}} />
+        <span className="text-xs font-bold text-gray-900">4.6/5 · 850+ Reviews on Nykaa</span>
       </span>
     ),
   },
@@ -82,7 +82,7 @@ const TRUST_SLIDES = [
     content: (
       <span className="flex items-center gap-1.5">
         <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" width="14" height="14" alt="Instagram" style={{flexShrink:0}} />
-        <span className="text-xs font-bold text-gray-900">42K Followers on Instagram</span>
+        <span className="text-xs font-bold text-gray-900">52K Followers on Instagram</span>
       </span>
     ),
   },
@@ -130,7 +130,7 @@ function RightRailTrust() {
       aria-label="Social proof"
       style={{
         top: '30%',
-        right: '16px',
+        right: '15px',
         transform: 'translateY(-30%) rotate(270deg)',
         transformOrigin: 'right center',
         minWidth: '270px',
@@ -387,7 +387,7 @@ const HomePage = ({ onProductClick }) => {
 
       {/* Instagram trust / mentions strip — off for now; set to true to restore */}
       {false && (
-        <InstagramTrustCarousel instagramUrl={AJNAA_INSTAGRAM_URL} followersLabel="42K" />
+        <InstagramTrustCarousel instagramUrl={AJNAA_INSTAGRAM_URL} followersLabel="52K" />
       )}
 
       {/* Big Deals Section */}
@@ -767,7 +767,7 @@ const HomePage = ({ onProductClick }) => {
                   <p className="text-gray-400 text-sm">posts</p>
                 </div>
                 <div className="text-center">
-                  <p className="font-bold text-gray-900 text-base">42K</p>
+                  <p className="font-bold text-gray-900 text-base">52K</p>
                   <p className="text-gray-400 text-sm">followers</p>
                 </div>
                 <div className="text-center">
@@ -860,7 +860,7 @@ const HomePage = ({ onProductClick }) => {
                   <p className="text-gray-400 text-xs">posts</p>
                 </div>
                 <div className="text-center">
-                  <p className="font-semibold text-gray-900 text-base">42K</p>
+                  <p className="font-semibold text-gray-900 text-base">52K</p>
                   <p className="text-gray-400 text-xs">followers</p>
                 </div>
                 <div className="text-center">

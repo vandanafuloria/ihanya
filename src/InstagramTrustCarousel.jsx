@@ -3,8 +3,8 @@ import instagramTrustReal from './assets/instagram-trust-real.jpg';
 
 const AMAZON_LOGO =
   'https://static.vecteezy.com/system/resources/previews/014/018/561/non_2x/amazon-logo-on-transparent-background-free-vector.jpg';
-const FLIPKART_LOGO =
-  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-ear6tLG-5_mPMoXZt9_V0GikgHnxFObsog&s';
+const NYKAA_LOGO =
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMZ4VQq3AUwc6kAUXJM6eg2QCxmocOhXMvQQ&s';
 
 const InstaRealIcon = () => (
   <img
@@ -51,14 +51,14 @@ function RatingBadge({ value }) {
 }
 
 /**
- * Single rotated trust strip — exactly 5 slides: 10K+ / Instagram / Amazon / Flipkart / comfort.
+ * Single rotated trust strip — exactly 5 slides: 10K+ / Instagram / Amazon / Nykaa / comfort.
  */
 export default function InstagramTrustCarousel({
   instagramUrl,
   followersLabel = '78.6K',
   shopUrl = 'https://www.instagram.com/muunhomedecor/',
   amazonUrl = 'https://www.amazon.in/s?k=Muun+Home+Decor',
-  flipkartUrl = 'https://www.flipkart.com/search?q=muun+home+decor',
+  nykaaUrl = 'https://www.nykaa.com/',
 }) {
   const trustSlides = useMemo(
     () => [
@@ -89,14 +89,14 @@ export default function InstagramTrustCarousel({
         badge: '4.5',
       },
       {
-        key: 'flipkart',
-        href: flipkartUrl,
-        ariaLabel: 'Muun Home Decor on Flipkart',
+        key: 'nykaa',
+        href: nykaaUrl,
+        ariaLabel: 'Muun Home Decor on Nykaa',
         icon: (
-          <img src={FLIPKART_LOGO} alt="" className="h-4 w-auto object-contain" style={{ maxHeight: '16px' }} />
+          <img src={NYKAA_LOGO} alt="" className="h-4 w-auto object-contain" style={{ maxHeight: '16px' }} />
         ),
-        text: '860+ reviews · Flipkart',
-        badge: '4.4',
+        text: '900+ reviews · Nykaa',
+        badge: '4.6',
       },
       {
         key: 'comfort',
@@ -107,7 +107,7 @@ export default function InstagramTrustCarousel({
         badge: null,
       },
     ],
-    [followersLabel, instagramUrl, shopUrl, amazonUrl, flipkartUrl]
+    [followersLabel, instagramUrl, shopUrl, amazonUrl, nykaaUrl]
   );
 
   const [trustIdx, setTrustIdx] = useState(0);
@@ -144,7 +144,7 @@ export default function InstagramTrustCarousel({
         }
       `}</style>
       <div
-        className="fixed right-4 rounded-lg px-4 py-2.5 shadow-lg z-30 overflow-hidden border border-gray-200/80 bg-white"
+        className="fixed right-0 rounded-none px-4 py-2.5 shadow-lg z-30 overflow-hidden border border-gray-200/80 bg-white"
         style={{
           top: '226px',
           transform: 'rotate(270deg)',

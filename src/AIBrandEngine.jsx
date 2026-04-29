@@ -130,55 +130,55 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
 
   const brandInfo = {
     craft: {
-      title: 'Bag craftsmanship',
+      title: 'Home decor craftsmanship',
       iconType: 'craft',
       content: [
         {
-          label: 'Structured silhouette',
-          value: 'Holds its shape',
-          description: 'Reinforced base and side panels keep the bag upright all day — from office desks to airport carousels.',
+          label: 'Stable structure',
+          value: 'Holds its form',
+          description: 'Reinforced structure keeps the piece steady — from everyday corners to statement set-ups.',
         },
         {
-          label: 'Hardware & zippers',
-          value: 'Smooth & sturdy',
-          description: 'Matte-tone metal hardware, smooth-glide zippers, and magnetic closures that click with satisfying precision.',
+          label: 'Detailing & finishes',
+          value: 'Refined & durable',
+          description: 'Matte-tone detailing and refined closures—built for smooth everyday use.',
         },
         {
-          label: 'Fabric & finish',
-          value: 'Hand-checked',
-          description: 'Clean stitching, no loose threads, and fabrics chosen to resist everyday scuffs, spills, and dirt.',
+          label: 'Surface & finish',
+          value: 'Hand-finished',
+          description: 'Clean edges, no loose details, and finishes chosen to resist everyday marks.',
         },
       ],
       highlights: [
-        'Interior pockets designed around what you actually carry — phone, cards, lip balm, keys.',
-        'Detachable straps let you switch between handheld and crossbody in seconds.',
-        'Every bag passes a finish check before it leaves the warehouse.',
+        'Surfaces and compartments designed for everyday essentials.',
+        'Designed detailing that blends with your styling choices.',
+        'Every piece passes a finish check before it leaves our studio.',
       ],
     },
     occasions: {
-      title: 'Bags for every occasion',
+      title: 'Pieces for every occasion',
       iconType: 'occasions',
       content: [
         {
-          label: 'Work & commute',
-          value: 'Office-ready',
-          description: 'Structured bags that fit a 13-inch laptop, daily essentials, and still look polished in a client meeting.',
+          label: 'Daily spaces',
+          value: 'Room-ready',
+          description: 'Thoughtfully proportioned for living spaces—functional and polished in every room.',
         },
         {
-          label: 'Travel',
-          value: 'Flight to train',
-          description: 'Hard-shell luggage with TSA locks, spinner wheels, and expandable compartments built for Indian routes.',
+          label: 'Weekend styling',
+          value: 'Day to evening',
+          description: 'Built for re-styling—easy to move and reposition as your home changes.',
         },
         {
-          label: 'Weekends & gifting',
-          value: 'Casual to formal',
-          description: 'Totes and crossbodys that move from a Sunday market to a birthday dinner without missing a beat.',
+          label: 'Hosting & gifting',
+          value: 'Everyday to celebratory',
+          description: 'Pieces that transition from daily comfort to special occasions.',
         },
       ],
       highlights: [
-        'Meal bags that keep lunch warm for 3-4 hours — perfect for 9-to-6 schedules.',
-        'Luggage tested across domestic and international routes with zero wheel failures.',
-        'Compact crossbodys that hold phone, wallet, keys, and a small bottle — nothing more, nothing less.',
+        'Designs that keep spaces feeling fresh and inviting all day.',
+        'Durable build tested for everyday use and long-lasting performance.',
+        'Smart proportions for real life—beautiful even in small spaces.',
       ],
     },
     gifting: {
@@ -198,39 +198,39 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
         {
           label: 'Presentation',
           value: 'Gift-ready',
-          description: 'Premium packaging with dust bag and gift wrapping included — no extra effort needed.',
+          description: 'Premium wrapping and care notes included — no extra effort needed.',
         },
       ],
       highlights: [
-        'Recipients consistently say the bag looks far more expensive than it is.',
-        'Dust bag and wrapping included so it arrives feeling like a considered gift.',
+        'Recipients consistently say the piece looks far more elevated than it is.',
+        'Care wrap and wrapping included so it arrives feeling like a considered gift.',
         'Available in colours — Beige, Brown, Teal — easy to match personal style.',
       ],
     },
     care: {
-      title: 'Care for your Muun Home bags',
+      title: 'Care for your Muun Home decor',
       iconType: 'care',
       content: [
         {
-          label: 'Fabric bags',
+          label: 'Upholstery & surfaces',
           value: 'Wipe clean',
-          description: 'Damp cloth for surface marks — most fabrics repel light stains. Avoid submerging or machine washing.',
+          description: 'Use a soft damp cloth for surface marks. Avoid soaking and harsh cleaning.',
         },
         {
-          label: 'Luggage shell',
+          label: 'Wood & glass surfaces',
           value: 'Easy wipe-down',
-          description: 'Hard-shell scratches are normal in transit. Wipe with a soft damp cloth; avoid abrasive cleaners.',
+          description: 'Use a soft damp cloth. Avoid abrasive cleaners to protect finishes.',
         },
         {
-          label: 'Storage',
-          value: 'Stuff & store',
-          description: 'Keep structured bags stuffed with tissue paper so they hold shape between uses.',
+          label: 'Placement & storage',
+          value: 'Style & store',
+          description: 'Store with soft padding so surfaces and finishes stay perfect between uses.',
         },
       ],
       highlights: [
-        'Store bags upright and away from direct sunlight to preserve colour.',
-        'For meal bags, wipe the interior after every use to keep it odour-free.',
-        'Hardware stays polished longer when you avoid perfume contact.',
+        'Store pieces level/ upright and away from direct sunlight to preserve colour.',
+        'For tabletop areas, wipe after use to keep surfaces looking fresh.',
+        'Finishes stay polished when you avoid harsh chemicals.',
       ],
     },
     shipping: {
@@ -254,8 +254,8 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
         },
       ],
       highlights: [
-        'Bags are packed with internal padding — no dents or deformation on arrival.',
-        'Luggage wheels and handles are tested before dispatch.',
+        'Pieces are packed with protective padding — no dents or deformation on arrival.',
+        'Protective corners and surfaces are checked before dispatch.',
         'Free or promotional shipping often available — check cart for current offers.',
       ],
     },
@@ -265,8 +265,8 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
       content: [
         {
           label: 'Brand promise',
-          value: 'Carry more, worry less',
-          description: 'Bags designed for how Indian women actually live — commutes, travel, family functions, and everything between.',
+          value: 'Style more, worry less',
+          description: 'Decor designed for how Indian homes actually live — everyday rooms, hosting days, family moments, and everything between.',
         },
         {
           label: 'Shop',
@@ -275,21 +275,21 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
         },
         {
           label: 'Community',
-          value: '@muunhomedecor · 42K',
+          value: '@muunhomedecor · 52K',
           description: 'Styling reels, real customer stories, and new drops on Instagram.',
         },
       ],
       highlights: [
         'Trusted by 10K+ buyers on Amazon with consistently high ratings.',
-        'Products designed around what Indian travellers and professionals actually need.',
-        'When in doubt — structured handbag for daily carry, Trail Smart for travel.',
+        'Products designed around what Indian hosts and everyday creators actually need.',
+        'When in doubt — choose a balanced statement base for everyday hosting.',
       ],
     },
   };
 
   const graphData = {
     fit: {
-      label: 'Daily carry comfort',
+      label: 'Everyday styling comfort',
       data: [85, 88, 86, 90, 87, 91, 93],
       color: '#B99B7B',
     },
@@ -323,7 +323,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
   const metrics = [
     { id: 'positive', label: 'Quality' },
     { id: 'repeat', label: 'Repeat' },
-    { id: 'fit', label: 'Carry' },
+    { id: 'fit', label: 'Style' },
     { id: 'delivery', label: 'Ship' },
     { id: 'rating', label: 'Stars' },
     { id: 'issue', label: 'Support' },
@@ -426,7 +426,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
           ))}
         </div>
         <p className="chart-footnote">
-          Illustrative trend only — not live data. Themes: daily carry, travel, and gifting satisfaction.
+          Illustrative trend only — not live data. Themes: everyday styling, home hosting, and gifting satisfaction.
         </p>
       </div>
     );

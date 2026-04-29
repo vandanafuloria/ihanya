@@ -48,7 +48,7 @@ function formatSoldLabel(n) {
 // Brand Name
 const BRAND_NAME = "Muun Home Decor";
 const AJNAA_INSTAGRAM_URL = 'https://www.instagram.com/muunhomedecor/';
-const AJNAA_INSTAGRAM_FOLLOWERS_LABEL = '42K';
+const AJNAA_INSTAGRAM_FOLLOWERS_LABEL = '52K';
 
 /** Reviews UI — warm neutrals from former section gradient (replacing teal bars) */
 const REVIEW_ACCENT = '#B89B7B';
@@ -171,19 +171,19 @@ const MARKETPLACE_BADGES = [
     ),
   },
   {
-    label: 'Flipkart',
-    rating: '4.1/5',
-    count: '860+',
+    label: 'Nykaa',
+    rating: '4.6/5',
+    count: '900+',
     logo: (
-      <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/flipkart-icon.png" alt="Flipkart" style={{ height: 16, width: 'auto', flexShrink: 0 }} />
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMZ4VQq3AUwc6kAUXJM6eg2QCxmocOhXMvQQ&s" alt="Nykaa" style={{ height: 16, width: 'auto', flexShrink: 0 }} />
     ),
   },
   {
-    label: 'Myntra',
-    rating: '4.3/5',
-    count: '740+',
+    label: 'Nykaa',
+    rating: '4.6/5',
+    count: '850+',
     logo: (
-      <img src="https://static.vecteezy.com/system/resources/previews/067/941/729/non_2x/myntra-logo-myntra-icon-transparent-background-free-png.png" alt="Myntra" style={{ height: 22, width: 'auto', flexShrink: 0 }} />
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMZ4VQq3AUwc6kAUXJM6eg2QCxmocOhXMvQQ&s" alt="Nykaa" style={{ height: 22, width: 'auto', flexShrink: 0 }} />
     ),
   },
 ];
@@ -2078,7 +2078,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
           className="fixed inset-0 bg-black bg-opacity-90 z-[9999] flex items-center justify-center p-4"
           onClick={handleCloseModal}
         >
-          {/* Modal Content Container - Myntra Style Side-by-Side for Desktop */}
+          {/* Modal Content Container - Desktop split layout */}
           <div 
           className="relative w-full max-w-5xl h-[75vh] bg-white rounded-none overflow-hidden flex flex-col md:flex-row shadow-2xl"
             onClick={(e) => e.stopPropagation()}
