@@ -55,8 +55,8 @@ function RatingBadge({ value }) {
  */
 export default function InstagramTrustCarousel({
   instagramUrl,
-  followersLabel = '78.6K',
-  shopUrl = 'https://www.instagram.com/muunhomedecor/',
+  followersLabel = '522K',
+  shopUrl = 'https://www.instagram.com/saadaadesigns/',
   amazonUrl = 'https://www.amazon.in/s?k=Muun+Home+Decor',
   nykaaUrl = 'https://www.nykaa.com/',
 }) {
@@ -65,7 +65,7 @@ export default function InstagramTrustCarousel({
       {
         key: 'trusted',
         href: shopUrl,
-        ariaLabel: 'Trusted customers — visit Muun Home Decor',
+        ariaLabel: 'Trusted customers — visit Saadaa',
         icon: <StarRow />,
         text: 'Trusted by 10,000+ Customers',
         badge: null,
@@ -73,15 +73,15 @@ export default function InstagramTrustCarousel({
       {
         key: 'instagram',
         href: instagramUrl,
-        ariaLabel: 'Muun Home Decor on Instagram',
+        ariaLabel: 'Saadaa on Instagram',
         icon: <InstaRealIcon />,
-        text: `${followersLabel}+ followers · @muunhomedecor`,
+        text: `${followersLabel}+ followers · @saadaadesigns`,
         badge: null,
       },
       {
         key: 'amazon',
         href: amazonUrl,
-        ariaLabel: 'Muun Home Decor on Amazon India',
+        ariaLabel: 'Saadaa on Amazon India',
         icon: (
           <img src={AMAZON_LOGO} alt="" className="h-4 w-auto object-contain" style={{ maxHeight: '16px' }} />
         ),
@@ -91,7 +91,7 @@ export default function InstagramTrustCarousel({
       {
         key: 'nykaa',
         href: nykaaUrl,
-        ariaLabel: 'Muun Home Decor on Nykaa',
+        ariaLabel: 'Saadaa on Nykaa',
         icon: (
           <img src={NYKAA_LOGO} alt="" className="h-4 w-auto object-contain" style={{ maxHeight: '16px' }} />
         ),
@@ -101,7 +101,7 @@ export default function InstagramTrustCarousel({
       {
         key: 'comfort',
         href: shopUrl,
-        ariaLabel: 'Fine decor — Muun Home Decor',
+        ariaLabel: 'Fine decor — Saadaa',
         icon: <ComfortIcon />,
         text: 'Eco-conscious craft · Handmade in India',
         badge: null,

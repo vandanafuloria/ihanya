@@ -80,19 +80,19 @@ const ProductCard = ({ product, onClick }) => {
           loading="lazy"
           className="pc-img"
         />
+        {rating > 0 && (
+          <div className="pc-rating-overlay">
+            <svg className="pc-star-single" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d={STAR_PATH} fill="#fb923c" />
+            </svg>
+            <span className="pc-rating-value">{rating}</span>
+          </div>
+        )}
       </div>
 
       {/* Info area */}
       <div className="pc-info">
         <h3 className="pc-title">{title}</h3>
-        
-        {/* Rating and Reviews */}
-        <div className="pc-rating-container">
-          <StarRow rating={rating} />
-          <span className="pc-review-count">({reviewCount} reviews)</span>
-        </div>
-        
-        <p className="pc-price">{priceFormatted}</p>
       </div>
     </div>
   );

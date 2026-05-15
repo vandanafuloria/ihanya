@@ -289,8 +289,8 @@ const PhotoGallerySection = () => {
     <section className="photo-gallery-section">
       <div className="gallery-container">
         <div className="gallery-header">
-          <h2 className="gallery-title">Our Home Decor Collection</h2>
-          <p className="gallery-subtitle">Warm, modern decor pieces to elevate everyday living spaces.</p>
+          <h2 className="gallery-title">Our Collection</h2>
+          <p className="gallery-subtitle">Everyday basics crafted for comfort and style.</p>
         </div>
         
         <div className="gallery-grid">

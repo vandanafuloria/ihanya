@@ -1,20 +1,17 @@
 /** Muun Home — best sellers */
 
 export const MUUN_HOME_GALLERY_IMAGES = [
-  'https://www.muunhome.com/cdn/shop/files/57_ef5c06d2-7dbf-45ff-9a99-c6c091b1ac86_2048x2048.png?v=1776332647',
-  'https://www.muunhome.com/cdn/shop/files/52_b0679966-514a-4dd7-9f8c-c22720c81b41_2048x2048.png?v=1776333112',
-  'https://www.muunhome.com/cdn/shop/files/65_38a50b65-934b-4059-a9d2-aeb6dc7b8f0d_2048x2048.png?v=1776660440',
-  'https://www.muunhome.com/cdn/shop/files/51_171c58b6-8a74-439e-a83d-fc5b6fb2ee45_2048x2048.png?v=1776333112',
+  'https://cdn.shopify.com/s/files/1/0450/3476/6485/files/1_e8db68e9-6645-4e74-93a1-b723ba6383c0.webp?v=1757741964',
+  'https://cdn.shopify.com/s/files/1/0450/3476/6485/files/1_1_47d5f39b-c471-43bc-81ed-82c7f87d6a47.webp?v=1757744397',
+  'https://cdn.shopify.com/s/files/1/0450/3476/6485/files/1_503e78e0-74b0-4bba-bd56-a1a0e4dbc749.webp?v=1762756299',
+  'https://cdn.shopify.com/s/files/1/0450/3476/6485/files/1_63b7292e-e6b0-4503-b31e-72d08f91bafd.webp?v=1757745857',
 ];
 
 export const MUUN_HOME_PRODUCT_IMAGES = [
-  'https://www.muunhome.com/cdn/shop/files/57_ef5c06d2-7dbf-45ff-9a99-c6c091b1ac86_2048x2048.png?v=1776332647',
-  'https://www.muunhome.com/cdn/shop/files/52_b0679966-514a-4dd7-9f8c-c22720c81b41_2048x2048.png?v=1776333112',
-  'https://www.muunhome.com/cdn/shop/files/65_38a50b65-934b-4059-a9d2-aeb6dc7b8f0d_2048x2048.png?v=1776660440',
-  'https://www.muunhome.com/cdn/shop/files/51_171c58b6-8a74-439e-a83d-fc5b6fb2ee45_2048x2048.png?v=1776333112',
-  // extra slots to keep the 6 best-seller cards populated
-  'https://www.muunhome.com/cdn/shop/files/57_ef5c06d2-7dbf-45ff-9a99-c6c091b1ac86_2048x2048.png?v=1776332647',
-  'https://www.muunhome.com/cdn/shop/files/52_b0679966-514a-4dd7-9f8c-c22720c81b41_2048x2048.png?v=1776333112',
+  'https://cdn.shopify.com/s/files/1/0450/3476/6485/files/1_e8db68e9-6645-4e74-93a1-b723ba6383c0.webp?v=1757741964',
+  'https://cdn.shopify.com/s/files/1/0450/3476/6485/files/1_1_47d5f39b-c471-43bc-81ed-82c7f87d6a47.webp?v=1757744397',
+  'https://cdn.shopify.com/s/files/1/0450/3476/6485/files/1_503e78e0-74b0-4bba-bd56-a1a0e4dbc749.webp?v=1762756299',
+  'https://cdn.shopify.com/s/files/1/0450/3476/6485/files/1_63b7292e-e6b0-4503-b31e-72d08f91bafd.webp?v=1757745857',
 ];
 
 export const bestSellerProducts = [
@@ -22,7 +19,7 @@ export const bestSellerProducts = [
     id: 1,
     image: MUUN_HOME_PRODUCT_IMAGES[0],
     galleryImages: MUUN_HOME_GALLERY_IMAGES,
-    title: 'Modern Accent Chair',
+    title: 'Women Mint Green Airy Linen Short Kurta',
     currentPrice: 12999,
     originalPrice: 18999,
     rating: 4.8,
@@ -32,7 +29,7 @@ export const bestSellerProducts = [
   {
     id: 2,
     image: MUUN_HOME_PRODUCT_IMAGES[1],
-    title: 'Luxury Sofa Set',
+    title: 'Women Mint Green Airy Linen Short Kurta',
     currentPrice: 45999,
     originalPrice: 65999,
     rating: 4.9,
@@ -42,7 +39,7 @@ export const bestSellerProducts = [
   {
     id: 3,
     image: MUUN_HOME_PRODUCT_IMAGES[2],
-    title: 'Designer Coffee Table',
+    title: 'Women Beige Cotton Pant',
     currentPrice: 8999,
     originalPrice: 14999,
     rating: 4.7,
@@ -52,7 +49,7 @@ export const bestSellerProducts = [
   {
     id: 4,
     image: MUUN_HOME_PRODUCT_IMAGES[3],
-    title: 'Contemporary Dining Set',
+    title: 'Women Yellow Airy Linen Short Kurta',
     currentPrice: 24999,
     originalPrice: 35999,
     rating: 4.8,
@@ -61,22 +58,11 @@ export const bestSellerProducts = [
   },
   {
     id: 5,
-    image: MUUN_HOME_PRODUCT_IMAGES[4],
-    title: 'Premium Armchair',
-    currentPrice: 15999,
-    originalPrice: 22999,
-    rating: 4.9,
-    reviewCount: 92,
-    badge: 'Sale',
-  },
-  {
-    id: 6,
-    image: MUUN_HOME_PRODUCT_IMAGES[5],
-    title: 'Executive Office Chair',
-    currentPrice: 18999,
-    originalPrice: 27999,
+    image: 'https://cdn.shopify.com/s/files/1/0450/3476/6485/files/201_203df838-565a-4729-a749-2d71a6023447.webp?v=1764068793',
+    title: 'Women White Cotton Pant',
+    currentPrice: 0,
+    originalPrice: 0,
     rating: 4.6,
-    reviewCount: 134,
-    badge: 'Sale',
+    reviewCount: 0,
   },
 ];

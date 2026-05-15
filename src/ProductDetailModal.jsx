@@ -153,7 +153,7 @@ const ProductDetailModal = ({ product, isOpen, onClose }) => {
                   <strong>SKU:</strong> {product.sku || 'MH-' + product.id.toString().padStart(4, '0')}
                 </div>
                 <div className="meta-item">
-                  <strong>Category:</strong> {product.category || 'Home Decor'}
+                  <strong>Category:</strong> {product.category || 'Clothing'}
                 </div>
                 <div className="meta-item">
                   <strong>Availability:</strong> 

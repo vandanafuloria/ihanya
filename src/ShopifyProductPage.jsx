@@ -14,7 +14,7 @@ import PdpHeroReviewRotator from './PdpHeroReviewRotator';
 import productHeader from './assets/product_header.png';
 import productHeaderPhone from './assets/product_header_phone.png';
 import brandLogo from './assets/brand.png';
-import { SCRAPSHALA_SHOP_VIDEOS, PDP_DRAGGABLE_VIDEO } from './scrapshalaShopVideos';
+import { SCRAPSHALA_SHOP_VIDEOS, PDP_DRAGGABLE_VIDEO, MUUN_SHOP_VIDEO_CLIPS } from './scrapshalaShopVideos';
 import {
   bestSellerProducts,
   MUUN_HOME_PRODUCT_IMAGES,
@@ -45,10 +45,20 @@ function formatSoldLabel(n) {
 }
 
 
+// Product images — Women Mint Green Airy Linen Short Kurta
+const PRODUCT_PAGE_IMAGES = [
+  'https://saadaa.in/cdn/shop/files/1_1_47d5f39b-c471-43bc-81ed-82c7f87d6a47.webp?v=1757744397&width=700',
+  'https://saadaa.in/cdn/shop/files/mint_green_short_kurta_1.webp?v=1757745844&width=700',
+  'https://saadaa.in/cdn/shop/files/2_1_f8a540d1-58bf-4e07-8fe1-bc57a10edcc7.webp?v=1757745844&width=700',
+  'https://saadaa.in/cdn/shop/files/10_3ad5cc91-443c-4ce8-96bf-0797348925e2.webp?v=1757745844&width=700',
+  'https://saadaa.in/cdn/shop/files/3_1_64456da6-ad7f-45c5-ada0-0c4ea7f9ac01.webp?v=1757745844&width=700',
+  'https://saadaa.in/cdn/shop/files/6_4bc1e929-2a2f-4f94-8cb4-62171cbef29b.webp?v=1757745844&width=700',
+];
+
 // Brand Name
-const BRAND_NAME = "Muun Home Decor";
-const AJNAA_INSTAGRAM_URL = 'https://www.instagram.com/muunhomedecor/';
-const AJNAA_INSTAGRAM_FOLLOWERS_LABEL = '52K';
+const BRAND_NAME = "Saadaa";
+const AJNAA_INSTAGRAM_URL = 'https://www.instagram.com/saadaadesigns/';
+const AJNAA_INSTAGRAM_FOLLOWERS_LABEL = '522K';
 
 /** Reviews UI — warm neutrals from former section gradient (replacing teal bars) */
 const REVIEW_ACCENT = '#B89B7B';
@@ -60,15 +70,20 @@ const REVIEW_ACCENT_BORDER = 'rgba(184, 155, 123, 0.35)';
 const PRODUCT_VIDEO = PDP_DRAGGABLE_VIDEO;
 
 // Product Details
-const PRODUCT_NAME = "Maya Tables - Vintage Glass";
-const PRODUCT_PRICE = 5499;
-const PRODUCT_ORIGINAL_PRICE = 9199;
-const PRODUCT_DISCOUNT = 40;
-const PRODUCT_SKU = "CA-IREEN-BEI-001";
-const PRODUCT_DESCRIPTION = "The Maya Tables are a study in organic tension and nostalgia. Designed as anchor pieces for a room, the sculptural wooden base pairs with a soft, fluid smoked-glass top that catches and reflects light beautifully. Their low, airy profile keeps the layout open while adding warmth, craft, and character to everyday spaces.";
-const PRODUCT_BRAND = "Muun Home Decor";
+const PRODUCT_NAME = "Women Mint Green Airy Linen Short Kurta";
+const PRODUCT_PRICE = 899;
+const PRODUCT_ORIGINAL_PRICE = 0;
+const PRODUCT_DISCOUNT = 0;
+const PRODUCT_SKU = "SAADAA-MGALK-001";
+const PRODUCT_DESCRIPTION = "Crafted from airy linen, this short kurta is perfect for effortless everyday styling. Features a mandarin collar, 3/4 sleeves, and a relaxed fit that keeps you comfortable all day.";
+const PRODUCT_BRAND = "Saadaa";
 const PRODUCT_COLORS = [];
-const PRODUCT_SIZES = [];
+const PRODUCT_SIZES = ['S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'];
+const PRODUCT_BUST_SIZES = {
+  S: '34" - 35"', M: '36" - 37"', L: '38" - 39"',
+  XL: '40" - 41"', '2XL': '42" - 44"', '3XL': '45" - 46"', '4XL': '47" - 48"',
+};
+const PRODUCT_KURTA_TYPES = ['Short Kurta', 'Long Kurta'];
 /** Social proof — shown next to rating & reviews on the buy box */
 const PRODUCT_REVIEW_COUNT = 86;
 const PRODUCT_SOLD_COUNT = 340;
@@ -84,25 +99,14 @@ const RELATED_PRODUCTS = bestSellerProducts.slice(0, 4).map((p) => ({
   reviews: p.reviewCount,
 }));
 
-// Short captions under PDP reel pills
-const PDP_REEL_LABELS = [
-  'Style on the go',
-  'Travel essentials',
-  'Styled interiors',
-  'Customer favourites',
-  'Lightweight carry',
-  'Real customer stories',
-  'Work & weekend',
-  'Premium quality',
-  'Gift-ready decor',
-  'Shop Muun Home Decor',
-  'Made for India',
-];
+/** Reel pill captions — same order & copy as `MUUN_SHOP_VIDEO_CLIPS` on the home page */
+const PDP_REEL_LABELS = MUUN_SHOP_VIDEO_CLIPS.map((c) => c.title);
 
 /** Short keyword chips under rating / reviews on the buy box */
-const PDP_KEYWORD_TAGS = ['Organic tension', 'Sculptural base', 'Smoked glass top', 'Everyday living'];
+const PDP_KEYWORD_TAGS = ['Airy linen', 'Mandarin collar', '3/4 sleeves', 'Everyday wear'];
 
-const PDP_BREADCRUMB_MID = 'Home Decor';
+const PDP_BREADCRUMB_MID = 'Women Shop All Tops';
+const PDP_BREADCRUMB_LAST = 'Women Airy Linen Short Kurtas';
 const PDP_GIFT_PROMO = 'Free dust bag & gift wrapping with every order';
 const PDP_COUPON_CODE = 'CARRY10';
 const PDP_COUPON_COPY = 'Get an extra 10% off on decor picks — use code CARRY10';
@@ -152,7 +156,7 @@ const dummyReviews = [
   { name: 'Priya Sharma', rating: 5, title: 'Perfect everyday bag', text: 'Ireen holds its shape all day. Interior pockets are well-placed. Strap is comfortable for long carries.', date: '1/20/2025', type: 'product' },
   { name: 'Anjali Mehta', rating: 5, title: 'Quality is real', text: 'Stitching is clean, zipper smooth, fabric spotless after weeks of use. Looks far more expensive than it is.', date: '1/18/2025', type: 'product' },
   { name: 'Riya Patel', rating: 4, title: 'Gift for sister', text: 'Bought the Ireen as a birthday gift — she was genuinely impressed. 4 stars only because delivery took an extra day.', date: '1/15/2025', type: 'product' },
-  { name: 'Kavya Reddy', rating: 5, title: 'Exactly like the photos', text: 'Beige colour is identical to the website. No surprises at all. Muun Home Decor delivers what they show.', date: '1/12/2025', type: 'product' },
+  { name: 'Kavya Reddy', rating: 5, title: 'Exactly like the photos', text: 'Beige colour is identical to the website. No surprises at all. Saadaa delivers exactly what they show.', date: '1/12/2025', type: 'product' },
   { name: 'Meera Singh', rating: 5, title: 'Office to evening', text: 'Carries my laptop, charger, and essentials without looking overstuffed. Gets compliments every week.', date: '1/10/2025', type: 'product' },
   { name: 'Sneha Verma', rating: 5, title: 'Great packaging', text: 'Came with a dust bag and proper wrapping. No dents or marks on the bag. Thoughtful unboxing experience.', date: '1/08/2025', type: 'product' },
   { name: 'Divya Nair', rating: 4, title: 'Very clean finish', text: 'Hardware is solid and not flimsy. Handles feel premium. One tiny loose thread but the bag itself is excellent.', date: '1/05/2025', type: 'product' },
@@ -327,8 +331,8 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
   const productImages = passedProduct?.galleryImages?.length
     ? passedProduct.galleryImages
     : passedProduct?.image
-      ? [passedProduct.image, ...MUUN_HOME_PRODUCT_IMAGES.filter((u) => u !== passedProduct.image)]
-      : MUUN_HOME_GALLERY_IMAGES;
+      ? [passedProduct.image, ...PRODUCT_PAGE_IMAGES.filter((u) => u !== passedProduct.image)]
+      : PRODUCT_PAGE_IMAGES;
   const productRating  = passedProduct?.rating        ?? 4.8;
   const productReviews = passedProduct?.reviewCount   ?? PRODUCT_REVIEW_COUNT;
   const productSoldCount =
@@ -348,6 +352,8 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
   const [reviewsToShow, setReviewsToShow] = useState(3);
   const [expandedReviews, setExpandedReviews] = useState({});
   const [productSortBy, setProductSortBy] = useState('most-recent');
+  const [selectedKurtaType, setSelectedKurtaType] = useState('Short Kurta');
+  const [selectedSize, setSelectedSize] = useState(null);
 
   useLayoutEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
@@ -672,146 +678,44 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
         <img src={productHeaderPhone} alt="Product Header" className="block md:hidden w-full object-cover" />
       </div>
 
-      {/* Product Video - Draggable floating card */}
-      {showVideoCard && (
-        <div
-          ref={dragCardRef}
-          className="fixed z-50 select-none"
-          style={{
-            width: '150px',
-            touchAction: 'none',
-            userSelect: 'none',
-            cursor: 'grab',
-            borderRadius: '12px',
-            boxShadow: '0 8px 24px rgba(0,0,0,0.25)',
-            overflow: 'hidden',
-            background: '#000',
-          }}
-          onPointerDown={(e) => {
-            if (e.target.closest('.close-btn')) return;
-            e.currentTarget.setPointerCapture(e.pointerId);
-            e.currentTarget.style.cursor = 'grabbing';
-            const rect = e.currentTarget.getBoundingClientRect();
-            dragOffset.current = { x: e.clientX - rect.left, y: e.clientY - rect.top };
-            dragOffset.current.startX = e.clientX;
-            dragOffset.current.startY = e.clientY;
-            dragOffset.current.moved = false;
-          }}
-          onPointerMove={(e) => {
-            if (!e.currentTarget.hasPointerCapture(e.pointerId)) return;
-            const dx = Math.abs(e.clientX - dragOffset.current.startX);
-            const dy = Math.abs(e.clientY - dragOffset.current.startY);
-            if (dx > 5 || dy > 5) dragOffset.current.moved = true;
-            const card = e.currentTarget;
-            const x = Math.max(0, Math.min(window.innerWidth - card.offsetWidth, e.clientX - dragOffset.current.x));
-            const y = Math.max(0, Math.min(window.innerHeight - card.offsetHeight, e.clientY - dragOffset.current.y));
-            card.style.left = `${x}px`;
-            card.style.top = `${y}px`;
-          }}
-          onPointerUp={(e) => {
-            e.currentTarget.releasePointerCapture(e.pointerId);
-            e.currentTarget.style.cursor = 'grab';
-            if (!dragOffset.current.moved && !e.target.closest('.close-btn')) {
-              setSelectedVideo(PRODUCT_VIDEO);
-            }
-          }}
-        >
-          {/* Close button */}
-          <button
-            className="close-btn absolute top-2 right-2 z-20 w-7 h-7 bg-black/60 hover:bg-black/80 rounded-none flex items-center justify-center text-white"
-            onClick={(e) => { e.stopPropagation(); setShowVideoCard(false); }}
-          >
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-              <path d="M18 6L6 18M6 6L18 18" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
-            </svg>
-          </button>
 
-          {/* Video */}
-          <video
-            ref={dragVideoRef}
-            src={PRODUCT_VIDEO}
-            style={{ width: '150px', height: '225px', objectFit: 'cover', display: 'block', pointerEvents: 'none' }}
-            loop
-            muted
-            autoPlay
-            playsInline
-            preload="auto"
-          />
-        </div>
-      )}
-      
+
       <main className="flex-1 bg-white py-6 md:py-10">
         <div className="mx-auto w-full max-w-6xl px-4 md:px-8">
 
           {/* Breadcrumb — reference-style trail */}
           <nav className="mb-5 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-xs text-gray-500">
-            <button type="button" onClick={onHomeClick} className="text-gray-500 transition-colors hover:text-gray-800">
-              Home
-            </button>
-            <span className="text-gray-400" aria-hidden>
-              &gt;
-            </span>
+            <button type="button" onClick={onHomeClick} className="text-gray-500 transition-colors hover:text-gray-800">Home</button>
+            <span className="text-gray-400" aria-hidden>/</span>
             <span className="text-gray-500">{PDP_BREADCRUMB_MID}</span>
-            <span className="text-gray-400" aria-hidden>
-              &gt;
-            </span>
-            <span className="max-w-[min(100%,14rem)] truncate font-medium text-gray-800 sm:max-w-none">{productName}</span>
+            <span className="text-gray-400" aria-hidden>/</span>
+            <span className="font-medium text-gray-800">{PDP_BREADCRUMB_LAST}</span>
           </nav>
 
           <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-12">
 
-            {/* LEFT — large main image + horizontal thumbnail strip below */}
+            {/* LEFT — 2×2 image grid */}
             {(() => {
               const imgs = productImages.length ? productImages : [productHeader];
               return (
-                <div className="flex flex-col gap-3">
-                  {/* Main image */}
-                  <div className="relative overflow-hidden rounded-none" style={{ backgroundColor: '#EFEFEF' }}>
-                    <img
-                      src={imgs[selectedImage] || imgs[0]}
-                      alt={productName}
-                      className="w-full object-contain"
-                      style={{ aspectRatio: '3/4', maxHeight: '75vh' }}
-                    />
-                    {/* Prev arrow */}
-                    {imgs.length > 1 && (
-                      <button
-                        type="button"
-                        onClick={() => setSelectedImage(i => (i - 1 + imgs.length) % imgs.length)}
-                        className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/80 backdrop-blur-sm shadow flex items-center justify-center hover:bg-white transition-colors"
-                      >
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M15 18l-6-6 6-6"/>
-                        </svg>
-                      </button>
-                    )}
-                    {/* Next arrow */}
-                    {imgs.length > 1 && (
-                      <button
-                        type="button"
-                        onClick={() => setSelectedImage(i => (i + 1) % imgs.length)}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/80 backdrop-blur-sm shadow flex items-center justify-center hover:bg-white transition-colors"
-                      >
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M9 18l6-6-6-6"/>
-                        </svg>
-                      </button>
-                    )}
-                  </div>
-
-                  {/* Horizontal thumbnail strip */}
-                  {imgs.length > 1 && (
-                    <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
-                      {imgs.map((img, i) => (
-                        <button
-                          key={i}
-                          type="button"
-                          onClick={() => setSelectedImage(i)}
-                          className="w-16 h-16 shrink-0 overflow-hidden border-2 transition-all"
-                          style={{ borderColor: selectedImage === i ? '#1a1a1a' : '#e5e7eb' }}
-                        >
+                <div className="grid grid-cols-2 gap-2">
+                  {imgs.slice(0, 4).map((img, i) => (
+                    <div key={i} className="overflow-hidden rounded-lg bg-gray-100" style={{ aspectRatio: '3/4' }}>
+                      <img
+                        src={img}
+                        alt={`${productName} ${i + 1}`}
+                        className="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
+                        onClick={() => { setSelectedImage(i); }}
+                      />
+                    </div>
+                  ))}
+                  {/* Extra images as a hidden section below if needed */}
+                  {imgs.length > 4 && (
+                    <div className="col-span-2 flex gap-2 overflow-x-auto scrollbar-hide pt-1">
+                      {imgs.slice(4).map((img, i) => (
+                        <div key={i} className="w-20 h-28 shrink-0 overflow-hidden rounded-md bg-gray-100">
                           <img src={img} alt="" className="w-full h-full object-cover" />
-                        </button>
+                        </div>
                       ))}
                     </div>
                   )}
@@ -819,145 +723,116 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
               );
             })()}
 
-            {/* RIGHT — clean minimal buy box */}
+            {/* RIGHT — buy box */}
             <div className="flex flex-col gap-0">
 
               {/* Product name */}
-              <h1
-                className="mb-5 text-3xl font-light leading-tight text-gray-900 md:text-4xl"
-                style={{ letterSpacing: '0.12em', fontFamily: 'Georgia, serif', textTransform: 'uppercase' }}
-              >
+              <h1 className="mb-3 text-2xl font-semibold leading-snug text-gray-900 md:text-3xl">
                 {productName}
               </h1>
 
-
               {/* Price row */}
-              <div className="mb-4 flex flex-wrap items-baseline gap-3">
-                <span className="text-2xl font-semibold tracking-widest" style={{ color: '#c0392b' }}>
-                  RS.&nbsp;{productPrice.toLocaleString('en-IN')}.00
+              <div className="mb-1 flex flex-wrap items-baseline gap-3">
+                <span className="text-2xl font-semibold text-gray-900">
+                  ₹&nbsp;{productPrice.toLocaleString('en-IN')}
                 </span>
-                {productOriginal ? (
-                  <span className="text-base text-gray-400 line-through tracking-wide">
-                    RS.&nbsp;{productOriginal.toLocaleString('en-IN')}.00
+                {productOriginal > 0 && (
+                  <span className="text-sm text-gray-400 line-through">
+                    ₹&nbsp;{productOriginal.toLocaleString('en-IN')}
                   </span>
-                ) : null}
+                )}
+              </div>
+              <p className="mb-4 text-xs text-gray-500">Inclusive of all taxes</p>
+
+              {/* Rating row */}
+              <div className="mb-5 flex items-center gap-2">
+                <span className="flex gap-0.5" aria-label={`${productRating.toFixed(1)} out of 5 stars`}>
+                  {[1,2,3,4,5].map((i) => (
+                    <svg key={i} width="16" height="16" viewBox="0 0 24 24" aria-hidden>
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                        fill={i <= Math.round(productRating) ? '#fb923c' : '#d1d5db'} />
+                    </svg>
+                  ))}
+                </span>
+                <span className="text-sm font-semibold text-gray-800">{productRating.toFixed(1)}</span>
+                <span className="text-sm text-gray-400">({productReviews} reviews)</span>
               </div>
 
-              
-
-              <SocialProofTicker />
-
-              {/* Rating row — stars · count · Amazon badge */}
-              <div className="mb-3">
-                <div className="flex flex-nowrap items-center gap-x-2 overflow-hidden">
-                  {/* Stars */}
-                  <span className="flex gap-0.5" aria-label={`${productRating.toFixed(1)} out of 5 stars`}>
-                    {[1, 2, 3, 4, 5].map((i) => {
-                      const full = i <= Math.floor(productRating);
-                      const half = !full && i === Math.ceil(productRating) && (productRating % 1) >= 0.25;
-                      const clipId = `pdp-star-${i}`;
-                      return (
-                        <svg key={i} width="20" height="20" viewBox="0 0 24 24" aria-hidden>
-                          {half && (
-                            <defs>
-                              <clipPath id={clipId}><rect x="0" y="0" width="12" height="24" /></clipPath>
-                            </defs>
-                          )}
-                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#d1d5db" />
-                          {(full || half) && (
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#e05c00" clipPath={half ? `url(#${clipId})` : undefined} />
-                          )}
-                        </svg>
-                      );
-                    })}
-                  </span>
-                  {/* Rating number + count */}
-                  <span className="text-sm font-bold text-gray-900">{productRating.toFixed(1)}</span>
-                  <span className="text-sm text-gray-500">({productReviews} reviews)</span>
-                  {/* Divider */}
-                  <span className="text-gray-300 text-sm select-none">|</span>
-                  {/* Rotating marketplace badge */}
-                  <MarketplaceBadgeRotator />
-                </div>
-
-                {/* Keyword chips */}
-                <div className="mt-4 flex flex-wrap items-center gap-x-2.5 gap-y-2">
-                  {PDP_KEYWORD_TAGS.map((tag) => (
-                    <span
-                      key={tag}
-                      className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium text-stone-700"
+              {/* Kurta type selector */}
+              <div className="mb-5">
+                <p className="text-sm font-semibold text-gray-800 mb-2">Kurta :</p>
+                <div className="flex gap-2">
+                  {PRODUCT_KURTA_TYPES.map((type) => (
+                    <button
+                      key={type}
+                      type="button"
+                      onClick={() => setSelectedKurtaType(type)}
+                      className="px-4 py-2 text-sm font-medium border transition-colors"
                       style={{
-                        borderColor: 'rgba(185, 155, 123, 0.35)',
-                        background: 'linear-gradient(135deg, rgba(185, 155, 123, 0.18), rgba(255, 255, 255, 0.9))',
+                        borderColor: selectedKurtaType === type ? '#1a1a1a' : '#d1d5db',
+                        backgroundColor: selectedKurtaType === type ? '#1a1a1a' : '#fff',
+                        color: selectedKurtaType === type ? '#fff' : '#1a1a1a',
                       }}
                     >
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#B99B7B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                        <path d="M20 6L9 17L4 12" />
-                      </svg>
-                      {tag}
-                    </span>
+                      {type}
+                    </button>
                   ))}
                 </div>
               </div>
 
-              <div className="border-t border-gray-300 mb-6" />
-
-              {/* Description */}
-              <div className="mb-6 text-sm leading-relaxed text-gray-700" style={{ lineHeight: '1.85' }}>
-                <p className="mb-3">
-                  {passedProduct?.feature
-                    ? `${passedProduct.feature}. ${PRODUCT_DESCRIPTION}`
-                    : PRODUCT_DESCRIPTION}
-                </p>
-                <ul className="list-disc space-y-1.5 pl-5 text-[13px] text-gray-700">
-                  <li><span className="font-semibold">Design Philosophy:</span> A blend of mid-century influences and modern softness.</li>
-                  <li><span className="font-semibold">Brown Tinted Glass:</span> A translucent finish that plays with light and shadow.</li>
-                  <li><span className="font-semibold">Solid Wood Base:</span> Sculptural legs crafted to feel grounded yet light.</li>
-                </ul>
-              </div>
-
-              <div className="border-t border-gray-300 mb-6" />
-
-              {/* Quantity + Brand logo */}
-              <div className="mb-6 flex items-center">
-                <div className="flex w-fit items-center border border-gray-400 bg-white">
-                  <button
-                    type="button"
-                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="flex h-11 w-11 items-center justify-center text-xl text-gray-600 transition-colors hover:bg-gray-100"
-                  >
-                    −
-                  </button>
-                  <span className="w-12 text-center text-sm font-semibold text-gray-900 border-l border-r border-gray-400">
-                    {quantity}
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() => setQuantity(quantity + 1)}
-                    className="flex h-11 w-11 items-center justify-center text-xl text-gray-600 transition-colors hover:bg-gray-100"
-                  >
-                    +
+              {/* Bust size selector */}
+              <div className="mb-6">
+                <div className="flex items-center justify-between mb-2">
+                  <p className="text-sm font-semibold text-gray-800 uppercase tracking-wide">Your Bust Size:</p>
+                  <button type="button" className="flex items-center gap-1 text-xs text-gray-500 underline">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                    </svg>
+                    SIZE CHART
                   </button>
                 </div>
-                <img src={brandLogo} alt="Muun Home Decor" className="h-12 mx-4 w-auto md:w-[53%]" />
+                <div className="flex flex-wrap gap-2">
+                  {PRODUCT_SIZES.map((size) => (
+                    <button
+                      key={size}
+                      type="button"
+                      onClick={() => setSelectedSize(size)}
+                      className="flex flex-col items-center justify-center border transition-colors"
+                      style={{
+                        width: '64px', height: '52px',
+                        borderColor: selectedSize === size ? '#1a1a1a' : '#d1d5db',
+                        backgroundColor: selectedSize === size ? '#1a1a1a' : '#fff',
+                        color: selectedSize === size ? '#fff' : '#1a1a1a',
+                      }}
+                    >
+                      <span className="text-sm font-semibold leading-none">{size}</span>
+                      <span className="text-[10px] leading-tight mt-0.5 opacity-75">{PRODUCT_BUST_SIZES[size]}</span>
+                    </button>
+                  ))}
+                </div>
               </div>
 
-              {/* CTA buttons */}
-              <div className="flex flex-col gap-3 mb-6">
+              {/* ADD TO BAG */}
+              <div className="mb-5">
                 <button
                   type="button"
-                  className="flex h-12 w-full items-center justify-center text-sm font-semibold tracking-widest text-white transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: '#1a1a1a', letterSpacing: '0.12em' }}
+                  className="flex h-14 w-full items-center justify-center gap-2 text-sm font-semibold tracking-widest text-white transition-opacity hover:opacity-90 rounded-full"
+                  style={{ backgroundColor: '#1a1a1a', letterSpacing: '0.1em' }}
                 >
-                  ADD TO CART
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
+                  </svg>
+                  ADD TO BAG
                 </button>
-                <button
-                  type="button"
-                  className="flex h-12 w-full items-center justify-center text-sm font-semibold tracking-widest text-white transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: '#B99B7B', letterSpacing: '0.12em' }}
-                >
-                  BUY NOW
-                </button>
+              </div>
+
+              {/* BUY 3 GET 1 FREE promo banner */}
+              <div className="mb-6 rounded-lg px-5 py-4 text-center border border-stone-200" style={{ backgroundColor: '#faf7f2' }}>
+                <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">Limited Offer</p>
+                <p className="text-xl font-bold text-gray-900">
+                  Buy 3, Get 1 <span style={{ color: '#c0392b' }}>Free</span>
+                </p>
+                <p className="text-xs text-gray-400 mt-1">Automatically applied at checkout</p>
               </div>
 
 
@@ -989,8 +864,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
       </main>
 
 
-      {/* Reels — open full-screen reel modal (same pattern as home “Shop the Look”) */}
-      {(() => {
+      {false && (() => {
         const WILD_VIDEOS = SCRAPSHALA_SHOP_VIDEOS;
         const n = WILD_VIDEOS.length;
         const idx = wildVideoIdx;
@@ -1006,7 +880,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                 <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
                   <div>
                     <h2 className="text-base sm:text-lg font-semibold text-gray-900 tracking-tight">
-                      See Muun Home Decor in action
+                      Shop the Look
                     </h2>
                   </div>
                   <a
@@ -1021,7 +895,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       <circle cx="12" cy="12" r="4.5" stroke="currentColor" strokeWidth="1.8"/>
                       <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
                     </svg>
-                    @muunhomedecor
+                    @saadaadesigns
                   </a>
                 </div>
                 <div className="overflow-x-auto pb-2 scrollbar-hide" style={{ scrollbarWidth: 'none' }}>
@@ -1085,7 +959,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                   onClick={(e) => e.stopPropagation()}
                   role="dialog"
                   aria-modal="true"
-                  aria-label="Muun Home Decor reels"
+                  aria-label="Saadaa reels"
                 >
                   {/* Desktop: previous preview */}
                   <div className="hidden w-[148px] shrink-0 flex-col md:flex">
@@ -1159,7 +1033,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                           <img src={thumbImg} alt="" className="w-full h-full object-cover" />
                         </div>
                         <div className="min-w-0">
-                          <p className="text-white text-sm font-semibold leading-none truncate">Muun Home Decor</p>
+                          <p className="text-white text-sm font-semibold leading-none truncate">Saadaa</p>
                           <p className="text-white/75 text-xs mt-0.5 truncate">
                             Reel {idx + 1} of {n}
                           </p>
@@ -1231,7 +1105,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                         type="button"
                         onClick={() =>
                           navigator.share
-                            ? navigator.share({ title: 'Muun Home Decor', text: reelLabel, url: window.location.href })
+                            ? navigator.share({ title: 'Saadaa', text: reelLabel, url: window.location.href })
                             : navigator.clipboard?.writeText(window.location.href)
                         }
                         className="flex flex-col items-center gap-1"
@@ -1259,7 +1133,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                         className="inline-flex w-full items-center justify-center py-3 rounded-none text-sm font-bold text-white bg-[#B99B7B] hover:opacity-95 transition-opacity"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        Follow @muunhomedecor
+                        Follow @saadaadesigns
                       </a>
                     </div>
                   </div>
@@ -1455,7 +1329,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       href={AJNAA_INSTAGRAM_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label="Open @muunhomedecor on Instagram"
+                      aria-label="Open @saadaadesigns on Instagram"
                       className="flex items-center gap-3.5 rounded-none border border-stone-200/70 bg-white px-3.5 py-3 transition-colors hover:bg-stone-50/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B99B7B]/35 focus-visible:ring-offset-2"
                       style={{ textDecoration: 'none' }}
                     >
@@ -1484,7 +1358,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       </span>
                       <div className="min-w-0 flex-1 text-left">
                         <div className="flex flex-col gap-1.5">
-                          <p className="text-[13px] font-semibold leading-snug text-stone-900">@muunhomedecor</p>
+                          <p className="text-[13px] font-semibold leading-snug text-stone-900">@saadaadesigns</p>
                           <p className="text-[11px] leading-snug text-stone-600">
                             <span className="font-semibold tabular-nums text-stone-800">{AJNAA_INSTAGRAM_FOLLOWERS_LABEL}</span>
                             {' '}
@@ -1506,19 +1380,19 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
 
               {/* AI Insight — premium, minimal */}
               <div className="mb-8 overflow-hidden rounded-none border border-stone-200/60 bg-gradient-to-b from-white to-stone-50/40 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
-                <div className="flex items-baseline justify-between gap-4 border-b border-stone-200/50 px-6 py-4">
-                  <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-stone-400">Insight</span>
+                <div className="flex items-baseline justify-between gap-4 border-b border-stone-200/50 px-6 py-3">
+                  <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-stone-400">AI Summary</span>
                   <span className="text-[11px] text-stone-500">Verified reviews</span>
                 </div>
 
-                <div className="px-6 pb-2 pt-5">
-                  <h4 className="mb-3 font-serif text-xl font-normal tracking-tight text-stone-900 md:text-[1.35rem]">
-                    What home decor lovers are saying
+                <div className="px-6 pb-2 pt-4">
+                  <h4 className="mb-2.5 font-serif text-lg font-normal tracking-tight text-stone-900 md:text-xl">
+                    What Saadaa customers are saying
                   </h4>
-                  <p className="text-[15px] leading-[1.65] text-stone-600">
+                  <p className="text-[14px] leading-[1.65] text-stone-600">
                     {isAISummaryExpanded ? (
                       <>
-                        Shoppers praise Muun Home Decor for pieces that hold their shape beautifully, with clean finishes and details that feel thoughtfully made. Reviews often mention favorite textures and finishes — noting premium materials and styling details that look great every day. Many come back for a second piece or buy for friends and family.{' '}
+                        Shoppers love Saadaa for the breathable linen fabric that stays comfortable all day — especially the airy feel in summer. Reviews highlight true-to-colour photos, accurate sizing, and details like the mandarin collar and 3/4 sleeves. Many customers note the kurtas wash well and hold their shape. Repeat buyers are common, and several mention gifting Saadaa to friends and family.{' '}
                         <button
                           type="button"
                           onClick={() => setIsAISummaryExpanded(false)}
@@ -1529,7 +1403,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       </>
                     ) : (
                       <>
-                        Buyers love Muun Home Decor pieces for their crafted quality, refined finishes, and everyday charm — whether for daily living, hosting, or gifting.{' '}
+                        Customers praise Saadaa for airy linen quality, true-to-colour fits, and comfortable everyday wear — perfect from office to casual outings.{' '}
                         <button
                           type="button"
                           onClick={() => setIsAISummaryExpanded(true)}
@@ -1542,19 +1416,19 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                   </p>
                 </div>
 
-                <div className="px-6 pb-5 flex flex-wrap items-center gap-2.5 text-[12px] leading-relaxed">
+                <div className="px-6 pb-4 pt-3 flex flex-wrap items-center gap-2 text-[12px] leading-relaxed">
                   {[
-                    'Crafted home decor',
-                    'Premium quality',
+                    'Airy linen fabric',
+                    'True-to-size',
+                    'Everyday comfort',
                     'Gift-ready',
                   ].map((kw) => (
                     <span
                       key={kw}
-                      className="inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium text-stone-700"
+                      className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-[11px] font-medium text-stone-600"
                       style={{
                         borderColor: 'rgba(185, 155, 123, 0.35)',
-                        background:
-                          'linear-gradient(135deg, rgba(185, 155, 123, 0.18), rgba(255, 255, 255, 0.9))',
+                        background: 'linear-gradient(135deg, rgba(185, 155, 123, 0.12), rgba(255, 255, 255, 0.95))',
                       }}
                     >
                       {kw}
@@ -1562,8 +1436,8 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                   ))}
                 </div>
 
-                <div className="border-t border-stone-200/50 px-4 pb-5 pt-4 sm:px-6">
-                  <div className="flex gap-3" role="tablist" aria-label="Review category">
+                <div className="border-t border-stone-200/50 px-4 pb-4 pt-3 sm:px-6">
+                  <div className="inline-flex w-full gap-2 rounded-lg bg-stone-100/70 p-1" role="tablist" aria-label="Review category">
                     {[
                       ['product', 'Product reviews'],
                       ['brand', 'Brand reviews'],
@@ -1576,10 +1450,10 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                           role="tab"
                           aria-selected={selected}
                           onClick={() => setActiveTab(id)}
-                          className={`flex-1 rounded-xl border bg-white py-3.5 text-center text-[13px] font-semibold transition-all ${
+                          className={`flex-1 rounded-md py-2 text-center text-xs font-semibold transition-all ${
                             selected
-                              ? 'border-stone-900 text-stone-900 shadow-[0_1px_3px_rgba(0,0,0,0.08)]'
-                              : 'border-stone-200/90 text-stone-500 hover:border-stone-300 hover:text-stone-800'
+                              ? 'bg-white text-stone-900 shadow-sm'
+                              : 'text-stone-500 hover:text-stone-700'
                           }`}
                         >
                           {label}
@@ -1999,9 +1873,6 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
           </div>
         </div>
       </section>
-
-      {/* Photo Gallery */}
-      <PhotoGallery title="More from Muun Home Decor" subtitle="Curated pieces crafted for warm, modern spaces" />
 
       <ShopifyFooter brandName={BRAND_NAME} />
       

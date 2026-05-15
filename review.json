@@ -1,122 +1,122 @@
 [
   {
-    "name": "Ayesha Khan",
+    "name": "Anika Sharma",
+    "location": "Delhi",
+    "rating": 5,
+    "title": "My go-to kurta brand",
+    "review": "I ordered the Mint Green Airy Linen Short Kurta and honestly it exceeded every expectation. The fabric is breathable and so soft — I wore it on a 35-degree day and stayed completely comfortable. The mandarin collar gives it a clean, elevated look without trying too hard. I've already recommended it to three friends. Saadaa really understands what everyday dressing should feel like.",
+    "type": "large"
+  },
+  {
+    "name": "Rhea Kapoor",
     "location": "Mumbai",
     "rating": 5,
-    "title": "Beautiful Decor Piece",
-    "review": "Absolutely stunning diya set! Perfect for festival lighting.",
+    "title": "Linen done right",
+    "review": "I've tried linen from a lot of brands and most either feel too stiff or go limp after one wash. Saadaa's linen is different — it stays soft and holds its shape. The Short Kurta fits beautifully at size M, not too oversized, not too fitted. The colour was exactly what I saw on the website. Will definitely be buying the Yellow one next.",
     "type": "large"
   },
   {
-    "name": "Priya Sharma",
-    "location": "Delhi",
-    "rating": 4.5,
-    "title": "Elegant Home Decor",
-    "review": "These decorative pieces transformed my living room beautifully.",
-    "type": "large"
-  },
-  {
-    "name": "Neha Verma",
+    "name": "Meera Pillai",
     "location": "Bangalore",
-    "rating": 5,
-    "title": "Premium Quality",
-    "review": "Excellent craftsmanship and attention to detail in every piece.",
-    "type": "large"
-  },
-  {
-    "name": "Riya Patel",
-    "location": "Ahmedabad",
     "rating": 4,
-    "title": "Worth Every Rupee",
-    "review": "Great value for money. Perfect for Diwali decorations.",
+    "title": "Simple, clean, well-made",
+    "review": "Ordered the Beige Cotton Pant and the Short Kurta together. Both arrived well-packaged and the quality is genuinely good for the price. The cotton pant has a comfortable elastic waist and the fit is relaxed without looking shapeless. My one small note — the size chart could be slightly more detailed — but the pieces themselves are excellent. Wearing them almost every day now.",
     "type": "large"
   },
   {
-    "name": "Kavita Reddy",
-    "location": "Hyderabad",
-    "rating": 5,
-    "title": "Festive Glow",
-    "review": "Creates the most beautiful ambiance during festivals.",
-    "type": "large"
-  },
-  {
-    "name": "Simran Kaur",
-    "location": "Chandigarh",
-    "rating": 4.5,
-    "title": "Durable Design",
-    "review": "Well-crafted pieces that last for years.",
-    "type": "mid"
-  },
-  {
-    "name": "Meera Joshi",
-    "location": "Pune",
-    "rating": 5,
-    "title": "Elegant Style",
-    "review": "Modern design with traditional touch.",
-    "type": "mid"
-  },
-  {
-    "name": "Ananya Desai",
-    "location": "Surat",
-    "rating": 5,
-    "title": "Perfect for Festivals",
-    "review": "Ideal for all Hindu festivals and celebrations.",
-    "type": "mid"
-  },
-  {
-    "name": "Shruti Iyer",
-    "location": "Kolkata",
-    "rating": 4,
-    "title": "Great Collection",
-    "review": "Wide variety of decorative items to choose from.",
-    "type": "mid"
-  },
-  {
-    "name": "Pooja Hegde",
-    "location": "Chennai",
-    "rating": 5,
-    "title": "Beautiful Finish",
-    "review": "Smooth finish and intricate details.",
-    "type": "mid"
-  },
-  {
-    "name": "Tanya Bhatia",
-    "location": "Gurgaon",
-    "rating": 4.5,
-    "title": "Affordable Luxury",
-    "review": "Premium quality decor at reasonable prices.",
-    "type": "small"
-  },
-  {
-    "name": "Sakshi Nair",
+    "name": "Divya Nair",
     "location": "Kochi",
     "rating": 5,
-    "title": "Perfect Size",
-    "review": "Ideal proportions for my dining table centerpiece.",
-    "type": "small"
+    "title": "Exactly what I was looking for",
+    "review": "I've been looking for a brand that makes honest, simple clothes without too much embellishment or trend-chasing. Saadaa is exactly that. The Linen Kurta feels premium but is priced reasonably. Washed it twice now — no shrinkage, no fading. The stitching is clean throughout. This is the kind of wardrobe staple you keep for years.",
+    "type": "large"
   },
   {
-    "name": "Divya Agarwal",
+    "name": "Sanya Khanna",
+    "location": "Pune",
+    "rating": 5,
+    "title": "Wore it straight from the package",
+    "review": "No ironing needed, no breaking in period — just put it on and felt great. The Short Kurta in Mint Green has that effortless look that's hard to find. The 3/4 sleeves are the perfect length. Fit was true to size at L. Delivery was faster than expected too. One of my favourite online purchases this year.",
+    "type": "large"
+  },
+  {
+    "name": "Ishita Roy",
+    "location": "Kolkata",
+    "rating": 5,
+    "title": "Best basics brand I've found",
+    "review": "Everything from Saadaa just works. Simple cuts, quality fabric, great sizing.",
+    "type": "mid"
+  },
+  {
+    "name": "Tanvi Mehta",
+    "location": "Ahmedabad",
+    "rating": 4,
+    "title": "Comfortable all day",
+    "review": "Wore the linen kurta for a 10-hour work day and it looked as fresh in the evening as it did in the morning.",
+    "type": "mid"
+  },
+  {
+    "name": "Preethi Subramanian",
+    "location": "Chennai",
+    "rating": 5,
+    "title": "True to colour",
+    "review": "The Mint Green is exactly as shown — not too bright, not too washed out. Rare for online shopping.",
+    "type": "mid"
+  },
+  {
+    "name": "Zara Qureshi",
+    "location": "Hyderabad",
+    "rating": 5,
+    "title": "Second purchase, won't be my last",
+    "review": "Bought the Short Kurta first, loved it so much I immediately ordered the Long Kurta. Saadaa has a loyal customer in me.",
+    "type": "mid"
+  },
+  {
+    "name": "Nidhi Gupta",
     "location": "Lucknow",
     "rating": 4,
-    "title": "Trusted Brand",
-    "review": "Reliable quality for all home decoration needs.",
+    "title": "Clean finish, no loose threads",
+    "review": "Quality control is impressive. Everything was stitched perfectly and the fabric felt premium right out of the bag.",
+    "type": "mid"
+  },
+  {
+    "name": "Aarohi Jain",
+    "location": "Jaipur",
+    "rating": 5,
+    "title": "Lightweight and cool",
+    "review": "Perfect summer staple. The linen barely feels like you're wearing anything.",
     "type": "small"
   },
   {
-    "name": "Aditi Rao",
-    "location": "Indore",
+    "name": "Kritika Bose",
+    "location": "Bhopal",
     "rating": 5,
-    "title": "Minimalist Beauty",
-    "review": "Simple yet elegant designs that complement any decor.",
+    "title": "Great fit at every size",
+    "review": "Ordered 2XL — fits perfectly and looks just as good as the model images.",
+    "type": "small"
+  },
+  {
+    "name": "Puja Ahluwalia",
+    "location": "Chandigarh",
+    "rating": 4,
+    "title": "Washes well",
+    "review": "Three washes in and still looks brand new. No pilling, no shrinking.",
+    "type": "small"
+  },
+  {
+    "name": "Supriya Datta",
+    "location": "Gurgaon",
+    "rating": 5,
+    "title": "Saadaa gets basics right",
+    "review": "Simple silhouette, great fabric. Exactly what basics should be.",
     "type": "very_small"
   },
   {
-    "name": "Geeta Singh",
-    "location": "Bhopal",
+    "name": "Falak Mirza",
+    "location": "Surat",
     "rating": 5,
-    "title": "Traditional Charm",
-    "review": "Perfect blend of tradition and modern aesthetics.",
+    "title": "Everyday favourite",
+    "review": "Reaches for this kurta every other day. That says everything.",
     "type": "very_small"
   }
 ]

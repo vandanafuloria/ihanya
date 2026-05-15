@@ -1,21 +1,24 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './PhotoGallery.css';
 
-// Import gallery images with clean filenames
-import g01 from './assets/photo_gallary/gallery_1.png';
-import g02 from './assets/photo_gallary/gallery_2.png';
-import g03 from './assets/photo_gallary/gallery_3.png';
-import g04 from './assets/photo_gallary/gallery_4.png';
-import g05 from './assets/photo_gallary/gallery_5.png';
-import g06 from './assets/photo_gallary/gallery_6.png';
-import g07 from './assets/photo_gallary/gallery_7.png';
-import g08 from './assets/photo_gallary/gallery_8.png';
-import g09 from './assets/photo_gallary/gallery_9.png';
+// Import gallery images
+import g01 from './assets/photo_gallary/gallery_01.png';
+import g02 from './assets/photo_gallary/gallery_02.png';
+import g03 from './assets/photo_gallary/gallery_03.png';
+import g04 from './assets/photo_gallary/gallery_04.png';
+import g05 from './assets/photo_gallary/gallery_05.png';
+import g06 from './assets/photo_gallary/gallery_06.png';
+import g07 from './assets/photo_gallary/gallery_07.png';
+import g08 from './assets/photo_gallary/gallery_08.png';
+import g09 from './assets/photo_gallary/gallery_09.png';
 import g10 from './assets/photo_gallary/gallery_10.png';
+import g11 from './assets/photo_gallary/gallery_11.png';
+import g12 from './assets/photo_gallary/gallery_12.png';
+import g13 from './assets/photo_gallary/gallery_13.png';
 import { bestSellerProducts } from './scrapshalaBestSellers';
 
 export const GALLERY_IMAGES = [
-  g01, g02, g03, g04, g05, g06, g07, g08, g09, g10,
+  g01, g02, g03, g04, g05, g06, g07, g08, g09, g10, g11, g12, g13,
 ];
 
 const INITIAL_SHOW = 12;

@@ -1,10 +1,10 @@
 import React, { useId, useState } from 'react';
 import './AIBrandEngine.css';
 
-const SHOP_URL = 'https://www.instagram.com/muunhomedecor/';
-const INSTAGRAM_URL = 'https://www.instagram.com/muunhomedecor/';
+const SHOP_URL = 'https://www.instagram.com/saadaadesigns/';
+const INSTAGRAM_URL = 'https://www.instagram.com/saadaadesigns/';
 
-/** Sparkle mark — Muun Home navy accent */
+/** Sparkle mark — Saadaa accent */
 function PremiumAIIcon({ gradientId, className, style, size = 40 }) {
   return (
     <svg
@@ -130,107 +130,107 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
 
   const brandInfo = {
     craft: {
-      title: 'Home decor craftsmanship',
+      title: 'Saadaa craftsmanship',
       iconType: 'craft',
       content: [
         {
-          label: 'Stable structure',
-          value: 'Holds its form',
-          description: 'Reinforced structure keeps the piece steady — from everyday corners to statement set-ups.',
+          label: 'Fabric quality',
+          value: 'Airy linen & cotton',
+          description: 'Breathable natural fabrics sourced for comfort in the Indian climate — soft from day one.',
         },
         {
-          label: 'Detailing & finishes',
-          value: 'Refined & durable',
-          description: 'Matte-tone detailing and refined closures—built for smooth everyday use.',
+          label: 'Stitching',
+          value: 'Clean & precise',
+          description: 'Even seams, no loose threads, and reinforced stress points for long-lasting everyday wear.',
         },
         {
-          label: 'Surface & finish',
-          value: 'Hand-finished',
-          description: 'Clean edges, no loose details, and finishes chosen to resist everyday marks.',
+          label: 'Finish',
+          value: 'True to colour',
+          description: 'Colours stay consistent wash after wash — what you see online is what you receive.',
         },
       ],
       highlights: [
-        'Surfaces and compartments designed for everyday essentials.',
-        'Designed detailing that blends with your styling choices.',
-        'Every piece passes a finish check before it leaves our studio.',
+        'Every piece passes a quality check before leaving the studio.',
+        'Natural fabrics that soften with every wash and get better over time.',
+        'Minimalist cuts that hold their shape without structure or padding.',
       ],
     },
     occasions: {
-      title: 'Pieces for every occasion',
+      title: 'Wear it everywhere',
       iconType: 'occasions',
       content: [
         {
-          label: 'Daily spaces',
-          value: 'Room-ready',
-          description: 'Thoughtfully proportioned for living spaces—functional and polished in every room.',
+          label: 'Daily wear',
+          value: 'Office to errands',
+          description: 'Clean, simple silhouettes that look polished without trying — from desk to market.',
         },
         {
-          label: 'Weekend styling',
-          value: 'Day to evening',
-          description: 'Built for re-styling—easy to move and reposition as your home changes.',
+          label: 'Weekend',
+          value: 'Relaxed & fresh',
+          description: 'Lightweight linen and cotton keep you comfortable through long weekend days.',
         },
         {
-          label: 'Hosting & gifting',
-          value: 'Everyday to celebratory',
-          description: 'Pieces that transition from daily comfort to special occasions.',
+          label: 'Occasions',
+          value: 'Casual to festive',
+          description: 'Elevate with accessories — Saadaa basics work as a base for any occasion.',
         },
       ],
       highlights: [
-        'Designs that keep spaces feeling fresh and inviting all day.',
-        'Durable build tested for everyday use and long-lasting performance.',
-        'Smart proportions for real life—beautiful even in small spaces.',
+        'Designed for real days — not just photoshoots.',
+        'Versatile enough to pair with everything already in your wardrobe.',
+        'Breathable fabric keeps you cool through India\'s warm seasons.',
       ],
     },
     gifting: {
-      title: 'Gifting made thoughtful',
+      title: 'Gift a Saadaa basic',
       iconType: 'gift',
       content: [
         {
           label: 'Who it is for',
-          value: 'Her · them',
-          description: 'Sister, friend, mum, colleague — a Muun Home piece is a gift that gets used every single day.',
+          value: 'Her · anyone',
+          description: 'Sister, friend, mum, colleague — a piece she\'ll actually reach for every week.',
         },
         {
           label: 'Occasions',
-          value: 'Every milestone',
-          description: 'Birthdays, promotions, anniversaries, Diwali, housewarming, and "just because" surprises.',
+          value: 'Any milestone',
+          description: 'Birthdays, Diwali, rakhi, graduations — a wardrobe basic is a gift that gets used daily.',
         },
         {
           label: 'Presentation',
-          value: 'Gift-ready',
-          description: 'Premium wrapping and care notes included — no extra effort needed.',
+          value: 'Clean packaging',
+          description: 'Arrives neatly packaged and ready to gift — no extra effort needed.',
         },
       ],
       highlights: [
-        'Recipients consistently say the piece looks far more elevated than it is.',
-        'Care wrap and wrapping included so it arrives feeling like a considered gift.',
-        'Available in colours — Beige, Brown, Teal — easy to match personal style.',
+        'Recipients love that it fits straight away — size chart is accurate.',
+        'Simple enough to suit any style, special enough to feel considered.',
+        'Available in classic colours that work for every skin tone.',
       ],
     },
     care: {
-      title: 'Care for your Muun Home decor',
+      title: 'Care for your Saadaa clothing',
       iconType: 'care',
       content: [
         {
-          label: 'Upholstery & surfaces',
-          value: 'Wipe clean',
-          description: 'Use a soft damp cloth for surface marks. Avoid soaking and harsh cleaning.',
+          label: 'Washing',
+          value: 'Machine washable',
+          description: 'Wash in cold water on a gentle cycle. Turn inside out to preserve colour and texture.',
         },
         {
-          label: 'Wood & glass surfaces',
-          value: 'Easy wipe-down',
-          description: 'Use a soft damp cloth. Avoid abrasive cleaners to protect finishes.',
+          label: 'Drying',
+          value: 'Shade dry',
+          description: 'Dry in shade to prevent fading. Linen and cotton dry quickly without a dryer.',
         },
         {
-          label: 'Placement & storage',
-          value: 'Style & store',
-          description: 'Store with soft padding so surfaces and finishes stay perfect between uses.',
+          label: 'Ironing',
+          value: 'Low heat',
+          description: 'Iron on low-medium heat while slightly damp for a crisp finish. Avoid high heat on linen.',
         },
       ],
       highlights: [
-        'Store pieces level/ upright and away from direct sunlight to preserve colour.',
-        'For tabletop areas, wipe after use to keep surfaces looking fresh.',
-        'Finishes stay polished when you avoid harsh chemicals.',
+        'Linen softens naturally with every wash — gets better over time.',
+        'No dry cleaning needed. Simple machine wash is all it takes.',
+        'Store folded in a cool, dry place to maintain shape.',
       ],
     },
     shipping: {
@@ -260,29 +260,29 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
       ],
     },
     brand: {
-      title: 'Muun Home Decor',
+      title: 'Saadaa',
       iconType: 'brand',
       content: [
         {
           label: 'Brand promise',
-          value: 'Style more, worry less',
-          description: 'Decor designed for how Indian homes actually live — everyday rooms, hosting days, family moments, and everything between.',
+          value: 'Better basics for everyone',
+          description: 'Simple, quality clothing designed for real everyday life — comfortable, clean, and made to last.',
         },
         {
           label: 'Shop',
-          value: 'muunhomedecor',
-          description: 'Decor accents, statement pieces, and styling essentials — curated for warm, modern Indian homes.',
+          value: 'saadaadesigns',
+          description: 'Linen kurtas, cotton pants, and everyday basics — crafted for women who value simplicity and quality.',
         },
         {
           label: 'Community',
-          value: '@muunhomedecor · 52K',
+          value: '@saadaadesigns · 522K',
           description: 'Styling reels, real customer stories, and new drops on Instagram.',
         },
       ],
       highlights: [
-        'Trusted by 10K+ buyers on Amazon with consistently high ratings.',
-        'Products designed around what Indian hosts and everyday creators actually need.',
-        'When in doubt — choose a balanced statement base for everyday hosting.',
+        'Trusted by thousands of customers for breathable, honest everyday wear.',
+        'Minimalist designs that work for office, errands, and everything in between.',
+        'Linen and cotton fabrics chosen for comfort in the Indian climate.',
       ],
     },
   };
@@ -362,7 +362,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
     return (
       <div className="chart-container">
         <div className="chart-header">
-          <h5 className="chart-title">Muun Home Decor trust snapshot</h5>
+          <h5 className="chart-title">Saadaa customer trust snapshot</h5>
           <div className="chart-value">{displayValue}</div>
         </div>
         <svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} className="chart-svg" preserveAspectRatio="xMidYMid meet">
@@ -426,7 +426,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
           ))}
         </div>
         <p className="chart-footnote">
-          Illustrative trend only — not live data. Themes: everyday styling, home hosting, and gifting satisfaction.
+          Illustrative trend only — not live data. Themes: fabric quality, fit satisfaction, and everyday wear.
         </p>
       </div>
     );
@@ -454,7 +454,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
             type="button"
             className={`ai-brand-engine-trigger${compact ? ' abe-compact' : ''}`}
             onClick={() => setIsExpanded(true)}
-            aria-label="Open home decor insights for Muun Home Decor"
+            aria-label="Open clothing insights for Saadaa"
           >
             <div className="trigger-icon">
               <span className="ai-gemini-rotator" aria-hidden="true">
@@ -463,21 +463,21 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
             </div>
             {!compact && (
               <div className="trigger-text">
-                <span className="trigger-label">Home decor insights</span>
-                <span className="trigger-sublabel">Muun Home Decor</span>
+                <span className="trigger-label">Style insights</span>
+                <span className="trigger-sublabel">Saadaa</span>
               </div>
             )}
             <span className="trigger-badge">AI</span>
           </button>
           {!compact && (
             <div className="ai-brand-engine-tooltip" role="note">
-              Decor trends, styling & gifting — tap to explore
+              Fabric, fit & style insights — tap to explore
               <span className="ai-brand-engine-tooltip__arrow" aria-hidden />
             </div>
           )}
         </div>
       ) : (
-        <div className="ai-brand-engine-panel" role="dialog" aria-label="Muun Home Decor home decor insights">
+        <div className="ai-brand-engine-panel" role="dialog" aria-label="Saadaa clothing insights">
           <div className="panel-header">
             <div className="header-left">
               <div className="header-icon">
@@ -485,7 +485,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
               </div>
               <div>
                 <h3 className="panel-title">AI Brand Engine</h3>
-                <p className="panel-subtitle">Home decor · styling · everyday spaces</p>
+                <p className="panel-subtitle">Saadaa · better basics · everyday wear</p>
               </div>
             </div>
             <button type="button" className="panel-close-btn" onClick={() => setIsExpanded(false)} aria-label="Close">
@@ -544,7 +544,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
                 </div>
                 <div className="panel-content-cta">
                   <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className="abe-cta abe-cta--primary">
-                    Shop Muun Home
+                    Shop Saadaa
                   </a>
                   <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="abe-cta abe-cta--ghost">
                     Instagram
@@ -559,10 +559,10 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
               <span className="footer-badge-icon" aria-hidden>
                 <PremiumAIIcon gradientId={`${baseId}-foot`} size={18} />
               </span>
-              <span>Curated for home decor, styling & gifting</span>
+              <span>Curated for everyday clothing & style</span>
             </div>
             <p className="footer-note">
-              For home styling and gifting — summaries are for inspiration only. Check product pages and policies on instagram.com/muunhomedecor before you buy.
+              For clothing and styling — summaries are for inspiration only. Check product pages and policies on instagram.com/saadaadesigns before you buy.
             </p>
           </div>
         </div>

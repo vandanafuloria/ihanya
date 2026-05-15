@@ -1,25 +1,14 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { SCRAPSHALA_SHOP_VIDEOS } from './scrapshalaShopVideos';
+import { MUUN_SHOP_VIDEO_CLIPS, SCRAPSHALA_SHOP_VIDEOS } from './scrapshalaShopVideos';
 import { bestSellerProducts } from './scrapshalaBestSellers';
 
 const REEL_URLS = SCRAPSHALA_SHOP_VIDEOS;
-
-const BRAND_NAME = 'Muun Home Decor';
-const SHOP_CTA_URL = 'https://www.instagram.com/muunhomedecor/';
+const SHOP_CTA_URL = 'https://www.instagram.com/saadaadesigns/';
 
 const IG_STORY_RING =
   'rounded-full bg-[linear-gradient(135deg,#feda75_0%,#fa7e1e_35%,#d62976_68%,#962fbf_100%)] p-[2.5px] sm:p-[3px]';
 
-const REEL_CAPTIONS = [
-  'Bags built for life on the move.',
-  `${BRAND_NAME} · carry more, worry less.`,
-  'Structured style for every occasion.',
-  'From commute to weekend — Muun Home goes everywhere.',
-  'Your journey, carried beautifully.',
-  'Every bag tells a story.',
-  'Crafted with care — made for you.',
-  'Elevate your everyday carry.',
-];
+const BRAND_NAME = 'Saadaa';
 
 function IconClose() {
   return (
@@ -131,7 +120,9 @@ export default function HeaderReels({ onViewProduct }) {
 
   const prevIdx = (viewerIndex - 1 + n) % n;
   const nextIdx = (viewerIndex + 1) % n;
-  const caption = REEL_CAPTIONS[viewerIndex % REEL_CAPTIONS.length] ?? REEL_CAPTIONS[0];
+  const caption =
+    MUUN_SHOP_VIDEO_CLIPS[viewerIndex]?.title ??
+    `${BRAND_NAME} · carry more, worry less.`;
 
   const handleShare = async () => {
     const url = REEL_URLS[viewerIndex];

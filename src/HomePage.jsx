@@ -5,23 +5,22 @@ import ProductCard from './ProductCard';
 import AIBrandEngine from './AIBrandEngine';
 import LiveUserCounter from './LiveUserCounter';
 import ActivityBanner from './ActivityBanner';
-import PhotoGallerySection from './PhotoGallerySection';
 import brandInstagramProfile from './assets/logo.png';
-import { SCRAPSHALA_SHOP_VIDEOS } from './scrapshalaShopVideos';
+import { MUUN_SHOP_VIDEO_CLIPS } from './scrapshalaShopVideos';
 import { bestSellerProducts } from './scrapshalaBestSellers';
 import InstagramTrustCarousel from './InstagramTrustCarousel';
 import { GALLERY_IMAGES } from './PhotoGallery';
 import { INSTAGRAM_POST_URLS } from './instagramPosts';
 import reviewData from '../review.json';
+import footer1Lap from './assets/footer1.png';
+import footer1Phone from './assets/footer_phone1.png';
 import './HomePage.css';
 
 
-const AJNAA_INSTAGRAM_URL = 'https://www.instagram.com/muunhomedecor/';
-const AJNAA_LINKTR_URL = 'https://www.instagram.com/muunhomedecor/';
+const AJNAA_INSTAGRAM_URL = 'https://www.instagram.com/saadaadesigns/';
+const AJNAA_LINKTR_URL = 'https://www.instagram.com/saadaadesigns/';
 const AJNAA_HASHTAG_URL =
-  'https://www.instagram.com/explore/tags/muunhomedecor/';
-
-const SHOPIFY_VIDEO_URLS = SCRAPSHALA_SHOP_VIDEOS;
+  'https://www.instagram.com/explore/tags/saadaadesigns/';
 
 const BRAND_NAME = "wordofmouth";
 
@@ -33,8 +32,8 @@ const VIDEO_VIEWS = [
   '3.5K', '4.1K', '3.3K', '3.6K', '2.8K', '3.9K',
 ];
 
-// Video Products data — one row per reel clip; posters cycle best sellers
-const videoProducts = SHOPIFY_VIDEO_URLS.map((url, i) => {
+// Video Products data — one row per Shopify Video clip; posters/prices cycle best sellers
+const videoProducts = MUUN_SHOP_VIDEO_CLIPS.map((clip, i) => {
   const bp = bestSellerProducts[i % bestSellerProducts.length];
   const discount =
     bp.originalPrice && bp.currentPrice
@@ -42,10 +41,11 @@ const videoProducts = SHOPIFY_VIDEO_URLS.map((url, i) => {
       : 0;
   return {
     id: i + 1,
-    video: url,
+    video: clip.url,
     image: bp.image,
     views: VIDEO_VIEWS[i],
-    title: bp.title,
+    title: clip.title,
+    linkedProductTitle: bp.title,
     currentPrice: bp.currentPrice,
     originalPrice: bp.originalPrice,
     discount,
@@ -53,104 +53,7 @@ const videoProducts = SHOPIFY_VIDEO_URLS.map((url, i) => {
   };
 });
 
-const TRUST_SLIDES = [
-  {
-    content: (
-      <span className="flex items-center gap-1.5">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" height="14" alt="Amazon" style={{flexShrink:0, width:'auto', height:'14px'}} />
-        <span className="text-xs font-bold text-gray-900">4.5/5 · 980+ Ratings on Amazon</span>
-      </span>
-    ),
-  },
-  {
-    content: (
-      <span className="flex items-center gap-1.5">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMZ4VQq3AUwc6kAUXJM6eg2QCxmocOhXMvQQ&s" height="16" alt="Nykaa" style={{flexShrink:0, width:'auto', height:'16px'}} />
-        <span className="text-xs font-bold text-gray-900">4.6/5 · 900+ Reviews on Nykaa</span>
-      </span>
-    ),
-  },
-  {
-    content: (
-      <span className="flex items-center gap-1.5">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMZ4VQq3AUwc6kAUXJM6eg2QCxmocOhXMvQQ&s" height="16" alt="Nykaa" style={{flexShrink:0, width:'auto', height:'16px'}} />
-        <span className="text-xs font-bold text-gray-900">4.6/5 · 850+ Reviews on Nykaa</span>
-      </span>
-    ),
-  },
-  {
-    content: (
-      <span className="flex items-center gap-1.5">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" width="14" height="14" alt="Instagram" style={{flexShrink:0}} />
-        <span className="text-xs font-bold text-gray-900">52K Followers on Instagram</span>
-      </span>
-    ),
-  },
-  {
-    content: (
-      <span className="flex items-center gap-1.5">
-        <span style={{color:'#f97316',fontSize:'12px',letterSpacing:'1px'}}>★★★★★</span>
-        <span className="text-xs font-bold text-gray-900">10K+ Happy Customers</span>
-      </span>
-    ),
-  },
-];
 
-function RightRailTrust() {
-  const [current, setCurrent] = React.useState(0);
-  const [phase, setPhase] = React.useState('idle'); // 'idle' | 'exit' | 'enter'
-
-  React.useEffect(() => {
-    const id = setInterval(() => {
-      // slide current out to the left
-      setPhase('exit');
-      setTimeout(() => {
-        // swap slide, place incoming off-screen to the right
-        setCurrent(i => (i + 1) % TRUST_SLIDES.length);
-        setPhase('enter');
-        // slide new one in from right to center
-        setTimeout(() => setPhase('idle'), 320);
-      }, 320);
-    }, 3200);
-    return () => clearInterval(id);
-  }, []);
-
-  const slideStyle = {
-    transition: 'transform 320ms cubic-bezier(0.4,0,0.2,1), opacity 320ms ease',
-    transform:
-      phase === 'exit'  ? 'translateX(-110%)' :
-      phase === 'enter' ? 'translateX(110%)'  :
-      'translateX(0)',
-    opacity: phase === 'idle' ? 1 : 0,
-  };
-
-  return (
-    <div
-      className="fixed z-30 rounded-lg shadow-lg overflow-hidden"
-      aria-label="Social proof"
-      style={{
-        top: '30%',
-        right: '15px',
-        transform: 'translateY(-30%) rotate(270deg)',
-        transformOrigin: 'right center',
-        minWidth: '270px',
-        height: '36px',
-        backgroundColor: '#fff',
-        display: 'flex',
-        alignItems: 'center',
-        paddingLeft: '14px',
-        paddingRight: '14px',
-      }}
-    >
-      <div
-        className="flex items-center gap-2 whitespace-nowrap h-full w-full overflow-hidden"
-        style={slideStyle}
-      >
-        {TRUST_SLIDES[current].content}
-      </div>
-    </div>
-  );
-}
 
 const HomePage = ({ onProductClick }) => {
   const [selectedVideo, setSelectedVideo] = useState(null);
@@ -382,14 +285,6 @@ const HomePage = ({ onProductClick }) => {
       {/* Live User Counter */}
       <LiveUserCounter className={`fixed left-4 z-50 transition-all duration-300 ${isScrolled ? 'top-4' : 'top-[46px]'}`} />
 
-      {/* Right rail trust carousel */}
-      <RightRailTrust />
-
-      {/* Instagram trust / mentions strip — off for now; set to true to restore */}
-      {false && (
-        <InstagramTrustCarousel instagramUrl={AJNAA_INSTAGRAM_URL} followersLabel="52K" />
-      )}
-
       {/* Big Deals Section */}
       <section className="w-full py-12 md:py-16 bg-white">
         <div className="w-full px-4">
@@ -403,7 +298,7 @@ const HomePage = ({ onProductClick }) => {
                 <div
                   key={product.id}
                   className="flex-shrink-0 cursor-pointer"
-                  style={{ width: '300px' }}
+                  style={{ width: '220px' }}
                   onClick={() => onProductClick && onProductClick(product)}
                 >
                   <ProductCard
@@ -420,15 +315,9 @@ const HomePage = ({ onProductClick }) => {
 
 
 
-      {/* Video Section - moved to product page */}
-      <section className="w-full py-12 md:py-16 bg-white hidden">
+      {/* Video stories — same clips as “Decor in motion” + PDP reels */}
+      <section className="w-full py-12 md:py-16 bg-white">
         <div className="w-full px-4">
-          <div className="text-center mb-8 md:mb-12">
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-normal text-[#DB2A20] mb-3 tracking-wide">
-              SHOP OUR BEST SELLERS
-            </h2>
-          </div>
-
           {/* Pill / Story-style thumbnails */}
           <div className="overflow-x-auto scrollbar-hide -mx-4 px-4">
             <div className="flex gap-3 md:gap-4 min-w-max pb-2">
@@ -446,6 +335,7 @@ const HomePage = ({ onProductClick }) => {
                     <div className="rounded-[999px] overflow-hidden bg-gray-100"
                       style={{ width: '140px', height: '210px' }}>
                       <video
+                        key={product.video}
                         src={product.video}
                         className="w-full h-full object-cover"
                         autoPlay
@@ -457,176 +347,13 @@ const HomePage = ({ onProductClick }) => {
                       />
                     </div>
                   </div>
-                  {/* Label */}
-                  <span className="text-xs text-gray-700 text-center max-w-[140px] leading-tight line-clamp-2">
-                    {product.title}
-                  </span>
+
                 </button>
               ))}
 
             </div>
           </div>
 
-          {/* old scroll kept hidden — replaced by pills above */}
-          <div className="hidden overflow-x-auto -mx-4 px-4 scrollbar-hide">
-            <div className="flex gap-4 md:gap-6 min-w-max">
-              {videoProducts.map((product) => (
-                <div 
-                  key={product.id} 
-                  className="w-[200px] md:w-[240px] flex-shrink-0"
-                  style={{ minHeight: '330px', boxShadow: 'rgba(0, 0, 0, 0.2) 0px 4px 8px', borderRadius: '8px' }}
-                >
-                  <div className="bg-white rounded-lg overflow-hidden h-full flex flex-col">
-                    {/* Video Container */}
-                    <div 
-                      className="relative w-full h-[360px] md:h-[440px]"
-                    >
-                      <div 
-                        className="w-full h-full"
-                        style={{ backgroundColor: 'rgb(242, 242, 242)', borderRadius: '8px 8px 0px 0px' }}
-                      >
-                        <video
-                          src={product.video}
-                          className="w-full h-full object-cover"
-                          style={{ borderRadius: '8px 8px 0px 0px' }}
-                          loop
-                          muted
-                          autoPlay
-                          playsInline
-                          preload="none"
-                          ref={(el) => {
-                            videoRefs.current[product.id] = el;
-                          }}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            setSelectedVideo(product);
-                          }}
-                        />
-                      </div>
-                      
-                      {/* Views Container - Bottom Left */}
-                      <div 
-                        className="absolute bottom-[10px] left-[10px] text-white text-sm font-medium px-2 py-1 rounded"
-                        style={{ background: 'rgba(255, 255, 255, 0.2)' }}
-                      >
-                        {product.views} Views
-                      </div>
-                      
-                      {/* Like/Share Container - Bottom Right */}
-                      <div 
-                        className="absolute bottom-[10px] right-[10px] flex items-center gap-3"
-                      >
-                        {/* Like Icon */}
-                        <div className="flex items-center justify-center">
-                          <svg 
-                            width="15" 
-                            height="16" 
-                            viewBox="0 0 15 16" 
-                            fill="none" 
-                            stroke="#fff" 
-                            strokeWidth="1" 
-                            xmlns="http://www.w3.org/2000/svg"
-                            style={{ transform: 'scale(1.3)', filter: 'drop-shadow(0 0 0.4rem rgba(0, 0, 0, 0.5))' }}
-                          >
-                            <path d="M10.3128 2.31787C9.11857 2.31787 8.07301 2.8314 7.42127 3.69942C6.76953 2.8314 5.72396 2.31787 4.52978 2.31787C3.57919 2.31894 2.66784 2.69704 1.99567 3.36921C1.3235 4.04138 0.945407 4.95272 0.944336 5.90331C0.944336 9.9514 6.94648 13.228 7.20209 13.3634C7.26946 13.3996 7.34477 13.4186 7.42127 13.4186C7.49777 13.4186 7.57307 13.3996 7.64044 13.3634C7.89605 13.228 13.8982 9.9514 13.8982 5.90331C13.8971 4.95272 13.519 4.04138 12.8469 3.36921C12.1747 2.69704 11.2633 2.31894 10.3128 2.31787ZM7.42127 12.4265C6.3653 11.8112 1.86961 9.00819 1.86961 5.90331C1.87053 5.19808 2.15109 4.52199 2.64977 4.02331C3.14845 3.52463 3.82454 3.24406 4.52978 3.24315C5.65457 3.24315 6.59893 3.84226 6.99333 4.80455C7.02818 4.8894 7.08748 4.96198 7.16367 5.01305C7.23987 5.06413 7.32953 5.0914 7.42127 5.0914C7.513 5.0914 7.60266 5.06413 7.67886 5.01305C7.75506 4.96198 7.81435 4.8894 7.84921 4.80455C8.24361 3.84053 9.18797 3.24315 10.3128 3.24315C11.018 3.24406 11.6941 3.52463 12.1928 4.02331C12.6914 4.52199 12.972 5.19808 12.9729 5.90331C12.9729 9.00357 8.47608 11.8106 7.42127 12.4265Z" fill="white"></path>
-                          </svg>
-                        </div>
-                        
-                        {/* Share Icon */}
-                        <div className="flex items-center justify-center">
-                          <svg 
-                            width="16" 
-                            height="16" 
-                            viewBox="0 0 16 16" 
-                            fill="none" 
-                            stroke="#fff" 
-                            strokeWidth="1" 
-                            xmlns="http://www.w3.org/2000/svg"
-                            style={{ transform: 'scale(1.3)', filter: 'drop-shadow(0 0 0.4rem rgba(0, 0, 0, 0.5))' }}
-                          >
-                            <path d="M14.0074 2.12578C13.8911 2.0095 13.7458 1.92634 13.5866 1.88487C13.4274 1.8434 13.2601 1.84511 13.1018 1.88983H13.0931L1.99328 5.25784C1.81259 5.3098 1.65202 5.41557 1.53295 5.56107C1.41388 5.70656 1.34196 5.88488 1.32676 6.07228C1.31156 6.25967 1.35381 6.44725 1.44788 6.61003C1.54195 6.77281 1.68338 6.90308 1.85333 6.98348L6.80471 9.32847L9.14971 14.2799C9.22374 14.4384 9.3416 14.5725 9.48936 14.6663C9.63712 14.76 9.80862 14.8095 9.98361 14.809C10.0102 14.809 10.0368 14.8078 10.0634 14.8055C10.2501 14.7904 10.4278 14.7185 10.5725 14.5996C10.7172 14.4806 10.8221 14.3202 10.873 14.1399L14.2387 3.04007C14.2387 3.03717 14.2387 3.03428 14.2387 3.03139C14.284 2.87349 14.2865 2.70638 14.2458 2.54723C14.2052 2.38807 14.1229 2.24261 14.0074 2.12578ZM9.98882 13.875L9.98592 13.8831L7.70975 9.07807L10.4416 6.34561C10.5247 6.25815 10.5704 6.14168 10.5688 6.02104C10.5673 5.9004 10.5187 5.78514 10.4334 5.69983C10.348 5.61452 10.2328 5.56591 10.1121 5.56436C9.9915 5.56282 9.87504 5.60846 9.78757 5.69156L7.05511 8.42344L2.24946 6.14726H2.25756L13.3528 2.78041L9.98882 13.875Z" fill="white"></path>
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Product Info Section */}
-                    <div className="p-3 flex-1 flex flex-col">
-                      <div className="flex items-start gap-3">
-                        {/* Product Image Thumbnail */}
-                        <div 
-                          className="flex-shrink-0 rounded-full overflow-hidden"
-                          style={{ height: '32px', width: '32px', borderRadius: '2rem' }}
-                        >
-                          <img 
-                            src={product.image || product.video} 
-                            alt={product.title}
-                            className="w-full h-full object-cover"
-                            onError={(e) => {
-                              e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="32" height="32"%3E%3Crect width="32" height="32" fill="%23f2f2f2"/%3E%3C/svg%3E';
-                            }}
-                          />
-                        </div>
-                        
-                        {/* Product Details */}
-                        <div className="flex-1 min-w-0">
-                          {/* Product Name */}
-                          <div 
-                            className="text-black font-normal text-[13px] mb-1 line-clamp-2"
-                            style={{ color: 'rgb(0, 0, 0)', fontWeight: 400, fontSize: '13px' }}
-                          >
-                            {product.title}
-                          </div>
-                          
-                          {/* Prices */}
-                          <div className="flex items-center gap-2 flex-wrap">Curated for Your Elegance
-                            {product.currentPrice && (
-                              <div 
-                                className="text-black font-normal"
-                                style={{ color: '#000000', fontStyle: 'normal' }}
-                              >
-                                ₹ {product.currentPrice.toLocaleString('en-IN')}
-                              </div>
-                            )}
-                          </div>
-                          
-                          {/* Offer Percentage */}
-                          {product.discount && (
-                            <div 
-                              className="text-sm font-normal mt-1"
-                              style={{ color: 'rgb(21, 106, 5)', fontWeight: 400 }}
-                            >
-                              {product.discount}% Off
-                            </div>
-                          )}
-                          
-                          {/* Social Proof - Sold This Week */}
-                          <div 
-                            className="text-xs font-normal mt-1.5"
-                            style={{ color: '#DB2A20', fontWeight: 400 }}
-                          >
-                            {(product.soldThisWeek ?? 235)} sold this week
-                          </div>
-                        </div>
-                      </div>
-                      
-                      {/* Add to Cart Button */}
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          console.log('Add to cart:', product);
-                        }}
-                        className="w-full text-white py-2.5 px-4 rounded-lg font-semibold text-xs uppercase tracking-wide transition-all duration-300 hover:shadow-md mt-3" style={{ backgroundColor: '#B99B7B', marginTop: '12px' }}
-                      >
-                        ADD TO CART
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
@@ -634,14 +361,8 @@ const HomePage = ({ onProductClick }) => {
       <section className="w-full py-10 bg-white">
         <div className="w-full px-4">
           <div className="flex items-center justify-between mb-8">
-            <div>
-              <p className="text-xs font-semibold tracking-widest text-gray-400 uppercase mb-1">Latest drops</p>
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-                Decor in motion
-                <span className="ml-2 text-[#B99B7B]" aria-hidden>✦</span>
-              </h2>
-            </div>
-            <button className="text-sm font-bold text-gray-900 hover:opacity-70 transition-opacity">View All</button>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Shop the Look</h2>
+            <button className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-opacity">View All</button>
           </div>
           <div className="overflow-x-auto scrollbar-hide -mx-4 px-4">
             <div className="flex gap-6 md:gap-8 min-w-max pb-2">
@@ -657,6 +378,7 @@ const HomePage = ({ onProductClick }) => {
                     <div className="relative w-full h-[360px] md:h-[440px]">
                       <div className="w-full h-full" style={{ backgroundColor: 'rgb(242,242,242)', borderRadius: 0 }}>
                         <video
+                          key={product.video}
                           src={product.video}
                           className="w-full h-full object-cover"
                           style={{ borderRadius: 0, pointerEvents: 'none' }}
@@ -664,7 +386,7 @@ const HomePage = ({ onProductClick }) => {
                           muted
                           autoPlay
                           playsInline
-                          preload="none"
+                          preload="metadata"
                         />
                       </div>
                       {/* Views — bottom left */}
@@ -692,27 +414,8 @@ const HomePage = ({ onProductClick }) => {
                     </div>
 
                     {/* Product info */}
-                    <div className="p-3 flex-1 flex flex-col">
-                      <div className="flex items-start gap-3">
-                        <div className="flex-shrink-0 w-8 h-8 rounded-full overflow-hidden" style={{ borderRadius: '2rem' }}>
-                          <img src={product.image} alt={product.title} className="w-full h-full object-cover"
-                            onError={(e) => { e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="32" height="32"%3E%3Crect width="32" height="32" fill="%23f2f2f2"/%3E%3C/svg%3E'; }}/>
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="text-black text-[13px] mb-1 line-clamp-2">{product.title}</div>
-                          <div className="flex items-center gap-2 flex-wrap">
-                            {product.currentPrice && (
-                              <span className="text-black font-semibold">Rs. {product.currentPrice.toLocaleString('en-IN')}.00</span>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                      <button
-                        onClick={(e) => e.stopPropagation()}
-                        className="w-full text-white py-2.5 px-4 rounded-none font-semibold text-xs uppercase tracking-wide transition-all duration-300 hover:shadow-md mt-3" style={{ backgroundColor: '#B99B7B' }}
-                      >
-                        ADD TO CART
-                      </button>
+                    <div className="px-3 py-2">
+                      <p className="text-sm font-medium text-gray-900 line-clamp-1">{product.title}</p>
                     </div>
                   </div>
                 </div>
@@ -722,12 +425,9 @@ const HomePage = ({ onProductClick }) => {
         </div>
       </section>
 
-      {/* Photo Gallery Section */}
-      <PhotoGallerySection />
 
-      {/* Instagram profile (followers, posts, bio) — off for now; set to true to restore */}
       {false && (
-      <section className="w-full py-6 md:py-10 bg-white">
+      <section className="w-full py-6 md:py-10 bg-white hidden">
         <div className="w-full px-4">
 
           {/* ── DESKTOP layout (md+): left | center | right ── */}
@@ -741,7 +441,7 @@ const HomePage = ({ onProductClick }) => {
                 <div className="w-32 h-32 rounded-full overflow-hidden">
                   <img
                     src={brandInstagramProfile}
-                    alt="Muun Home Decor on Instagram"
+                    alt="Saadaa on Instagram"
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
@@ -757,7 +457,7 @@ const HomePage = ({ onProductClick }) => {
                   rel="noopener noreferrer"
                   className="text-gray-900 font-semibold text-xl hover:opacity-70 transition-opacity"
                 >
-                  muunhomedecor
+                  saadaadesigns
                 </a>
                 <span className="text-gray-400 text-base tracking-widest">···</span>
               </div>
@@ -767,7 +467,7 @@ const HomePage = ({ onProductClick }) => {
                   <p className="text-gray-400 text-sm">posts</p>
                 </div>
                 <div className="text-center">
-                  <p className="font-bold text-gray-900 text-base">52K</p>
+                  <p className="font-bold text-gray-900 text-base">522K</p>
                   <p className="text-gray-400 text-sm">followers</p>
                 </div>
                 <div className="text-center">
@@ -808,7 +508,7 @@ const HomePage = ({ onProductClick }) => {
             </div>
 
             <div className="space-y-1">
-              <p className="text-gray-900 text-sm font-semibold">Muun Home Decor</p>
+              <p className="text-gray-900 text-sm font-semibold">Saadaa</p>
               <p className="text-gray-400 text-sm">Premium bags for every journey</p>
               <p className="text-gray-800 text-sm">Thoughtfully crafted designs for every look.</p>
               <p className="text-gray-800 text-sm">Handmade in India · Trusted quality</p>
@@ -831,7 +531,7 @@ const HomePage = ({ onProductClick }) => {
                 className="text-sm font-medium"
                 style={{ color: '#DB2A20' }}
               >
-                muunhomedecor
+                saadaadesigns
               </a>
             </div>
           </div>
@@ -847,7 +547,7 @@ const HomePage = ({ onProductClick }) => {
                   <div className="w-20 h-20 rounded-full overflow-hidden">
                     <img
                       src={brandInstagramProfile}
-                      alt="Muun Home Decor on Instagram"
+                      alt="Saadaa on Instagram"
                       className="w-full h-full object-cover"
                       loading="lazy"
                     />
@@ -860,7 +560,7 @@ const HomePage = ({ onProductClick }) => {
                   <p className="text-gray-400 text-xs">posts</p>
                 </div>
                 <div className="text-center">
-                  <p className="font-semibold text-gray-900 text-base">52K</p>
+                  <p className="font-semibold text-gray-900 text-base">522K</p>
                   <p className="text-gray-400 text-xs">followers</p>
                 </div>
                 <div className="text-center">
@@ -871,7 +571,7 @@ const HomePage = ({ onProductClick }) => {
             </div>
 
             <div className="space-y-0.5">
-              <p className="text-gray-900 text-sm font-semibold">Muun Home Decor</p>
+              <p className="text-gray-900 text-sm font-semibold">Saadaa</p>
               <p className="text-gray-400 text-xs">Premium bags for every journey</p>
               <p className="text-gray-800 text-sm">Thoughtfully crafted designs for every look.</p>
               <p className="text-gray-800 text-sm">Handmade in India · Trusted quality</p>
@@ -894,7 +594,7 @@ const HomePage = ({ onProductClick }) => {
                 className="text-sm font-medium"
                 style={{ color: '#DB2A20' }}
               >
-                muunhomedecor
+                saadaadesigns
               </a>
             </div>
 
@@ -1210,7 +910,7 @@ const HomePage = ({ onProductClick }) => {
                   <img src={selectedLookVideo.image} alt="" className="w-full h-full object-cover" />
                 </div>
                 <div>
-                  <p className="text-white text-sm font-semibold leading-none">Muun Home Decor</p>
+                  <p className="text-white text-sm font-semibold leading-none">Saadaa</p>
                   <p className="text-white/70 text-xs mt-0.5">{selectedLookVideo.views} views</p>
                 </div>
               </div>
@@ -1269,7 +969,7 @@ const HomePage = ({ onProductClick }) => {
 
               {/* Share */}
               <button
-                onClick={() => navigator.share ? navigator.share({ title: selectedLookVideo.title, text: `Check out ${selectedLookVideo.title} from Muun Home Decor`, url: window.location.href }) : navigator.clipboard?.writeText(window.location.href)}
+                onClick={() => navigator.share ? navigator.share({ title: selectedLookVideo.title, text: `Check out ${selectedLookVideo.title} from Saadaa`, url: window.location.href }) : navigator.clipboard?.writeText(window.location.href)}
                 className="flex flex-col items-center gap-1"
               >
                 <div className="w-11 h-11 rounded-full bg-black/40 flex items-center justify-center">
@@ -1339,22 +1039,6 @@ const HomePage = ({ onProductClick }) => {
         </div>
       )}
 
-
-      {/* Floating Instagram Button */}
-      <button
-        className="fixed bottom-5 left-5 w-12 h-12 md:w-auto md:h-auto md:px-5 md:py-3 rounded-full flex items-center justify-center md:gap-2.5 text-sm font-semibold text-white cursor-pointer z-30 transition-all duration-300 hover:scale-105 active:scale-95"
-        style={{
-          background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)',
-          boxShadow: '0 4px 15px rgba(188, 24, 136, 0.4)'
-        }}
-        onClick={() => setShowInstagramModal(true)}
-        aria-label="See Our Instagram"
-      >
-        <svg className="w-5 h-5 md:w-5 md:h-5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-        </svg>
-        <span className="hidden md:inline whitespace-nowrap">See Our Instagram</span>
-      </button>
 
       {/* Instagram Modal */}
       {showInstagramModal && (
@@ -1428,6 +1112,11 @@ const HomePage = ({ onProductClick }) => {
           </div>
         </div>
       )}
+
+      <div className="w-full">
+        <img src={footer1Lap} alt="" className="hidden md:block w-full h-auto" />
+        <img src={footer1Phone} alt="" className="block md:hidden w-full h-auto" />
+      </div>
 
       <ShopifyFooter brandName={BRAND_NAME} />
       <AIBrandEngine compact />

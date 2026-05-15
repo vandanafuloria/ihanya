@@ -1,18 +1,52 @@
-/** Shopify CDN reel URLs — home PDP grid, HeaderReels, PDP wild strip */
-export const SCRAPSHALA_SHOP_VIDEOS = [
-  'https://cdn.shopify.com/videos/c/o/v/8ee71158ba7a4de7a82f6cce806dbe7c.mp4',
-  'https://cdn.shopify.com/videos/c/o/v/1c504a527ab04e348107046c9c73c22e.mp4',
-  'https://cdn.shopify.com/videos/c/o/v/c48566e5c56c424eb61463e84825e2c5.mp4',
-  'https://cdn.shopify.com/videos/c/o/v/c7a4813980f6408195553e1e99e2e701.mp4',
-  'https://cdn.shopify.com/videos/c/o/v/ee4f3d1e1105402cad009191c24d8088.mp4',
-  'https://cdn.shopify.com/videos/c/o/v/fc423fafa5f64d92a1c038f6de88eb42.mp4',
-  'https://cdn.shopify.com/videos/c/o/v/fcc25516552a4c89b181351914f3e113.mp4',
-  'https://cdn.shopify.com/videos/c/o/v/6df87d4dc4bc4189ab883f9d30514a1c.mp4',
-  'https://cdn.shopify.com/videos/c/o/v/6dbf27e7e01445abbc9334ba30cec833.mp4',
-  'https://cdn.shopify.com/videos/c/o/v/8aa32b8bf3ae4960aee06cfd9c2b8e31.mp4',
-  'https://cdn.shopify.com/videos/c/o/v/7690b3fdf22146819892722277e728d5.mp4',
-  'https://cdn.shopify.com/videos/c/o/v/1347a93d1dc64bae844b41b3077ba290.mp4',
+/**
+ * Saada Designs — Local video assets with Instagram links.
+ * Single source for home "Shop videos", header reels, and PDP reel strip.
+ */
+export const MUUN_SHOP_VIDEO_CLIPS = [
+  { 
+    url: '/src/assets/videos/saadaadesigns_1776499724_3877880544378354063_12580228633.mp4', 
+    title: 'Elegant designs for everyday',
+    instagramUrl: 'https://www.instagram.com/p/DXFEHf4E4ke/'
+  },
+  { 
+    url: '/src/assets/videos/saadaadesigns_1777479960_3886104929815949187_12580228633.mp4', 
+    title: 'Crafted with care',
+    instagramUrl: 'https://www.instagram.com/p/DW_dQ-hEcYo/?img_index=1'
+  },
+  { 
+    url: '/src/assets/videos/saadaadesigns_1777809485_3888869675068860781.mp4', 
+    title: 'Style meets function',
+    instagramUrl: 'https://www.instagram.com/p/DXhf5J9kv3z/'
+  },
+  { 
+    url: '/src/assets/videos/saadaadesigns_1777914985_3889754030604017524.mp4', 
+    title: 'Timeless pieces',
+    instagramUrl: 'https://www.instagram.com/p/DYTWyVgy1zH/'
+  },
+  { 
+    url: '/src/assets/videos/saadaadesigns_1778175552_3891940132143582136.mp4', 
+    title: 'Modern aesthetics',
+    instagramUrl: 'https://www.instagram.com/p/DYFckGuy9C-/'
+  },
+  { 
+    url: '/src/assets/videos/saadaadesigns_1778259339_3892643079362695358.mp4', 
+    title: 'Quality craftsmanship',
+    instagramUrl: 'https://www.instagram.com/p/DXQ_88pEfmP/'
+  },
+  { 
+    url: '/src/assets/videos/saadaadesigns_1778394333_3893774697292198599.mp4', 
+    title: 'Designer collections',
+    instagramUrl: 'https://www.instagram.com/p/DXFEHf4E4ke/'
+  },
+  { 
+    url: '/src/assets/videos/saadaadesigns_1778726091_3896558318701468871.mp4', 
+    title: 'Saada signature style',
+    instagramUrl: 'https://www.instagram.com/p/DW_dQ-hEcYo/?img_index=1'
+  },
 ];
 
-/** Floating draggable reel on the product (PDP) page — mirrors previous 4th slot */
+/** @deprecated Prefer `MUUN_SHOP_VIDEO_CLIPS` — kept for existing imports (URL list only) */
+export const SCRAPSHALA_SHOP_VIDEOS = MUUN_SHOP_VIDEO_CLIPS.map((c) => c.url);
+
+/** Floating draggable reel on the product (PDP) page */
 export const PDP_DRAGGABLE_VIDEO = SCRAPSHALA_SHOP_VIDEOS[3];
