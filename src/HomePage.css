@@ -208,3 +208,26 @@
   will-change: opacity;
 }
 
+/* Customer YouTube testimonials — mobile thumb strip */
+.customer-youtube-thumb-strip {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(55, 143, 233, 0.3) transparent;
+}
+
+.customer-youtube-thumb-strip::-webkit-scrollbar {
+  height: 5px;
+}
+
+.customer-youtube-thumb-strip::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.customer-youtube-thumb-strip::-webkit-scrollbar-thumb {
+  background-color: rgba(55, 143, 233, 0.2);
+  border-radius: 999px;
+}
+
+.customer-youtube-thumb-strip::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(55, 143, 233, 0.4);
+}
+

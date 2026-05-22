@@ -9,6 +9,7 @@ import brandInstagramProfile from './assets/logo.png';
 import { MUUN_SHOP_VIDEO_CLIPS } from './scrapshalaShopVideos';
 import { bestSellerProducts } from './scrapshalaBestSellers';
 import InstagramTrustCarousel from './InstagramTrustCarousel';
+import CustomerYoutubeTestimonialsCards from './CustomerYoutubeTestimonialsCards';
 import { GALLERY_IMAGES } from './PhotoGallery';
 import { INSTAGRAM_POST_URLS } from './instagramPosts';
 import reviewData from '../review.json';
@@ -1111,6 +1112,7 @@ const HomePage = ({ onProductClick }) => {
         </div>
       )}
 
+      <CustomerYoutubeTestimonialsCards />
       <ShopifyFooter brandName={BRAND_NAME} />
       <AIBrandEngine compact />
       <ActivityBanner />

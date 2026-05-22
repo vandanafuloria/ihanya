@@ -182,7 +182,7 @@ const SOCIAL_PROOF_MESSAGES = [
         <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
       </svg>
     ),
-    text: (n) => `${n} people added this to cart today`,
+    text: (n) => `${n} people added to cart`,
   },
   {
     icon: (
@@ -190,14 +190,14 @@ const SOCIAL_PROOF_MESSAGES = [
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
       </svg>
     ),
-    text: (n) => `${n} orders placed in the last hour`,
+    text: (n) => `${n} orders placed in last 24 hrs`,
   },
 ];
 
 function SocialProofTicker() {
   const [idx, setIdx] = React.useState(0);
   const [visible, setVisible] = React.useState(true);
-  const nums = [23, 41, 18];
+  const nums = [34, 58, 127];
 
   React.useEffect(() => {
     const id = setInterval(() => {
@@ -206,22 +206,25 @@ function SocialProofTicker() {
         setIdx(i => (i + 1) % SOCIAL_PROOF_MESSAGES.length);
         setVisible(true);
       }, 350);
-    }, 3500);
+    }, 3000);
     return () => clearInterval(id);
   }, []);
 
   const { icon, text } = SOCIAL_PROOF_MESSAGES[idx];
   return (
-    <div className="mb-3 flex items-center gap-2 w-fit">
+    <div
+      className="mb-3 flex items-center gap-1.5 w-fit px-3 py-1.5 rounded-full"
+      style={{ backgroundColor: 'rgba(55,143,233,0.08)', border: '1px solid rgba(55,143,233,0.18)' }}
+    >
       <span
-        className="flex items-center gap-1.5 text-xs font-medium tracking-wide"
+        className="flex items-center gap-1.5 text-xs font-semibold"
         style={{
           transition: 'opacity 350ms ease',
           opacity: visible ? 1 : 0,
-          color: '#B99B7B',
+          color: '#378FE9',
         }}
       >
-        <span style={{ color: '#B99B7B' }}>{icon}</span>
+        <span className="shrink-0" style={{ color: '#378FE9' }}>{icon}</span>
         {text(nums[idx])}
       </span>
     </div>
@@ -590,6 +593,89 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50 relative">
 
+      {/* Floating draggable video card */}
+      {showVideoCard && (
+        <div
+          ref={dragCardRef}
+          className="fixed z-50 select-none"
+          style={{
+            width: '160px',
+            touchAction: 'none',
+            userSelect: 'none',
+            cursor: 'grab',
+            borderRadius: '14px',
+            boxShadow: '0 8px 32px rgba(0,0,0,0.28)',
+            overflow: 'hidden',
+            background: '#000',
+            border: '2px solid rgba(255,255,255,0.15)',
+          }}
+          onPointerDown={(e) => {
+            if (e.target.closest('.drag-close-btn')) return;
+            e.currentTarget.setPointerCapture(e.pointerId);
+            e.currentTarget.style.cursor = 'grabbing';
+            const rect = e.currentTarget.getBoundingClientRect();
+            dragOffset.current = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+            dragOffset.current.startX = e.clientX;
+            dragOffset.current.startY = e.clientY;
+            dragOffset.current.moved = false;
+          }}
+          onPointerMove={(e) => {
+            if (!e.currentTarget.hasPointerCapture(e.pointerId)) return;
+            const dx = Math.abs(e.clientX - dragOffset.current.startX);
+            const dy = Math.abs(e.clientY - dragOffset.current.startY);
+            if (dx > 5 || dy > 5) dragOffset.current.moved = true;
+            const card = e.currentTarget;
+            const x = Math.max(0, Math.min(window.innerWidth - card.offsetWidth, e.clientX - dragOffset.current.x));
+            const y = Math.max(0, Math.min(window.innerHeight - card.offsetHeight, e.clientY - dragOffset.current.y));
+            card.style.left = `${x}px`;
+            card.style.top = `${y}px`;
+            dragPos.current = { x, y };
+          }}
+          onPointerUp={(e) => {
+            e.currentTarget.releasePointerCapture(e.pointerId);
+            e.currentTarget.style.cursor = 'grab';
+            if (!dragOffset.current.moved && !e.target.closest('.drag-close-btn')) {
+              setSelectedVideo(PRODUCT_VIDEO);
+            }
+          }}
+        >
+          {/* Label pill */}
+          <div className="absolute top-2 left-2 z-20 flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold text-white" style={{ backgroundColor: '#378FE9', opacity: 0.92 }}>
+            <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            Watch
+          </div>
+
+          {/* Close button */}
+          <button
+            className="drag-close-btn absolute top-2 right-2 z-20 w-6 h-6 bg-black/60 hover:bg-black/85 rounded-full flex items-center justify-center text-white transition-colors"
+            onClick={(e) => { e.stopPropagation(); setShowVideoCard(false); }}
+            aria-label="Close video"
+          >
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
+              <path d="M18 6L6 18M6 6L18 18" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
+            </svg>
+          </button>
+
+          {/* Video */}
+          <video
+            ref={dragVideoRef}
+            src={PRODUCT_VIDEO}
+            style={{ width: '160px', height: '240px', objectFit: 'cover', display: 'block', pointerEvents: 'none' }}
+            loop
+            muted
+            autoPlay
+            playsInline
+            preload="auto"
+          />
+
+          {/* Bottom label */}
+          <div className="absolute bottom-0 left-0 right-0 px-2 py-2" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.75), transparent)' }}>
+            <p className="text-white text-[10px] font-semibold leading-tight">Berry Bright Sunscreen</p>
+            <p className="text-white/60 text-[9px]">Tap to watch full video</p>
+          </div>
+        </div>
+      )}
+
       {/* Back to Home */}
       {onHomeClick && (
         <div className="w-full bg-white border-b border-gray-100 px-4 py-2">
@@ -739,6 +825,9 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
               <div className="mb-4">
                 <MarketplaceBadgeRotator />
               </div>
+
+              {/* Social proof ticker */}
+              <SocialProofTicker />
 
               {/* Price */}
               <div className="mb-1 flex items-baseline gap-3">
@@ -1742,70 +1831,75 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
 
       {/* Instagram Modal */}
       {showInstagramModal && (
-        <div 
-          className="fixed inset-0 bg-black/30 backdrop-blur-md flex items-center justify-center z-[10000] p-4 overflow-y-auto"
+        <div
+          className="fixed inset-0 z-[10000] flex items-stretch md:items-center justify-center bg-black/40 backdrop-blur-sm"
           onClick={() => setShowInstagramModal(false)}
         >
-          <div 
-            className="relative w-full md:w-2/5 max-w-4xl h-full md:h-[90vh] bg-gray-50 rounded-none shadow-2xl overflow-hidden"
+          <div
+            className="relative flex flex-col w-full h-full md:h-[90vh] md:w-[420px] md:max-w-[95vw] md:rounded-2xl bg-white shadow-2xl overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            <button 
-              className="absolute top-4 right-4 bg-black bg-opacity-60 border-none rounded-none w-10 h-10 flex items-center justify-center cursor-pointer transition-all duration-200 z-[10001] hover:bg-opacity-80"
-              onClick={() => setShowInstagramModal(false)}
-              aria-label="Close Instagram"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 6L6 18M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
-            </button>
-            <div className="h-full flex flex-col overflow-hidden">
-              <div className="text-center border-b border-gray-200 flex-shrink-0 py-4 px-4">
-                <h2 className="text-3xl font-bold text-gray-800 mb-2 m-0">Our Instagram</h2>
-                <p className="text-base text-gray-600 m-0">Check out our latest posts and reels</p>
+            {/* Header */}
+            <div className="flex items-center justify-between border-b border-gray-100 px-4 py-3 flex-shrink-0">
+              <div className="flex items-center gap-2.5">
+                <svg width="22" height="22" viewBox="0 0 24 24" className="shrink-0">
+                  <defs>
+                    <linearGradient id="igGradModal" x1="0%" y1="100%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#f09433"/>
+                      <stop offset="50%" stopColor="#dc2743"/>
+                      <stop offset="100%" stopColor="#bc1888"/>
+                    </linearGradient>
+                  </defs>
+                  <path fill="url(#igGradModal)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                <div>
+                  <p className="text-sm font-bold text-gray-900 leading-tight">@consciouschemistindia</p>
+                  <p className="text-xs text-gray-500">{AJNAA_INSTAGRAM_FOLLOWERS_LABEL} followers</p>
+                </div>
               </div>
-              <div className="flex-1 overflow-y-auto py-4 px-4">
-                <div className="max-w-xs mx-auto w-full">
-                  {/* Loading Skeleton */}
-                  {instagramLoading && (
-                    <div className="space-y-6">
-                      {[1, 2, 3, 4].map((i) => (
-                    <div
-                          key={`skeleton-${i}`}
-                          className="w-full bg-gray-200 rounded-none overflow-hidden animate-pulse"
-                          style={{ height: '380px' }}
-                        >
-                          <div className="h-full bg-gradient-to-br from-gray-200 via-gray-100 to-gray-200"></div>
-                        </div>
-                      ))}
-                      <div className="flex items-center justify-center py-4">
-                        <div className="flex items-center gap-2 text-gray-500">
-                          <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                          </svg>
-                          <span>Loading Instagram posts...</span>
-                        </div>
-                      </div>
-                    </div>
-                  )}
+              <button
+                type="button"
+                onClick={() => setShowInstagramModal(false)}
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+                aria-label="Close"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                  <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
 
-                  {/* Instagram Posts */}
-                  <div style={{ display: instagramLoading ? 'none' : 'block' }}>
-                    {instagramPosts.map((url) => (
-                      <div
-                        key={url}
-                        className="w-full flex justify-center mb-4 last:mb-0"
-                      >
-                        <blockquote 
-                          className="instagram-media" 
-                          data-instgrm-permalink={url}
-                          data-instgrm-version="14"
-                          style={{ maxWidth: '260px', width: '100%' }}
+            {/* Scrollable posts */}
+            <div className="flex-1 overflow-y-auto">
+              <div className="w-full max-w-sm mx-auto px-3 py-3 space-y-3">
+                {/* Loading Skeleton */}
+                {instagramLoading && (
+                  <div className="space-y-3">
+                    {[1, 2, 3].map((i) => (
+                      <div key={`skeleton-${i}`} className="w-full rounded-xl bg-gray-100 animate-pulse" style={{ height: '340px' }} />
+                    ))}
+                    <div className="flex items-center justify-center py-4 gap-2 text-gray-400 text-sm">
+                      <svg className="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
+                      </svg>
+                      Loading posts...
+                    </div>
+                  </div>
+                )}
+
+                {/* Instagram Posts */}
+                <div style={{ display: instagramLoading ? 'none' : 'block' }} className="space-y-3">
+                  {instagramPosts.map((url) => (
+                    <div key={url} className="w-full flex justify-center">
+                      <blockquote
+                        className="instagram-media"
+                        data-instgrm-permalink={url}
+                        data-instgrm-version="14"
+                        style={{ width: '100%', maxWidth: '100%', minWidth: 0 }}
                       />
                     </div>
                   ))}
-                  </div>
                 </div>
               </div>
             </div>
