@@ -12,8 +12,6 @@ import InstagramTrustCarousel from './InstagramTrustCarousel';
 import { GALLERY_IMAGES } from './PhotoGallery';
 import { INSTAGRAM_POST_URLS } from './instagramPosts';
 import reviewData from '../review.json';
-import footer1Lap from './assets/footer1.png';
-import footer1Phone from './assets/footer_phone1.png';
 import './HomePage.css';
 
 
@@ -298,7 +296,7 @@ const HomePage = ({ onProductClick }) => {
                 <div
                   key={product.id}
                   className="flex-shrink-0 cursor-pointer"
-                  style={{ width: '220px' }}
+                  style={{ width: '280px' }}
                   onClick={() => onProductClick && onProductClick(product)}
                 >
                   <ProductCard
@@ -1112,11 +1110,6 @@ const HomePage = ({ onProductClick }) => {
           </div>
         </div>
       )}
-
-      <div className="w-full">
-        <img src={footer1Lap} alt="" className="hidden md:block w-full h-auto" />
-        <img src={footer1Phone} alt="" className="block md:hidden w-full h-auto" />
-      </div>
 
       <ShopifyFooter brandName={BRAND_NAME} />
       <AIBrandEngine compact />

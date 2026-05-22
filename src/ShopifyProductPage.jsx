@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useLayoutEffect, useCallback } from 'react';
+import MarketplaceBadgeRotator from './MarketplaceBadgeRotator';
 import ShopifyHeader from './ShopifyHeader';
 import ShopifyFooter from './ShopifyFooter';
 import AIBrandEngine from './AIBrandEngine';
@@ -45,48 +46,48 @@ function formatSoldLabel(n) {
 }
 
 
-// Product images — Women Mint Green Airy Linen Short Kurta
+// Product images — Berry Bright Sunscreen
 const PRODUCT_PAGE_IMAGES = [
-  'https://saadaa.in/cdn/shop/files/1_1_47d5f39b-c471-43bc-81ed-82c7f87d6a47.webp?v=1757744397&width=700',
-  'https://saadaa.in/cdn/shop/files/mint_green_short_kurta_1.webp?v=1757745844&width=700',
-  'https://saadaa.in/cdn/shop/files/2_1_f8a540d1-58bf-4e07-8fe1-bc57a10edcc7.webp?v=1757745844&width=700',
-  'https://saadaa.in/cdn/shop/files/10_3ad5cc91-443c-4ce8-96bf-0797348925e2.webp?v=1757745844&width=700',
-  'https://saadaa.in/cdn/shop/files/3_1_64456da6-ad7f-45c5-ada0-0c4ea7f9ac01.webp?v=1757745844&width=700',
-  'https://saadaa.in/cdn/shop/files/6_4bc1e929-2a2f-4f94-8cb4-62171cbef29b.webp?v=1757745844&width=700',
+  'https://consciouschemist.com/cdn/shop/files/Artboard_5_copy_3.webp?v=1775560507&width=1200',
+  'https://consciouschemist.com/cdn/shop/files/2_1_1.webp?v=1775560466&width=1200',
+  'https://consciouschemist.com/cdn/shop/files/bbss.webp?v=1776747775&width=1200',
+  'https://consciouschemist.com/cdn/shop/files/bhfqpppnvkqledlipmto.webp?v=1776747544&width=1200',
+  'https://consciouschemist.com/cdn/shop/files/fdt3ivldmtrvcrfu9nbd.webp?v=1776747544&width=1200',
+  'https://consciouschemist.com/cdn/shop/files/w3dsi4leywzz8pdlrfjt.webp?v=1776747544&width=1200',
 ];
 
 // Brand Name
-const BRAND_NAME = "Saadaa";
-const AJNAA_INSTAGRAM_URL = 'https://www.instagram.com/saadaadesigns/';
-const AJNAA_INSTAGRAM_FOLLOWERS_LABEL = '522K';
+const BRAND_NAME = "Conscious Chemist";
+const AJNAA_INSTAGRAM_URL = 'https://www.instagram.com/consciouschemistindia/';
+const AJNAA_INSTAGRAM_FOLLOWERS_LABEL = '173K';
 
-/** Reviews UI — warm neutrals from former section gradient (replacing teal bars) */
-const REVIEW_ACCENT = '#B89B7B';
-const REVIEW_RING_TRACK = '#e5ddd4';
-const REVIEW_SOFT = 'rgba(184, 155, 123, 0.14)';
-const REVIEW_ACCENT_BORDER = 'rgba(184, 155, 123, 0.35)';
+/** Reviews UI — Conscious Chemist blue */
+const REVIEW_ACCENT = '#378FE9';
+const REVIEW_RING_TRACK = '#dbeafe';
+const REVIEW_SOFT = 'rgba(55, 143, 233, 0.10)';
+const REVIEW_ACCENT_BORDER = 'rgba(55, 143, 233, 0.30)';
 
 // Product Video — draggable floating card
 const PRODUCT_VIDEO = PDP_DRAGGABLE_VIDEO;
 
 // Product Details
-const PRODUCT_NAME = "Women Mint Green Airy Linen Short Kurta";
-const PRODUCT_PRICE = 899;
-const PRODUCT_ORIGINAL_PRICE = 0;
-const PRODUCT_DISCOUNT = 0;
-const PRODUCT_SKU = "SAADAA-MGALK-001";
-const PRODUCT_DESCRIPTION = "Crafted from airy linen, this short kurta is perfect for effortless everyday styling. Features a mandarin collar, 3/4 sleeves, and a relaxed fit that keeps you comfortable all day.";
-const PRODUCT_BRAND = "Saadaa";
+const PRODUCT_NAME = "Berry Bright Sunscreen";
+const PRODUCT_PRICE = 399;
+const PRODUCT_ORIGINAL_PRICE = 599;
+const PRODUCT_DISCOUNT = 33;
+const PRODUCT_SKU = "CC-BBS-50G-001";
+const PRODUCT_DESCRIPTION = "Water-resistant, soothing & calming non-greasy sunscreen with SPF 50/PA++++. Infused with Niacinamide and Black Berry Extract to protect from UV rays, reduce tanning, and improve brightness — for all skin types.";
+const PRODUCT_BRAND = "Conscious Chemist";
 const PRODUCT_COLORS = [];
-const PRODUCT_SIZES = ['S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'];
+const PRODUCT_SIZES = ['30 Gms', '50 Gms'];
 const PRODUCT_BUST_SIZES = {
-  S: '34" - 35"', M: '36" - 37"', L: '38" - 39"',
-  XL: '40" - 41"', '2XL': '42" - 44"', '3XL': '45" - 46"', '4XL': '47" - 48"',
+  '30 Gms': '30 ml / 1.01 fl oz',
+  '50 Gms': '50 ml / 1.76 fl oz',
 };
-const PRODUCT_KURTA_TYPES = ['Short Kurta', 'Long Kurta'];
+const PRODUCT_KURTA_TYPES = ['Berry Bright Sunscreen', 'Oil Balance SPF 65'];
 /** Social proof — shown next to rating & reviews on the buy box */
-const PRODUCT_REVIEW_COUNT = 86;
-const PRODUCT_SOLD_COUNT = 340;
+const PRODUCT_REVIEW_COUNT = 1746;
+const PRODUCT_SOLD_COUNT = 5200;
 
 // You May Also Like — aligned with best sellers
 const RELATED_PRODUCTS = bestSellerProducts.slice(0, 4).map((p) => ({
@@ -103,18 +104,18 @@ const RELATED_PRODUCTS = bestSellerProducts.slice(0, 4).map((p) => ({
 const PDP_REEL_LABELS = MUUN_SHOP_VIDEO_CLIPS.map((c) => c.title);
 
 /** Short keyword chips under rating / reviews on the buy box */
-const PDP_KEYWORD_TAGS = ['Airy linen', 'Mandarin collar', '3/4 sleeves', 'Everyday wear'];
+const PDP_KEYWORD_TAGS = ['Niacinamide ✨', 'Protects from UV rays 😎', 'Black berry extract 🫐', 'Zero White Cast'];
 
-const PDP_BREADCRUMB_MID = 'Women Shop All Tops';
-const PDP_BREADCRUMB_LAST = 'Women Airy Linen Short Kurtas';
-const PDP_GIFT_PROMO = 'Free dust bag & gift wrapping with every order';
-const PDP_COUPON_CODE = 'CARRY10';
-const PDP_COUPON_COPY = 'Get an extra 10% off on decor picks — use code CARRY10';
+const PDP_BREADCRUMB_MID = 'Sunscreen';
+const PDP_BREADCRUMB_LAST = 'Berry Bright Sunscreen SPF 50';
+const PDP_GIFT_PROMO = 'Free gift on orders above ₹599';
+const PDP_COUPON_CODE = 'NEW15';
+const PDP_COUPON_COPY = 'Get 15% off on your first purchase — use code NEW15';
 
 /** Trust row below CTAs */
 const PDP_TRUST_FEATURES = [
   {
-    label: 'Easy 7 Days Return',
+    label: 'Easy 7-Day Return',
     icon: (
       <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
         <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -130,7 +131,7 @@ const PDP_TRUST_FEATURES = [
     ),
   },
   {
-    label: '1 Year Warranty',
+    label: 'Dermatologist Tested',
     icon: (
       <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -138,7 +139,7 @@ const PDP_TRUST_FEATURES = [
     ),
   },
   {
-    label: 'Premium Material',
+    label: 'Sulphate & Paraben Free',
     icon: (
       <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
         <path strokeLinecap="round" strokeLinejoin="round" d="M5 3l14 9-14 9V3z" />
@@ -153,86 +154,18 @@ const PDP_TRUST_FEATURES = [
 
 // Fallback blurbs for image modals
 const dummyReviews = [
-  { name: 'Priya Sharma', rating: 5, title: 'Perfect everyday bag', text: 'Ireen holds its shape all day. Interior pockets are well-placed. Strap is comfortable for long carries.', date: '1/20/2025', type: 'product' },
-  { name: 'Anjali Mehta', rating: 5, title: 'Quality is real', text: 'Stitching is clean, zipper smooth, fabric spotless after weeks of use. Looks far more expensive than it is.', date: '1/18/2025', type: 'product' },
-  { name: 'Riya Patel', rating: 4, title: 'Gift for sister', text: 'Bought the Ireen as a birthday gift — she was genuinely impressed. 4 stars only because delivery took an extra day.', date: '1/15/2025', type: 'product' },
-  { name: 'Kavya Reddy', rating: 5, title: 'Exactly like the photos', text: 'Beige colour is identical to the website. No surprises at all. Saadaa delivers exactly what they show.', date: '1/12/2025', type: 'product' },
-  { name: 'Meera Singh', rating: 5, title: 'Office to evening', text: 'Carries my laptop, charger, and essentials without looking overstuffed. Gets compliments every week.', date: '1/10/2025', type: 'product' },
-  { name: 'Sneha Verma', rating: 5, title: 'Great packaging', text: 'Came with a dust bag and proper wrapping. No dents or marks on the bag. Thoughtful unboxing experience.', date: '1/08/2025', type: 'product' },
-  { name: 'Divya Nair', rating: 4, title: 'Very clean finish', text: 'Hardware is solid and not flimsy. Handles feel premium. One tiny loose thread but the bag itself is excellent.', date: '1/05/2025', type: 'product' },
-  { name: 'Pooja Mehta', rating: 5, title: 'Mum approved', text: 'Bought the Wander Tote for mum — she uses it daily. Says straps are comfortable and the bag is light.', date: '1/03/2025', type: 'product' },
-  { name: 'Neha Kapoor', rating: 5, title: 'Second purchase', text: 'First was the City Crossbody. This time the Ireen — same great quality and consistent finish.', date: '12/30/2024', type: 'product' },
-  { name: 'Aarti Desai', rating: 5, title: 'Photographs beautifully', text: 'Used Ireen for a shoot — structured shape shows up great on camera. Team asked about the brand.', date: '12/28/2024', type: 'product' },
+  { name: 'Priya Sharma', rating: 5, title: 'Zero white cast!', text: 'Finally a sunscreen that doesn\'t leave a white cast. Blends beautifully and feels lightweight all day.', date: '1/20/2025', type: 'product' },
+  { name: 'Anjali Mehta', rating: 5, title: 'Best sunscreen I\'ve tried', text: 'Texture is so smooth and non-greasy. My skin feels protected without the heavy cream feeling. Love it!', date: '1/18/2025', type: 'product' },
+  { name: 'Riya Patel', rating: 4, title: 'Gifted to my sister', text: 'Bought the Berry Bright as a birthday gift — she loved it. 4 stars only because delivery took an extra day.', date: '1/15/2025', type: 'product' },
+  { name: 'Kavya Reddy', rating: 5, title: 'Exactly like described', text: 'No white cast, no stickiness. Conscious Chemist delivers exactly what they promise.', date: '1/12/2025', type: 'product' },
+  { name: 'Meera Singh', rating: 5, title: 'My morning essential', text: 'Been using it for 3 months. Skin tone has evened out noticeably. The Niacinamide is doing its job!', date: '1/10/2025', type: 'product' },
+  { name: 'Sneha Verma', rating: 5, title: 'Great packaging', text: 'Arrived sealed and secure. The tube is sturdy and dispenses the perfect amount. Thoughtful product experience.', date: '1/08/2025', type: 'product' },
+  { name: 'Divya Nair', rating: 4, title: 'Skin feels protected', text: 'Lightweight formula is perfect for daily use. SPF 50 gives real confidence outdoors. Will repurchase.', date: '1/05/2025', type: 'product' },
+  { name: 'Pooja Mehta', rating: 5, title: 'Mum approved', text: 'Bought this for my mum — she uses it every morning. Says it\'s the first sunscreen she\'s liked in years.', date: '1/03/2025', type: 'product' },
+  { name: 'Neha Kapoor', rating: 5, title: 'Second purchase already', text: 'First bought the Blackhead Water, now the Berry Bright — same great quality and consistency across products.', date: '12/30/2024', type: 'product' },
+  { name: 'Aarti Desai', rating: 5, title: 'Visible brightening', text: 'Used it for 6 weeks — tanning reduced noticeably and my skin looks brighter. The Black Berry Extract works!', date: '12/28/2024', type: 'product' },
 ];
 
-const MARKETPLACE_BADGES = [
-  {
-    label: 'Amazon',
-    rating: '4.5/5',
-    count: '980+',
-    logo: (
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" style={{ height: 14, width: 'auto', flexShrink: 0 }} />
-    ),
-  },
-  {
-    label: 'Nykaa',
-    rating: '4.6/5',
-    count: '900+',
-    logo: (
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMZ4VQq3AUwc6kAUXJM6eg2QCxmocOhXMvQQ&s" alt="Nykaa" style={{ height: 16, width: 'auto', flexShrink: 0 }} />
-    ),
-  },
-  {
-    label: 'Nykaa',
-    rating: '4.6/5',
-    count: '850+',
-    logo: (
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMZ4VQq3AUwc6kAUXJM6eg2QCxmocOhXMvQQ&s" alt="Nykaa" style={{ height: 22, width: 'auto', flexShrink: 0 }} />
-    ),
-  },
-];
-
-function MarketplaceBadgeRotator() {
-  const [idx, setIdx] = React.useState(0);
-  const [phase, setPhase] = React.useState('idle'); // 'idle' | 'exit' | 'enter'
-
-  React.useEffect(() => {
-    const id = setInterval(() => {
-      setPhase('exit');
-      setTimeout(() => {
-        setIdx(i => (i + 1) % MARKETPLACE_BADGES.length);
-        setPhase('enter');
-        setTimeout(() => setPhase('idle'), 280);
-      }, 280);
-    }, 2800);
-    return () => clearInterval(id);
-  }, []);
-
-  const badge = MARKETPLACE_BADGES[idx];
-  const slideStyle = {
-    transition: 'transform 280ms cubic-bezier(0.4,0,0.2,1), opacity 280ms ease',
-    transform:
-      phase === 'exit'  ? 'translateX(-110%)' :
-      phase === 'enter' ? 'translateX(110%)'  :
-      'translateX(0)',
-    opacity: phase === 'idle' ? 1 : 0,
-  };
-
-  return (
-    <span
-      className="flex items-center overflow-hidden px-1 py-0.5"
-      style={{ minWidth: 120 }}
-      aria-live="polite"
-      aria-label={`${badge.label} rating`}
-    >
-      <span className="flex items-center gap-1.5" style={slideStyle}>
-        {badge.logo}
-        <span className="text-xs font-semibold text-gray-800">{badge.rating}</span>
-        <span className="text-xs text-gray-700">({badge.count})</span>
-      </span>
-    </span>
-  );
-}
 
 const SOCIAL_PROOF_MESSAGES = [
   {
@@ -681,7 +614,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
 
 
       <main className="flex-1 bg-white py-6 md:py-10">
-        <div className="mx-auto w-full max-w-6xl px-4 md:px-8">
+        <div className="mx-auto w-full max-w-[1500px] px-4 md:px-6">
 
           {/* Breadcrumb — reference-style trail */}
           <nav className="mb-5 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-xs text-gray-500">
@@ -692,61 +625,105 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
             <span className="font-medium text-gray-800">{PDP_BREADCRUMB_LAST}</span>
           </nav>
 
-          <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-12">
+          {/* ── Desktop 3-col: [main image] [thumbnail strip] [buy box] ── */}
+          <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-8">
 
-            {/* LEFT — 2×2 image grid */}
+            {/* 1 — Main product image + mobile thumbnail strip */}
             {(() => {
               const imgs = productImages.length ? productImages : [productHeader];
               return (
-                <div className="grid grid-cols-2 gap-2">
-                  {imgs.slice(0, 4).map((img, i) => (
-                    <div key={i} className="overflow-hidden rounded-lg bg-gray-100" style={{ aspectRatio: '3/4' }}>
-                      <img
-                        src={img}
-                        alt={`${productName} ${i + 1}`}
-                        className="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
-                        onClick={() => { setSelectedImage(i); }}
-                      />
-                    </div>
-                  ))}
-                  {/* Extra images as a hidden section below if needed */}
-                  {imgs.length > 4 && (
-                    <div className="col-span-2 flex gap-2 overflow-x-auto scrollbar-hide pt-1">
-                      {imgs.slice(4).map((img, i) => (
-                        <div key={i} className="w-20 h-28 shrink-0 overflow-hidden rounded-md bg-gray-100">
-                          <img src={img} alt="" className="w-full h-full object-cover" />
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                <div className="w-full lg:w-[44%] shrink-0 lg:sticky lg:top-6 self-start">
+                  <div className="overflow-hidden rounded-2xl bg-gray-50" style={{ aspectRatio: '3/4' }}>
+                    <img
+                      src={imgs[selectedImage] || imgs[0]}
+                      alt={productName}
+                      className="w-full h-full object-cover cursor-zoom-in"
+                    />
+                  </div>
+                  {/* Mobile horizontal thumbnail row */}
+                  <div className="flex lg:hidden gap-2 mt-3 overflow-x-auto pb-1 scrollbar-hide">
+                    {imgs.map((img, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => setSelectedImage(i)}
+                        className="shrink-0 overflow-hidden rounded-lg bg-gray-100 border-2 transition-all"
+                        style={{
+                          width: '64px',
+                          height: '80px',
+                          borderColor: selectedImage === i ? '#378FE9' : 'transparent',
+                        }}
+                      >
+                        <img src={img} alt={`${productName} ${i + 1}`} className="w-full h-full object-cover" />
+                      </button>
+                    ))}
+                  </div>
                 </div>
               );
             })()}
 
-            {/* RIGHT — buy box */}
-            <div className="flex flex-col gap-0">
+            {/* 2 — Vertical thumbnail strip (desktop only) */}
+            {(() => {
+              const imgs = productImages.length ? productImages : [productHeader];
+              return (
+                <div className="hidden lg:flex flex-col gap-2 w-[13%] shrink-0 lg:sticky lg:top-6 self-start">
+                  {imgs.map((img, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => setSelectedImage(i)}
+                      className="overflow-hidden rounded-xl bg-gray-100 border-2 transition-all"
+                      style={{
+                        aspectRatio: '3/4',
+                        borderColor: selectedImage === i ? '#378FE9' : 'transparent',
+                      }}
+                    >
+                      <img src={img} alt={`${productName} ${i + 1}`} className="w-full h-full object-cover" />
+                    </button>
+                  ))}
+                </div>
+              );
+            })()}
+
+            {/* 3 — Buy box */}
+            <div className="flex-1 flex flex-col gap-0 min-w-0">
+
+              {/* Bestseller badge */}
+              <div className="mb-3 flex items-center gap-2">
+                <span className="text-lg">🔥</span>
+                <span className="px-3 py-1 rounded-full text-sm font-bold text-white" style={{ backgroundColor: '#378FE9' }}>
+                  Bestseller
+                </span>
+              </div>
 
               {/* Product name */}
-              <h1 className="mb-3 text-2xl font-semibold leading-snug text-gray-900 md:text-3xl">
+              <h1 className="mb-3 text-2xl md:text-3xl font-bold leading-snug text-gray-900">
                 {productName}
               </h1>
 
-              {/* Price row */}
-              <div className="mb-1 flex flex-wrap items-baseline gap-3">
-                <span className="text-2xl font-semibold text-gray-900">
-                  ₹&nbsp;{productPrice.toLocaleString('en-IN')}
-                </span>
-                {productOriginal > 0 && (
-                  <span className="text-sm text-gray-400 line-through">
-                    ₹&nbsp;{productOriginal.toLocaleString('en-IN')}
-                  </span>
-                )}
+              {/* Keyword tags */}
+              <div className="mb-4 flex flex-wrap gap-2">
+                {PDP_KEYWORD_TAGS.map((tag, i) => {
+                  const colors = [
+                    { bg: '#fdf2f8', text: '#9d174d', border: '#fbcfe8' },
+                    { bg: '#f5f3ff', text: '#5b21b6', border: '#ddd6fe' },
+                    { bg: '#fefce8', text: '#854d0e', border: '#fef08a' },
+                    { bg: '#f0fdf4', text: '#166534', border: '#bbf7d0' },
+                  ];
+                  const c = colors[i % colors.length];
+                  return (
+                    <span key={tag} className="px-3 py-1 rounded-full text-xs font-medium"
+                      style={{ background: c.bg, color: c.text, border: `1px solid ${c.border}` }}>
+                      {tag}
+                    </span>
+                  );
+                })}
               </div>
-              <p className="mb-4 text-xs text-gray-500">Inclusive of all taxes</p>
 
               {/* Rating row */}
-              <div className="mb-5 flex items-center gap-2">
-                <span className="flex gap-0.5" aria-label={`${productRating.toFixed(1)} out of 5 stars`}>
+              <div className="mb-4 flex flex-wrap items-center gap-x-2 gap-y-1">
+                <span className="text-sm font-semibold text-gray-700">Customer Reviews :</span>
+                <span className="flex gap-0.5">
                   {[1,2,3,4,5].map((i) => (
                     <svg key={i} width="16" height="16" viewBox="0 0 24 24" aria-hidden>
                       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
@@ -754,106 +731,125 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                     </svg>
                   ))}
                 </span>
-                <span className="text-sm font-semibold text-gray-800">{productRating.toFixed(1)}</span>
-                <span className="text-sm text-gray-400">({productReviews} reviews)</span>
+                <span className="text-sm font-bold text-gray-800">{productRating.toFixed(1)}</span>
+                <span className="text-sm text-gray-500">| {productReviews}</span>
               </div>
 
-              {/* Kurta type selector */}
+              {/* Marketplace badge rotator */}
+              <div className="mb-4">
+                <MarketplaceBadgeRotator />
+              </div>
+
+              {/* Price */}
+              <div className="mb-1 flex items-baseline gap-3">
+                <span className="text-2xl md:text-3xl font-bold text-gray-900">
+                  Rs.&nbsp;{productPrice.toLocaleString('en-IN')}
+                </span>
+                {productOriginal > 0 && (
+                  <span className="text-sm text-gray-400 line-through">
+                    Rs.&nbsp;{productOriginal.toLocaleString('en-IN')}
+                  </span>
+                )}
+              </div>
+              <p className="mb-1 text-xs font-semibold text-gray-700">MRP Inclusive Of All Taxes</p>
+
+              {/* Applicable Offers */}
+              <p className="mb-3 text-sm font-bold" style={{ color: '#378FE9' }}>Applicable Offers:</p>
+              <div className="mb-5 flex gap-3 overflow-x-auto pb-1 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
+                {/* Most Popular */}
+                <div className="shrink-0 w-40 md:w-48 rounded-xl border-2 overflow-hidden" style={{ borderColor: '#378FE9' }}>
+                  <div className="py-1.5 text-center text-xs font-bold text-white tracking-widest" style={{ backgroundColor: '#378FE9' }}>
+                    MOST POPULAR
+                  </div>
+                  <div className="px-3 py-3 bg-white text-center">
+                    <p className="text-base font-bold text-gray-900">Flat 20% OFF</p>
+                    <p className="text-xs text-gray-500 mt-0.5">First Purchase</p>
+                    <p className="text-xs text-gray-400">15% New User + 5% Prepaid OFF</p>
+                    <p className="text-xs text-gray-500 mt-2 uppercase tracking-wide">Apply Code</p>
+                    <span className="mt-1 inline-block px-3 py-1 rounded text-xs font-bold text-white" style={{ backgroundColor: '#378FE9' }}>
+                      {PDP_COUPON_CODE}
+                    </span>
+                  </div>
+                </div>
+                {/* Best Value */}
+                <div className="shrink-0 w-40 md:w-48 rounded-xl border-2 overflow-hidden border-yellow-400">
+                  <div className="py-1.5 text-center text-xs font-bold text-gray-900 tracking-widest bg-yellow-400">
+                    BEST VALUE
+                  </div>
+                  <div className="px-3 py-3 bg-white text-center">
+                    <p className="text-base font-bold text-gray-900">Buy 2 At 599</p>
+                    <p className="text-xs text-gray-500 mt-0.5">Add 2 items in Cart to Avail</p>
+                    <p className="text-xs text-gray-400">+ 1 FREE Gift</p>
+                    <p className="text-xs text-gray-500 mt-2 uppercase tracking-wide">Auto Applied</p>
+                    <span className="mt-1 inline-block px-3 py-1 rounded text-xs font-bold text-white bg-yellow-500">
+                      BUY599
+                    </span>
+                  </div>
+                </div>
+                {/* Bundle */}
+                <div className="shrink-0 w-40 md:w-48 rounded-xl border-2 overflow-hidden" style={{ borderColor: '#378FE9' }}>
+                  <div className="py-1.5 text-center text-xs font-bold text-white tracking-widest" style={{ backgroundColor: '#378FE9' }}>
+                    BUNDLE DEAL
+                  </div>
+                  <div className="px-3 py-3 bg-white text-center">
+                    <p className="text-base font-bold text-gray-900">Buy 3 At 849</p>
+                    <p className="text-xs text-gray-500 mt-0.5">Add 3 items in Cart to Avail</p>
+                    <p className="text-xs text-gray-400">+ 2 FREE Gifts</p>
+                    <p className="text-xs text-gray-500 mt-2 uppercase tracking-wide">Auto Applied</p>
+                    <span className="mt-1 inline-block px-3 py-1 rounded text-xs font-bold text-white" style={{ backgroundColor: '#378FE9' }}>
+                      BUY849
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Size selector */}
               <div className="mb-5">
-                <p className="text-sm font-semibold text-gray-800 mb-2">Kurta :</p>
+                <p className="text-sm font-semibold text-gray-800 mb-2">Size :</p>
                 <div className="flex gap-2">
-                  {PRODUCT_KURTA_TYPES.map((type) => (
-                    <button
-                      key={type}
-                      type="button"
-                      onClick={() => setSelectedKurtaType(type)}
-                      className="px-4 py-2 text-sm font-medium border transition-colors"
-                      style={{
-                        borderColor: selectedKurtaType === type ? '#1a1a1a' : '#d1d5db',
-                        backgroundColor: selectedKurtaType === type ? '#1a1a1a' : '#fff',
-                        color: selectedKurtaType === type ? '#fff' : '#1a1a1a',
-                      }}
-                    >
-                      {type}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Bust size selector */}
-              <div className="mb-6">
-                <div className="flex items-center justify-between mb-2">
-                  <p className="text-sm font-semibold text-gray-800 uppercase tracking-wide">Your Bust Size:</p>
-                  <button type="button" className="flex items-center gap-1 text-xs text-gray-500 underline">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
-                    </svg>
-                    SIZE CHART
-                  </button>
-                </div>
-                <div className="flex flex-wrap gap-2">
                   {PRODUCT_SIZES.map((size) => (
                     <button
                       key={size}
                       type="button"
                       onClick={() => setSelectedSize(size)}
-                      className="flex flex-col items-center justify-center border transition-colors"
+                      className="px-4 py-2 rounded-lg text-sm font-semibold border-2 transition-all"
                       style={{
-                        width: '64px', height: '52px',
-                        borderColor: selectedSize === size ? '#1a1a1a' : '#d1d5db',
-                        backgroundColor: selectedSize === size ? '#1a1a1a' : '#fff',
-                        color: selectedSize === size ? '#fff' : '#1a1a1a',
+                        borderColor: selectedSize === size ? '#378FE9' : '#d1d5db',
+                        backgroundColor: selectedSize === size ? '#378FE9' : '#fff',
+                        color: selectedSize === size ? '#fff' : '#374151',
                       }}
                     >
-                      <span className="text-sm font-semibold leading-none">{size}</span>
-                      <span className="text-[10px] leading-tight mt-0.5 opacity-75">{PRODUCT_BUST_SIZES[size]}</span>
+                      {size}
                     </button>
                   ))}
                 </div>
               </div>
 
-              {/* ADD TO BAG */}
-              <div className="mb-5">
-                <button
-                  type="button"
-                  className="flex h-14 w-full items-center justify-center gap-2 text-sm font-semibold tracking-widest text-white transition-opacity hover:opacity-90 rounded-full"
-                  style={{ backgroundColor: '#1a1a1a', letterSpacing: '0.1em' }}
-                >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
-                  </svg>
-                  ADD TO BAG
-                </button>
-              </div>
+              {/* ADD TO CART */}
+              <button
+                type="button"
+                className="mb-5 flex h-14 w-full items-center justify-center gap-2 text-base font-bold text-white transition-opacity hover:opacity-90 rounded-xl"
+                style={{ backgroundColor: '#378FE9' }}
+              >
+                Add To Cart
+              </button>
 
-              {/* BUY 3 GET 1 FREE promo banner */}
-              <div className="mb-6 rounded-lg px-5 py-4 text-center border border-stone-200" style={{ backgroundColor: '#faf7f2' }}>
-                <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">Limited Offer</p>
-                <p className="text-xl font-bold text-gray-900">
-                  Buy 3, Get 1 <span style={{ color: '#c0392b' }}>Free</span>
-                </p>
-                <p className="text-xs text-gray-400 mt-1">Automatically applied at checkout</p>
+              {/* Trust row */}
+              <div className="mb-5 grid grid-cols-2 gap-2">
+                {PDP_TRUST_FEATURES.map((f) => (
+                  <div key={f.label} className="flex items-center gap-2 rounded-lg border border-gray-100 bg-gray-50 px-3 py-2">
+                    <span style={{ color: '#378FE9' }}>{f.icon}</span>
+                    <span className="text-xs font-medium text-gray-700">{f.label}</span>
+                  </div>
+                ))}
               </div>
-
 
               {/* Accordions */}
               {[
-                {
-                  label: 'PREPARATION DAYS',
-                  content: 'This product is handcrafted and requires 3–5 working days of preparation before dispatch.',
-                },
-                {
-                  label: 'RETURN / EXCHANGE POLICY',
-                  content: 'We accept returns and exchanges within 7 days of delivery. The product must be unused and in its original packaging.',
-                },
-                {
-                  label: 'CANCELLATION POLICY',
-                  content: 'Orders can be cancelled within 24 hours of placement. Once dispatched, cancellations are not accepted.',
-                },
-                {
-                  label: 'SHIPPING POLICY',
-                  content: 'Free shipping on all orders. Estimated delivery in 5–7 business days across India.',
-                },
+                { label: 'KEY INGREDIENTS', content: 'Niacinamide — controls oil & fades dark spots. Black Berry Extract — antioxidant-rich, protects against UV-induced damage. SPF 50/PA++++ — broad spectrum UVA & UVB protection. Squalane — lightweight moisturiser that keeps skin soft without greasiness.' },
+                { label: 'HOW TO USE', content: 'Apply generously on face and neck 15 minutes before sun exposure. Reapply every 2–3 hours when outdoors. Use as the last step of your morning skincare routine, after moisturiser.' },
+                { label: 'RETURN / EXCHANGE POLICY', content: 'We accept returns within 7 days of delivery if the product is unused and in its original sealed packaging. Opened products are not eligible for return due to hygiene reasons.' },
+                { label: 'SHIPPING POLICY', content: 'Free shipping on orders above ₹599. Standard delivery in 3–5 business days across India. Express delivery available at checkout for select pincodes.' },
               ].map(({ label, content }) => (
                 <AccordionRow key={label} label={label} content={content} />
               ))}
@@ -895,7 +891,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       <circle cx="12" cy="12" r="4.5" stroke="currentColor" strokeWidth="1.8"/>
                       <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
                     </svg>
-                    @saadaadesigns
+                    @consciouschemist
                   </a>
                 </div>
                 <div className="overflow-x-auto pb-2 scrollbar-hide" style={{ scrollbarWidth: 'none' }}>
@@ -1133,7 +1129,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                         className="inline-flex w-full items-center justify-center py-3 rounded-none text-sm font-bold text-white bg-[#B99B7B] hover:opacity-95 transition-opacity"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        Follow @saadaadesigns
+                        Follow @consciouschemist
                       </a>
                     </div>
                   </div>
@@ -1231,7 +1227,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       ))}
                     </div>
                     <p className="mb-3 text-sm text-stone-600">
-                      Based on <strong className="font-semibold text-stone-900">147</strong> reviews
+                      Based on <strong className="font-semibold text-stone-900">1,746</strong> reviews
                     </p>
                     <div
                       className="inline-flex items-center gap-2 rounded-none border border-stone-200/70 px-3.5 py-1.5 text-xs font-medium"
@@ -1248,7 +1244,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                           clipRule="evenodd"
                         />
                       </svg>
-                      96% perfect for gifting
+                      94% zero white cast verified
                     </div>
                   </div>
 
@@ -1290,8 +1286,8 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
                         ),
-                        label: 'Gift-ready packaging',
-                        value: '96%',
+                        label: 'Zero white cast',
+                        value: '94%',
                       },
                       {
                         icon: (
@@ -1299,8 +1295,8 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                           </svg>
                         ),
-                        label: 'Build quality',
-                        value: '9/10',
+                        label: 'Formula quality',
+                        value: '4.8/5',
                       },
                       {
                         icon: (
@@ -1308,7 +1304,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                           </svg>
                         ),
-                        label: 'Everyday carry',
+                        label: 'Daily use approved',
                         value: '98%',
                       },
                     ].map((stat, idx) => (
@@ -1329,7 +1325,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       href={AJNAA_INSTAGRAM_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label="Open @saadaadesigns on Instagram"
+                      aria-label="Open @consciouschemistindia on Instagram"
                       className="flex items-center gap-3.5 rounded-none border border-stone-200/70 bg-white px-3.5 py-3 transition-colors hover:bg-stone-50/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B99B7B]/35 focus-visible:ring-offset-2"
                       style={{ textDecoration: 'none' }}
                     >
@@ -1358,7 +1354,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       </span>
                       <div className="min-w-0 flex-1 text-left">
                         <div className="flex flex-col gap-1.5">
-                          <p className="text-[13px] font-semibold leading-snug text-stone-900">@saadaadesigns</p>
+                          <p className="text-[13px] font-semibold leading-snug text-stone-900">@consciouschemistindia</p>
                           <p className="text-[11px] leading-snug text-stone-600">
                             <span className="font-semibold tabular-nums text-stone-800">{AJNAA_INSTAGRAM_FOLLOWERS_LABEL}</span>
                             {' '}
@@ -1387,12 +1383,12 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
 
                 <div className="px-6 pb-2 pt-4">
                   <h4 className="mb-2.5 font-serif text-lg font-normal tracking-tight text-stone-900 md:text-xl">
-                    What Saadaa customers are saying
+                    What Conscious Chemist customers are saying
                   </h4>
                   <p className="text-[14px] leading-[1.65] text-stone-600">
                     {isAISummaryExpanded ? (
                       <>
-                        Shoppers love Saadaa for the breathable linen fabric that stays comfortable all day — especially the airy feel in summer. Reviews highlight true-to-colour photos, accurate sizing, and details like the mandarin collar and 3/4 sleeves. Many customers note the kurtas wash well and hold their shape. Repeat buyers are common, and several mention gifting Saadaa to friends and family.{' '}
+                        Shoppers rave about the lightweight, non-greasy texture that works even in humid weather. Reviews consistently highlight zero white cast, fast absorption, and a subtle glow finish. Many customers note visible reduction in tanning within 2–3 weeks. The Niacinamide + Black Berry Extract combo is frequently praised for brightening dull skin. Repeat buyers are common, and dermatologist-tested claims add significant trust.{' '}
                         <button
                           type="button"
                           onClick={() => setIsAISummaryExpanded(false)}
@@ -1403,7 +1399,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       </>
                     ) : (
                       <>
-                        Customers praise Saadaa for airy linen quality, true-to-colour fits, and comfortable everyday wear — perfect from office to casual outings.{' '}
+                        Customers love the non-greasy, zero white cast formula — perfect for daily use across all skin types, especially in summer.{' '}
                         <button
                           type="button"
                           onClick={() => setIsAISummaryExpanded(true)}
@@ -1418,20 +1414,18 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
 
                 <div className="px-6 pb-4 pt-3 flex flex-wrap items-center gap-2 text-[12px] leading-relaxed">
                   {[
-                    'Airy linen fabric',
-                    'True-to-size',
-                    'Everyday comfort',
-                    'Gift-ready',
+                    { label: 'Zero White Cast', bg: '#fdf2f8', text: '#9d174d', border: '#fbcfe8' },
+                    { label: 'Non-Greasy', bg: '#f5f3ff', text: '#5b21b6', border: '#ddd6fe' },
+                    { label: 'Brightening', bg: '#fefce8', text: '#854d0e', border: '#fef08a' },
+                    { label: 'Dermatologist Tested', bg: '#f0fdf4', text: '#166534', border: '#bbf7d0' },
+                    { label: 'SPF 50 PA++++', bg: '#eff6ff', text: '#1e40af', border: '#bfdbfe' },
                   ].map((kw) => (
                     <span
-                      key={kw}
-                      className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-[11px] font-medium text-stone-600"
-                      style={{
-                        borderColor: 'rgba(185, 155, 123, 0.35)',
-                        background: 'linear-gradient(135deg, rgba(185, 155, 123, 0.12), rgba(255, 255, 255, 0.95))',
-                      }}
+                      key={kw.label}
+                      className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-[11px] font-medium"
+                      style={{ background: kw.bg, color: kw.text, borderColor: kw.border }}
                     >
-                      {kw}
+                      {kw.label}
                     </span>
                   ))}
                 </div>
@@ -1598,7 +1592,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                                 })}
                               </div>
                               <span className="truncate text-xs font-semibold text-stone-900">{review.name}</span>
-                              <svg className="h-3 w-3 shrink-0 text-[#B99B7B]" fill="currentColor" viewBox="0 0 20 20">
+                              <svg className="h-4 w-4 shrink-0 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path
                                   fillRule="evenodd"
                                   d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"

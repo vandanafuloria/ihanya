@@ -15,10 +15,16 @@ import g10 from './assets/photo_gallary/gallery_10.png';
 import g11 from './assets/photo_gallary/gallery_11.png';
 import g12 from './assets/photo_gallary/gallery_12.png';
 import g13 from './assets/photo_gallary/gallery_13.png';
+import g14 from './assets/photo_gallary/gallery_14.png';
+import g15 from './assets/photo_gallary/gallery_15.png';
+import g16 from './assets/photo_gallary/gallery_16.png';
+import g17 from './assets/photo_gallary/gallery_17.png';
+import g18 from './assets/photo_gallary/gallery_18.png';
 import { bestSellerProducts } from './scrapshalaBestSellers';
 
 export const GALLERY_IMAGES = [
-  g01, g02, g03, g04, g05, g06, g07, g08, g09, g10, g11, g12, g13,
+  g01, g02, g03, g04, g05, g06, g07, g08, g09,
+  g10, g11, g12, g13, g14, g15, g16, g17, g18,
 ];
 
 const INITIAL_SHOW = 12;

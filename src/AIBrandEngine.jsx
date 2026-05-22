@@ -1,10 +1,9 @@
 import React, { useId, useState } from 'react';
 import './AIBrandEngine.css';
 
-const SHOP_URL = 'https://www.instagram.com/saadaadesigns/';
-const INSTAGRAM_URL = 'https://www.instagram.com/saadaadesigns/';
+const SHOP_URL = 'https://consciouschemist.com/';
+const INSTAGRAM_URL = 'https://www.instagram.com/consciouschemist/';
 
-/** Sparkle mark — Saadaa accent */
 function PremiumAIIcon({ gradientId, className, style, size = 40 }) {
   return (
     <svg
@@ -20,9 +19,9 @@ function PremiumAIIcon({ gradientId, className, style, size = 40 }) {
     >
       <defs>
         <linearGradient id={gradientId} x1="12" y1="12" x2="36" y2="36" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#c9aa8f" />
-          <stop offset="0.45" stopColor="#B99B7B" />
-          <stop offset="1" stopColor="#8a7260" />
+          <stop stopColor="#5aa6ee" />
+          <stop offset="0.45" stopColor="#378FE9" />
+          <stop offset="1" stopColor="#1f6dbf" />
         </linearGradient>
       </defs>
       <path
@@ -41,87 +40,54 @@ function PremiumAIIcon({ gradientId, className, style, size = 40 }) {
 function AIBrandEngine({ showExtras = true, compact = false }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [activeTab, setActiveTab] = useState('metrics');
-  const [activeMetric, setActiveMetric] = useState('fit');
+  const [activeMetric, setActiveMetric] = useState('satisfaction');
   const baseId = useId().replace(/:/g, '');
 
   if (!showExtras) return null;
 
   const getIcon = (type) => {
     const icons = {
-      craft: (
+      formula: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+          <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      occasions: (
+      skin: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z"
-            stroke="currentColor"
-            strokeWidth="2"
-          />
-          <path d="M12 6V12L16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2"/>
+          <path d="M8 14s1.5 2 4 2 4-2 4-2" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          <path d="M9 9h.01M15 9h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       ),
-      returns: (
+      ingredient: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M3 9L9 3L15 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M9 3V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M21 15L15 21L9 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      care: (
+      spf: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M12 3L4 7V11C4 16.55 7.16 21.74 12 23C16.84 21.74 20 16.55 20 11V7L12 3Z"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+          <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="2"/>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       ),
       shipping: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M1 3H17L22 8L17 13H1V3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          <circle cx="5.5" cy="18.5" r="2.5" stroke="currentColor" strokeWidth="2" />
-          <circle cx="18.5" cy="18.5" r="2.5" stroke="currentColor" strokeWidth="2" />
+          <path d="M1 3H17L22 8L17 13H1V3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <circle cx="5.5" cy="18.5" r="2.5" stroke="currentColor" strokeWidth="2"/>
+          <circle cx="18.5" cy="18.5" r="2.5" stroke="currentColor" strokeWidth="2"/>
         </svg>
       ),
       brand: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path d="M8 12L10.5 14.5L16 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      ),
-      gift: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M20 12V20H4V12M2 7H22V12H2V7ZM12 7V20M12 7H7.5C6.12 7 5 5.88 5 4.5C5 3.12 6.12 2 7.5 2C10.5 2 12 7 12 7ZM12 7H16.5C17.88 7 19 5.88 19 4.5C19 3.12 17.88 2 16.5 2C13.5 2 12 7 12 7Z"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+          <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M8 12L10.5 14.5L16 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
       metrics: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M3 3V21H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M7 16L12 11L16 15L21 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M21 10V3H14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M3 3V21H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M7 16L12 11L16 15L21 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M21 10V3H14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
     };
@@ -129,204 +95,204 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
   };
 
   const brandInfo = {
-    craft: {
-      title: 'Saadaa craftsmanship',
-      iconType: 'craft',
+    formula: {
+      title: 'Conscious Formulations',
+      iconType: 'formula',
       content: [
         {
-          label: 'Fabric quality',
-          value: 'Airy linen & cotton',
-          description: 'Breathable natural fabrics sourced for comfort in the Indian climate — soft from day one.',
+          label: 'Dermatologist-Tested',
+          value: 'Clinically Validated',
+          description: 'Every product is dermatologist-tested and formulated for Indian skin — proven efficacy before it ever reaches you.',
         },
         {
-          label: 'Stitching',
-          value: 'Clean & precise',
-          description: 'Even seams, no loose threads, and reinforced stress points for long-lasting everyday wear.',
+          label: 'Clean Formula',
+          value: 'Sulphate & Paraben Free',
+          description: 'No harsh sulphates, parabens, or harmful fillers. Ingredients chosen for what they do, not what they hide.',
         },
         {
-          label: 'Finish',
-          value: 'True to colour',
-          description: 'Colours stay consistent wash after wash — what you see online is what you receive.',
+          label: 'Transparency',
+          value: 'Full Ingredient Disclosure',
+          description: 'Every ingredient is listed and explained. We believe you deserve to know exactly what goes on your skin.',
         },
       ],
       highlights: [
-        'Every piece passes a quality check before leaving the studio.',
-        'Natural fabrics that soften with every wash and get better over time.',
-        'Minimalist cuts that hold their shape without structure or padding.',
+        'Formulated specifically for Indian skin types and climate conditions.',
+        'Science-backed actives — peptides, niacinamide, ceramides — at effective concentrations.',
+        'Results-first philosophy: visible improvement from the first use.',
       ],
     },
-    occasions: {
-      title: 'Wear it everywhere',
-      iconType: 'occasions',
+    skin: {
+      title: 'Skin Concerns Covered',
+      iconType: 'skin',
       content: [
         {
-          label: 'Daily wear',
-          value: 'Office to errands',
-          description: 'Clean, simple silhouettes that look polished without trying — from desk to market.',
+          label: 'Oily & Combination',
+          value: 'Oil Balance Range',
+          description: 'Lightweight, non-greasy formulas that control sebum without stripping — matte finish without dryness.',
         },
         {
-          label: 'Weekend',
-          value: 'Relaxed & fresh',
-          description: 'Lightweight linen and cotton keep you comfortable through long weekend days.',
+          label: 'Dull & Uneven Skin',
+          value: 'Brightening Actives',
+          description: 'Vitamin C, niacinamide, and kojic acid work together to fade dark spots and restore radiance.',
         },
         {
-          label: 'Occasions',
-          value: 'Casual to festive',
-          description: 'Elevate with accessories — Saadaa basics work as a base for any occasion.',
+          label: 'Acne & Breakouts',
+          value: 'Microneedle Patches',
+          description: 'Self-dissolving microneedle patches deliver actives directly into blemishes — faster healing, less scarring.',
         },
       ],
       highlights: [
-        'Designed for real days — not just photoshoots.',
-        'Versatile enough to pair with everything already in your wardrobe.',
-        'Breathable fabric keeps you cool through India\'s warm seasons.',
+        'Suitable for sensitive skin — fragrance-free options available.',
+        'Works on all Indian skin tones — tested across Fitzpatrick types III–VI.',
+        'From hydration to anti-aging — one brand covers your full routine.',
       ],
     },
-    gifting: {
-      title: 'Gift a Saadaa basic',
-      iconType: 'gift',
+    ingredient: {
+      title: 'Hero Ingredients',
+      iconType: 'ingredient',
       content: [
         {
-          label: 'Who it is for',
-          value: 'Her · anyone',
-          description: 'Sister, friend, mum, colleague — a piece she\'ll actually reach for every week.',
+          label: 'Multi-Peptide Complex',
+          value: 'Anti-Aging',
+          description: 'Stimulates collagen production to visibly reduce fine lines and improve skin elasticity over time.',
         },
         {
-          label: 'Occasions',
-          value: 'Any milestone',
-          description: 'Birthdays, Diwali, rakhi, graduations — a wardrobe basic is a gift that gets used daily.',
+          label: 'Niacinamide 10%',
+          value: 'Brightening + Barrier',
+          description: 'Reduces pores, controls oil, fades pigmentation, and strengthens the skin barrier — all in one active.',
         },
         {
-          label: 'Presentation',
-          value: 'Clean packaging',
-          description: 'Arrives neatly packaged and ready to gift — no extra effort needed.',
+          label: 'Ceramide Complex',
+          value: 'Deep Hydration',
+          description: 'Replenishes the skin\'s lipid barrier for long-lasting moisture retention and protection from environmental stress.',
         },
       ],
       highlights: [
-        'Recipients love that it fits straight away — size chart is accurate.',
-        'Simple enough to suit any style, special enough to feel considered.',
-        'Available in classic colours that work for every skin tone.',
+        'Mineral SPF 65 with zero white cast — broad spectrum UVA/UVB protection.',
+        'Hyaluronic acid draws moisture from the air into the skin for 24-hour hydration.',
+        'Milk Thistle & Olive Squalane — antioxidant-rich botanicals that soothe and repair.',
       ],
     },
-    care: {
-      title: 'Care for your Saadaa clothing',
-      iconType: 'care',
+    spf: {
+      title: 'Sunscreen Expertise',
+      iconType: 'spf',
       content: [
         {
-          label: 'Washing',
-          value: 'Machine washable',
-          description: 'Wash in cold water on a gentle cycle. Turn inside out to preserve colour and texture.',
+          label: '100% Mineral SPF 50',
+          value: 'Zero White Cast',
+          description: 'Physical sunscreen with Niacinamide & Cica Essence — no chemical filters, no ghost-face finish.',
         },
         {
-          label: 'Drying',
-          value: 'Shade dry',
-          description: 'Dry in shade to prevent fading. Linen and cotton dry quickly without a dryer.',
+          label: 'Oil Balance SPF 65',
+          value: 'For Oily Skin',
+          description: 'PA++++ broad spectrum, matte finish, sweat-resistant — designed for India\'s humid climate.',
         },
         {
-          label: 'Ironing',
-          value: 'Low heat',
-          description: 'Iron on low-medium heat while slightly damp for a crisp finish. Avoid high heat on linen.',
+          label: 'Sun Drink SPF 50',
+          value: 'Hybrid Gel',
+          description: 'Non-greasy hybrid gel sunscreen with Ceramide Complex — hydrates while it protects, for all skin types.',
         },
       ],
       highlights: [
-        'Linen softens naturally with every wash — gets better over time.',
-        'No dry cleaning needed. Simple machine wash is all it takes.',
-        'Store folded in a cool, dry place to maintain shape.',
+        'PA++++ rating — protects against UVA rays that cause premature ageing.',
+        'Fast-absorbing ultra-light fluid — no stickiness, no residue.',
+        'Fragrance-free and non-comedogenic — safe for acne-prone skin.',
       ],
     },
     shipping: {
-      title: 'Delivery & returns',
+      title: 'Delivery & Returns',
       iconType: 'shipping',
       content: [
         {
-          label: 'Pan-India delivery',
-          value: 'Trackable',
-          description: 'Every order ships with real-time tracking — check estimated delivery at checkout for your PIN.',
+          label: 'Pan-India Delivery',
+          value: 'Fast & Trackable',
+          description: 'Every order ships with real-time tracking. Estimated delivery shown at checkout for your pincode.',
         },
         {
-          label: 'COD available',
-          value: 'Pay on delivery',
-          description: 'Cash on delivery available at checkout. No advance payment required for eligible pincodes.',
+          label: 'COD Available',
+          value: 'Pay on Delivery',
+          description: 'Cash on delivery available at checkout — no advance payment needed for eligible pincodes.',
         },
         {
-          label: '7-day returns',
-          value: 'Easy returns',
-          description: 'Not what you expected? Raise a return within 7 days. Check policy page for full eligibility details.',
+          label: 'Easy Returns',
+          value: '7-Day Policy',
+          description: 'Not satisfied? Raise a return within 7 days of delivery. See the returns page for full details.',
         },
       ],
       highlights: [
-        'Pieces are packed with protective padding — no dents or deformation on arrival.',
-        'Protective corners and surfaces are checked before dispatch.',
-        'Free or promotional shipping often available — check cart for current offers.',
+        'Products shipped in tamper-proof, sealed packaging for hygiene and safety.',
+        'Free shipping above ₹599 — automatically applied at checkout.',
+        'Bundled kits shipped together — no split deliveries.',
       ],
     },
     brand: {
-      title: 'Saadaa',
+      title: 'Conscious Chemist',
       iconType: 'brand',
       content: [
         {
-          label: 'Brand promise',
-          value: 'Better basics for everyone',
-          description: 'Simple, quality clothing designed for real everyday life — comfortable, clean, and made to last.',
+          label: 'Brand Promise',
+          value: 'Results First, Conscious Always',
+          description: 'Science-driven skincare built for Indian skin — effective, transparent, and free of harmful ingredients.',
         },
         {
-          label: 'Shop',
-          value: 'saadaadesigns',
-          description: 'Linen kurtas, cotton pants, and everyday basics — crafted for women who value simplicity and quality.',
+          label: 'Trust',
+          value: 'India\'s Trusted Skincare',
+          description: '50,000+ happy customers. 4.8★ average across bestsellers. Dermatologist-tested and customer-loved.',
         },
         {
           label: 'Community',
-          value: '@saadaadesigns · 522K',
-          description: 'Styling reels, real customer stories, and new drops on Instagram.',
+          value: '@consciouschemist',
+          description: 'Skincare routines, ingredient breakdowns, real customer reviews and new launches on Instagram.',
         },
       ],
       highlights: [
-        'Trusted by thousands of customers for breathable, honest everyday wear.',
-        'Minimalist designs that work for office, errands, and everything in between.',
-        'Linen and cotton fabrics chosen for comfort in the Indian climate.',
+        'Formulated for Indian skin types — oily, combination, acne-prone, and sensitive.',
+        'No greenwashing — every clean claim is backed by a real formulation decision.',
+        'Affordable luxury: clinical-grade actives without the clinic price tag.',
       ],
     },
   };
 
   const graphData = {
-    fit: {
-      label: 'Everyday styling comfort',
-      data: [85, 88, 86, 90, 87, 91, 93],
-      color: '#B99B7B',
+    satisfaction: {
+      label: 'Customer satisfaction',
+      data: [82, 85, 87, 89, 90, 92, 95],
+      color: '#378FE9',
     },
-    positive: {
-      label: 'Quality satisfaction',
-      data: [78, 82, 84, 87, 85, 88, 91],
-      color: '#c9aa8f',
+    results: {
+      label: 'Visible results reported',
+      data: [74, 78, 81, 84, 86, 89, 91],
+      color: '#5aa6ee',
     },
     repeat: {
       label: 'Repeat purchases',
-      data: [62, 65, 68, 70, 72, 75, 79],
-      color: '#a68b70',
+      data: [60, 64, 67, 71, 74, 77, 81],
+      color: '#1f6dbf',
     },
     delivery: {
       label: 'Delivery experience',
-      data: [86, 88, 89, 91, 90, 92, 94],
-      color: '#8a7260',
+      data: [85, 87, 88, 90, 91, 93, 95],
+      color: '#378FE9',
     },
     rating: {
-      label: 'Avg. rating',
-      data: [4.3, 4.4, 4.5, 4.6, 4.6, 4.7, 4.8],
-      color: '#c9aa8f',
+      label: 'Avg. product rating',
+      data: [4.3, 4.4, 4.5, 4.6, 4.7, 4.7, 4.8],
+      color: '#5aa6ee',
     },
-    issue: {
-      label: 'Post-purchase support',
-      data: [80, 82, 85, 87, 88, 90, 92],
-      color: '#B99B7B',
+    recommend: {
+      label: 'Would recommend',
+      data: [79, 82, 84, 87, 89, 91, 94],
+      color: '#1f6dbf',
     },
   };
 
   const metrics = [
-    { id: 'positive', label: 'Quality' },
+    { id: 'satisfaction', label: 'Happy' },
+    { id: 'results', label: 'Results' },
     { id: 'repeat', label: 'Repeat' },
-    { id: 'fit', label: 'Style' },
     { id: 'delivery', label: 'Ship' },
     { id: 'rating', label: 'Stars' },
-    { id: 'issue', label: 'Support' },
+    { id: 'recommend', label: 'Refer' },
   ];
 
   const currentMetric = graphData[activeMetric];
@@ -362,7 +328,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
     return (
       <div className="chart-container">
         <div className="chart-header">
-          <h5 className="chart-title">Saadaa customer trust snapshot</h5>
+          <h5 className="chart-title">Conscious Chemist trust snapshot</h5>
           <div className="chart-value">{displayValue}</div>
         </div>
         <svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} className="chart-svg" preserveAspectRatio="xMidYMid meet">
@@ -376,74 +342,50 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
           {[0, 1, 2, 3, 4].map((i) => {
             const y = padding.top + (i / 4) * (height - padding.top - padding.bottom);
             return (
-              <line
-                key={i}
-                x1={padding.left}
-                y1={y}
-                x2={width - padding.right}
-                y2={y}
-                stroke="#e8eaed"
-                strokeWidth="1"
-                strokeDasharray="2,2"
-              />
+              <line key={i} x1={padding.left} y1={y} x2={width - padding.right} y2={y}
+                stroke="#e8eaed" strokeWidth="1" strokeDasharray="2,2" />
             );
           })}
-          <path
-            d={linePath}
-            fill="none"
-            stroke={currentMetric.color}
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+          <path d={linePath} fill="none" stroke={currentMetric.color} strokeWidth="2.5"
+            strokeLinecap="round" strokeLinejoin="round" />
           {points.map((point, index) => (
-            <circle key={index} cx={point.x} cy={point.y} r="4" fill={currentMetric.color} stroke="white" strokeWidth="2" />
+            <circle key={index} cx={point.x} cy={point.y} r="4"
+              fill={currentMetric.color} stroke="white" strokeWidth="2" />
           ))}
           {points.map((point, index) => (
-            <text
-              key={`lbl-${index}`}
-              x={point.x}
-              y={height - padding.bottom + 20}
-              textAnchor="middle"
-              fill="#666"
-              fontSize="10"
-              fontWeight="500"
-            >
-              S{index + 1}
+            <text key={`lbl-${index}`} x={point.x} y={height - padding.bottom + 20}
+              textAnchor="middle" fill="#666" fontSize="10" fontWeight="500">
+              W{index + 1}
             </text>
           ))}
         </svg>
         <div className="metric-filters">
           {metrics.map((metric) => (
-            <button
-              key={metric.id}
-              type="button"
+            <button key={metric.id} type="button"
               className={`metric-filter-btn ${activeMetric === metric.id ? 'active' : ''}`}
-              onClick={() => setActiveMetric(metric.id)}
-            >
+              onClick={() => setActiveMetric(metric.id)}>
               {metric.label}
             </button>
           ))}
         </div>
         <p className="chart-footnote">
-          Illustrative trend only — not live data. Themes: fabric quality, fit satisfaction, and everyday wear.
+          Illustrative trend only. Based on customer satisfaction themes: results, ingredients, and skin feel.
         </p>
       </div>
     );
   };
 
   const tabs = [
-    { id: 'metrics', label: 'Signals', iconType: 'metrics' },
-    { id: 'craft', label: 'Craft', iconType: 'craft' },
-    { id: 'occasions', label: 'Use', iconType: 'occasions' },
-    { id: 'gifting', label: 'Gifts', iconType: 'gift' },
-    { id: 'care', label: 'Care', iconType: 'care' },
-    { id: 'shipping', label: 'Ship', iconType: 'shipping' },
-    { id: 'brand', label: 'Brand', iconType: 'brand' },
+    { id: 'metrics',    label: 'Signals',  iconType: 'metrics' },
+    { id: 'formula',    label: 'Formula',  iconType: 'formula' },
+    { id: 'skin',       label: 'Skin',     iconType: 'skin' },
+    { id: 'ingredient', label: 'Actives',  iconType: 'ingredient' },
+    { id: 'spf',        label: 'SPF',      iconType: 'spf' },
+    { id: 'shipping',   label: 'Ship',     iconType: 'shipping' },
+    { id: 'brand',      label: 'Brand',    iconType: 'brand' },
   ];
 
   const currentInfo = brandInfo[activeTab];
-
   const sparkleGrad = `${baseId}-sparkle`;
 
   return (
@@ -454,7 +396,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
             type="button"
             className={`ai-brand-engine-trigger${compact ? ' abe-compact' : ''}`}
             onClick={() => setIsExpanded(true)}
-            aria-label="Open clothing insights for Saadaa"
+            aria-label="Open skincare insights for Conscious Chemist"
           >
             <div className="trigger-icon">
               <span className="ai-gemini-rotator" aria-hidden="true">
@@ -463,29 +405,29 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
             </div>
             {!compact && (
               <div className="trigger-text">
-                <span className="trigger-label">Style insights</span>
-                <span className="trigger-sublabel">Saadaa</span>
+                <span className="trigger-label">Skin insights</span>
+                <span className="trigger-sublabel">Conscious Chemist</span>
               </div>
             )}
             <span className="trigger-badge">AI</span>
           </button>
           {!compact && (
             <div className="ai-brand-engine-tooltip" role="note">
-              Fabric, fit & style insights — tap to explore
+              Ingredients, SPF & skincare insights — tap to explore
               <span className="ai-brand-engine-tooltip__arrow" aria-hidden />
             </div>
           )}
         </div>
       ) : (
-        <div className="ai-brand-engine-panel" role="dialog" aria-label="Saadaa clothing insights">
+        <div className="ai-brand-engine-panel" role="dialog" aria-label="Conscious Chemist skincare insights">
           <div className="panel-header">
             <div className="header-left">
               <div className="header-icon">
                 <PremiumAIIcon gradientId={`${baseId}-head`} style={{ width: 36, height: 36 }} size={36} />
               </div>
               <div>
-                <h3 className="panel-title">AI Brand Engine</h3>
-                <p className="panel-subtitle">Saadaa · better basics · everyday wear</p>
+                <h3 className="panel-title">AI Skin Engine</h3>
+                <p className="panel-subtitle">Conscious Chemist · Results First, Conscious Always</p>
               </div>
             </div>
             <button type="button" className="panel-close-btn" onClick={() => setIsExpanded(false)} aria-label="Close">
@@ -497,14 +439,10 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
 
           <div className="panel-tabs" role="tablist">
             {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                type="button"
-                role="tab"
+              <button key={tab.id} type="button" role="tab"
                 aria-selected={activeTab === tab.id}
                 className={`tab-btn ${activeTab === tab.id ? 'active' : ''}`}
-                onClick={() => setActiveTab(tab.id)}
-              >
+                onClick={() => setActiveTab(tab.id)}>
                 <span className="tab-icon">{getIcon(tab.iconType)}</span>
                 <span className="tab-label">{tab.label}</span>
               </button>
@@ -544,7 +482,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
                 </div>
                 <div className="panel-content-cta">
                   <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className="abe-cta abe-cta--primary">
-                    Shop Saadaa
+                    Shop Now
                   </a>
                   <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="abe-cta abe-cta--ghost">
                     Instagram
@@ -559,10 +497,10 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
               <span className="footer-badge-icon" aria-hidden>
                 <PremiumAIIcon gradientId={`${baseId}-foot`} size={18} />
               </span>
-              <span>Curated for everyday clothing & style</span>
+              <span>Dermatologist-tested · Sulphate & Paraben Free</span>
             </div>
             <p className="footer-note">
-              For clothing and styling — summaries are for inspiration only. Check product pages and policies on instagram.com/saadaadesigns before you buy.
+              Summaries are for guidance only. Always patch-test new products and consult a dermatologist for specific skin concerns. Visit consciouschemist.com for full ingredient lists.
             </p>
           </div>
         </div>
