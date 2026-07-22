@@ -1,30 +1,26 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './PhotoGallery.css';
 
-// Import gallery images
-import g01 from './assets/photo_gallary/gallery_01.png';
-import g02 from './assets/photo_gallary/gallery_02.png';
-import g03 from './assets/photo_gallary/gallery_03.png';
-import g04 from './assets/photo_gallary/gallery_04.png';
-import g05 from './assets/photo_gallary/gallery_05.png';
-import g06 from './assets/photo_gallary/gallery_06.png';
-import g07 from './assets/photo_gallary/gallery_07.png';
-import g08 from './assets/photo_gallary/gallery_08.png';
-import g09 from './assets/photo_gallary/gallery_09.png';
-import g10 from './assets/photo_gallary/gallery_10.png';
-import g11 from './assets/photo_gallary/gallery_11.png';
-import g12 from './assets/photo_gallary/gallery_12.png';
-import g13 from './assets/photo_gallary/gallery_13.png';
-import g14 from './assets/photo_gallary/gallery_14.png';
-import g15 from './assets/photo_gallary/gallery_15.png';
-import g16 from './assets/photo_gallary/gallery_16.png';
-import g17 from './assets/photo_gallary/gallery_17.png';
-import g18 from './assets/photo_gallary/gallery_18.png';
+// Customer gallery — Ishnya looks (synced with PDP reviews)
+import g01 from './assets/photo_gallery/gallery_01.png';
+import g02 from './assets/photo_gallery/gallery_02.png';
+import g03 from './assets/photo_gallery/gallery_03.png';
+import g04 from './assets/photo_gallery/gallery_04.png';
+import g05 from './assets/photo_gallery/gallery_05.png';
+import g06 from './assets/photo_gallery/gallery_06.png';
+import g07 from './assets/photo_gallery/gallery_07.png';
+import g08 from './assets/photo_gallery/gallery_08.png';
+import g09 from './assets/photo_gallery/gallery_09.png';
+import g10 from './assets/photo_gallery/gallery_10.png';
+import g11 from './assets/photo_gallery/gallery_11.png';
+import g12 from './assets/photo_gallery/gallery_12.png';
+import g13 from './assets/photo_gallery/gallery_13.png';
+import g14 from './assets/photo_gallery/gallery_14.png';
 import { bestSellerProducts } from './scrapshalaBestSellers';
 
 export const GALLERY_IMAGES = [
-  g01, g02, g03, g04, g05, g06, g07, g08, g09,
-  g10, g11, g12, g13, g14, g15, g16, g17, g18,
+  g01, g02, g03, g04, g05, g06, g07,
+  g08, g09, g10, g11, g12, g13, g14,
 ];
 
 const INITIAL_SHOW = 12;
@@ -52,7 +48,7 @@ function getGalleryProductDetail(index) {
 
 export default function PhotoGallery({
   title = 'Our Gallery',
-  subtitle = 'Handcrafted for celebrations, gifts, and everyday shine.',
+  subtitle = 'Real looks from the Ishnya community — Indo-Western styles in everyday moments.',
 }) {
   const [lightbox, setLightbox] = useState(null); // index or null
   const [showAll, setShowAll] = useState(false);
@@ -82,104 +78,57 @@ export default function PhotoGallery({
     };
   }, [lightbox, close, prev, next]);
 
-  const detail =
-    lightbox !== null ? getGalleryProductDetail(lightbox) : null;
-
   return (
     <section className="pg-section">
-      {/* Header */}
       <div className="pg-header">
-   
         <h2 className="pg-title">{title}</h2>
-        <p className="pg-subtitle">{subtitle}</p>
+        {subtitle && <p className="pg-subtitle">{subtitle}</p>}
       </div>
 
-      {/* Masonry grid */}
       <div className="pg-grid">
         {images.map((src, i) => (
           <button
-            key={i}
-            className="pg-item"
+            key={src}
+            type="button"
+            className="pg-cell"
             onClick={() => setLightbox(i)}
-            aria-label={`View photo ${i + 1}`}
+            aria-label={`Open gallery photo ${i + 1}`}
           >
-            <img src={src} alt={`Gallery ${i + 1}`} loading="lazy" />
-            <span className="pg-item-overlay">
-              <span className="pg-add-cart">Add to Cart</span>
-            </span>
+            <img src={src} alt={`Ishnya look ${i + 1}`} loading="lazy" />
           </button>
         ))}
       </div>
 
-      {/* Show more / less */}
       {GALLERY_IMAGES.length > INITIAL_SHOW && (
-        <div className="pg-footer">
-          <button
-            className="pg-toggle-btn"
-            onClick={() => setShowAll(v => !v)}
-          >
+        <div className="pg-more">
+          <button type="button" className="pg-more-btn" onClick={() => setShowAll(v => !v)}>
             {showAll ? 'Show Less' : `View All ${GALLERY_IMAGES.length} Photos`}
           </button>
         </div>
       )}
 
-      {/* Lightbox */}
-      {lightbox !== null && detail && (
-        <div className="pg-lb-backdrop" onClick={close} role="dialog" aria-modal="true" aria-labelledby="pg-lb-title">
-          <div className="pg-lb-panel" onClick={e => e.stopPropagation()}>
-            <button type="button" className="pg-lb-close" onClick={close} aria-label="Close">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-                <path d="M18 6L6 18M6 6l12 12" strokeLinecap="round"/>
-              </svg>
-            </button>
-
-            <div className="pg-lb-split">
-              <div className="pg-lb-visual">
-                <button type="button" className="pg-lb-arrow pg-lb-prev" onClick={prev} aria-label="Previous photo">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-                    <path d="M15 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </button>
-
-                <img
-                  key={lightbox}
-                  src={GALLERY_IMAGES[lightbox]}
-                  alt={`Gallery ${lightbox + 1}`}
-                  className="pg-lb-img"
-                />
-
-                <button type="button" className="pg-lb-arrow pg-lb-next" onClick={next} aria-label="Next photo">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-                    <path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </button>
-
-                <p className="pg-lb-counter">{lightbox + 1} / {GALLERY_IMAGES.length}</p>
-              </div>
-
-              <div className="pg-lb-details">
-                
-                <h3 id="pg-lb-title" className="pg-lb-product-title">{detail.title}</h3>
-                <p className="pg-lb-desc">
-                  Hand-finished details inspired by this look. Dummy preview — pair with your occasion edit.
-                </p>
-                <div className="pg-lb-rating" aria-hidden="true">
-                  <span className="pg-lb-stars">★★★★★</span>
-                  <span className="pg-lb-rating-text">
-                    {detail.rating} · {detail.reviewCount}+ reviews
-                  </span>
+      {lightbox !== null && (
+        <div className="pg-lightbox" role="dialog" aria-modal="true" onClick={close}>
+          <button type="button" className="pg-lb-close" onClick={close} aria-label="Close">×</button>
+          <button type="button" className="pg-lb-nav pg-lb-prev" onClick={(e) => { e.stopPropagation(); prev(); }} aria-label="Previous">‹</button>
+          <button type="button" className="pg-lb-nav pg-lb-next" onClick={(e) => { e.stopPropagation(); next(); }} aria-label="Next">›</button>
+          <div className="pg-lb-inner" onClick={(e) => e.stopPropagation()}>
+            <img src={GALLERY_IMAGES[lightbox]} alt={`Ishnya look ${lightbox + 1}`} />
+            {(() => {
+              const detail = getGalleryProductDetail(lightbox);
+              return (
+                <div className="pg-lb-meta">
+                  <p className="pg-lb-counter">{lightbox + 1} / {GALLERY_IMAGES.length}</p>
+                  <h3 className="pg-lb-title">{detail.title}</h3>
+                  <p className="pg-lb-price">
+                    <span className="pg-lb-now">{inr(detail.currentPrice)}</span>
+                    <span className="pg-lb-mrp">{inr(detail.originalPrice)}</span>
+                    <span className="pg-lb-off">{detail.pctOff}% off</span>
+                  </p>
+                  <p className="pg-lb-rating">{detail.rating} · {detail.reviewCount}+ reviews</p>
                 </div>
-                <div className="pg-lb-price-row">
-                  <span className="pg-lb-price">{inr(detail.currentPrice)}</span>
-                  <span className="pg-lb-mrp">{inr(detail.originalPrice)}</span>
-                  <span className="pg-lb-off">{detail.pctOff}% off</span>
-                </div>
-                <button type="button" className="pg-lb-cta">
-                  Add to cart
-                </button>
-                <p className="pg-lb-disclaimer">Sample pricing for display. Final price at checkout.</p>
-              </div>
-            </div>
+              );
+            })()}
           </div>
         </div>
       )}

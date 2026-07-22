@@ -1,8 +1,8 @@
 import React, { useId, useState } from 'react';
 import './AIBrandEngine.css';
 
-const SHOP_URL = 'https://consciouschemist.com/';
-const INSTAGRAM_URL = 'https://www.instagram.com/consciouschemist/';
+const SHOP_URL = 'https://ishnya.com/';
+const INSTAGRAM_URL = 'https://www.instagram.com/labelishnya/';
 
 function PremiumAIIcon({ gradientId, className, style, size = 40 }) {
   return (
@@ -19,9 +19,9 @@ function PremiumAIIcon({ gradientId, className, style, size = 40 }) {
     >
       <defs>
         <linearGradient id={gradientId} x1="12" y1="12" x2="36" y2="36" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#5aa6ee" />
-          <stop offset="0.45" stopColor="#378FE9" />
-          <stop offset="1" stopColor="#1f6dbf" />
+          <stop stopColor="#e07a8a" />
+          <stop offset="0.45" stopColor="#c41e3a" />
+          <stop offset="1" stopColor="#8b1530" />
         </linearGradient>
       </defs>
       <path
@@ -47,47 +47,47 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
 
   const getIcon = (type) => {
     const icons = {
-      formula: (
+      collection: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          <path d="M16 15l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ),
-      skin: (
+      style: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2"/>
-          <path d="M8 14s1.5 2 4 2 4-2 4-2" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-          <path d="M9 9h.01M15 9h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          <path d="M12 3l2.2 4.4L19 8.2l-3.5 3.4.8 4.9L12 14.3 7.7 16.5l.8-4.9L5 8.2l4.8-.8L12 3z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
         </svg>
       ),
-      ingredient: (
+      craft: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          <circle cx="12" cy="12" r="3.5" stroke="currentColor" strokeWidth="2" />
         </svg>
       ),
-      spf: (
+      occasion: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="2"/>
-          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="2" />
+          <path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
         </svg>
       ),
       shipping: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M1 3H17L22 8L17 13H1V3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <circle cx="5.5" cy="18.5" r="2.5" stroke="currentColor" strokeWidth="2"/>
-          <circle cx="18.5" cy="18.5" r="2.5" stroke="currentColor" strokeWidth="2"/>
+          <path d="M1 3H17L22 8L17 13H1V3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          <circle cx="5.5" cy="18.5" r="2.5" stroke="currentColor" strokeWidth="2" />
+          <circle cx="18.5" cy="18.5" r="2.5" stroke="currentColor" strokeWidth="2" />
         </svg>
       ),
       brand: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M8 12L10.5 14.5L16 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M8 12L10.5 14.5L16 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ),
       metrics: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M3 3V21H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M7 16L12 11L16 15L21 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M21 10V3H14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M3 3V21H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M7 16L12 11L16 15L21 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M21 10V3H14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ),
     };
@@ -95,200 +95,218 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
   };
 
   const brandInfo = {
-    formula: {
-      title: 'Conscious Formulations',
-      iconType: 'formula',
+    collection: {
+      title: 'Signature Collections',
+      iconType: 'collection',
       content: [
         {
-          label: 'Dermatologist-Tested',
-          value: 'Clinically Validated',
-          description: 'Every product is dermatologist-tested and formulated for Indian skin — proven efficacy before it ever reaches you.',
+          label: 'Indo-Western',
+          value: 'Desi Fusion Edit',
+          description:
+            'Indian aesthetics meet contemporary cuts — kurtas, drapes, and silhouettes made for the modern woman.',
         },
         {
-          label: 'Clean Formula',
-          value: 'Sulphate & Paraben Free',
-          description: 'No harsh sulphates, parabens, or harmful fillers. Ingredients chosen for what they do, not what they hide.',
+          label: 'Co-Ord Sets',
+          value: 'Matched Separates',
+          description:
+            'From Rozana drape skirts to printed shirt sets — effortless two-pieces you can style together or apart.',
         },
         {
-          label: 'Transparency',
-          value: 'Full Ingredient Disclosure',
-          description: 'Every ingredient is listed and explained. We believe you deserve to know exactly what goes on your skin.',
+          label: 'Suit & Sharara',
+          value: 'Festive & Everyday',
+          description:
+            'Suit sets, farshi salwars, and shararas designed for celebrations without sacrificing all-day comfort.',
         },
       ],
       highlights: [
-        'Formulated specifically for Indian skin types and climate conditions.',
-        'Science-backed actives — peptides, niacinamide, ceramides — at effective concentrations.',
-        'Results-first philosophy: visible improvement from the first use.',
+        'Bestsellers span Indo-Western, co-ords, shirts, and the Daily Edit.',
+        'New arrivals drop regularly — prints, embroidery, and statement colourways.',
+        'Inclusive sizing so more women can find their fit and feel confident.',
       ],
     },
-    skin: {
-      title: 'Skin Concerns Covered',
-      iconType: 'skin',
+    style: {
+      title: 'How It Wears',
+      iconType: 'style',
       content: [
         {
-          label: 'Oily & Combination',
-          value: 'Oil Balance Range',
-          description: 'Lightweight, non-greasy formulas that control sebum without stripping — matte finish without dryness.',
+          label: 'Comfort First',
+          value: 'Soft, Moveable Fits',
+          description:
+            'Beautiful enough for compliments, comfortable enough for a full day — work, travel, family, or festivities.',
         },
         {
-          label: 'Dull & Uneven Skin',
-          value: 'Brightening Actives',
-          description: 'Vitamin C, niacinamide, and kojic acid work together to fade dark spots and restore radiance.',
+          label: 'Contemporary Desi',
+          value: 'Neither Too Ethnic Nor Too Western',
+          description:
+            'Born to fill the gap between typical Indian wear and plain western — fusion that feels current, not costume.',
         },
         {
-          label: 'Acne & Breakouts',
-          value: 'Microneedle Patches',
-          description: 'Self-dissolving microneedle patches deliver actives directly into blemishes — faster healing, less scarring.',
+          label: 'Versatile Looks',
+          value: 'AM to PM Ready',
+          description:
+            'One co-ord for brunch, one embroidered set for evening — pieces that shift with your day.',
         },
       ],
       highlights: [
-        'Suitable for sensitive skin — fragrance-free options available.',
-        'Works on all Indian skin tones — tested across Fitzpatrick types III–VI.',
-        'From hydration to anti-aging — one brand covers your full routine.',
+        'Designed for women who move between office, travel, and celebrations.',
+        'Trendy silhouettes with wearable, flattering proportions.',
+        'Affordable fashion without compromising on finish or feel.',
       ],
     },
-    ingredient: {
-      title: 'Hero Ingredients',
-      iconType: 'ingredient',
+    craft: {
+      title: 'Prints & Craft',
+      iconType: 'craft',
       content: [
         {
-          label: 'Multi-Peptide Complex',
-          value: 'Anti-Aging',
-          description: 'Stimulates collagen production to visibly reduce fine lines and improve skin elasticity over time.',
+          label: 'Signature Prints',
+          value: 'Lotus · Bandhani · Ajrakh',
+          description:
+            'From blue lotus drapes to bandhani shirts and Ajrakh-inspired prints — artistry you can wear every day.',
         },
         {
-          label: 'Niacinamide 10%',
-          value: 'Brightening + Barrier',
-          description: 'Reduces pores, controls oil, fades pigmentation, and strengthens the skin barrier — all in one active.',
+          label: 'Embroidery & Detail',
+          value: 'Hand-Finished Touches',
+          description:
+            'Aari work, festive jacquards, and embroidered necklines that elevate co-ords, dresses, and three-piece sets.',
         },
         {
-          label: 'Ceramide Complex',
-          value: 'Deep Hydration',
-          description: 'Replenishes the skin\'s lipid barrier for long-lasting moisture retention and protection from environmental stress.',
+          label: 'Feel of Fabric',
+          value: 'Breathable & Easy',
+          description:
+            'Soft cottons and light weaves chosen for Indian weather — looks polished, feels breezy.',
         },
       ],
       highlights: [
-        'Mineral SPF 65 with zero white cast — broad spectrum UVA/UVB protection.',
-        'Hyaluronic acid draws moisture from the air into the skin for 24-hour hydration.',
-        'Milk Thistle & Olive Squalane — antioxidant-rich botanicals that soothe and repair.',
+        'Colour stories that pop — wine, emerald, magenta, indigo, and festive brights.',
+        'Details like drapes, high-lows, cowl pants, and flared silhouettes for movement.',
+        'Packaging and presentation customers call “perfect” every time.',
       ],
     },
-    spf: {
-      title: 'Sunscreen Expertise',
-      iconType: 'spf',
+    occasion: {
+      title: 'Dress for Every Moment',
+      iconType: 'occasion',
       content: [
         {
-          label: '100% Mineral SPF 50',
-          value: 'Zero White Cast',
-          description: 'Physical sunscreen with Niacinamide & Cica Essence — no chemical filters, no ghost-face finish.',
+          label: 'Daily Edit',
+          value: 'Everyday Ethnic',
+          description:
+            'Printed shirts, straight kurtas, and easy co-ords for workdays and weekends that still feel special.',
         },
         {
-          label: 'Oil Balance SPF 65',
-          value: 'For Oily Skin',
-          description: 'PA++++ broad spectrum, matte finish, sweat-resistant — designed for India\'s humid climate.',
+          label: 'Festive Wear',
+          value: 'Celebration Ready',
+          description:
+            'Shararas, pathani sets, embroidered dresses, and statement colours for weddings, poojas, and parties.',
         },
         {
-          label: 'Sun Drink SPF 50',
-          value: 'Hybrid Gel',
-          description: 'Non-greasy hybrid gel sunscreen with Ceramide Complex — hydrates while it protects, for all skin types.',
+          label: 'Travel & City',
+          value: 'On-the-Go Glam',
+          description:
+            'Lightweight sets that pack well, photograph beautifully, and keep you comfortable on the move.',
         },
       ],
       highlights: [
-        'PA++++ rating — protects against UVA rays that cause premature ageing.',
-        'Fast-absorbing ultra-light fluid — no stickiness, no residue.',
-        'Fragrance-free and non-comedogenic — safe for acne-prone skin.',
+        'One wardrobe language from desk to dinner to destination.',
+        'Customers love the festive edit for comfort + style in equal measure.',
+        'Influencer-approved looks that still feel wearable in real life.',
       ],
     },
     shipping: {
-      title: 'Delivery & Returns',
+      title: 'Delivery & Exchange',
       iconType: 'shipping',
       content: [
         {
-          label: 'Pan-India Delivery',
-          value: 'Fast & Trackable',
-          description: 'Every order ships with real-time tracking. Estimated delivery shown at checkout for your pincode.',
+          label: 'Fast Dispatch',
+          value: 'Ships Quickly',
+          description:
+            'Orders move fast — customers often note almost-instant shipping and responsive updates.',
         },
         {
           label: 'COD Available',
           value: 'Pay on Delivery',
-          description: 'Cash on delivery available at checkout — no advance payment needed for eligible pincodes.',
+          description:
+            'Cash on delivery and easy checkout options so shopping feels low-friction and secure.',
         },
         {
-          label: 'Easy Returns',
-          value: '7-Day Policy',
-          description: 'Not satisfied? Raise a return within 7 days of delivery. See the returns page for full details.',
+          label: 'Easy Exchange',
+          value: 'Hassle-Free Returns',
+          description:
+            'Need a size swap? Use the Return / Exchange flow on ishnya.com for a smooth post-purchase experience.',
         },
       ],
       highlights: [
-        'Products shipped in tamper-proof, sealed packaging for hygiene and safety.',
-        'Free shipping above ₹599 — automatically applied at checkout.',
-        'Bundled kits shipped together — no split deliveries.',
+        'International shipping available alongside domestic delivery.',
+        'Friendly support via phone, WhatsApp, and email from the Dadar West studio.',
+        'Secure checkout with genuine quality assurance.',
       ],
     },
     brand: {
-      title: 'Conscious Chemist',
+      title: 'Ishnya',
       iconType: 'brand',
       content: [
         {
           label: 'Brand Promise',
-          value: 'Results First, Conscious Always',
-          description: 'Science-driven skincare built for Indian skin — effective, transparent, and free of harmful ingredients.',
+          value: 'Desi Fusion for Modern Women',
+          description:
+            'An Indo-Western apparel label that blends Indian aesthetics with contemporary silhouettes — confidence, comfort, and you.',
         },
         {
-          label: 'Trust',
-          value: 'India\'s Trusted Skincare',
-          description: '50,000+ happy customers. 4.8★ average across bestsellers. Dermatologist-tested and customer-loved.',
+          label: 'Born in Bombay',
+          value: 'Homegrown Label',
+          description:
+            'Created to close the gap between western wear and typical Indian wear — for women who live in between.',
         },
         {
           label: 'Community',
-          value: '@consciouschemist',
-          description: 'Skincare routines, ingredient breakdowns, real customer reviews and new launches on Instagram.',
+          value: '@labelishnya',
+          description:
+            'New drops, styling reels, and real customer looks on Instagram — Pret · Desi · Fusion.',
         },
       ],
       highlights: [
-        'Formulated for Indian skin types — oily, combination, acne-prone, and sensitive.',
-        'No greenwashing — every clean claim is backed by a real formulation decision.',
-        'Affordable luxury: clinical-grade actives without the clinic price tag.',
+        'Clothes that look beautiful and make you feel completely yourself.',
+        'Inclusive sizing and accessible pricing without diluting design.',
+        'Loved for festive wear, contemporary cuts, and warm customer service.',
       ],
     },
   };
 
   const graphData = {
     satisfaction: {
-      label: 'Customer satisfaction',
-      data: [82, 85, 87, 89, 90, 92, 95],
-      color: '#378FE9',
+      label: 'Style love',
+      data: [84, 86, 88, 90, 91, 93, 95],
+      color: '#c41e3a',
     },
     results: {
-      label: 'Visible results reported',
-      data: [74, 78, 81, 84, 86, 89, 91],
-      color: '#5aa6ee',
+      label: 'Fit & comfort',
+      data: [78, 80, 83, 85, 87, 90, 92],
+      color: '#e07a8a',
     },
     repeat: {
-      label: 'Repeat purchases',
-      data: [60, 64, 67, 71, 74, 77, 81],
-      color: '#1f6dbf',
+      label: 'Repeat shoppers',
+      data: [62, 65, 68, 72, 75, 78, 82],
+      color: '#8b1530',
     },
     delivery: {
       label: 'Delivery experience',
-      data: [85, 87, 88, 90, 91, 93, 95],
-      color: '#378FE9',
+      data: [86, 87, 89, 90, 92, 93, 95],
+      color: '#c41e3a',
     },
     rating: {
       label: 'Avg. product rating',
       data: [4.3, 4.4, 4.5, 4.6, 4.7, 4.7, 4.8],
-      color: '#5aa6ee',
+      color: '#e07a8a',
     },
     recommend: {
       label: 'Would recommend',
-      data: [79, 82, 84, 87, 89, 91, 94],
-      color: '#1f6dbf',
+      data: [81, 83, 85, 88, 90, 92, 94],
+      color: '#8b1530',
     },
   };
 
   const metrics = [
-    { id: 'satisfaction', label: 'Happy' },
-    { id: 'results', label: 'Results' },
+    { id: 'satisfaction', label: 'Love' },
+    { id: 'results', label: 'Fit' },
     { id: 'repeat', label: 'Repeat' },
     { id: 'delivery', label: 'Ship' },
     { id: 'rating', label: 'Stars' },
@@ -328,7 +346,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
     return (
       <div className="chart-container">
         <div className="chart-header">
-          <h5 className="chart-title">Conscious Chemist trust snapshot</h5>
+          <h5 className="chart-title">Ishnya style snapshot</h5>
           <div className="chart-value">{displayValue}</div>
         </div>
         <svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} className="chart-svg" preserveAspectRatio="xMidYMid meet">
@@ -342,47 +360,78 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
           {[0, 1, 2, 3, 4].map((i) => {
             const y = padding.top + (i / 4) * (height - padding.top - padding.bottom);
             return (
-              <line key={i} x1={padding.left} y1={y} x2={width - padding.right} y2={y}
-                stroke="#e8eaed" strokeWidth="1" strokeDasharray="2,2" />
+              <line
+                key={i}
+                x1={padding.left}
+                y1={y}
+                x2={width - padding.right}
+                y2={y}
+                stroke="#e8eaed"
+                strokeWidth="1"
+                strokeDasharray="2,2"
+              />
             );
           })}
-          <path d={linePath} fill="none" stroke={currentMetric.color} strokeWidth="2.5"
-            strokeLinecap="round" strokeLinejoin="round" />
+          <path
+            d={linePath}
+            fill="none"
+            stroke={currentMetric.color}
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
           {points.map((point, index) => (
-            <circle key={index} cx={point.x} cy={point.y} r="4"
-              fill={currentMetric.color} stroke="white" strokeWidth="2" />
+            <circle
+              key={index}
+              cx={point.x}
+              cy={point.y}
+              r="4"
+              fill={currentMetric.color}
+              stroke="white"
+              strokeWidth="2"
+            />
           ))}
           {points.map((point, index) => (
-            <text key={`lbl-${index}`} x={point.x} y={height - padding.bottom + 20}
-              textAnchor="middle" fill="#666" fontSize="10" fontWeight="500">
+            <text
+              key={`lbl-${index}`}
+              x={point.x}
+              y={height - padding.bottom + 20}
+              textAnchor="middle"
+              fill="#666"
+              fontSize="10"
+              fontWeight="500"
+            >
               W{index + 1}
             </text>
           ))}
         </svg>
         <div className="metric-filters">
           {metrics.map((metric) => (
-            <button key={metric.id} type="button"
+            <button
+              key={metric.id}
+              type="button"
               className={`metric-filter-btn ${activeMetric === metric.id ? 'active' : ''}`}
-              onClick={() => setActiveMetric(metric.id)}>
+              onClick={() => setActiveMetric(metric.id)}
+            >
               {metric.label}
             </button>
           ))}
         </div>
         <p className="chart-footnote">
-          Illustrative trend only. Based on customer satisfaction themes: results, ingredients, and skin feel.
+          Illustrative trend only. Based on customer themes: fit, comfort, design love, and delivery.
         </p>
       </div>
     );
   };
 
   const tabs = [
-    { id: 'metrics',    label: 'Signals',  iconType: 'metrics' },
-    { id: 'formula',    label: 'Formula',  iconType: 'formula' },
-    { id: 'skin',       label: 'Skin',     iconType: 'skin' },
-    { id: 'ingredient', label: 'Actives',  iconType: 'ingredient' },
-    { id: 'spf',        label: 'SPF',      iconType: 'spf' },
-    { id: 'shipping',   label: 'Ship',     iconType: 'shipping' },
-    { id: 'brand',      label: 'Brand',    iconType: 'brand' },
+    { id: 'metrics', label: 'Signals', iconType: 'metrics' },
+    { id: 'collection', label: 'Edit', iconType: 'collection' },
+    { id: 'style', label: 'Style', iconType: 'style' },
+    { id: 'craft', label: 'Craft', iconType: 'craft' },
+    { id: 'occasion', label: 'Wear', iconType: 'occasion' },
+    { id: 'shipping', label: 'Ship', iconType: 'shipping' },
+    { id: 'brand', label: 'Brand', iconType: 'brand' },
   ];
 
   const currentInfo = brandInfo[activeTab];
@@ -396,7 +445,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
             type="button"
             className={`ai-brand-engine-trigger${compact ? ' abe-compact' : ''}`}
             onClick={() => setIsExpanded(true)}
-            aria-label="Open skincare insights for Conscious Chemist"
+            aria-label="Open fashion insights for Ishnya"
           >
             <div className="trigger-icon">
               <span className="ai-gemini-rotator" aria-hidden="true">
@@ -405,29 +454,29 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
             </div>
             {!compact && (
               <div className="trigger-text">
-                <span className="trigger-label">Skin insights</span>
-                <span className="trigger-sublabel">Conscious Chemist</span>
+                <span className="trigger-label">Style insights</span>
+                <span className="trigger-sublabel">Ishnya</span>
               </div>
             )}
             <span className="trigger-badge">AI</span>
           </button>
           {!compact && (
             <div className="ai-brand-engine-tooltip" role="note">
-              Ingredients, SPF & skincare insights — tap to explore
+              Collections, fit & fusion fashion — tap to explore
               <span className="ai-brand-engine-tooltip__arrow" aria-hidden />
             </div>
           )}
         </div>
       ) : (
-        <div className="ai-brand-engine-panel" role="dialog" aria-label="Conscious Chemist skincare insights">
+        <div className="ai-brand-engine-panel" role="dialog" aria-label="Ishnya fashion insights">
           <div className="panel-header">
             <div className="header-left">
               <div className="header-icon">
                 <PremiumAIIcon gradientId={`${baseId}-head`} style={{ width: 36, height: 36 }} size={36} />
               </div>
               <div>
-                <h3 className="panel-title">AI Skin Engine</h3>
-                <p className="panel-subtitle">Conscious Chemist · Results First, Conscious Always</p>
+                <h3 className="panel-title">AI Style Engine</h3>
+                <p className="panel-subtitle">Ishnya · Indo-Western for Modern Women</p>
               </div>
             </div>
             <button type="button" className="panel-close-btn" onClick={() => setIsExpanded(false)} aria-label="Close">
@@ -439,10 +488,14 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
 
           <div className="panel-tabs" role="tablist">
             {tabs.map((tab) => (
-              <button key={tab.id} type="button" role="tab"
+              <button
+                key={tab.id}
+                type="button"
+                role="tab"
                 aria-selected={activeTab === tab.id}
                 className={`tab-btn ${activeTab === tab.id ? 'active' : ''}`}
-                onClick={() => setActiveTab(tab.id)}>
+                onClick={() => setActiveTab(tab.id)}
+              >
                 <span className="tab-icon">{getIcon(tab.iconType)}</span>
                 <span className="tab-label">{tab.label}</span>
               </button>
@@ -473,7 +526,13 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
                     {currentInfo.highlights.map((highlight) => (
                       <li key={highlight} className="highlight-item">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="highlight-icon">
-                          <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                          <path
+                            d="M20 6L9 17L4 12"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
                         </svg>
                         <span>{highlight}</span>
                       </li>
@@ -482,7 +541,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
                 </div>
                 <div className="panel-content-cta">
                   <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className="abe-cta abe-cta--primary">
-                    Shop Now
+                    Shop Ishnya
                   </a>
                   <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="abe-cta abe-cta--ghost">
                     Instagram
@@ -497,10 +556,14 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
               <span className="footer-badge-icon" aria-hidden>
                 <PremiumAIIcon gradientId={`${baseId}-foot`} size={18} />
               </span>
-              <span>Dermatologist-tested · Sulphate & Paraben Free</span>
+              <span>Pret · Desi · Fusion · Born in Bombay</span>
             </div>
             <p className="footer-note">
-              Summaries are for guidance only. Always patch-test new products and consult a dermatologist for specific skin concerns. Visit consciouschemist.com for full ingredient lists.
+              Style notes are for inspiration. Check size guides and product details on{' '}
+              <a href={SHOP_URL} target="_blank" rel="noopener noreferrer">
+                ishnya.com
+              </a>{' '}
+              before you buy. Easy exchange available when you need a better fit.
             </p>
           </div>
         </div>

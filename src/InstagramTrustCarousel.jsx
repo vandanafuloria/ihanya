@@ -54,18 +54,18 @@ function RatingBadge({ value }) {
  * Single rotated trust strip — exactly 5 slides: 10K+ / Instagram / Amazon / Nykaa / comfort.
  */
 export default function InstagramTrustCarousel({
-  instagramUrl,
-  followersLabel = '522K',
-  shopUrl = 'https://www.instagram.com/saadaadesigns/',
-  amazonUrl = 'https://www.amazon.in/s?k=Muun+Home+Decor',
-  nykaaUrl = 'https://www.nykaa.com/',
+  instagramUrl = 'https://www.instagram.com/labelishnya/',
+  followersLabel = '179K',
+  shopUrl = 'https://ishnya.com/',
+  amazonUrl = 'https://www.amazon.in/',
+  nykaaUrl = 'https://www.myntra.com/',
 }) {
   const trustSlides = useMemo(
     () => [
       {
         key: 'trusted',
         href: shopUrl,
-        ariaLabel: 'Trusted customers — visit Saadaa',
+        ariaLabel: 'Trusted customers — visit Ishnya',
         icon: <StarRow />,
         text: 'Trusted by 10,000+ Customers',
         badge: null,
@@ -73,15 +73,15 @@ export default function InstagramTrustCarousel({
       {
         key: 'instagram',
         href: instagramUrl,
-        ariaLabel: 'Saadaa on Instagram',
+        ariaLabel: 'Ishnya on Instagram',
         icon: <InstaRealIcon />,
-        text: `${followersLabel}+ followers · @saadaadesigns`,
+        text: `${followersLabel} followers · @labelishnya`,
         badge: null,
       },
       {
         key: 'amazon',
         href: amazonUrl,
-        ariaLabel: 'Saadaa on Amazon India',
+        ariaLabel: 'Ishnya on Amazon India',
         icon: (
           <img src={AMAZON_LOGO} alt="" className="h-4 w-auto object-contain" style={{ maxHeight: '16px' }} />
         ),
@@ -91,19 +91,19 @@ export default function InstagramTrustCarousel({
       {
         key: 'nykaa',
         href: nykaaUrl,
-        ariaLabel: 'Saadaa on Nykaa',
+        ariaLabel: 'Ishnya on Myntra',
         icon: (
           <img src={NYKAA_LOGO} alt="" className="h-4 w-auto object-contain" style={{ maxHeight: '16px' }} />
         ),
-        text: '900+ reviews · Nykaa',
+        text: '900+ reviews · Myntra',
         badge: '4.6',
       },
       {
         key: 'comfort',
         href: shopUrl,
-        ariaLabel: 'Fine decor — Saadaa',
+        ariaLabel: 'Desi fusion wear — Ishnya',
         icon: <ComfortIcon />,
-        text: 'Eco-conscious craft · Handmade in India',
+        text: 'Pret · Fusion · Occasion Wear',
         badge: null,
       },
     ],

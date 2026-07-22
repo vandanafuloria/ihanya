@@ -9,19 +9,22 @@ import brandInstagramProfile from './assets/logo.png';
 import { MUUN_SHOP_VIDEO_CLIPS } from './scrapshalaShopVideos';
 import { bestSellerProducts } from './scrapshalaBestSellers';
 import InstagramTrustCarousel from './InstagramTrustCarousel';
-import CustomerYoutubeTestimonialsCards from './CustomerYoutubeTestimonialsCards';
-import { GALLERY_IMAGES } from './PhotoGallery';
 import { INSTAGRAM_POST_URLS } from './instagramPosts';
 import reviewData from '../review.json';
 import './HomePage.css';
 
 
-const AJNAA_INSTAGRAM_URL = 'https://www.instagram.com/saadaadesigns/';
-const AJNAA_LINKTR_URL = 'https://www.instagram.com/saadaadesigns/';
+const AJNAA_INSTAGRAM_URL = 'https://www.instagram.com/labelishnya/';
+const AJNAA_LINKTR_URL = 'https://www.ishnya.com/';
 const AJNAA_HASHTAG_URL =
-  'https://www.instagram.com/explore/tags/saadaadesigns/';
+  'https://www.instagram.com/explore/tags/ishnya/';
 
-const BRAND_NAME = "wordofmouth";
+const BRAND_NAME = 'Ishnya';
+const IG_HANDLE = 'labelishnya';
+const IG_DISPLAY = 'ISHNYA | Desi Fusion Wear';
+const IG_POSTS = '2,482';
+const IG_FOLLOWERS = '179K';
+const IG_FOLLOWING = '522';
 
 const getRandomSoldThisWeek = (min = 180, max = 420) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
@@ -296,8 +299,7 @@ const HomePage = ({ onProductClick }) => {
               {bestSellerProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="flex-shrink-0 cursor-pointer"
-                  style={{ width: '280px' }}
+                  className="flex-shrink-0 cursor-pointer w-[260px] md:w-[340px] lg:w-[380px]"
                   onClick={() => onProductClick && onProductClick(product)}
                 >
                   <ProductCard
@@ -440,7 +442,7 @@ const HomePage = ({ onProductClick }) => {
                 <div className="w-32 h-32 rounded-full overflow-hidden">
                   <img
                     src={brandInstagramProfile}
-                    alt="Saadaa on Instagram"
+                    alt="Ishnya on Instagram"
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
@@ -456,21 +458,21 @@ const HomePage = ({ onProductClick }) => {
                   rel="noopener noreferrer"
                   className="text-gray-900 font-semibold text-xl hover:opacity-70 transition-opacity"
                 >
-                  saadaadesigns
+                  {IG_HANDLE}
                 </a>
                 <span className="text-gray-400 text-base tracking-widest">···</span>
               </div>
               <div className="flex gap-8">
                 <div className="text-center">
-                  <p className="font-bold text-gray-900 text-base">2,007</p>
+                  <p className="font-bold text-gray-900 text-base">{IG_POSTS}</p>
                   <p className="text-gray-400 text-sm">posts</p>
                 </div>
                 <div className="text-center">
-                  <p className="font-bold text-gray-900 text-base">522K</p>
+                  <p className="font-bold text-gray-900 text-base">{IG_FOLLOWERS}</p>
                   <p className="text-gray-400 text-sm">followers</p>
                 </div>
                 <div className="text-center">
-                  <p className="font-bold text-gray-900 text-base">5</p>
+                  <p className="font-bold text-gray-900 text-base">{IG_FOLLOWING}</p>
                   <p className="text-gray-400 text-sm">following</p>
                 </div>
               </div>
@@ -507,11 +509,11 @@ const HomePage = ({ onProductClick }) => {
             </div>
 
             <div className="space-y-1">
-              <p className="text-gray-900 text-sm font-semibold">Saadaa</p>
-              <p className="text-gray-400 text-sm">Premium bags for every journey</p>
-              <p className="text-gray-800 text-sm">Thoughtfully crafted designs for every look.</p>
-              <p className="text-gray-800 text-sm">Handmade in India · Trusted quality</p>
-              <p className="text-gray-800 text-sm">Celebrate tradition with a modern touch</p>
+              <p className="text-gray-900 text-sm font-semibold">{IG_DISPLAY}</p>
+              <p className="text-gray-800 text-sm">Modern desi fits with main character energy</p>
+              <p className="text-gray-800 text-sm">Pret · Fusion · Occasion Wear</p>
+              <p className="text-gray-800 text-sm">📍 Bandra-Linking Road, Mumbai</p>
+              <p className="text-gray-800 text-sm">🌍 Shipping Worldwide</p>
               <p className="text-sm">
                 <a
                   href={AJNAA_HASHTAG_URL}
@@ -520,7 +522,7 @@ const HomePage = ({ onProductClick }) => {
                   className="font-medium"
                   style={{ color: '#DB2A20' }}
                 >
-                  #MuunHomeDecor
+                  #ishnya
                 </a>
               </p>
               <a
@@ -530,7 +532,7 @@ const HomePage = ({ onProductClick }) => {
                 className="text-sm font-medium"
                 style={{ color: '#DB2A20' }}
               >
-                saadaadesigns
+                www.ishnya.com
               </a>
             </div>
           </div>
@@ -546,7 +548,7 @@ const HomePage = ({ onProductClick }) => {
                   <div className="w-20 h-20 rounded-full overflow-hidden">
                     <img
                       src={brandInstagramProfile}
-                      alt="Saadaa on Instagram"
+                      alt="Ishnya on Instagram"
                       className="w-full h-full object-cover"
                       loading="lazy"
                     />
@@ -555,26 +557,26 @@ const HomePage = ({ onProductClick }) => {
               </div>
               <div className="flex flex-1 justify-around">
                 <div className="text-center">
-                  <p className="font-semibold text-gray-900 text-base">2,007</p>
+                  <p className="font-semibold text-gray-900 text-base">{IG_POSTS}</p>
                   <p className="text-gray-400 text-xs">posts</p>
                 </div>
                 <div className="text-center">
-                  <p className="font-semibold text-gray-900 text-base">522K</p>
+                  <p className="font-semibold text-gray-900 text-base">{IG_FOLLOWERS}</p>
                   <p className="text-gray-400 text-xs">followers</p>
                 </div>
                 <div className="text-center">
-                  <p className="font-semibold text-gray-900 text-base">5</p>
+                  <p className="font-semibold text-gray-900 text-base">{IG_FOLLOWING}</p>
                   <p className="text-gray-400 text-xs">following</p>
                 </div>
               </div>
             </div>
 
             <div className="space-y-0.5">
-              <p className="text-gray-900 text-sm font-semibold">Saadaa</p>
-              <p className="text-gray-400 text-xs">Premium bags for every journey</p>
-              <p className="text-gray-800 text-sm">Thoughtfully crafted designs for every look.</p>
-              <p className="text-gray-800 text-sm">Handmade in India · Trusted quality</p>
-              <p className="text-gray-800 text-sm">Celebrate tradition with a modern touch</p>
+              <p className="text-gray-900 text-sm font-semibold">{IG_DISPLAY}</p>
+              <p className="text-gray-800 text-sm">Modern desi fits with main character energy</p>
+              <p className="text-gray-800 text-sm">Pret · Fusion · Occasion Wear</p>
+              <p className="text-gray-800 text-sm">📍 Bandra-Linking Road, Mumbai</p>
+              <p className="text-gray-800 text-sm">🌍 Shipping Worldwide</p>
               <p className="text-sm">
                 <a
                   href={AJNAA_HASHTAG_URL}
@@ -583,7 +585,7 @@ const HomePage = ({ onProductClick }) => {
                   className="font-medium"
                   style={{ color: '#DB2A20' }}
                 >
-                  #MuunHomeDecor
+                  #ishnya
                 </a>
               </p>
               <a
@@ -593,7 +595,7 @@ const HomePage = ({ onProductClick }) => {
                 className="text-sm font-medium"
                 style={{ color: '#DB2A20' }}
               >
-                saadaadesigns
+                www.ishnya.com
               </a>
             </div>
 
@@ -909,7 +911,7 @@ const HomePage = ({ onProductClick }) => {
                   <img src={selectedLookVideo.image} alt="" className="w-full h-full object-cover" />
                 </div>
                 <div>
-                  <p className="text-white text-sm font-semibold leading-none">Saadaa</p>
+                  <p className="text-white text-sm font-semibold leading-none">Ishnya</p>
                   <p className="text-white/70 text-xs mt-0.5">{selectedLookVideo.views} views</p>
                 </div>
               </div>
@@ -968,7 +970,7 @@ const HomePage = ({ onProductClick }) => {
 
               {/* Share */}
               <button
-                onClick={() => navigator.share ? navigator.share({ title: selectedLookVideo.title, text: `Check out ${selectedLookVideo.title} from Saadaa`, url: window.location.href }) : navigator.clipboard?.writeText(window.location.href)}
+                onClick={() => navigator.share ? navigator.share({ title: selectedLookVideo.title, text: `Check out ${selectedLookVideo.title} from Ishnya`, url: window.location.href }) : navigator.clipboard?.writeText(window.location.href)}
                 className="flex flex-col items-center gap-1"
               >
                 <div className="w-11 h-11 rounded-full bg-black/40 flex items-center justify-center">
@@ -1112,7 +1114,6 @@ const HomePage = ({ onProductClick }) => {
         </div>
       )}
 
-      <CustomerYoutubeTestimonialsCards />
       <ShopifyFooter brandName={BRAND_NAME} />
       <AIBrandEngine compact />
       <ActivityBanner />

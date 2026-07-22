@@ -46,48 +46,56 @@ function formatSoldLabel(n) {
 }
 
 
-// Product images — Berry Bright Sunscreen
-const PRODUCT_PAGE_IMAGES = [
-  'https://consciouschemist.com/cdn/shop/files/Artboard_5_copy_3.webp?v=1775560507&width=1200',
-  'https://consciouschemist.com/cdn/shop/files/2_1_1.webp?v=1775560466&width=1200',
-  'https://consciouschemist.com/cdn/shop/files/bbss.webp?v=1776747775&width=1200',
-  'https://consciouschemist.com/cdn/shop/files/bhfqpppnvkqledlipmto.webp?v=1776747544&width=1200',
-  'https://consciouschemist.com/cdn/shop/files/fdt3ivldmtrvcrfu9nbd.webp?v=1776747544&width=1200',
-  'https://consciouschemist.com/cdn/shop/files/w3dsi4leywzz8pdlrfjt.webp?v=1776747544&width=1200',
-];
+// Product images — Ishnya fashion defaults
+const PRODUCT_PAGE_IMAGES = [...MUUN_HOME_GALLERY_IMAGES];
 
 // Brand Name
-const BRAND_NAME = "Conscious Chemist";
-const AJNAA_INSTAGRAM_URL = 'https://www.instagram.com/consciouschemistindia/';
-const AJNAA_INSTAGRAM_FOLLOWERS_LABEL = '173K';
+const BRAND_NAME = 'Ishnya';
+const AJNAA_INSTAGRAM_URL = 'https://www.instagram.com/labelishnya/';
+const AJNAA_INSTAGRAM_FOLLOWERS_LABEL = '179K';
+const AJNAA_INSTAGRAM_HANDLE = '@labelishnya';
+const AJNAA_INSTAGRAM_DISPLAY = 'ISHNYA | Desi Fusion Wear';
+const AJNAA_INSTAGRAM_POSTS = '2,482';
+const AJNAA_INSTAGRAM_FOLLOWING = '522';
 
-/** Reviews UI — Conscious Chemist blue */
-const REVIEW_ACCENT = '#378FE9';
-const REVIEW_RING_TRACK = '#dbeafe';
-const REVIEW_SOFT = 'rgba(55, 143, 233, 0.10)';
-const REVIEW_ACCENT_BORDER = 'rgba(55, 143, 233, 0.30)';
+/** Reviews UI — Ishnya red */
+const REVIEW_ACCENT = '#c41e3a';
+const REVIEW_RING_TRACK = '#fce7eb';
+const REVIEW_SOFT = 'rgba(196, 30, 58, 0.10)';
+const REVIEW_ACCENT_BORDER = 'rgba(196, 30, 58, 0.30)';
+const PDP_ACCENT = '#c41e3a';
 
 // Product Video — draggable floating card
 const PRODUCT_VIDEO = PDP_DRAGGABLE_VIDEO;
 
 // Product Details
-const PRODUCT_NAME = "Berry Bright Sunscreen";
-const PRODUCT_PRICE = 399;
-const PRODUCT_ORIGINAL_PRICE = 599;
-const PRODUCT_DISCOUNT = 33;
-const PRODUCT_SKU = "CC-BBS-50G-001";
-const PRODUCT_DESCRIPTION = "Water-resistant, soothing & calming non-greasy sunscreen with SPF 50/PA++++. Infused with Niacinamide and Black Berry Extract to protect from UV rays, reduce tanning, and improve brightness — for all skin types.";
-const PRODUCT_BRAND = "Conscious Chemist";
-const PRODUCT_COLORS = [];
-const PRODUCT_SIZES = ['30 Gms', '50 Gms'];
+const PRODUCT_NAME = 'REZAAR — Navy Blue Drape Skirt Co-Ord Set with Shirt Top';
+const PRODUCT_PRICE = 3200;
+const PRODUCT_ORIGINAL_PRICE = 4500;
+const PRODUCT_DISCOUNT = 28;
+const PRODUCT_SKU = 'ISH-REZAAR-NAVY';
+const PRODUCT_DESCRIPTION =
+  'An Indo-Western co-ord with a navy drape skirt and matching shirt top — contemporary desi fusion for work, travel, and celebrations.';
+const PRODUCT_BRAND = 'Ishnya';
+const PRODUCT_COLORS = [
+  { name: 'NAVY BLUE', image: MUUN_HOME_PRODUCT_IMAGES[0] },
+  { name: 'RED PRINT', image: MUUN_HOME_PRODUCT_IMAGES[1] },
+  { name: 'BOTTLE GREEN', image: MUUN_HOME_PRODUCT_IMAGES[2] },
+  { name: 'HOT PINK', image: MUUN_HOME_PRODUCT_IMAGES[3] },
+];
+const PRODUCT_SIZES = ['36', '38', '40', '42', '44', '46'];
 const PRODUCT_BUST_SIZES = {
-  '30 Gms': '30 ml / 1.01 fl oz',
-  '50 Gms': '50 ml / 1.76 fl oz',
+  '36': 'Bust 36"',
+  '38': 'Bust 38"',
+  '40': 'Bust 40"',
+  '42': 'Bust 42"',
+  '44': 'Bust 44"',
+  '46': 'Bust 46"',
 };
-const PRODUCT_KURTA_TYPES = ['Berry Bright Sunscreen', 'Oil Balance SPF 65'];
+const PRODUCT_KURTA_TYPES = ['Co-Ord Set', 'Kurta Set'];
 /** Social proof — shown next to rating & reviews on the buy box */
-const PRODUCT_REVIEW_COUNT = 1746;
-const PRODUCT_SOLD_COUNT = 5200;
+const PRODUCT_REVIEW_COUNT = 548;
+const PRODUCT_SOLD_COUNT = 860;
 
 // You May Also Like — aligned with best sellers
 const RELATED_PRODUCTS = bestSellerProducts.slice(0, 4).map((p) => ({
@@ -103,19 +111,16 @@ const RELATED_PRODUCTS = bestSellerProducts.slice(0, 4).map((p) => ({
 /** Reel pill captions — same order & copy as `MUUN_SHOP_VIDEO_CLIPS` on the home page */
 const PDP_REEL_LABELS = MUUN_SHOP_VIDEO_CLIPS.map((c) => c.title);
 
-/** Short keyword chips under rating / reviews on the buy box */
-const PDP_KEYWORD_TAGS = ['Niacinamide ✨', 'Protects from UV rays 😎', 'Black berry extract 🫐', 'Zero White Cast'];
-
-const PDP_BREADCRUMB_MID = 'Sunscreen';
-const PDP_BREADCRUMB_LAST = 'Berry Bright Sunscreen SPF 50';
-const PDP_GIFT_PROMO = 'Free gift on orders above ₹599';
-const PDP_COUPON_CODE = 'NEW15';
-const PDP_COUPON_COPY = 'Get 15% off on your first purchase — use code NEW15';
+const PDP_BREADCRUMB_MID = 'SPECIAL PRICES';
+const PDP_BREADCRUMB_LAST = 'REZAAR — Navy Blue Drape Skirt Co-Ord Set';
+const PDP_GIFT_PROMO = 'Easy exchange available';
+const PDP_COUPON_CODE = 'ISHNYA10';
+const PDP_COUPON_COPY = 'Get 10% off on your first purchase — use code ISHNYA10';
 
 /** Trust row below CTAs */
 const PDP_TRUST_FEATURES = [
   {
-    label: 'Easy 7-Day Return',
+    label: 'Easy Exchange',
     icon: (
       <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
         <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -131,18 +136,18 @@ const PDP_TRUST_FEATURES = [
     ),
   },
   {
-    label: 'Dermatologist Tested',
+    label: 'Inclusive Sizing',
     icon: (
       <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
       </svg>
     ),
   },
   {
-    label: 'Sulphate & Paraben Free',
+    label: 'Genuine Quality',
     icon: (
       <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M5 3l14 9-14 9V3z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     ),
   },
@@ -154,20 +159,38 @@ const PDP_TRUST_FEATURES = [
 
 // Fallback blurbs for image modals
 const dummyReviews = [
-  { name: 'Priya Sharma', rating: 5, title: 'Zero white cast!', text: 'Finally a sunscreen that doesn\'t leave a white cast. Blends beautifully and feels lightweight all day.', date: '1/20/2025', type: 'product' },
-  { name: 'Anjali Mehta', rating: 5, title: 'Best sunscreen I\'ve tried', text: 'Texture is so smooth and non-greasy. My skin feels protected without the heavy cream feeling. Love it!', date: '1/18/2025', type: 'product' },
-  { name: 'Riya Patel', rating: 4, title: 'Gifted to my sister', text: 'Bought the Berry Bright as a birthday gift — she loved it. 4 stars only because delivery took an extra day.', date: '1/15/2025', type: 'product' },
-  { name: 'Kavya Reddy', rating: 5, title: 'Exactly like described', text: 'No white cast, no stickiness. Conscious Chemist delivers exactly what they promise.', date: '1/12/2025', type: 'product' },
-  { name: 'Meera Singh', rating: 5, title: 'My morning essential', text: 'Been using it for 3 months. Skin tone has evened out noticeably. The Niacinamide is doing its job!', date: '1/10/2025', type: 'product' },
-  { name: 'Sneha Verma', rating: 5, title: 'Great packaging', text: 'Arrived sealed and secure. The tube is sturdy and dispenses the perfect amount. Thoughtful product experience.', date: '1/08/2025', type: 'product' },
-  { name: 'Divya Nair', rating: 4, title: 'Skin feels protected', text: 'Lightweight formula is perfect for daily use. SPF 50 gives real confidence outdoors. Will repurchase.', date: '1/05/2025', type: 'product' },
-  { name: 'Pooja Mehta', rating: 5, title: 'Mum approved', text: 'Bought this for my mum — she uses it every morning. Says it\'s the first sunscreen she\'s liked in years.', date: '1/03/2025', type: 'product' },
-  { name: 'Neha Kapoor', rating: 5, title: 'Second purchase already', text: 'First bought the Blackhead Water, now the Berry Bright — same great quality and consistency across products.', date: '12/30/2024', type: 'product' },
-  { name: 'Aarti Desai', rating: 5, title: 'Visible brightening', text: 'Used it for 6 weeks — tanning reduced noticeably and my skin looks brighter. The Black Berry Extract works!', date: '12/28/2024', type: 'product' },
+  { name: 'Priya Sharma', rating: 5, title: 'So flattering!', text: 'The co-ord drapes beautifully and feels soft all day. Perfect desi fusion look for brunch and functions.', date: '1/20/2025', type: 'product' },
+  { name: 'Anjali Mehta', rating: 5, title: 'Exactly like Instagram', text: 'Ordered after seeing @labelishnya reels — print, fit, and colour are just as good in person. Obsessed.', date: '1/18/2025', type: 'product' },
+  { name: 'Riya Patel', rating: 4, title: 'Gifted to my sister', text: 'Bought the embroidered set as a birthday gift — she loved the fit and how easy it is to style. 4 stars only because delivery took an extra day.', date: '1/15/2025', type: 'product' },
+  { name: 'Kavya Reddy', rating: 5, title: 'Comfortable occasion wear', text: 'Finally festive clothes I can dance in. Ishnya nails Pret · Fusion · Occasion Wear.', date: '1/12/2025', type: 'product' },
+  { name: 'Meera Singh', rating: 5, title: 'My new favourite label', text: 'Been ordering for 3 months. Soft fabrics, flattering cuts, and packaging always feels special.', date: '1/10/2025', type: 'product' },
+  { name: 'Sneha Verma', rating: 5, title: 'Main character energy', text: 'Wore the navy drape set out and got so many compliments. Feels expensive and effortless.', date: '1/08/2025', type: 'product' },
+  { name: 'Divya Nair', rating: 4, title: 'Travel ready', text: 'Packed well for a weekend trip and still looked polished at dinner. Would repurchase.', date: '1/05/2025', type: 'product' },
+  { name: 'Pooja Mehta', rating: 5, title: 'Mum approved', text: 'Bought this for my mum — she loves how comfortable and elegant it feels. Instant fan.', date: '1/03/2025', type: 'product' },
+  { name: 'Neha Kapoor', rating: 5, title: 'Second purchase already', text: 'First bought a co-ord, then a kurta set — same beautiful quality across pieces.', date: '12/30/2024', type: 'product' },
+  { name: 'Aarti Desai', rating: 5, title: 'Inclusive sizing win', text: 'Found my size easily and the fit is so flattering. Ishnya really designs for real women.', date: '12/28/2024', type: 'product' },
 ];
 
 
 const SOCIAL_PROOF_MESSAGES = [
+  {
+    icon: (
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+    ),
+    text: (n) => `${n} people added this to cart`,
+  },
+  {
+    icon: (
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
+      </svg>
+    ),
+    text: (n) => `${n} people bought this in the last 3 hours`,
+  },
   {
     icon: (
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -176,28 +199,12 @@ const SOCIAL_PROOF_MESSAGES = [
     ),
     text: (n) => `${n} people viewing this right now`,
   },
-  {
-    icon: (
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-      </svg>
-    ),
-    text: (n) => `${n} people added to cart`,
-  },
-  {
-    icon: (
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-      </svg>
-    ),
-    text: (n) => `${n} orders placed in last 24 hrs`,
-  },
 ];
 
 function SocialProofTicker() {
   const [idx, setIdx] = React.useState(0);
   const [visible, setVisible] = React.useState(true);
-  const nums = [34, 58, 127];
+  const nums = [47, 23, 61];
 
   React.useEffect(() => {
     const id = setInterval(() => {
@@ -213,18 +220,19 @@ function SocialProofTicker() {
   const { icon, text } = SOCIAL_PROOF_MESSAGES[idx];
   return (
     <div
-      className="mb-3 flex items-center gap-1.5 w-fit px-3 py-1.5 rounded-full"
-      style={{ backgroundColor: 'rgba(55,143,233,0.08)', border: '1px solid rgba(55,143,233,0.18)' }}
+      className="mb-4 flex items-center gap-1.5 w-fit max-w-full px-3 py-1.5 rounded-full"
+      style={{ backgroundColor: 'rgba(196,30,58,0.08)', border: '1px solid rgba(196,30,58,0.18)' }}
+      aria-live="polite"
     >
       <span
         className="flex items-center gap-1.5 text-xs font-semibold"
         style={{
           transition: 'opacity 350ms ease',
           opacity: visible ? 1 : 0,
-          color: '#378FE9',
+          color: '#c41e3a',
         }}
       >
-        <span className="shrink-0" style={{ color: '#378FE9' }}>{icon}</span>
+        <span className="shrink-0" style={{ color: '#c41e3a' }}>{icon}</span>
         {text(nums[idx])}
       </span>
     </div>
@@ -288,8 +296,9 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
   const [reviewsToShow, setReviewsToShow] = useState(3);
   const [expandedReviews, setExpandedReviews] = useState({});
   const [productSortBy, setProductSortBy] = useState('most-recent');
-  const [selectedKurtaType, setSelectedKurtaType] = useState('Short Kurta');
-  const [selectedSize, setSelectedSize] = useState(null);
+  const [selectedKurtaType, setSelectedKurtaType] = useState('Co-Ord Set');
+  const [selectedSize, setSelectedSize] = useState('36');
+  const [selectedColor, setSelectedColor] = useState(PRODUCT_COLORS[0]?.name || 'NAVY BLUE');
 
   useLayoutEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
@@ -640,7 +649,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
           }}
         >
           {/* Label pill */}
-          <div className="absolute top-2 left-2 z-20 flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold text-white" style={{ backgroundColor: '#378FE9', opacity: 0.92 }}>
+          <div className="absolute top-2 left-2 z-20 flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold text-white" style={{ backgroundColor: PDP_ACCENT, opacity: 0.92 }}>
             <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
             Watch
           </div>
@@ -670,7 +679,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
 
           {/* Bottom label */}
           <div className="absolute bottom-0 left-0 right-0 px-2 py-2" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.75), transparent)' }}>
-            <p className="text-white text-[10px] font-semibold leading-tight">Berry Bright Sunscreen</p>
+            <p className="text-white text-[10px] font-semibold leading-tight line-clamp-2">{productName}</p>
             <p className="text-white/60 text-[9px]">Tap to watch full video</p>
           </div>
         </div>
@@ -711,36 +720,67 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
             <span className="font-medium text-gray-800">{PDP_BREADCRUMB_LAST}</span>
           </nav>
 
-          {/* ── Desktop 3-col: [main image] [thumbnail strip] [buy box] ── */}
-          <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-8">
+          {/* ── Desktop: [thumb strip] [main image] [buy box] ── */}
+          <div className="flex flex-col lg:flex-row items-start gap-5 lg:gap-8">
 
-            {/* 1 — Main product image + mobile thumbnail strip */}
+            {/* Gallery cluster */}
             {(() => {
               const imgs = productImages.length ? productImages : [productHeader];
               return (
-                <div className="w-full lg:w-[44%] shrink-0 lg:sticky lg:top-6 self-start">
-                  <div className="overflow-hidden rounded-2xl bg-gray-50" style={{ aspectRatio: '3/4' }}>
-                    <img
-                      src={imgs[selectedImage] || imgs[0]}
-                      alt={productName}
-                      className="w-full h-full object-cover cursor-zoom-in"
-                    />
-                  </div>
-                  {/* Mobile horizontal thumbnail row */}
-                  <div className="flex lg:hidden gap-2 mt-3 overflow-x-auto pb-1 scrollbar-hide">
+                <div className="w-full lg:w-[52%] shrink-0 flex flex-col-reverse lg:flex-row gap-3 lg:sticky lg:top-6 self-start">
+                  {/* Vertical thumbs — left on desktop */}
+                  <div className="hidden lg:flex flex-col gap-2 w-[72px] shrink-0 max-h-[640px] overflow-y-auto scrollbar-hide">
                     {imgs.map((img, i) => (
                       <button
                         key={i}
                         type="button"
                         onClick={() => setSelectedImage(i)}
-                        className="shrink-0 overflow-hidden rounded-lg bg-gray-100 border-2 transition-all"
+                        className="overflow-hidden bg-gray-100 border transition-all"
+                        style={{
+                          width: 72,
+                          height: 96,
+                          borderColor: selectedImage === i ? '#111' : '#e5e7eb',
+                          borderWidth: selectedImage === i ? 2 : 1,
+                        }}
+                      >
+                        <img src={img} alt={`${productName} ${i + 1}`} className="w-full h-full object-cover object-top" />
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Main image */}
+                  <div className="relative flex-1 overflow-hidden bg-gray-50 border border-gray-200" style={{ aspectRatio: '3/4' }}>
+                    <img
+                      src={imgs[selectedImage] || imgs[0]}
+                      alt={productName}
+                      className="w-full h-full object-cover object-top cursor-zoom-in"
+                    />
+                    <button
+                      type="button"
+                      className="absolute top-3 right-3 flex h-9 w-9 items-center justify-center bg-white/90 border border-gray-200 text-gray-700 shadow-sm"
+                      aria-label="Expand image"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path strokeLinecap="round" d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                      </svg>
+                    </button>
+                  </div>
+
+                  {/* Mobile horizontal thumbs */}
+                  <div className="flex lg:hidden gap-2 overflow-x-auto pb-1 scrollbar-hide">
+                    {imgs.map((img, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => setSelectedImage(i)}
+                        className="shrink-0 overflow-hidden bg-gray-100 border-2 transition-all"
                         style={{
                           width: '64px',
                           height: '80px',
-                          borderColor: selectedImage === i ? '#378FE9' : 'transparent',
+                          borderColor: selectedImage === i ? '#111' : 'transparent',
                         }}
                       >
-                        <img src={img} alt={`${productName} ${i + 1}`} className="w-full h-full object-cover" />
+                        <img src={img} alt={`${productName} ${i + 1}`} className="w-full h-full object-cover object-top" />
                       </button>
                     ))}
                   </div>
@@ -748,164 +788,108 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
               );
             })()}
 
-            {/* 2 — Vertical thumbnail strip (desktop only) */}
-            {(() => {
-              const imgs = productImages.length ? productImages : [productHeader];
-              return (
-                <div className="hidden lg:flex flex-col gap-2 w-[13%] shrink-0 lg:sticky lg:top-6 self-start">
-                  {imgs.map((img, i) => (
-                    <button
-                      key={i}
-                      type="button"
-                      onClick={() => setSelectedImage(i)}
-                      className="overflow-hidden rounded-xl bg-gray-100 border-2 transition-all"
-                      style={{
-                        aspectRatio: '3/4',
-                        borderColor: selectedImage === i ? '#378FE9' : 'transparent',
-                      }}
-                    >
-                      <img src={img} alt={`${productName} ${i + 1}`} className="w-full h-full object-cover" />
-                    </button>
-                  ))}
-                </div>
-              );
-            })()}
+            {/* Buy box — Ishnya style */}
+            <div className="flex-1 flex flex-col gap-0 min-w-0 pt-1">
 
-            {/* 3 — Buy box */}
-            <div className="flex-1 flex flex-col gap-0 min-w-0">
-
-              {/* Bestseller badge */}
-              <div className="mb-3 flex items-center gap-2">
-                <span className="text-lg">🔥</span>
-                <span className="px-3 py-1 rounded-full text-sm font-bold text-white" style={{ backgroundColor: '#378FE9' }}>
-                  Bestseller
-                </span>
-              </div>
-
-              {/* Product name */}
-              <h1 className="mb-3 text-2xl md:text-3xl font-bold leading-snug text-gray-900">
-                {productName}
+              <h1 className="mb-3 text-[22px] md:text-[26px] font-medium leading-snug text-gray-800 tracking-tight">
+                {productName}{selectedSize ? ` - ${selectedSize}` : ''}
               </h1>
 
-              {/* Keyword tags */}
-              <div className="mb-4 flex flex-wrap gap-2">
-                {PDP_KEYWORD_TAGS.map((tag, i) => {
-                  const colors = [
-                    { bg: '#fdf2f8', text: '#9d174d', border: '#fbcfe8' },
-                    { bg: '#f5f3ff', text: '#5b21b6', border: '#ddd6fe' },
-                    { bg: '#fefce8', text: '#854d0e', border: '#fef08a' },
-                    { bg: '#f0fdf4', text: '#166534', border: '#bbf7d0' },
-                  ];
-                  const c = colors[i % colors.length];
-                  return (
-                    <span key={tag} className="px-3 py-1 rounded-full text-xs font-medium"
-                      style={{ background: c.bg, color: c.text, border: `1px solid ${c.border}` }}>
-                      {tag}
-                    </span>
-                  );
-                })}
-              </div>
-
-              {/* Rating row */}
-              <div className="mb-4 flex flex-wrap items-center gap-x-2 gap-y-1">
-                <span className="text-sm font-semibold text-gray-700">Customer Reviews :</span>
+              {/* Stars + reviews */}
+              <div className="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1">
                 <span className="flex gap-0.5">
-                  {[1,2,3,4,5].map((i) => (
+                  {[1, 2, 3, 4, 5].map((i) => (
                     <svg key={i} width="16" height="16" viewBox="0 0 24 24" aria-hidden>
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                        fill={i <= Math.round(productRating) ? '#fb923c' : '#d1d5db'} />
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                        fill={i <= Math.round(productRating) ? PDP_ACCENT : 'none'}
+                        stroke={PDP_ACCENT}
+                        strokeWidth="1.4"
+                      />
                     </svg>
                   ))}
                 </span>
-                <span className="text-sm font-bold text-gray-800">{productRating.toFixed(1)}</span>
-                <span className="text-sm text-gray-500">| {productReviews}</span>
+                <span className="text-sm text-gray-500">{productReviews} reviews</span>
+                <button type="button" className="text-sm text-gray-500 underline underline-offset-2 hover:text-gray-800">
+                  Be the first review
+                </button>
               </div>
 
-              {/* Marketplace badge rotator */}
-              <div className="mb-4">
+              {/* SKU + stock */}
+              <div className="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
+                <span className="text-gray-500">
+                  SKU: <span className="text-gray-700">{PRODUCT_SKU}</span>
+                </span>
+                <span className="font-semibold" style={{ color: PDP_ACCENT }}>
+                  In Stock
+                </span>
+              </div>
+
+              {/* Marketplace badge rotator — keep as-is */}
+              <div className="mb-2">
                 <MarketplaceBadgeRotator />
               </div>
 
-              {/* Social proof ticker */}
+              {/* Live social proof — cart / purchases / viewers */}
               <SocialProofTicker />
 
               {/* Price */}
-              <div className="mb-1 flex items-baseline gap-3">
-                <span className="text-2xl md:text-3xl font-bold text-gray-900">
-                  Rs.&nbsp;{productPrice.toLocaleString('en-IN')}
+              <div className="mb-5 flex items-baseline gap-3 flex-wrap">
+                <span className="text-xl md:text-2xl font-bold text-gray-900">
+                  Rs. {Number(productPrice).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                 </span>
-                {productOriginal > 0 && (
-                  <span className="text-sm text-gray-400 line-through">
-                    Rs.&nbsp;{productOriginal.toLocaleString('en-IN')}
+                {productOriginal > productPrice && (
+                  <span className="text-base line-through" style={{ color: PDP_ACCENT }}>
+                    Rs. {Number(productOriginal).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                   </span>
                 )}
               </div>
-              <p className="mb-1 text-xs font-semibold text-gray-700">MRP Inclusive Of All Taxes</p>
 
-              {/* Applicable Offers */}
-              <p className="mb-3 text-sm font-bold" style={{ color: '#378FE9' }}>Applicable Offers:</p>
-              <div className="mb-5 flex gap-3 overflow-x-auto pb-1 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
-                {/* Most Popular */}
-                <div className="shrink-0 w-40 md:w-48 rounded-xl border-2 overflow-hidden" style={{ borderColor: '#378FE9' }}>
-                  <div className="py-1.5 text-center text-xs font-bold text-white tracking-widest" style={{ backgroundColor: '#378FE9' }}>
-                    MOST POPULAR
-                  </div>
-                  <div className="px-3 py-3 bg-white text-center">
-                    <p className="text-base font-bold text-gray-900">Flat 20% OFF</p>
-                    <p className="text-xs text-gray-500 mt-0.5">First Purchase</p>
-                    <p className="text-xs text-gray-400">15% New User + 5% Prepaid OFF</p>
-                    <p className="text-xs text-gray-500 mt-2 uppercase tracking-wide">Apply Code</p>
-                    <span className="mt-1 inline-block px-3 py-1 rounded text-xs font-bold text-white" style={{ backgroundColor: '#378FE9' }}>
-                      {PDP_COUPON_CODE}
-                    </span>
-                  </div>
-                </div>
-                {/* Best Value */}
-                <div className="shrink-0 w-40 md:w-48 rounded-xl border-2 overflow-hidden border-yellow-400">
-                  <div className="py-1.5 text-center text-xs font-bold text-gray-900 tracking-widest bg-yellow-400">
-                    BEST VALUE
-                  </div>
-                  <div className="px-3 py-3 bg-white text-center">
-                    <p className="text-base font-bold text-gray-900">Buy 2 At 599</p>
-                    <p className="text-xs text-gray-500 mt-0.5">Add 2 items in Cart to Avail</p>
-                    <p className="text-xs text-gray-400">+ 1 FREE Gift</p>
-                    <p className="text-xs text-gray-500 mt-2 uppercase tracking-wide">Auto Applied</p>
-                    <span className="mt-1 inline-block px-3 py-1 rounded text-xs font-bold text-white bg-yellow-500">
-                      BUY599
-                    </span>
+              {/* Color swatches */}
+              {PRODUCT_COLORS.length > 0 && (
+                <div className="mb-5">
+                  <p className="mb-2 text-xs font-semibold tracking-wide text-gray-800 uppercase">
+                    Color — <span className="font-bold">{selectedColor}</span>
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {PRODUCT_COLORS.map((c) => (
+                      <button
+                        key={c.name}
+                        type="button"
+                        onClick={() => {
+                          setSelectedColor(c.name);
+                          const idx = productImages.findIndex((u) => u === c.image);
+                          if (idx >= 0) setSelectedImage(idx);
+                        }}
+                        className="overflow-hidden bg-white transition-all"
+                        style={{
+                          width: 56,
+                          height: 72,
+                          border: selectedColor === c.name ? '2px solid #111' : '1px solid #d1d5db',
+                        }}
+                        aria-label={c.name}
+                      >
+                        <img src={c.image} alt={c.name} className="w-full h-full object-cover object-top" />
+                      </button>
+                    ))}
                   </div>
                 </div>
-                {/* Bundle */}
-                <div className="shrink-0 w-40 md:w-48 rounded-xl border-2 overflow-hidden" style={{ borderColor: '#378FE9' }}>
-                  <div className="py-1.5 text-center text-xs font-bold text-white tracking-widest" style={{ backgroundColor: '#378FE9' }}>
-                    BUNDLE DEAL
-                  </div>
-                  <div className="px-3 py-3 bg-white text-center">
-                    <p className="text-base font-bold text-gray-900">Buy 3 At 849</p>
-                    <p className="text-xs text-gray-500 mt-0.5">Add 3 items in Cart to Avail</p>
-                    <p className="text-xs text-gray-400">+ 2 FREE Gifts</p>
-                    <p className="text-xs text-gray-500 mt-2 uppercase tracking-wide">Auto Applied</p>
-                    <span className="mt-1 inline-block px-3 py-1 rounded text-xs font-bold text-white" style={{ backgroundColor: '#378FE9' }}>
-                      BUY849
-                    </span>
-                  </div>
-                </div>
-              </div>
+              )}
 
-              {/* Size selector */}
-              <div className="mb-5">
-                <p className="text-sm font-semibold text-gray-800 mb-2">Size :</p>
-                <div className="flex gap-2">
+              {/* Size */}
+              <div className="mb-2">
+                <p className="mb-2 text-xs font-semibold tracking-wide text-gray-800 uppercase">Size</p>
+                <div className="flex flex-wrap gap-2">
                   {PRODUCT_SIZES.map((size) => (
                     <button
                       key={size}
                       type="button"
                       onClick={() => setSelectedSize(size)}
-                      className="px-4 py-2 rounded-lg text-sm font-semibold border-2 transition-all"
+                      className="flex h-11 w-11 items-center justify-center text-sm font-medium border transition-colors"
                       style={{
-                        borderColor: selectedSize === size ? '#378FE9' : '#d1d5db',
-                        backgroundColor: selectedSize === size ? '#378FE9' : '#fff',
-                        color: selectedSize === size ? '#fff' : '#374151',
+                        borderColor: '#111',
+                        backgroundColor: selectedSize === size ? '#111' : '#fff',
+                        color: selectedSize === size ? '#fff' : '#111',
                       }}
                     >
                       {size}
@@ -914,20 +898,61 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                 </div>
               </div>
 
-              {/* ADD TO CART */}
               <button
                 type="button"
-                className="mb-5 flex h-14 w-full items-center justify-center gap-2 text-base font-bold text-white transition-opacity hover:opacity-90 rounded-xl"
-                style={{ backgroundColor: '#378FE9' }}
+                className="mb-5 inline-flex items-center gap-1.5 text-sm text-gray-600 hover:text-gray-900"
               >
-                Add To Cart
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden>
+                  <path strokeLinecap="round" d="M4 7h16M4 12h10M4 17h14" />
+                  <path strokeLinecap="round" d="M18 10v8M15 15h6" />
+                </svg>
+                Size Chart
+              </button>
+
+              {/* Quantity */}
+              <div className="mb-5 inline-flex items-center border border-gray-300 w-fit">
+                <button
+                  type="button"
+                  className="flex h-11 w-11 items-center justify-center text-lg text-gray-700 hover:bg-gray-50"
+                  onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                  aria-label="Decrease quantity"
+                >
+                  −
+                </button>
+                <span className="flex h-11 min-w-[48px] items-center justify-center border-x border-gray-300 text-sm font-medium tabular-nums">
+                  {quantity}
+                </span>
+                <button
+                  type="button"
+                  className="flex h-11 w-11 items-center justify-center text-lg text-gray-700 hover:bg-gray-50"
+                  onClick={() => setQuantity((q) => q + 1)}
+                  aria-label="Increase quantity"
+                >
+                  +
+                </button>
+              </div>
+
+              {/* CTAs */}
+              <button
+                type="button"
+                className="mb-2 flex h-12 w-full items-center justify-center text-sm font-bold tracking-[0.14em] text-white uppercase transition-opacity hover:opacity-90"
+                style={{ backgroundColor: PDP_ACCENT }}
+              >
+                Add to Cart
+              </button>
+              <button
+                type="button"
+                className="mb-6 flex h-12 w-full items-center justify-center text-sm font-bold tracking-[0.14em] text-white uppercase transition-opacity hover:opacity-90"
+                style={{ backgroundColor: PDP_ACCENT }}
+              >
+                Buy It Now
               </button>
 
               {/* Trust row */}
               <div className="mb-5 grid grid-cols-2 gap-2">
                 {PDP_TRUST_FEATURES.map((f) => (
-                  <div key={f.label} className="flex items-center gap-2 rounded-lg border border-gray-100 bg-gray-50 px-3 py-2">
-                    <span style={{ color: '#378FE9' }}>{f.icon}</span>
+                  <div key={f.label} className="flex items-center gap-2 border border-gray-100 bg-gray-50 px-3 py-2">
+                    <span style={{ color: PDP_ACCENT }}>{f.icon}</span>
                     <span className="text-xs font-medium text-gray-700">{f.label}</span>
                   </div>
                 ))}
@@ -935,10 +960,25 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
 
               {/* Accordions */}
               {[
-                { label: 'KEY INGREDIENTS', content: 'Niacinamide — controls oil & fades dark spots. Black Berry Extract — antioxidant-rich, protects against UV-induced damage. SPF 50/PA++++ — broad spectrum UVA & UVB protection. Squalane — lightweight moisturiser that keeps skin soft without greasiness.' },
-                { label: 'HOW TO USE', content: 'Apply generously on face and neck 15 minutes before sun exposure. Reapply every 2–3 hours when outdoors. Use as the last step of your morning skincare routine, after moisturiser.' },
-                { label: 'RETURN / EXCHANGE POLICY', content: 'We accept returns within 7 days of delivery if the product is unused and in its original sealed packaging. Opened products are not eligible for return due to hygiene reasons.' },
-                { label: 'SHIPPING POLICY', content: 'Free shipping on orders above ₹599. Standard delivery in 3–5 business days across India. Express delivery available at checkout for select pincodes.' },
+                {
+                  label: 'PRODUCT DETAILS',
+                  content: PRODUCT_DESCRIPTION,
+                },
+                {
+                  label: 'FABRIC & CARE',
+                  content:
+                    'Soft, breathable fabrics suited to Indian weather. Follow the care label — gentle wash recommended to preserve prints and embroidery.',
+                },
+                {
+                  label: 'RETURN / EXCHANGE POLICY',
+                  content:
+                    'Easy exchange available via the Return / Exchange flow on ishnya.com. Unused items in original packaging are eligible as per policy.',
+                },
+                {
+                  label: 'SHIPPING POLICY',
+                  content:
+                    'Fast dispatch across India with COD available. International shipping options available at checkout for select destinations.',
+                },
               ].map(({ label, content }) => (
                 <AccordionRow key={label} label={label} content={content} />
               ))}
@@ -980,7 +1020,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       <circle cx="12" cy="12" r="4.5" stroke="currentColor" strokeWidth="1.8"/>
                       <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
                     </svg>
-                    @consciouschemist
+                    @labelishnya
                   </a>
                 </div>
                 <div className="overflow-x-auto pb-2 scrollbar-hide" style={{ scrollbarWidth: 'none' }}>
@@ -1218,7 +1258,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                         className="inline-flex w-full items-center justify-center py-3 rounded-none text-sm font-bold text-white bg-[#B99B7B] hover:opacity-95 transition-opacity"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        Follow @consciouschemist
+                        Follow @labelishnya
                       </a>
                     </div>
                   </div>
@@ -1267,7 +1307,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
               {bestSellerProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="w-[90vw] md:w-[380px] lg:w-[280px] flex-shrink-0 cursor-pointer"
+                  className="w-[90vw] md:w-[340px] lg:w-[380px] flex-shrink-0 cursor-pointer"
                 >
                   <ProductCard product={product} />
                 </div>
@@ -1316,7 +1356,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       ))}
                     </div>
                     <p className="mb-3 text-sm text-stone-600">
-                      Based on <strong className="font-semibold text-stone-900">1,746</strong> reviews
+                      Based on <strong className="font-semibold text-stone-900">2,180</strong> reviews
                     </p>
                     <div
                       className="inline-flex items-center gap-2 rounded-none border border-stone-200/70 px-3.5 py-1.5 text-xs font-medium"
@@ -1333,7 +1373,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                           clipRule="evenodd"
                         />
                       </svg>
-                      94% zero white cast verified
+                      96% would recommend the fit
                     </div>
                   </div>
 
@@ -1375,8 +1415,8 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
                         ),
-                        label: 'Zero white cast',
-                        value: '94%',
+                        label: 'Loved the fit',
+                        value: '96%',
                       },
                       {
                         icon: (
@@ -1384,7 +1424,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                           </svg>
                         ),
-                        label: 'Formula quality',
+                        label: 'Style & quality',
                         value: '4.8/5',
                       },
                       {
@@ -1393,7 +1433,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                           </svg>
                         ),
-                        label: 'Daily use approved',
+                        label: 'Occasion-ready',
                         value: '98%',
                       },
                     ].map((stat, idx) => (
@@ -1414,7 +1454,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       href={AJNAA_INSTAGRAM_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label="Open @consciouschemistindia on Instagram"
+                      aria-label="Open @labelishnya on Instagram"
                       className="flex items-center gap-3.5 rounded-none border border-stone-200/70 bg-white px-3.5 py-3 transition-colors hover:bg-stone-50/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B99B7B]/35 focus-visible:ring-offset-2"
                       style={{ textDecoration: 'none' }}
                     >
@@ -1443,11 +1483,12 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       </span>
                       <div className="min-w-0 flex-1 text-left">
                         <div className="flex flex-col gap-1.5">
-                          <p className="text-[13px] font-semibold leading-snug text-stone-900">@consciouschemistindia</p>
+                          <p className="text-[13px] font-semibold leading-snug text-stone-900">{AJNAA_INSTAGRAM_HANDLE}</p>
+                          <p className="text-[11px] leading-snug text-stone-700">{AJNAA_INSTAGRAM_DISPLAY}</p>
                           <p className="text-[11px] leading-snug text-stone-600">
                             <span className="font-semibold tabular-nums text-stone-800">{AJNAA_INSTAGRAM_FOLLOWERS_LABEL}</span>
                             {' '}
-                            followers
+                            followers · Modern desi fits
                           </p>
                         </div>
                       </div>
@@ -1472,12 +1513,12 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
 
                 <div className="px-6 pb-2 pt-4">
                   <h4 className="mb-2.5 font-serif text-lg font-normal tracking-tight text-stone-900 md:text-xl">
-                    What Conscious Chemist customers are saying
+                    What Ishnya customers are saying
                   </h4>
                   <p className="text-[14px] leading-[1.65] text-stone-600">
                     {isAISummaryExpanded ? (
                       <>
-                        Shoppers rave about the lightweight, non-greasy texture that works even in humid weather. Reviews consistently highlight zero white cast, fast absorption, and a subtle glow finish. Many customers note visible reduction in tanning within 2–3 weeks. The Niacinamide + Black Berry Extract combo is frequently praised for brightening dull skin. Repeat buyers are common, and dermatologist-tested claims add significant trust.{' '}
+                        Shoppers love the comfortable Indo-Western fits, festive-ready prints, and contemporary silhouettes. Reviews highlight soft fabrics, flattering drapes, and pieces that work from everyday to celebrations. Customers frequently praise packaging, fast shipping, and friendly support.{' '}
                         <button
                           type="button"
                           onClick={() => setIsAISummaryExpanded(false)}
@@ -1488,7 +1529,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       </>
                     ) : (
                       <>
-                        Customers love the non-greasy, zero white cast formula — perfect for daily use across all skin types, especially in summer.{' '}
+                        Customers love the comfort-first Indo-Western fits — stylish enough for festivities, easy enough for everyday wear.{' '}
                         <button
                           type="button"
                           onClick={() => setIsAISummaryExpanded(true)}
@@ -1503,11 +1544,11 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
 
                 <div className="px-6 pb-4 pt-3 flex flex-wrap items-center gap-2 text-[12px] leading-relaxed">
                   {[
-                    { label: 'Zero White Cast', bg: '#fdf2f8', text: '#9d174d', border: '#fbcfe8' },
-                    { label: 'Non-Greasy', bg: '#f5f3ff', text: '#5b21b6', border: '#ddd6fe' },
-                    { label: 'Brightening', bg: '#fefce8', text: '#854d0e', border: '#fef08a' },
-                    { label: 'Dermatologist Tested', bg: '#f0fdf4', text: '#166534', border: '#bbf7d0' },
-                    { label: 'SPF 50 PA++++', bg: '#eff6ff', text: '#1e40af', border: '#bfdbfe' },
+                    { label: 'Desi Fusion', bg: '#fdf2f8', text: '#9d174d', border: '#fbcfe8' },
+                    { label: 'Comfort Fit', bg: '#f5f3ff', text: '#5b21b6', border: '#ddd6fe' },
+                    { label: 'Occasion Ready', bg: '#fefce8', text: '#854d0e', border: '#fef08a' },
+                    { label: 'Flattering Drape', bg: '#f0fdf4', text: '#166534', border: '#bbf7d0' },
+                    { label: 'Main Character Energy', bg: '#fff1f2', text: '#9f1239', border: '#fecdd3' },
                   ].map((kw) => (
                     <span
                       key={kw.label}
@@ -1554,7 +1595,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                     <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
                       <div>
                         <h3 className="mb-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-stone-500">CUSTOMER PHOTOS</h3>
-                        <p className="text-sm text-stone-600">Real results from the community</p>
+                        <p className="text-sm text-stone-600">Real looks from the Ishnya community</p>
                       </div>
                       <span className="rounded-none bg-stone-100 px-3 py-1 text-xs font-medium tabular-nums text-stone-600">
                         {customerReviewImages.length} uploads
@@ -1853,8 +1894,9 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                   <path fill="url(#igGradModal)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                 </svg>
                 <div>
-                  <p className="text-sm font-bold text-gray-900 leading-tight">@consciouschemistindia</p>
-                  <p className="text-xs text-gray-500">{AJNAA_INSTAGRAM_FOLLOWERS_LABEL} followers</p>
+                  <p className="text-sm font-bold text-gray-900 leading-tight">{AJNAA_INSTAGRAM_HANDLE}</p>
+                  <p className="text-xs text-gray-600">{AJNAA_INSTAGRAM_DISPLAY}</p>
+                  <p className="text-xs text-gray-500">{AJNAA_INSTAGRAM_FOLLOWERS_LABEL} followers · {AJNAA_INSTAGRAM_POSTS} posts</p>
                 </div>
               </div>
               <button
@@ -1952,7 +1994,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
               {bestSellerProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="w-[90vw] md:w-[380px] lg:w-[280px] flex-shrink-0 cursor-pointer"
+                  className="w-[90vw] md:w-[340px] lg:w-[380px] flex-shrink-0 cursor-pointer"
                 >
                   <ProductCard product={product} />
                 </div>
