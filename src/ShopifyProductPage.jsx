@@ -117,6 +117,14 @@ const PDP_GIFT_PROMO = 'Easy exchange available';
 const PDP_COUPON_CODE = 'ISHNYA10';
 const PDP_COUPON_COPY = 'Get 10% off on your first purchase — use code ISHNYA10';
 
+/** Feature keyword pills under the product title */
+const PDP_KEYWORD_TAGS = [
+  'Desi Fusion ✨',
+  'Comfort Fit 👗',
+  'Occasion Ready 🎉',
+  'Soft Breathable Fabric',
+];
+
 /** Trust row below CTAs */
 const PDP_TRUST_FEATURES = [
   {
@@ -794,6 +802,28 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
               <h1 className="mb-3 text-[22px] md:text-[26px] font-medium leading-snug text-gray-800 tracking-tight">
                 {productName}{selectedSize ? ` - ${selectedSize}` : ''}
               </h1>
+
+              {/* Feature keyword pills */}
+              <div className="mb-4 flex flex-wrap gap-2">
+                {PDP_KEYWORD_TAGS.map((tag, i) => {
+                  const colors = [
+                    { bg: '#fdf2f8', text: '#9d174d', border: '#fbcfe8' },
+                    { bg: '#f5f3ff', text: '#5b21b6', border: '#ddd6fe' },
+                    { bg: '#fefce8', text: '#854d0e', border: '#fef08a' },
+                    { bg: '#f0fdf4', text: '#166534', border: '#bbf7d0' },
+                  ];
+                  const c = colors[i % colors.length];
+                  return (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 rounded-full text-xs font-medium"
+                      style={{ background: c.bg, color: c.text, border: `1px solid ${c.border}` }}
+                    >
+                      {tag}
+                    </span>
+                  );
+                })}
+              </div>
 
               {/* Stars + reviews */}
               <div className="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1">
